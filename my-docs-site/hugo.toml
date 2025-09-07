@@ -1,0 +1,11 @@
+baseURL = 'https://github.com/unb-mds/2025-2-squad-05'
+languageCode = 'pt-br'
+title = 'Sem Filtro UNB'
+
+[module]
+    [[module.imports]]
+        path = "github.com/colinwilson/lotusdocs"
+        disable = false
+    [[module.imports]]
+        path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+        disable = false

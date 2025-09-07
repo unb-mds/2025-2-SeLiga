@@ -18,3 +18,4 @@ Navigate to the root of your Hugo project and use the `hugo new` command to crea
 ```shell
 hugo new docs/examplepage.md
 ```
+...

@@ -47,7 +47,7 @@ O Figma atua como uma **planta baixa do nosso produto**, garantindo que a equipe
 
 ### 5. Atalhos e Comandos Úteis ⌨️
 
-Aprender alguns atalhos e comandos simples pode acelerar muito o seu fluxo de trabalho no Figma.
+Atalhos e comandos simples no Figma.
 
 #### **Ferramentas e Criação**
 
@@ -82,3 +82,4 @@ Aprender alguns atalhos e comandos simples pode acelerar muito o seu fluxo de tr
 - [Criando site com o Figma](https://www.youtube.com/watch?v=oy5_yJLMZXI)
 - [O que é UI/UX?](https://www.youtube.com/watch?v=rbEbsF8o1-8)
 - [Figma Community](https://www.figma.com/community)
+

@@ -39,28 +39,28 @@ jobs:
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          # A CORREÇÃO: Usar a versão estendida do Hugo
           extended: true
 
       - name: Build
-        # Roda o build a partir da pasta 'docs'. O site será gerado em uma pasta 'public' na raiz.
-        run: hugo --minify --source docs
+        # CORREÇÃO: Navega para a pasta docs e roda o build de lá.
+        # Isso garante que a pasta 'public' seja criada dentro de 'docs'.
+        run: cd docs && hugo --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Define o caminho para a pasta que será publicada
-          path: ./public
+          # CORREÇÃO: O caminho para a pasta publicada agora é explicitamente ./docs/public
+          path: ./docs/public
 
-  # Job de Deploy
+  # Job de Deploy (não precisa de alteração)
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    # O job de deploy só roda depois que o de build for concluído com sucesso
     needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+

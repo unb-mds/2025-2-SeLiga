@@ -1,48 +1,66 @@
 # Nome do Workflow
-name: Deploy Hugo Docs
+name: Deploy Hugo site to Pages
 
-# Gatilho: rodar quando houver um push na branch 'main'
-# e somente se os arquivos na pasta 'docs/' forem alterados.
 on:
+  # Roda quando um push é feito na branch `main`
   push:
     branches:
-      - main # Mude para 'master' se for o caso do seu repositório
+      - main
+    # Roda apenas se houverem mudanças na pasta docs/
     paths:
       - 'docs/**'
 
+  # Permite que você rode este workflow manualmente na aba Actions
+  workflow_dispatch:
+
+# Define as permissões necessárias para o deploy no GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite apenas uma implantação simultânea
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  deploy:
+  # Job de Build
+  build:
     runs-on: ubuntu-latest
     steps:
-      # 1. Baixa o código do seu repositório
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true  # Essencial para baixar o tema que é um submódulo
-          fetch-depth: 0    # Necessário para o Hugo obter o histórico completo
+          submodules: true
+          fetch-depth: 0
 
-      # 2. Instala o Hugo na versão ESTENDIDA (ESSA É A CORREÇÃO)
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          extended: true # Adicionado para compilar temas com SCSS/SASS
+          # A CORREÇÃO: Usar a versão estendida do Hugo
+          extended: true
 
-      # 3. Faz o "build" do site Hugo
-      # O site será gerado na pasta 'public' por padrão
       - name: Build
-        # Navega para a pasta docs antes de rodar o build
-        run: cd docs && hugo --minify
+        # Roda o build a partir da pasta 'docs'. O site será gerado em uma pasta 'public' na raiz.
+        run: hugo --minify --source docs
 
-      # 4. Publica o conteúdo da pasta 'public' na branch 'gh-pages'
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          # O token é gerado automaticamente pelo GitHub, não precisa criar um secret
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # A pasta que contém os arquivos do site gerado
-          publish_dir: ./docs/public
-          # O nome da branch onde o site será publicado
-          publish_branch: gh-pages
-          # Força a reescrita da branch para manter apenas a última versão
-          force_orphan: true
+          # Define o caminho para a pasta que será publicada
+          path: ./public
+
+  # Job de Deploy
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    # O job de deploy só roda depois que o de build for concluído com sucesso
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

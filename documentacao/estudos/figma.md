@@ -1,10 +1,10 @@
-#🎨 Guia de Estudo e Prática: Figma 
+# Guia de Estudo e Prática: Figma 🎨
 
 Este documento serve como um guia abrangente sobre o Figma, com foco em sua aplicação para a criação de protótipos e o design de interfaces de usuário (UI).
 
 ---
 
-###💡 O que é o Figma?
+### O que é o Figma? 💡
 
 O Figma é uma ferramenta de design de interface e prototipagem, baseada em nuvem. Sua principal característica é a colaboração em tempo real, permitindo que várias pessoas trabalhem no mesmo arquivo simultaneamente.
 
@@ -14,7 +14,7 @@ O Figma é uma ferramenta de design de interface e prototipagem, baseada em nuve
 
 ---
 
-###🧭 Conceitos Fundamentais
+### Conceitos Fundamentais 🧭
 
 - **Frame:** É a "tela" do seu projeto. Funciona como uma prancheta de desenho, com dimensões predefinidas para dispositivos (desktop, mobile, tablet) ou tamanhos personalizados.
 - **Componente:** É um elemento de UI reutilizável. Por exemplo, um botão ou um cabeçalho. Criar componentes acelera o processo de design e garante a consistência do projeto.
@@ -23,7 +23,7 @@ O Figma é uma ferramenta de design de interface e prototipagem, baseada em nuve
 
 ---
 
-###🛠️ O Processo de Prototipagem 🛠️
+### O Processo de Prototipagem 🛠️
 
 O processo de design e prototipagem no Figma segue uma hierarquia de fidelidade, que vai do rascunho ao modelo final.
 
@@ -33,7 +33,7 @@ O processo de design e prototipagem no Figma segue uma hierarquia de fidelidade,
 
 ---
 
-###🚀 Aplicação Prática no Nosso Projeto
+### Aplicação Prática no Nosso Projeto🚀
 
 No nosso projeto de dados abertos, o Figma será usado para:
 
@@ -45,7 +45,7 @@ O Figma atua como uma **planta baixa do nosso produto**, garantindo que a equipe
 
 ---
 
-###⌨️ Atalhos e Comandos Úteis
+### Atalhos e Comandos Úteis ⌨️
 
 Atalhos e comandos simples no Figma.
 
@@ -76,11 +76,12 @@ Atalhos e comandos simples no Figma.
 
 ---
 
-###📓 Referências de Estudo 
+### Referências de Estudo 📓 
 
 - [Oque é o Figma](https://www.youtube.com/watch?v=oy5_yJLMZXI)
 - [Criando site com o Figma](https://www.youtube.com/watch?v=oy5_yJLMZXI)
 - [O que é UI/UX?](https://www.youtube.com/watch?v=rbEbsF8o1-8)
 - [Figma Community](https://www.figma.com/community)
+
 
 

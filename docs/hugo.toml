@@ -1,0 +1,9 @@
+baseURL = 'https://GustavoEmmanuel-1.github.io/2025-2-squad-05/'
+languageCode = 'pt-br'
+title = 'Documentação do Sem Filtro UNB'
+theme = 'book'
+
+# Configurações específicas do tema "Book"
+[params]
+  BookRepo = 'https://github.com/GustavoEmmanuel-1/2025-2-squad-05'
+  BookEditPath = 'edit/main/docs/content' # Caminho para sugerir edições

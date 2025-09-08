@@ -1,0 +1,84 @@
+baseURL = 'https://unb-mds.github.io/2025-2-squad-05/'
+languageCode = 'pt-br'
+title = 'Sem Filtro UNB'
+publishDir = "docs"
+theme = "hugolify"
+
+###########################################################################
+# CONFIGURAÇÃO DE MÓDulos (VERSÃO FINAL E COMPLETA)
+###########################################################################
+[module]
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+  [[module.imports]]
+    path = "github.com/twbs/icons"
+    ignoreConfig = true
+    [[module.imports.mounts]]
+      source = "font/fonts"
+      target = "static/assets/fonts/bootstrap-icons"
+    [[module.imports.mounts]]
+      source = "font/bootstrap-icons.scss"
+      target = "assets/scss/bootstrap-icons/bootstrap-icons.scss"
+  [[module.imports]]
+    path = "github.com/midzer/tobii"
+    ignoreConfig = true
+    [[module.imports.mounts]]
+      source = "src/scss"
+      target = "assets/scss/tobii"
+    [[module.imports.mounts]]
+      source = "src/js"
+      target = "assets/js/vendors/tobii"
+  
+  # CORREÇÃO: Adicionando o módulo CookieConsent
+  [[module.imports]]
+    path = "github.com/orestbida/cookieconsent"
+    ignoreConfig = true
+    [[module.imports.mounts]]
+      source = "src/scss"
+      target = "assets/scss/cookieconsent"
+    [[module.imports.mounts]]
+      source = "dist/cookieconsent.umd.js"
+      target = "static/assets/js/cookieconsent.umd.js"
+  
+  # Adicionando o módulo Carousel (Splide)
+  [[module.imports]]
+    path = "github.com/Splidejs/splide"
+    ignoreConfig = true
+    [[module.imports.mounts]]
+      source = "dist/css/splide.min.css"
+      target = "static/assets/css/splide.min.css"
+    [[module.imports.mounts]]
+      source = "dist/js/splide.min.js"
+      target = "static/assets/js/splide.min.js"
+
+  [[module.imports]]
+    path = "github.com/dixonandmoe/rellax"
+    ignoreConfig = true
+    [[module.imports.mounts]]
+      source = "rellax.min.js"
+      target = "assets/js/vendors/rellax.min.js"
+
+###########################################################################
+# PARÂMETROS DE CUSTOMIZAÇÃO DO TEMA
+###########################################################################
+[params]
+  mainSections = ["docs"]
+  [params.logo]
+    header = "/assets/images/logo.svg"
+    footer = "/assets/images/logo.svg"

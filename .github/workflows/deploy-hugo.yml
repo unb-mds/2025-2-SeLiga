@@ -6,9 +6,6 @@ on:
   push:
     branches:
       - main
-    # Roda apenas se houverem mudanças na pasta docs/
-    paths:
-      - 'docs/**'
 
   # Permite que você rode este workflow manualmente na aba Actions
   workflow_dispatch:
@@ -40,17 +37,26 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
+      
+      # Adicionado: Instala as dependências do Node.js (PostCSS)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Build
-        # CORREÇÃO: Navega para a pasta docs e roda o build de lá.
-        # Isso garante que a pasta 'public' seja criada dentro de 'docs'.
-        run: cd docs && hugo --minify
+        # CORREÇÃO: Roda o build a partir da raiz do projeto
+        run: hugo --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # CORREÇÃO: O caminho para a pasta publicada agora é explicitamente ./docs/public
-          path: ./docs/public
+          # CORREÇÃO: O Hugo gera o site na pasta 'docs' (definido no hugo.toml)
+          path: ./docs
 
   # Job de Deploy (não precisa de alteração)
   deploy:
@@ -63,4 +69,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

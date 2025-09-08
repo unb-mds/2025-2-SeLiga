@@ -1,0 +1,3 @@
+[submodule "themes/hugolify"]
+	path = themes/hugolify
+	url = https://github.com/Hugolify/hugolify-theme.git

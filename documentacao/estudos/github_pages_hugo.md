@@ -30,4 +30,6 @@ O Hugo é um gerador de site estático (Static Site Generator). Em vez de escrev
 
 # Modificando os Arquivos do Site
 
-Para adicionar ou editar o conteúdo de uma página, navegue até a pasta `content`. Por exemplo, para editar a página "Sobre", você provavelmente encontrará um arquivo como `content/sobre.md`. Abra este arquivo em um editor de texto e faça as alterações usando a sintaxe Markdown.
+Para adicionar ou editar o conteúdo de uma página, navegue até a pasta "content/docs" ou "layout". Por exemplo, para editar uma página, você encontrará um arquivo .md. Abra este arquivo em um editor de texto e faça as alterações usando a sintaxe Markdown.
+
+Para testar na sua máquina antes de dar commit, podemos entrar no diretorio local(do repositório clonado) e usar o comando do hugo: >> hugo server -D << logo aparecerá um link (por exemplo: http://localhost:1313/2025-2-squad-05/), basta abri-lo.

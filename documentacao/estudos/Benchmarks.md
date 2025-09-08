@@ -40,3 +40,7 @@ Avaliam a capacidade do software na transição entre condições adversas, pode
 
 5. **Relatório**  
    Documentação das descobertas e comunicação para os desenvolvedores.
+
+   #Referências
+   
+   https://www.atlassian.com/continuous-delivery/software-testing/automated-testing

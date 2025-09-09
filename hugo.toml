@@ -1,7 +1,7 @@
-baseURL = 'https://unb-mds.github.io/2025-2-squad-05/'
+baseURL = 'https://github.com/unb-mds/2025-2.SemFiltro-UnB/'
 languageCode = 'pt-br'
 title = 'Sem Filtro UNB'
-publishDir = "docs"
+
 theme = "hugolify"
 
 ###########################################################################

@@ -1,29 +1,29 @@
-# Nome do Workflow
-name: Deploy Hugo site to Pages
+name: Deploy Hugo site to gh-pages
 
 on:
-  # Roda quando um push é feito na branch `main`
+  # Roda quando um push é feito na branch `documentacao`
   push:
     branches:
-      - main
+      - documentacao
 
-  # Permite que você rode este workflow manualmente na aba Actions
+  # Permite rodar manualmente
   workflow_dispatch:
 
-# Define as permissões necessárias para o deploy no GitHub Pages
+# Define as permissões
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permite apenas uma implantação simultânea
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Job de Build
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,8 +37,7 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
-      
-      # Adicionado: Instala as dependências do Node.js (PostCSS)
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -49,23 +48,14 @@ jobs:
         run: npm ci
 
       - name: Build
-        # CORREÇÃO: Roda o build a partir da raiz do projeto
         run: hugo --minify
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          # CORREÇÃO: O Hugo gera o site na pasta 'docs' (definido no hugo.toml)
-          path: ./docs
-
-  # Job de Deploy (não precisa de alteração)
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          # O token é necessário para permitir que a Action faça um push para a branch
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # A pasta que contém o site gerado (padrão do Hugo)
+          publish_dir: ./public
+          # O nome da branch de destino
+          publish_branch: gh-pages

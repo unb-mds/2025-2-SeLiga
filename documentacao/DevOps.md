@@ -48,3 +48,37 @@ Comunicação entre equipes de desenvolvimento, QA e operações.
 * Uso de métricas e logs para decisões baseadas em dados.
 * Cultura de aprendizado contínuo e feedback rápido.
 
+
+## Pipelines de DevOps  
+
+Um **pipeline de DevOps** é uma sequência de etapas automatizadas que suporta a construção, o teste e a implantação de novas versões de software.  
+Ele é a base da **Integração Contínua e Entrega Contínua (CI/CD)**, garantindo entregas rápidas, seguras e com mínima intervenção manual.  
+
+### Etapas principais  
+- **Gerenciamento de Código-Fonte:** mudanças enviadas para um repositório (ex.: Git) disparam o pipeline.  
+- **Construção (Build):** o código é compilado, dependências resolvidas e artefatos gerados.  
+- **Testes:** execução de testes automatizados (unidade, integração, funcionais e segurança).  
+- **Implantação (Deploy):** código aprovado segue para ambientes de homologação ou produção (manual ou automático).  
+- **Monitoramento e Feedback:** métricas e logs são coletados após o deploy para identificar falhas e melhorar as próximas entregas.
+
+## DevOps e Transformação Digital  
+
+A **transformação digital** é a transição das empresas para processos e estratégias que utilizam tecnologias digitais para melhorar negócios, operações e experiência do cliente.  
+
+- O **DevOps** é um elemento-chave nesse processo, permitindo que equipes de desenvolvimento e operações integrem novas tecnologias de forma rápida, confiável e sustentável.  
+- Ajuda a criar sistemas **úteis, escaláveis e fáceis de manter**, que evoluem conforme as mudanças nos requisitos de negócios.  
+- Enquanto a TI tradicional se apoia em tecnologias legadas, o DevOps promove **agilidade, inovação e adaptação**, tornando-se sinônimo de transformação digital.
+
+## DevOps e Gerenciamento de Custos de Nuvem  
+
+O **DevOps** impacta significativamente os custos da nuvem ao introduzir **eficiência, automação e melhor gestão de recursos**.  
+
+- **Provisionamento automático:** recursos são criados ou removidos conforme a demanda, evitando desperdício.  
+- **Monitoramento contínuo:** identifica recursos ociosos ou subutilizados.  
+- **Infraestrutura como Código (IaC):** padroniza ambientes e reduz provisionamento excessivo.  
+- **Pipelines CI/CD:** minimizam retrabalho e falhas em produção, evitando custos desnecessários.  
+
+Essas práticas permitem **uso mais eficiente da nuvem e economia de custos**, sem comprometer desempenho ou confiabilidade.  
+
+## Referências 
+https://octopus.com/devops/devops-approach/?utm_source=chatgpt.com

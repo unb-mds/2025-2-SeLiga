@@ -1,12 +1,17 @@
 {{ define "main" }}
   <div class="container py-4">
-    <h2>{{ .Title }}</h2>
-    <p>{{ .Content }}</p>
+    <h1>{{ .Title }}</h1>
+
+    <div class="content mb-4">
+      {{ .Content }}
+    </div>
+
     <hr>
+
     <h3>Documentos</h3>
     <ul class="list-unstyled">
       {{ range where .Site.RegularPages "Section" "docs" }}
-        <li>
+        <li class="mb-3">
           <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
           <p>{{ .Summary }}</p>
         </li>

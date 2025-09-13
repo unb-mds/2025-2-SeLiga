@@ -1,29 +1,17 @@
-name: Deploy Hugo site to gh-pages
+name: Build and Deploy Hugo site to gh-pages
 
 on:
-  # Roda quando um push é feito na branch `documentacao`
   push:
     branches:
       - documentacao
-
-  # Permite rodar manualmente
   workflow_dispatch:
 
-# Define as permissões
+# Permissão para o robô ter poder de escrita no repositório
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,12 +38,10 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy to gh-pages
+      - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
-          # O token é necessário para permitir que a Action faça um push para a branch
+          # Token que dá permissão para a Action fazer o push
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # A pasta que contém o site gerado (padrão do Hugo)
+          # A pasta que contém o site pronto (padrão do Hugo quando não especificamos publishDir)
           publish_dir: ./public
-          # O nome da branch de destino
-          publish_branch: gh-pages

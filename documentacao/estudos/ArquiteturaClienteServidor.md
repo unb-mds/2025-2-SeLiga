@@ -41,7 +41,7 @@
 - É um cliente “leve”, que faz pouca coisa localmente.  
 - Apenas envia requisições para o servidor e exibe a resposta.  
 - **Processamento**: quase todo fica no servidor (banco de dados, cálculos, lógica de negócio).
-- 
+  
 - **Exemplos**:  
   - Navegadores de internet (Chrome, Firefox).  
   - Aplicações de terminal em nuvem (Citrix, Remote Desktop).  
@@ -50,7 +50,11 @@
 - É um cliente “pesado”, que faz grande parte do processamento localmente.  
 - Armazena parte dos dados e da lógica no próprio dispositivo do usuário.  
 - **Processamento**: dividido entre cliente e servidor.
-- 
+  
 - **Exemplos**:  
   - Programas como **Microsoft Word, Photoshop, jogos no PC** → funcionam mesmo sem internet e só usam servidor em alguns momentos.  
-  - Apps de banco no celular que já fazem cálculos antes de enviar a requisição ao servidor.  
+  - Apps de banco no celular que já fazem cálculos antes de enviar a requisição ao servidor.
+
+## Referências
+https://www.eposaudio.com/en/us/insights/articles/thin-client-or-thick-client-whats-the-difference
+https://www.fortinet.com/resources/cyberglossary/thin-client

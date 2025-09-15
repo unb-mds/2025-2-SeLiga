@@ -269,7 +269,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 ## Guias para Estudo 📓 
 
 - [TUDO que você deve estudar de JavaScript antes do React](https://www.youtube.com/watch?v=37SwqREHRGI)
-- [Introdução ao React]([https://www.youtube.com/watch?v=rbEbsF8o1-8](https://www.youtube.com/watch?v=1LhX2u6_BJE))
+- [Introdução ao React](https://www.youtube.com/watch?v=1LhX2u6_BJE)
 - [React Completo para Iniciantes ](https://www.youtube.com/watch?v=2RWsLmu8yVc)
 
 ---

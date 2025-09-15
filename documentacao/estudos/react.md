@@ -1,17 +1,17 @@
-# Estudo de React
+# Estudo de React ⚛️
 
 React é uma **biblioteca de JavaScript** criada pelo Facebook para construir interfaces de usuário de forma prática, declarativa e eficiente. Ou seja, para usar React, é essencial conhecer bem **JavaScript moderno (ES6+)**, pois toda a lógica e manipulação de dados são feitas usando JS.
 
 Com React, conseguimos:
 
-* Criar **componentes reutilizáveis**, que podem ser usados em diferentes partes da aplicação.
+* Criar **componentes reutilizáveis** 🔄, que podem ser usados em diferentes partes da aplicação.
 * Usar **JSX**, que permite escrever HTML dentro do JavaScript de forma clara e organizada.
-* Gerenciar **estado** e **efeitos colaterais** de componentes usando **hooks**.
-* Navegar entre páginas de forma fluida com **React Router**, sem recarregar a página.
+* Gerenciar **estado** 📊 e **efeitos colaterais** de componentes usando **hooks**.
+* Navegar entre páginas de forma fluida com **React Router**, sem recarregar a página 🚀.
 
 ---
 
-## 1. JavaScript Moderno (ES6+)
+## 1. JavaScript Moderno (ES6+) ✨
 
 ### 1.1 Arrow Functions
 
@@ -95,9 +95,9 @@ fetchDados();
 
 ---
 
-## 2. Conceitos Básicos de React
+## 2. Conceitos Básicos de React 🛠️
 
-### 2.1 Componentes
+### 2.1 Componentes 🧩
 
 * São blocos de código que representam partes da interface.
 * Podem ser reutilizados em vários lugares.
@@ -112,7 +112,7 @@ function Botao() {
 }
 ```
 
-### 2.2 JSX
+### 2.2 JSX 🎨
 
 * Sintaxe que mistura HTML e JS.
 * Facilita a criação de elementos visuais diretamente dentro do código.
@@ -154,7 +154,7 @@ function Contador() {
 
 ---
 
-## 3. Hooks Principais
+## 3. Hooks Principais 🪝
 
 ### 3.1 useState
 
@@ -175,7 +175,7 @@ useEffect(() => {
 }, []); // [] = executa apenas uma vez
 ```
 
-### 3.3 useContext
+### 3.3 useContext 🤝
 
 * Compartilha estado entre componentes sem precisar passar props manualmente.
 
@@ -189,7 +189,7 @@ function Componente() {
 }
 ```
 
-### 3.4 useMemo
+### 3.4 useMemo 🧠
 
 * Memoriza valores calculados para **evitar recomputações desnecessárias**.
 
@@ -197,7 +197,7 @@ function Componente() {
 const resultado = useMemo(() => calcularValorComplexo(a, b), [a, b]);
 ```
 
-### 3.5 useCallback
+### 3.5 useCallback ✍️
 
 * Memoriza funções para **evitar recriações a cada renderização**.
 
@@ -209,9 +209,9 @@ const handleClick = useCallback(() => {
 
 ---
 
-## 4. Renderização Condicional e Listas
+## 4. Renderização Condicional e Listas 📋
 
-### 4.1 Renderização Condicional
+### 4.1 Renderização Condicional 🤔
 
 * Mostrar elementos dependendo de condições.
 
@@ -224,7 +224,7 @@ const handleClick = useCallback(() => {
   * **if/else** fora do JSX
   * **&&** para condições simples
 
-### 4.2 Listas e Chaves
+### 4.2 Listas e Chaves 🔑
 
 * Renderizar arrays com `.map()`.
 * Cada item precisa de **key única**.
@@ -242,7 +242,7 @@ return (
 
 ---
 
-## 5. Roteamento com React Router
+## 5. Roteamento com React Router 🗺️
 
 * Permite criar **Single Page Applications (SPA)** com navegação entre páginas.
 
@@ -265,6 +265,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 * React Router organiza a navegação de forma declarativa e simples.
 
 ---
+
+## Guias para Estudo 📓 
+
+- [TUDO que você deve estudar de JavaScript antes do React](https://www.youtube.com/watch?v=37SwqREHRGI)
+- [Introdução ao React]([https://www.youtube.com/watch?v=rbEbsF8o1-8](https://www.youtube.com/watch?v=1LhX2u6_BJE))
+- [React Completo para Iniciantes ](https://www.youtube.com/watch?v=2RWsLmu8yVc)
+
+---
+
 ## Referências
 
 1. W3Schools. **JavaScript ES6**. Disponível em: <https://www.w3schools.com/js/js_es6.asp>. Acesso em: 5 set. 2025.

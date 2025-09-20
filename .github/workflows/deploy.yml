@@ -43,7 +43,7 @@ jobs:
 
       # 3. Gera o site estático (roda o comando 'hugo')
       - name: Build
-        run: hugo --minify --baseURL "https://gustavoemmanuel-1.github.io/2025-2-SeLiga/"
+        run: hugo --minify --baseURL "https://unb-mds.github.io/2025-2-SeLiga/"
 
       # 4. Envia os arquivos gerados para a branch "gh-pages"
       - name: Deploy

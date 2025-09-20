@@ -1,0 +1,54 @@
+# deploy.yml
+
+name: Deploy Hugo site to Pages
+
+on:
+  # Roda quando um push é feito na branch "documentacao"
+  push:
+    branches:
+      - documentacao
+
+  # Permite que você rode este workflow manualmente pela aba Actions
+  workflow_dispatch:
+
+# Permissões do GITHUB_TOKEN para permitir o deploy no GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Permite apenas um deploy concorrente, cancelando execuções antigas
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4  # Pode ser v3 ou v4
+        with:
+          submodules: 'recursive'  # <-- ADICIONE ESTA LINHA
+          fetch-depth: 0         # É uma boa prática adicionar isso também
+
+      # ... resto do seu workflow (Setup Hugo, Build, etc.)
+
+      # 2. Configura o Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true # Descomente se seu tema precisar da versão "extended"
+
+      # 3. Gera o site estático (roda o comando 'hugo')
+      - name: Build
+        run: hugo --minify --baseURL "https://gustavoemmanuel-1.github.io/2025-2-SeLiga/"
+
+      # 4. Envia os arquivos gerados para a branch "gh-pages"
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages # A branch para onde o site será enviado

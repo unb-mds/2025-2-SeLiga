@@ -30,6 +30,14 @@ O Hugo é um gerador de site estático (Static Site Generator). Em vez de escrev
 
 # Modificando os Arquivos do Site
 
-Para adicionar ou editar o conteúdo de uma página, navegue até a pasta "content/docs" ou "layout". Por exemplo, para editar uma página, você encontrará um arquivo .md. Abra este arquivo em um editor de texto e faça as alterações usando a sintaxe Markdown.
+Para adicionar ou editar o conteúdo de uma página, navegue até a pasta "content"(para modificar o conteudo) ou "layout"(para mudar o design do site(CSS)). Por exemplo, para editar uma página, você encontrará um arquivo .md. Abra este arquivo em um editor de texto e faça as alterações usando a sintaxe Markdown.
 
-Para testar na sua máquina antes de dar commit, podemos entrar no diretorio local(do repositório clonado) e usar o comando do hugo: >> hugo server -D << logo aparecerá um link (por exemplo: http://localhost:1313/2025-2-squad-05/), basta abri-lo.
+## Como o fluxo de trabalho do GitHub funciona
+
+* Aqui está o fluxo de trabalho de implantação do seu site, passo a passo:
+
+1.  Você faz alterações em seu site e envia (faz o push) para a branch **documentacao**.
+2.  O **GitHub Actions** detecta esse envio. Ele "roda" o **Hugo** nos servidores do GitHub para gerar os arquivos estáticos do seu site. O resultado desse processo é salvo na pasta **public**.
+3.  O GitHub Actions então pega esses arquivos gerados na pasta **public** e os envia (faz o push) automaticamente para a sua branch **gh-pages**.
+
+  Para testar na sua máquina antes de dar commit, podemos entrar no diretorio local(do repositório clonado) na branch "documentacao", e usar o comando do hugo: >> hugo server -D << logo aparecerá um link (por exemplo: http://localhost:1313/2025-2-squad-05/), basta abri-lo.

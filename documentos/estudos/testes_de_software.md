@@ -92,6 +92,43 @@ O objetivo principal é **encontrar defeitos antes que o software chegue ao usu�
 
 ---
 
+# Níveis de Teste de Software
+
+## Teste Unitário
+O **teste unitário** verifica pequenas partes isoladas do código, geralmente funções, métodos ou classes.  
+O objetivo dele é garantir que cada “unidade” do programa funciona corretamente de forma independente.  
+Normalmente quem faz esses testes são os **desenvolvedores**, logo após escreverem o código.  
+
+### Exemplo prático
+Imagina que temos uma função em Java que soma dois números:
+```java
+public class Calculadora {
+    public int somar(int a, int b) {
+        return a + b;
+    }
+}
+```
+Escrevendo um teste unitário usando JUnit (framework de testes em Java):
+```import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class CalculadoraTest {
+    @Test
+    public void testSomar() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.somar(2, 3);
+
+        // Verifica se a soma de 2 + 3 é igual a 5
+        assertEquals(5, resultado);
+    }
+}
+```
+Esse teste testa apenas uma unidade do código (o método somar),
+não depende de banco de dados, rede ou outro sistema externo,
+além de ser rápido e fácil de rodar.
+
+---
+
 ## Referências
 - ISTQB Foundation Level Syllabus.  
 - Myers, G. J. *The Art of Software Testing*.  

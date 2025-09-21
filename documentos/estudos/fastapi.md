@@ -221,3 +221,6 @@ def delete_item(item_id: int = Query(..., description="ID do item"))        # ".
     del armazem[item_id]                                                    # Simplesmente deleta do dicionário
     return{"Sucesso": "Item deletado"}
 ```
+
+## Link para arquivo de implementação 
+- https://github.com/lopes061/Python-FASTAPI

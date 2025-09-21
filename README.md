@@ -16,4 +16,5 @@ O projeto **SeLiga** coleta reportagens de mais de 90 jornais para alimentar um 
 ---
 
 ## Documentação
+* [GitPage](https://unb-mds.github.io/2025-2-SeLiga/)
 * [Figma](https://www.figma.com/board/CIMdLiO4lAXoEHfFq4qZsg/Planjeamento---squad-05?node-id=2040-2433&t=aRCmAyRv7T7KCYYk-0)

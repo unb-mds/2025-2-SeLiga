@@ -100,7 +100,7 @@ O objetivo dele é garantir que cada “unidade” do programa funciona corretam
 Normalmente quem faz esses testes são os **desenvolvedores**, logo após escreverem o código.  
 
 ### Exemplo prático
-Imagina que temos uma função em Java que soma dois números:
+Uma função em Java que soma dois números:
 ```java
 public class Calculadora {
     public int somar(int a, int b) {
@@ -109,7 +109,8 @@ public class Calculadora {
 }
 ```
 Escrevendo um teste unitário usando JUnit (framework de testes em Java):
-```import static org.junit.Assert.assertEquals;
+```
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class CalculadoraTest {
@@ -126,6 +127,93 @@ public class CalculadoraTest {
 Esse teste testa apenas uma unidade do código (o método somar),
 não depende de banco de dados, rede ou outro sistema externo,
 além de ser rápido e fácil de rodar.
+
+---
+
+## Teste de Integração
+O **teste de integração** verifica se diferentes módulos ou unidades do sistema funcionam bem em conjunto.  
+O objetivo é encontrar problemas de comunicação entre partes do sistema (ex: funções, APIs, banco de dados).  
+Quem faz esses testes são os **desenvolvedores** ou a equipe de **QA (Quality Assurance)**.  
+
+### Exemplo prático
+Duas classes em Java:
+
+#### UsuarioService que busca um usuário
+```java
+public class UsuarioService {
+    public String getEmailUsuario(int id) {
+        if (id == 1) return "teste@email.com";
+        return null;
+    }
+}
+```
+EmailService que envia um e-mail para esse usuário
+```java
+public class EmailService {
+    public boolean enviarEmail(String email, String mensagem) {
+        if (email != null && !email.isEmpty()) {
+            // Simulação do envio de e-mail
+            return true;
+        }
+        return false;
+    }
+}
+```
+Teste de Integração
+Agora um teste de integração para verificar se o UsuarioService e o EmailService funcionam juntos:
+
+```java
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+
+public class IntegracaoTest {
+
+    @Test
+    public void testEnviarEmailParaUsuario() {
+        UsuarioService usuarioService = new UsuarioService();
+        EmailService emailService = new EmailService();
+
+        String email = usuarioService.getEmailUsuario(1);
+        boolean enviado = emailService.enviarEmail(email, "Bem-vindo ao sistema!");
+
+        // Verifica se o e-mail foi enviado com sucesso
+        assertTrue(enviado);
+    }
+}
+```
+Esse teste garante que:
+
+O UsuarioService retorna corretamente o e-mail de um usuário.
+
+O EmailService consegue usar esse e-mail para enviar uma mensagem.
+
+A integração entre os dois módulos funciona como esperado.
+
+---
+
+## Teste de Sistema
+O **teste de sistema** avalia o software como um todo, já integrado, verificando se atende aos **requisitos funcionais** e **não funcionais**.  
+O objetivo é garantir que o sistema entregue o que foi especificado (funcionalidades completas, performance, segurança, usabilidade).  
+Quem faz esses testes é a equipe de **QA/testadores dedicados**.  
+
+### Exemplo prático
+Testar se o sistema de reservas de uma universidade permite:  
+- Cadastrar usuários.  
+- Reservar salas.  
+- Gerar relatórios corretamente.
+
+---
+
+## Teste de Acessibilidade
+O **teste de acessibilidade** verifica se o sistema pode ser usado por todas as pessoas, incluindo aquelas com **deficiências visuais, auditivas, motoras ou cognitivas**.  
+O objetivo é garantir **inclusão** e conformidade com padrões de acessibilidade (como **WCAG**).  
+Quem faz esses testes é a equipe de **QA**, especialistas em acessibilidade e, muitas vezes, **usuários reais** com necessidades específicas.  
+
+### Exemplo prático
+Testar se um site:  
+- Pode ser navegado por **leitores de tela**.  
+- Possui **contraste adequado** nas cores.  
+- Permite que todos os elementos sejam acessados pelo **teclado**.
 
 ---
 

@@ -227,6 +227,70 @@ Os dados extraídos raramente vêm em um formato limpo e pronto para uso.
 
 ---
 
+# Boas práticas
+Para garantir que a coleta de dados tenha uma boa qualidade, algumas práticas podem ser consideradas benéficas. Vamos citar algumas delas e ver seus impactos no desenvolvimento:
+
+## Pausas entre requests
+As **pausas entre requests** (ou `request delays`) são uma das práticas mais importantes no web scraping, porque ajudam a manter o bot **eficiente** e menos propenso a ser **bloqueado**. Alguns motivos de se realizar essas pausas são:
+1. **Evitar sobrecarregar o servidor:**  
+Quando o scraper faz requisições excessivas, é possível que isso cause lentidão no site ou, no pior dos casos, fazer com que o site caia.
+2. **Respeitar limites:**  
+Certos sites são rígidos com seus limites de acesso no `robots.txt`.
+3. **Risco de bloqueio:**  
+Sites geralmente têm mecanismos de defesa contra tráfego suspeito (`firewalls`, `rate limiting`, `bloqueio de IP`). Pausas tornam o acesso mais parecido com o de um usuário humano.  
+
+Aqui está um exemplo de como essas pausas são implementadas, sendo, nesse caso, uma pausa fixa de 1 requisição a cada 5 segundos:  
+
+```bash
+import time
+import requests
+
+urls = ["http://example.com/page1", "http://example.com/page2"]
+for url in urls:
+    response = requests.get(url)        # resposta do processo
+    time.sleep(5)                       # Espera por 5 segundos
+```
+
+## Salvar durante execução
+Um forte aliado das pausas entre requests é salvar seu progresso durante a execução da coleta, ou seja, **salvar os dados gradualmente enquanto o scraper roda**, em vez de deixar tudo para o final. Isso traz algumas vantagens como a **eficiência** e a **segurança dos dados**. Salvar, mesmo que de pouco em pouco, pode ser importante já que **evita a perda de dados** se erros ocorrerem durante o processo de coleta de dados, não se perderia nada muito impactante para o projeto.  
+
+Para salvar o progresso gradualmente, algumas técnicas podem ser implementadas, como:  
+1. **Escrita incremental em arquivos:**  
+* Podemos gerar um arquivo `CSV/JSON` em que, a cada item extraido, o mesmo é incrementado no arquivo, por exemplo:  
+```bash
+import csv
+
+with open("noticias.csv", "a", newline="") as f:
+    writer = csv.writer(f)
+    for noticia in noticias:
+        writer.writerow([noticia["titulo"], noticia["link"], noticia["data"]])
+```
+
+* Essa técnica, por mais que seja símples, pode gerar arquivos muito grandes.  
+
+2. **Escrita diretamente no banco de dados:**  
+* Inserir dados conforme forem extraidos é bom para scrapers que rodam em um loop contínuo.  
+* Utilizando um banco de dados como `MongoDB`, que armazena JSON nativamente é ideal, já que scrapers extraem dados em dicionários, além de ser **flexível** e ter uma ótima **escalabilidade**.  
+* Exemplo utilizando MongoDB:
+
+```bash
+for n in noticias:
+    titulo = n.get_text(strip=True)
+    link = n.find_parent("a")["href"] if n.find_parent("a") else None
+
+    noticia = {
+        "titulo": titulo,
+        "link": link,
+        "fonte": "G1",
+    }
+
+    # insere imediatamente no banco
+    colecao.insert_one(noticia)
+    print("Salvo:", titulo)
+```
+3. **Scrapy pipelines:**  
+* O scrapy já implementa essa prática de salvamento do progresso nativamente. Cada item coletado passa automaticamente por uma `pipeline de dados`, onde você decide como salvar (CSV, JSON, banco de dados etc).
+
 # Fontes:
-* [repositorio "checar"](https://github.com/aosfatos/check-up?tab=readme-ov-file#3--collect-ad-information)
-* [kinsta](https://kinsta.com/pt/base-de-conhecimento/o-que-e-web-scraping/)
+* [Repositorio "check up"](https://github.com/aosfatos/check-up?tab=readme-ov-file#3--collect-ad-information)
+* [kinsta - o que é web scraping](https://kinsta.com/pt/base-de-conhecimento/o-que-e-web-scraping/)

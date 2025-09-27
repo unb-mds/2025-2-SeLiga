@@ -1,0 +1,19 @@
+baseURL = 'https://unb-mds.github.io/2025-2-SeLiga/'
+languageCode = 'pt-br'
+title = 'Seliga'
+theme = 'congo'
+
+[params]
+  # Adiciona arquivos CSS customizados.
+  # O caminho é relativo à pasta 'assets'.
+  customCSS = ["css/custom.css"]
+  #
+[menu]
+  [[menu.main]]
+    name = "Equipe"
+    pageRef = "/equipe"
+    weight = 5
+  [[menu.main]]
+    name = "Documentação"
+    pageRef = "/documentacao"
+    weight = 10

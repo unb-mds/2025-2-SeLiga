@@ -1,8 +1,8 @@
 # SeLiga, o portal da verdade
 
-**Descrição**
+## Descrição
 
-O projeto **SeLiga** coleta reportagens de mais de 90 jornais para alimentar um sistema de detecção automatizada de fake news. O objetivo principal é desenvolver uma aplicação web que permita ao usuário explorar e filtrar notícias e descobrir se são falsas ou não.
+O projeto **SeLiga** tem o objetivo de verificar a veracidade de notícias online. Para isso, mineramos reportagens de mais de 10 jornais para alimentar um sistema de detecção automatizada de fake news. O objetivo principal é desenvolver uma aplicação web que permita ao usuário explorar e filtrar notícias e, por fim, descobrir se são falsas ou não.
 
 ---
 
@@ -13,6 +13,30 @@ O projeto **SeLiga** coleta reportagens de mais de 90 jornais para alimentar um 
 * Módulo de detecção automatizada de possível desinformação.
 * API para servir dados das notícias e dos resultados da detecção.
 
+---
+
+## Como executar
+* Clone o repositório:
+```bash
+git clone https://github.com/unb-mds/2025-2-SeLiga.git
+```
+* Para executar localmente, rode os seguintes para criar um **virtual environment** comandos no terminal:
+```bash
+python -m venv venv
+```
+* Se `python` não funcionar, tente `python3`.
+* Ative o ambiente virtual (para desativar, simplesmente digite `deactivate`):
+```bash
+source venv/bin/activate
+```
+* Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+* Rode localmente:
+```bash
+uvicorn main:app --reload
+```
 ---
 
 ## Documentação

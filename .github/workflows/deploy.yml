@@ -3,52 +3,54 @@
 name: Deploy Hugo site to Pages
 
 on:
-  # Roda quando um push é feito na branch "documentacao"
+  # Roda quando um push é feito na branch "gh-pages"
   push:
     branches:
-      - documentacao
+      - gh-pages
 
   # Permite que você rode este workflow manualmente pela aba Actions
   workflow_dispatch:
 
-# Permissões do GITHUB_TOKEN para permitir o deploy no GitHub Pages
+# Permissões do GITHUB_TOKEN para o deploy
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
-# Permite apenas um deploy concorrente, cancelando execuções antigas
+# Permite apenas um deploy concorrente
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  # Job de Build - constrói o site
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # Pode ser v3 ou v4
+        uses: actions/checkout@v4
         with:
-          submodules: 'recursive'  # <-- ADICIONE ESTA LINHA
-          fetch-depth: 0         # É uma boa prática adicionar isso também
+          submodules: true # Essencial para baixar o tema
 
-      # ... resto do seu workflow (Setup Hugo, Build, etc.)
-
-      # 2. Configura o Hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          extended: true # Descomente se seu tema precisar da versão "extended"
 
-      # 3. Gera o site estático (roda o comando 'hugo')
       - name: Build
-        run: hugo --minify --baseURL "https://unb-mds.github.io/2025-2-SeLiga/"
+        run: hugo --minify
 
-      # 4. Envia os arquivos gerados para a branch "gh-pages"
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages # A branch para onde o site será enviado
+          # Faz o upload da pasta 'public' que o Hugo gerou
+          path: ./public
+
+  # Job de Deploy - publica o site
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build # Este job só roda depois que o job 'build' terminar com sucesso
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # Usa o artefato gerado no passo anterior

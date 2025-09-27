@@ -1,0 +1,49 @@
+.body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f7f7f7;
+
+}
+
+.layout-container {
+    display: flex; 
+    min-height: 100vh; 
+}
+
+.Siderbar{
+
+  width: 250px;
+  caret-color: #1B1E2A;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(17, 26, 141, 0.1);
+
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-area {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #1B1E2A; 
+}
+
+/* Filtros: */
+.busca-filtros {
+    background-color: #2B303B;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+/* Botão de busca*/
+.btn-buscar {
+    background-color: #F67655; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}

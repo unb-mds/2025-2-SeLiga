@@ -1,0 +1,6 @@
+# Arquivos gerados pelo Hugo
+/public/
+/resources/
+
+# Outros
+.hugo_build.lock

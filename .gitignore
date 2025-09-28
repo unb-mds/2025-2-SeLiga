@@ -1,5 +1,4 @@
-# ignora package json
-/package.json
+# ignora package-lock.json
 /package-lock.json
 package-lock.json
 

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/2025-2-SeLiga/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025-2-SeLiga/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Arquitetura Cliente-servidor | SeLiga</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+É um modelo de arquitetura de software em que o sistema é dividido em duas partes:
+Cliente
+
+Quem faz as solicitações.
+Interface usada pelo usuário (navegador, app, programa).
+Envia pedidos ao servidor (ex.: abrir uma página da web).
+
+Servidor
+
+Quem processa e responde às solicitações.
+Recebe os pedidos do cliente.
+Processa a requisição (consulta banco de dados, aplica regras de negócio).
+Retorna a resposta (ex.: HTML, JSON, arquivo).
+
+
+Exemplo
+
+Você digita www.google.com no navegador (cliente).
+O navegador envia um pedido HTTP ao servidor do Google.
+O servidor processa e devolve a página com os resultados.
+O navegador exibe para você.
+
+
+Vantagens
+
+Separação entre interface e processamento.
+Centralização de dados no servidor (gera mais controle e segurança).
+Facilidade de manutenção (alterações no servidor se refletem para todos os clientes).
+
+Desvantagens
+
+Dependência da conexão com o servidor.
+Se o servidor cair, todos os clientes são afetados.
+Pode gerar sobrecarga no servidor se muitos clientes acessarem ao mesmo tempo.
+
+
+Tipos de Cliente-servidor
+Cliente Fino (Thin Client)
+
+
+É um cliente “leve”, que faz pouca coisa localmente.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2025-2-SeLiga/estudos/ArquiteturaClienteServidor/">
+<link crossorigin="anonymous" href="/2025-2-SeLiga/assets/css/stylesheet.bf5658f8b68defa6da5d91a2ecdf95130a49e863ffadf2cd7632e70e4151ebac.css" integrity="sha256-v1ZY&#43;LaN76baXZGi7N&#43;VEwpJ6GP/rfLNdjLnDkFR66w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/2025-2-SeLiga/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/2025-2-SeLiga/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/2025-2-SeLiga/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/2025-2-SeLiga/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/2025-2-SeLiga/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2025-2-SeLiga/estudos/ArquiteturaClienteServidor/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="/2025-2-SeLiga/css/custom.min.css">
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/2025-2-SeLiga/" accesskey="h" title="SeLiga (Alt + H)">SeLiga</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/equipe" title="Equipe">
+                    <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
+                    <span>Documentação</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/estudos/menu/" title="Estudos">
+                    <span>Estudos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Arquitetura Cliente-servidor
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<p>É um modelo de arquitetura de software em que o sistema é dividido em duas partes:</p>
+<h2 id="cliente">Cliente<a hidden class="anchor" aria-hidden="true" href="#cliente">#</a></h2>
+<ul>
+<li>Quem faz as solicitações.</li>
+<li>Interface usada pelo usuário (navegador, app, programa).</li>
+<li>Envia pedidos ao servidor (ex.: abrir uma página da web).</li>
+</ul>
+<h2 id="servidor">Servidor<a hidden class="anchor" aria-hidden="true" href="#servidor">#</a></h2>
+<ul>
+<li>Quem processa e responde às solicitações.</li>
+<li>Recebe os pedidos do cliente.</li>
+<li>Processa a requisição (consulta banco de dados, aplica regras de negócio).</li>
+<li>Retorna a resposta (ex.: HTML, JSON, arquivo).</li>
+</ul>
+<hr>
+<h2 id="exemplo">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo">#</a></h2>
+<ol>
+<li>Você digita <strong><a href="https://www.google.com">www.google.com</a></strong> no navegador (cliente).</li>
+<li>O navegador envia um pedido HTTP ao servidor do Google.</li>
+<li>O servidor processa e devolve a página com os resultados.</li>
+<li>O navegador exibe para você.</li>
+</ol>
+<hr>
+<h2 id="vantagens">Vantagens<a hidden class="anchor" aria-hidden="true" href="#vantagens">#</a></h2>
+<ul>
+<li>Separação entre interface e processamento.</li>
+<li>Centralização de dados no servidor (gera mais controle e segurança).</li>
+<li>Facilidade de manutenção (alterações no servidor se refletem para todos os clientes).</li>
+</ul>
+<h2 id="desvantagens">Desvantagens<a hidden class="anchor" aria-hidden="true" href="#desvantagens">#</a></h2>
+<ul>
+<li>Dependência da conexão com o servidor.</li>
+<li>Se o servidor cair, todos os clientes são afetados.</li>
+<li>Pode gerar sobrecarga no servidor se muitos clientes acessarem ao mesmo tempo.</li>
+</ul>
+<hr>
+<h2 id="tipos-de-cliente-servidor">Tipos de Cliente-servidor<a hidden class="anchor" aria-hidden="true" href="#tipos-de-cliente-servidor">#</a></h2>
+<h3 id="cliente-fino-thin-client">Cliente Fino (Thin Client)<a hidden class="anchor" aria-hidden="true" href="#cliente-fino-thin-client">#</a></h3>
+<ul>
+<li>
+<p>É um cliente “leve”, que faz pouca coisa localmente.</p>
+</li>
+<li>
+<p>Apenas envia requisições para o servidor e exibe a resposta.</p>
+</li>
+<li>
+<p><strong>Processamento</strong>: quase todo fica no servidor (banco de dados, cálculos, lógica de negócio).</p>
+</li>
+<li>
+<p><strong>Exemplos</strong>:</p>
+<ul>
+<li>Navegadores de internet (Chrome, Firefox).</li>
+<li>Aplicações de terminal em nuvem (Citrix, Remote Desktop).</li>
+</ul>
+</li>
+</ul>
+<h3 id="cliente-gordo-thick-client">Cliente Gordo (Thick Client)<a hidden class="anchor" aria-hidden="true" href="#cliente-gordo-thick-client">#</a></h3>
+<ul>
+<li>
+<p>É um cliente “pesado”, que faz grande parte do processamento localmente.</p>
+</li>
+<li>
+<p>Armazena parte dos dados e da lógica no próprio dispositivo do usuário.</p>
+</li>
+<li>
+<p><strong>Processamento</strong>: dividido entre cliente e servidor.</p>
+</li>
+<li>
+<p><strong>Exemplos</strong>:</p>
+<ul>
+<li>Programas como <strong>Microsoft Word, Photoshop, jogos no PC</strong> → funcionam mesmo sem internet e só usam servidor em alguns momentos.</li>
+<li>Apps de banco no celular que já fazem cálculos antes de enviar a requisição ao servidor.</li>
+</ul>
+</li>
+</ul>
+<h1 id="comunicação-via-protocolos">Comunicação via Protocolos<a hidden class="anchor" aria-hidden="true" href="#comunicação-via-protocolos">#</a></h1>
+<p>Para que a comunicação entre cliente e servidor seja bem-sucedida, eles precisam seguir um conjunto de regras ou uma &ldquo;linguagem&rdquo; comum. Essa linguagem é chamada de <strong>protocolo de rede</strong>.<br>
+Existem vários protocolos, cada um com uma finalidade específica. Eles trabalham juntos em diferentes camadas para garantir que a comunicação seja completa e confiável.</p>
+<hr>
+<h2 id="protocolos-chave-na-comunicação-web">Protocolos chave na comunicação web<a hidden class="anchor" aria-hidden="true" href="#protocolos-chave-na-comunicação-web">#</a></h2>
+<h3 id="1-tcpip">1. TCP/IP<a hidden class="anchor" aria-hidden="true" href="#1-tcpip">#</a></h3>
+<p>O <strong>TCP/IP (Transmission Control Protocol/Internet Protocol)</strong> é a espinha dorsal de toda a internet. Ele é, na verdade, um conjunto de protocolos que funciona em duas camadas principais:</p>
+<ul>
+<li>
+<p><strong>IP (Internet Protocol):</strong><br>
+É como o serviço de correios. Ele se preocupa em endereçar e encaminhar os &ldquo;pacotes de dados&rdquo; (pequenos pedaços de informação) do ponto A ao ponto B.<br>
+⚠️ O IP <strong>não garante</strong> que todos os pacotes cheguem na ordem correta, ele apenas os envia.</p>
+</li>
+<li>
+<p><strong>TCP (Transmission Control Protocol):</strong><br>
+Funciona como um serviço de entrega com confirmação. Ele garante que os pacotes de dados cheguem ao destino na ordem certa, sem perdas e sem duplicatas.<br>
+Se um pacote se perde no caminho, o TCP pede que ele seja reenviado. Isso torna a comunicação muito mais confiável.</p>
+</li>
+</ul>
+<p>👉 <strong>Em resumo:</strong><br>
+O IP cuida do <strong>roteamento</strong>, e o TCP cuida da <strong>confiabilidade e organização da entrega</strong>.</p>
+<hr>
+<h3 id="2-http-e-https">2. HTTP e HTTPS<a hidden class="anchor" aria-hidden="true" href="#2-http-e-https">#</a></h3>
+<p>O <strong>HTTP (Hypertext Transfer Protocol)</strong> é o protocolo usado para a comunicação na web.<br>
+É a linguagem que seu navegador usa para solicitar uma página da internet a um servidor, e que o servidor usa para enviar essa página de volta.</p>
+<ul>
+<li>
+<p><strong>Como funciona o HTTP:</strong><br>
+Quando você digita um endereço em seu navegador (cliente), ele envia uma requisição HTTP para o servidor.<br>
+Essa requisição diz algo como:</p>
+<blockquote>
+<p>&ldquo;Olá, servidor! Por favor, me envie a página inicial do seu site.&rdquo;</p></blockquote>
+<p>O servidor processa o pedido e envia uma resposta HTTP com o conteúdo da página.</p>
+</li>
+<li>
+<p><strong>HTTPS (Hypertext Transfer Protocol Secure):</strong><br>
+É a versão <strong>segura</strong> do HTTP.<br>
+Ele adiciona uma camada de criptografia (SSL/TLS) para proteger a comunicação entre cliente e servidor.<br>
+Isso é essencial para <strong>transações financeiras, logins e troca de dados sensíveis</strong>.<br>
+A criptografia embaralha os dados, tornando-os ilegíveis para qualquer pessoa que possa interceptá-los.</p>
+</li>
+</ul>
+<p>👉 <strong>Em resumo:</strong></p>
+<ul>
+<li><strong>HTTP:</strong> troca de informações na web.</li>
+<li><strong>HTTPS:</strong> versão <strong>segura</strong> do HTTP, com criptografia.</li>
+</ul>
+<hr>
+<h1 id="como-a-arquitetura-cliente-servidor-se-aplica-ao-projeto">Como a Arquitetura Cliente-Servidor se aplica ao projeto<a hidden class="anchor" aria-hidden="true" href="#como-a-arquitetura-cliente-servidor-se-aplica-ao-projeto">#</a></h1>
+<h3 id="o-cliente-usuário">O Cliente (usuário)<a hidden class="anchor" aria-hidden="true" href="#o-cliente-usuário">#</a></h3>
+<p>Pense no cliente como a pessoa que está usando o projeto. Ela pode estar em seu <strong>celular ou computador</strong>, usando um <strong>aplicativo ou site</strong>.</p>
+<p>A função do cliente é:</p>
+<ul>
+<li><strong>Enviar a notícia:</strong> A pessoa copia e cola um link ou trecho da notícia.</li>
+<li><strong>Fazer a requisição:</strong> O aplicativo ou site (cliente) envia essa informação para o &ldquo;cérebro&rdquo; do projeto.</li>
+<li><strong>Receber a resposta:</strong> O cliente espera e recebe a resposta do servidor, que dirá se a notícia é fake ou não.</li>
+</ul>
+<hr>
+<h3 id="o-servidor-o-cérebro-do-projeto">O Servidor (o cérebro do projeto)<a hidden class="anchor" aria-hidden="true" href="#o-servidor-o-cérebro-do-projeto">#</a></h3>
+<p>Pense no servidor como o <strong>&ldquo;cérebro&rdquo;</strong> que faz todo o trabalho pesado.</p>
+<p>A função do servidor é:</p>
+<ul>
+<li><strong>Receber a requisição:</strong> O servidor recebe a notícia enviada pelo cliente.</li>
+<li><strong>Processar a informação:</strong> Usa algoritmos, bancos de dados e inteligência artificial para analisar a notícia.<br>
+Ele pode comparar com outras fontes, verificar fatos e analisar a linguagem.</li>
+<li><strong>Gerar a resposta:</strong> Após a análise, o servidor decide se a notícia é fake ou não.</li>
+<li><strong>Enviar a resposta:</strong> O servidor envia a resposta de volta para o cliente, que a exibe na tela para o usuário do projeto.</li>
+</ul>
+<h2 id="referências">Referências<a hidden class="anchor" aria-hidden="true" href="#referências">#</a></h2>
+<p><a href="https://www.eposaudio.com/en/us/insights/articles/thin-client-or-thick-client-whats-the-difference">https://www.eposaudio.com/en/us/insights/articles/thin-client-or-thick-client-whats-the-difference</a>
+<a href="https://www.fortinet.com/resources/cyberglossary/thin-client">https://www.fortinet.com/resources/cyberglossary/thin-client</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2025-2-SeLiga/estudos/API/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>APIs</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2025-2-SeLiga/estudos/arquitetura/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Arquitetura de Software</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/2025-2-SeLiga/">SeLiga</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

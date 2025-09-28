@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/2025-2-SeLiga/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025-2-SeLiga/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Estudo de Metodologia Ágil | SeLiga</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Metodologia Ágil - Scrum
+O que é Scrum?
+Scrum é um framework ágil usado para gerenciar projetos complexos, permitindo que equipes se auto-organizem e entreguem valor continuamente.
+
+O trabalho é dividido em Sprints, que podem ter duração de 1 a 4 semanas, e cada sprint resulta em um incremento funcional do produto.
+A metodologia scrum permite inspeção e ajustes constantes, garantindo entregas ágeis e de qualidade.
+Em resumo, ao invés da equipe desenvolver todo um sistema de uma vez, ela entrega pequenas funcionalidades a cada Sprint, e isso possibilita que as equipes assumam o próprio gerenciamento, aprendam com as experiências passadas e ajustem seu trabalho diante de mudanças.
+
+Artefatos do Scrum
+As equipes Scrum utilizam os chamados artefatos Scrum para organizar projetos e solucionar problemas. Esses artefatos oferecem informações importantes sobre planejamento e tarefas para a equipe e para as partes interessadas. Existem três artefatos principais:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2025-2-SeLiga/estudos/metodologia_agil/">
+<link crossorigin="anonymous" href="/2025-2-SeLiga/assets/css/stylesheet.bf5658f8b68defa6da5d91a2ecdf95130a49e863ffadf2cd7632e70e4151ebac.css" integrity="sha256-v1ZY&#43;LaN76baXZGi7N&#43;VEwpJ6GP/rfLNdjLnDkFR66w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/2025-2-SeLiga/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/2025-2-SeLiga/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/2025-2-SeLiga/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/2025-2-SeLiga/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/2025-2-SeLiga/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2025-2-SeLiga/estudos/metodologia_agil/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="/2025-2-SeLiga/css/custom.min.css">
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/2025-2-SeLiga/" accesskey="h" title="SeLiga (Alt + H)">SeLiga</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/equipe" title="Equipe">
+                    <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
+                    <span>Documentação</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/estudos/menu/" title="Estudos">
+                    <span>Estudos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Estudo de Metodologia Ágil
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<h1 id="metodologia-ágil---scrum">Metodologia Ágil - Scrum<a hidden class="anchor" aria-hidden="true" href="#metodologia-ágil---scrum">#</a></h1>
+<h2 id="o-que-é-scrum">O que é Scrum?<a hidden class="anchor" aria-hidden="true" href="#o-que-é-scrum">#</a></h2>
+<p>Scrum é um <strong>framework ágil</strong> usado para gerenciar projetos complexos, permitindo que equipes se auto-organizem e entreguem valor continuamente.</p>
+<ul>
+<li>O trabalho é dividido em <strong>Sprints</strong>, que podem ter duração de 1 a 4 semanas, e cada sprint resulta em um incremento funcional do produto.</li>
+<li>A metodologia scrum permite inspeção e ajustes constantes, garantindo entregas ágeis e de qualidade.</li>
+<li>Em resumo, ao invés da equipe desenvolver todo um sistema de uma vez, ela entrega pequenas funcionalidades a cada Sprint, e isso possibilita que as equipes assumam o próprio gerenciamento, aprendam com as experiências passadas e ajustem seu trabalho diante de mudanças.</li>
+</ul>
+<h2 id="artefatos-do-scrum">Artefatos do Scrum<a hidden class="anchor" aria-hidden="true" href="#artefatos-do-scrum">#</a></h2>
+<p>As equipes Scrum utilizam os chamados <strong>artefatos Scrum</strong> para organizar projetos e solucionar problemas. Esses artefatos oferecem informações importantes sobre <strong>planejamento e tarefas</strong> para a equipe e para as partes interessadas. Existem <strong>três artefatos principais</strong>:</p>
+<p><strong>Product Backlog</strong></p>
+<ul>
+<li>Lista dinâmica de funcionalidades, melhorias e correções do projeto.</li>
+<li>Mantida pelo PO, que atualiza prioridades e adiciona ou remove itens conforme as necessidades do cliente e do mercado.</li>
+</ul>
+<p><strong>Sprint Backlog</strong></p>
+<ul>
+<li>Lista dos itens do Product Backlog que a equipe trabalhará na Sprint atual.</li>
+<li>Flexível e pode ser ajustada durante a Sprint.</li>
+</ul>
+<p><strong>Incremento</strong></p>
+<ul>
+<li>Produto final utilizável ao final da Sprint.</li>
+<li>Representa o progresso em direção à meta, que deve ser mantida durante toda a Sprint.</li>
+</ul>
+<p><strong>Boas práticas:</strong></p>
+<ul>
+<li>Manter o Product Backlog atualizado constantemente.</li>
+<li>Garantir que o Incremento esteja testado e utilizável antes da Review.</li>
+</ul>
+<h2 id="papéis-no-scrum">Papéis no Scrum<a hidden class="anchor" aria-hidden="true" href="#papéis-no-scrum">#</a></h2>
+<h3 id="-product-owner-po">👤 Product Owner (PO)<a hidden class="anchor" aria-hidden="true" href="#-product-owner-po">#</a></h3>
+<ul>
+<li>Tem o papel de garantir que a equipe entregue o maior valor possível para o negócio.</li>
+<li>Entende as necessidades dos clientes e usuários e decide o que é prioridade.</li>
+<li>Fornece à equipe uma orientação clara sobre os recursos que devem ser desenvolvidos primeiro.</li>
+<li>Faz a ponte entre as expectativas da empresa e o entendimento da equipe.</li>
+<li>Decide quando e com que frequência os resultados devem ser apresentados.</li>
+</ul>
+<h3 id="-scrum-master">🧑‍🏫 Scrum Master<a hidden class="anchor" aria-hidden="true" href="#-scrum-master">#</a></h3>
+<ul>
+<li>Atua como facilitador, garantindo que a equipe siga os princípios e práticas do Scrum.</li>
+<li>Ajuda a remover obstáculos que atrapalham o andamento do trabalho.</li>
+<li>Planeja os recursos necessários para cada Sprint e organiza reuniões e eventos do Scrum.</li>
+<li>Promove treinamentos e orienta a equipe na adoção de novas tecnologias.</li>
+<li>Comunica-se com outros grupos ou áreas da empresa para resolver problemas que afetam a equipe.</li>
+</ul>
+<h3 id="-time-de-desenvolvimento">👥 Time de Desenvolvimento<a hidden class="anchor" aria-hidden="true" href="#-time-de-desenvolvimento">#</a></h3>
+<ul>
+<li>Composta por desenvolvedores, testadores, designers, especialistas em UX e engenheiros de operações.</li>
+<li>Cada membro possui habilidades diferentes, e todos treinam uns aos outros para que ninguém se torne um gargalo.</li>
+<li>Trabalham de forma colaborativa e auto-organizada, garantindo que as tarefas da Sprint sejam concluídas.</li>
+<li>Participam do planejamento e estimativa do trabalho que podem realizar em cada Sprint.</li>
+<li>Seguem práticas de desenvolvimento sustentável.</li>
+<li>Jeff Bezos, fundador da Amazon, recomenda a regra de duas pizzas para decidir o tamanho da equipe: a equipe deve ser pequena o bastante para dividir duas pizzas.</li>
+</ul>
+<h2 id="eventos-do-scrum">Eventos do Scrum<a hidden class="anchor" aria-hidden="true" href="#eventos-do-scrum">#</a></h2>
+<h3 id="-sprint">🏁 Sprint<a hidden class="anchor" aria-hidden="true" href="#-sprint">#</a></h3>
+<ul>
+<li><strong>Duração:</strong> 1 a 4 semanas.</li>
+<li><strong>Objetivo:</strong> Entregar um incremento funcional do produto.</li>
+<li><strong>Características:</strong>
+<ul>
+<li>Começa com a Sprint Planning e termina com a Retrospective.</li>
+<li>A Meta da Sprint <strong>não</strong> deve ser alterada durante o ciclo.</li>
+</ul>
+</li>
+</ul>
+<h3 id="-sprint-planning">📅 Sprint Planning<a hidden class="anchor" aria-hidden="true" href="#-sprint-planning">#</a></h3>
+<ul>
+<li><strong>Objetivo:</strong> Definir o que será feito na Sprint e como será feito.</li>
+<li><strong>Atividades:</strong>
+<ul>
+<li>PO apresenta itens do Product Backlog.</li>
+<li>Time seleciona os itens que podem ser concluídos.</li>
+<li>Define-se a <strong>Meta da Sprint</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="-daily-scrum">☀️ Daily Scrum<a hidden class="anchor" aria-hidden="true" href="#-daily-scrum">#</a></h3>
+<ul>
+<li><strong>Duração:</strong> Máximo 15 minutos.</li>
+<li><strong>Formato:</strong> Cada membro responde:
+<ol>
+<li>O que fez ontem?</li>
+<li>O que fará hoje?</li>
+<li>Existe algum impedimento?</li>
+</ol>
+</li>
+<li><strong>Objetivo:</strong> Sincronizar o time, identificar problemas e ajustar o trabalho rapidamente.</li>
+</ul>
+<h3 id="-sprint-review">🎬 Sprint Review<a hidden class="anchor" aria-hidden="true" href="#-sprint-review">#</a></h3>
+<ul>
+<li><strong>Objetivo:</strong> Inspecionar o incremento e coletar feedback dos stakeholders.</li>
+<li><strong>Atividades:</strong>
+<ul>
+<li>Time apresenta funcionalidades concluídas.</li>
+<li>PO e stakeholders dão feedback.</li>
+<li>Ajustes são feitos no Product Backlog conforme necessário.</li>
+</ul>
+</li>
+</ul>
+<h3 id="-sprint-retrospective">🔍 Sprint Retrospective<a hidden class="anchor" aria-hidden="true" href="#-sprint-retrospective">#</a></h3>
+<ul>
+<li><strong>Objetivo:</strong> Melhorar continuamente o processo e a colaboração do time.</li>
+<li><strong>Perguntas fundamentais:</strong>
+<ul>
+<li>O que funcionou bem?</li>
+<li>O que não funcionou?</li>
+<li>O que podemos melhorar na próxima Sprint?</li>
+</ul>
+</li>
+</ul>
+<h2 id="por-que-o-scrum-é-importante-no-desenvolvimento-de-software">Por que o Scrum é importante no desenvolvimento de software?<a hidden class="anchor" aria-hidden="true" href="#por-que-o-scrum-é-importante-no-desenvolvimento-de-software">#</a></h2>
+<p><strong>Manutenção da qualidade:</strong></p>
+<ul>
+<li>As verificações de qualidade são integradas ao Scrum. O feedback constante do Product Owner e as revisões da Sprint garantem que os requisitos permaneçam relevantes e o produto seja continuamente aprimorado.</li>
+</ul>
+<p><strong>Aumento do retorno sobre o investimento:</strong></p>
+<ul>
+<li>O Scrum prioriza os requisitos de maior valor para o cliente, foca em entregar rapidamente um produto funcional e reduz custos com defeitos e retrabalho.</li>
+</ul>
+<p><strong>Equipes mais felizes e produtivas:</strong></p>
+<ul>
+<li>Estruturas autogerenciadas permitem criatividade, aprendizado mútuo e maior motivação, criando um ambiente de confiança e colaboração.</li>
+</ul>
+<p><strong>Métricas para melhorar estimativas:</strong></p>
+<ul>
+<li>A equipe define suas métricas e estimativas de prazos, orçamento e qualidade, recebendo feedback constante das partes interessadas para manter o projeto no caminho certo.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2025-2-SeLiga/estudos/Benchmarks/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>BENCHMARK</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2025-2-SeLiga/estudos/react/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Estudo de React ⚛️</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/2025-2-SeLiga/">SeLiga</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

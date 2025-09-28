@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/2025-2-SeLiga/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025-2-SeLiga/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Guia de Estudos sobre DevOps | SeLiga</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+O que é DevOps?
+
+DevOps é um conjunto de práticas, princípios e ferramentas que integram a equipe de desenvolvimento e a equipe de operações em uma só.
+Nesse modelo, os engenheiros trabalham em diversos setores do projeto, como desenvolvimento, teste, deployment, operações e etc.
+Os times de DevOps usam práticas para automatizar processos que antes consutmavam ser manuais e devagares.
+O objetivo é reduzir o ciclo de vida de desenvolvimento e entregar software de alta qualidade de forma contínua e confiável.
+
+Práticas Fundamentais
+Integração Contínua
+Prática onde os desenvolvedores mesclam seus códigos com frequência em um repositório central, com o objetivo de encontrar e lidar com bugs de maneira mais eficiente e rápida e reduzir o tempo de validação de updates.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2025-2-SeLiga/estudos/DevOps/">
+<link crossorigin="anonymous" href="/2025-2-SeLiga/assets/css/stylesheet.bf5658f8b68defa6da5d91a2ecdf95130a49e863ffadf2cd7632e70e4151ebac.css" integrity="sha256-v1ZY&#43;LaN76baXZGi7N&#43;VEwpJ6GP/rfLNdjLnDkFR66w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/2025-2-SeLiga/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/2025-2-SeLiga/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/2025-2-SeLiga/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/2025-2-SeLiga/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/2025-2-SeLiga/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2025-2-SeLiga/estudos/DevOps/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="/2025-2-SeLiga/css/custom.min.css">
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/2025-2-SeLiga/" accesskey="h" title="SeLiga (Alt + H)">SeLiga</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/equipe" title="Equipe">
+                    <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
+                    <span>Documentação</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/estudos/menu/" title="Estudos">
+                    <span>Estudos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Guia de Estudos sobre DevOps
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<h2 id="o-que-é-devops">O que é DevOps?<a hidden class="anchor" aria-hidden="true" href="#o-que-é-devops">#</a></h2>
+<ul>
+<li>DevOps é um conjunto de práticas, princípios e ferramentas que integram a equipe de desenvolvimento e a equipe de operações em uma só.</li>
+<li>Nesse modelo, os engenheiros trabalham em diversos setores do projeto, como desenvolvimento, teste, deployment, operações e etc.</li>
+<li>Os times de DevOps usam práticas para automatizar processos que antes consutmavam ser manuais e devagares.</li>
+<li>O objetivo é reduzir o ciclo de vida de desenvolvimento e entregar software de alta qualidade de forma contínua e confiável.</li>
+</ul>
+<h2 id="práticas-fundamentais">Práticas Fundamentais<a hidden class="anchor" aria-hidden="true" href="#práticas-fundamentais">#</a></h2>
+<h3 id="integração-contínua">Integração Contínua<a hidden class="anchor" aria-hidden="true" href="#integração-contínua">#</a></h3>
+<p>Prática onde os desenvolvedores mesclam seus códigos com frequência em um repositório central, com o objetivo de encontrar e lidar com bugs de maneira mais eficiente e rápida e reduzir o tempo de validação de updates.</p>
+<h3 id="entrega-contínua">Entrega Contínua<a hidden class="anchor" aria-hidden="true" href="#entrega-contínua">#</a></h3>
+<p>Prática onde as mudanças são automaticamente constrúidas, testadas e preparadas para serem entregues. Quando bem implementada, os desenvolvedores sempre terão um update pronto para deploy que foi devidamente testado e validado.</p>
+<h3 id="infraestrutura-como-código">Infraestrutura como Código<a hidden class="anchor" aria-hidden="true" href="#infraestrutura-como-código">#</a></h3>
+<p>A infraestrutura é provisionada e gerenciada através de código e técnicas de software (controle de versão e integração contínua).Permite que quem trabalhe no projeto consiga interagir com a infraestrutura de maneira pragmática e escalonada.</p>
+<h3 id="monitoramento-e-logs">Monitoramento e Logs<a hidden class="anchor" aria-hidden="true" href="#monitoramento-e-logs">#</a></h3>
+<p>Utilizado para visualizar como a aplicação e sua performance impacta na experiencia do usuário, coletando informações, categorizando e analisando os dados.</p>
+<h3 id="cultura-de-colaboração">Cultura de Colaboração<a hidden class="anchor" aria-hidden="true" href="#cultura-de-colaboração">#</a></h3>
+<p>Comunicação entre equipes de desenvolvimento, QA e operações.</p>
+<h2 id="ferramentas-populares">Ferramentas Populares<a hidden class="anchor" aria-hidden="true" href="#ferramentas-populares">#</a></h2>
+<ul>
+<li><strong>Controle de Versão:</strong> Git, GitHub, GitLab, Bitbucket.</li>
+<li><strong>Integração/Entrega Contínua:</strong> Jenkins, GitLab CI/CD, GitHub Actions, CircleCI.</li>
+<li><strong>Containerização:</strong> Docker, Podman.</li>
+<li><strong>Orquestração:</strong> Kubernetes, Docker Swarm.</li>
+<li><strong>Infraestrutura como Código:</strong> Terraform, Ansible, Puppet, Chef.</li>
+<li><strong>Monitoramento:</strong> Prometheus, Grafana, Nagios, Datadog.</li>
+<li><strong>Gerenciamento de Configuração:</strong> Consul, etcd, Vault.</li>
+</ul>
+<h2 id="conceitos-chave">Conceitos-Chave<a hidden class="anchor" aria-hidden="true" href="#conceitos-chave">#</a></h2>
+<ul>
+<li><strong>Microserviços:</strong> arquitetura que divide a aplicação em serviços independentes.</li>
+<li><strong>Containerização:</strong> empacotar aplicações e suas dependências em um ambiente isolado.</li>
+<li><strong>Orquestração:</strong> gerenciar automaticamente múltiplos containers (ex: Kubernetes).</li>
+<li><strong>Blue-Green Deployment:</strong> duas versões do sistema (uma ativa, outra em standby) para migração suave.</li>
+<li><strong>Canary Releases:</strong> liberar a nova versão para um grupo pequeno de usuários antes do lançamento completo.</li>
+<li><strong>Rollback:</strong> reverter para uma versão anterior em caso de falhas.</li>
+</ul>
+<h2 id="boas-práticas">Boas Práticas<a hidden class="anchor" aria-hidden="true" href="#boas-práticas">#</a></h2>
+<ul>
+<li>Commits pequenos e frequentes.</li>
+<li>Automação de testes e builds.</li>
+<li>Ambientes consistentes (dev, staging, produção).</li>
+<li>Uso de métricas e logs para decisões baseadas em dados.</li>
+<li>Cultura de aprendizado contínuo e feedback rápido.</li>
+</ul>
+<h2 id="pipelines-de-devops">Pipelines de DevOps<a hidden class="anchor" aria-hidden="true" href="#pipelines-de-devops">#</a></h2>
+<p>Um <strong>pipeline de DevOps</strong> é uma sequência de etapas automatizadas que suporta a construção, o teste e a implantação de novas versões de software.<br>
+Ele é a base da <strong>Integração Contínua e Entrega Contínua (CI/CD)</strong>, garantindo entregas rápidas, seguras e com mínima intervenção manual.</p>
+<h3 id="etapas-principais">Etapas principais<a hidden class="anchor" aria-hidden="true" href="#etapas-principais">#</a></h3>
+<ul>
+<li><strong>Gerenciamento de Código-Fonte:</strong> mudanças enviadas para um repositório (ex.: Git) disparam o pipeline.</li>
+<li><strong>Construção (Build):</strong> o código é compilado, dependências resolvidas e artefatos gerados.</li>
+<li><strong>Testes:</strong> execução de testes automatizados (unidade, integração, funcionais e segurança).</li>
+<li><strong>Implantação (Deploy):</strong> código aprovado segue para ambientes de homologação ou produção (manual ou automático).</li>
+<li><strong>Monitoramento e Feedback:</strong> métricas e logs são coletados após o deploy para identificar falhas e melhorar as próximas entregas.</li>
+</ul>
+<h2 id="devops-e-transformação-digital">DevOps e Transformação Digital<a hidden class="anchor" aria-hidden="true" href="#devops-e-transformação-digital">#</a></h2>
+<p>A <strong>transformação digital</strong> é a transição das empresas para processos e estratégias que utilizam tecnologias digitais para melhorar negócios, operações e experiência do cliente.</p>
+<ul>
+<li>O <strong>DevOps</strong> é um elemento-chave nesse processo, permitindo que equipes de desenvolvimento e operações integrem novas tecnologias de forma rápida, confiável e sustentável.</li>
+<li>Ajuda a criar sistemas <strong>úteis, escaláveis e fáceis de manter</strong>, que evoluem conforme as mudanças nos requisitos de negócios.</li>
+<li>Enquanto a TI tradicional se apoia em tecnologias legadas, o DevOps promove <strong>agilidade, inovação e adaptação</strong>, tornando-se sinônimo de transformação digital.</li>
+</ul>
+<h2 id="devops-e-gerenciamento-de-custos-de-nuvem">DevOps e Gerenciamento de Custos de Nuvem<a hidden class="anchor" aria-hidden="true" href="#devops-e-gerenciamento-de-custos-de-nuvem">#</a></h2>
+<p>O <strong>DevOps</strong> impacta significativamente os custos da nuvem ao introduzir <strong>eficiência, automação e melhor gestão de recursos</strong>.</p>
+<ul>
+<li><strong>Provisionamento automático:</strong> recursos são criados ou removidos conforme a demanda, evitando desperdício.</li>
+<li><strong>Monitoramento contínuo:</strong> identifica recursos ociosos ou subutilizados.</li>
+<li><strong>Infraestrutura como Código (IaC):</strong> padroniza ambientes e reduz provisionamento excessivo.</li>
+<li><strong>Pipelines CI/CD:</strong> minimizam retrabalho e falhas em produção, evitando custos desnecessários.</li>
+</ul>
+<p>Essas práticas permitem <strong>uso mais eficiente da nuvem e economia de custos</strong>, sem comprometer desempenho ou confiabilidade.</p>
+<h2 id="referências">Referências<a hidden class="anchor" aria-hidden="true" href="#referências">#</a></h2>
+<p><a href="https://octopus.com/devops/devops-approach/?utm_source=chatgpt.com">https://octopus.com/devops/devops-approach/?utm_source=chatgpt.com</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2025-2-SeLiga/estudos/Git_e_GitHub/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Guia de Estudo: Git e GitHub</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2025-2-SeLiga/estudos/decisao_de_DB/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Levantamento e Justificativa da Escolha de Banco de Dados 📊</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/2025-2-SeLiga/">SeLiga</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/2025-2-SeLiga/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025-2-SeLiga/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Levantamento e Justificativa da Escolha de Banco de Dados 📊 | SeLiga</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Tarefas Cumpridas: ✅
+
+Identificação dos principais estilos de banco de dados.
+Análise dos trade-offs de cada abordagem.
+Relacionamento com as características do projeto.
+Verificação de escalabilidade, custo e complexidade.
+
+
+1. Estilos de Banco de Dados 📚
+Para o nosso projeto, os estilos de banco de dados mais relevantes são:
+
+Relacional (SQL): Bancos de dados tradicionais que armazenam dados em tabelas com um esquema fixo. Exemplo: PostgreSQL.
+Não-Relacional (NoSQL): Bancos de dados flexíveis que não exigem um esquema fixo. Subdividem-se em:
+
+Documento: Armazena dados em documentos no formato JSON. Exemplo: MongoDB.
+Chave-Valor: Armazena dados em pares de chaves e valores.
+Grafos: Armazena dados em estruturas de nós e arestas.
+
+
+
+
+2. Análise e Trade-offs: SQL vs. NoSQL (Documento) ⚖️
+
+  
+      
+          Característica
+          Banco de Dados Relacional (SQL)
+          Banco de Dados Não-Relacional (NoSQL)
+      
+  
+  
+      
+          Estrutura de Dados
+          Rígida e Estruturada.
+          Flexível e Dinâmica.
+      
+      
+          Vantagens
+          Ideal para dados com estrutura fixa, garante integridade.
+          Perfeito para dados que variam. Mais rápido e fácil de começar.
+      
+      
+          Desvantagens
+          Dificuldade em lidar com dados não estruturados ou com esquema variável.
+          Menos adequado para dados com relações complexas.
+      
+      
+          Aplicação no Projeto
+          Menos adequado, pois os dados de notícias de diferentes fontes podem variar.
+          Ideal, pois o formato JSON dos dados de notícias pode ser facilmente armazenado.
+      
+  
+
+
+3. Escalabilidade, Custo e Complexidade 📈
+
+  
+      
+          Característica
+          Escala Vertical (Relacional)
+          Escala Horizontal (NoSQL)
+      
+  
+  
+      
+          Escalabilidade
+          Aumenta o poder do servidor (CPU, RAM). Custo elevado.
+          Adiciona mais servidores simples para distribuir a carga. Custo mais baixo.
+      
+      
+          Complexidade
+          Exige um planejamento inicial detalhado da estrutura.
+          Curva de aprendizado mais suave, especialmente para quem já trabalha com JSON.
+      
+  
+
+A escalabilidade horizontal de bancos de dados NoSQL é a mais adequada para o nosso projeto, pois nos permite lidar com o crescimento do volume de notícias sem grandes custos.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2025-2-SeLiga/estudos/decisao_de_DB/">
+<link crossorigin="anonymous" href="/2025-2-SeLiga/assets/css/stylesheet.bf5658f8b68defa6da5d91a2ecdf95130a49e863ffadf2cd7632e70e4151ebac.css" integrity="sha256-v1ZY&#43;LaN76baXZGi7N&#43;VEwpJ6GP/rfLNdjLnDkFR66w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/2025-2-SeLiga/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/2025-2-SeLiga/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/2025-2-SeLiga/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/2025-2-SeLiga/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/2025-2-SeLiga/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2025-2-SeLiga/estudos/decisao_de_DB/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="/2025-2-SeLiga/css/custom.min.css">
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/2025-2-SeLiga/" accesskey="h" title="SeLiga (Alt + H)">SeLiga</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/equipe" title="Equipe">
+                    <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
+                    <span>Documentação</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/estudos/menu/" title="Estudos">
+                    <span>Estudos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Levantamento e Justificativa da Escolha de Banco de Dados 📊
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<h3 id="tarefas-cumpridas-"><strong>Tarefas Cumpridas:</strong> ✅<a hidden class="anchor" aria-hidden="true" href="#tarefas-cumpridas-">#</a></h3>
+<ul>
+<li>Identificação dos principais estilos de banco de dados.</li>
+<li>Análise dos trade-offs de cada abordagem.</li>
+<li>Relacionamento com as características do projeto.</li>
+<li>Verificação de escalabilidade, custo e complexidade.</li>
+</ul>
+<hr>
+<h3 id="1-estilos-de-banco-de-dados-"><strong>1. Estilos de Banco de Dados</strong> 📚<a hidden class="anchor" aria-hidden="true" href="#1-estilos-de-banco-de-dados-">#</a></h3>
+<p>Para o nosso projeto, os estilos de banco de dados mais relevantes são:</p>
+<ul>
+<li><strong>Relacional (SQL):</strong> Bancos de dados tradicionais que armazenam dados em tabelas com um esquema fixo. Exemplo: PostgreSQL.</li>
+<li><strong>Não-Relacional (NoSQL):</strong> Bancos de dados flexíveis que não exigem um esquema fixo. Subdividem-se em:
+<ul>
+<li><strong>Documento:</strong> Armazena dados em documentos no formato JSON. Exemplo: MongoDB.</li>
+<li><strong>Chave-Valor:</strong> Armazena dados em pares de chaves e valores.</li>
+<li><strong>Grafos:</strong> Armazena dados em estruturas de nós e arestas.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-análise-e-trade-offs-sql-vs-nosql-documento-"><strong>2. Análise e Trade-offs: SQL vs. NoSQL (Documento)</strong> ⚖️<a hidden class="anchor" aria-hidden="true" href="#2-análise-e-trade-offs-sql-vs-nosql-documento-">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Característica</th>
+          <th style="text-align: left">Banco de Dados Relacional (SQL)</th>
+          <th style="text-align: left">Banco de Dados Não-Relacional (NoSQL)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Estrutura de Dados</strong></td>
+          <td style="text-align: left"><strong>Rígida e Estruturada.</strong></td>
+          <td style="text-align: left"><strong>Flexível e Dinâmica.</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Vantagens</strong></td>
+          <td style="text-align: left">Ideal para dados com estrutura fixa, garante integridade.</td>
+          <td style="text-align: left"><strong>Perfeito para dados que variam.</strong> Mais rápido e fácil de começar.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Desvantagens</strong></td>
+          <td style="text-align: left">Dificuldade em lidar com dados não estruturados ou com esquema variável.</td>
+          <td style="text-align: left">Menos adequado para dados com relações complexas.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aplicação no Projeto</strong></td>
+          <td style="text-align: left"><strong>Menos adequado</strong>, pois os dados de notícias de diferentes fontes podem variar.</td>
+          <td style="text-align: left"><strong>Ideal</strong>, pois o formato JSON dos dados de notícias pode ser facilmente armazenado.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-escalabilidade-custo-e-complexidade-"><strong>3. Escalabilidade, Custo e Complexidade</strong> 📈<a hidden class="anchor" aria-hidden="true" href="#3-escalabilidade-custo-e-complexidade-">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Característica</th>
+          <th style="text-align: left">Escala Vertical (Relacional)</th>
+          <th style="text-align: left">Escala Horizontal (NoSQL)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Escalabilidade</strong></td>
+          <td style="text-align: left">Aumenta o poder do servidor (CPU, RAM). <strong>Custo elevado.</strong></td>
+          <td style="text-align: left">Adiciona mais servidores simples para distribuir a carga. <strong>Custo mais baixo.</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Complexidade</strong></td>
+          <td style="text-align: left">Exige um planejamento inicial detalhado da estrutura.</td>
+          <td style="text-align: left"><strong>Curva de aprendizado mais suave</strong>, especialmente para quem já trabalha com JSON.</td>
+      </tr>
+  </tbody>
+</table>
+<p>A escalabilidade horizontal de bancos de dados NoSQL é a mais adequada para o nosso projeto, pois nos permite lidar com o crescimento do volume de notícias sem grandes custos.</p>
+<hr>
+<h3 id="4-conclusão-escolha-e-justificativa-"><strong>4. Conclusão: Escolha e Justificativa</strong> ✅<a hidden class="anchor" aria-hidden="true" href="#4-conclusão-escolha-e-justificativa-">#</a></h3>
+<p><strong>O estilo de banco de dados mais adequado para o nosso projeto é o:</strong></p>
+<p><strong>Não-Relacional (Documento)</strong></p>
+<p><strong>Justificativa:</strong></p>
+<ul>
+<li><strong>Flexibilidade:</strong> A flexibilidade do esquema nos permite lidar com a variedade de dados de notícias de forma eficiente.</li>
+<li><strong>Facilidade de Uso:</strong> O formato JSON é intuitivo para o desenvolvimento, o que acelera o progresso da equipe.</li>
+<li><strong>Escalabilidade e Custo:</strong> A arquitetura do MongoDB nos permite lidar com o crescimento futuro do volume de dados de forma mais econômica e simples.</li>
+</ul>
+<p>A escolha de um banco de dados NoSQL atende a todos os requisitos do projeto e fornece uma base sólida para o desenvolvimento da nossa aplicação.</p>
+<h1 id="decisão-de-tecnologia-por-que-usar-mongodb">Decisão de Tecnologia: Por que usar MongoDB?<a hidden class="anchor" aria-hidden="true" href="#decisão-de-tecnologia-por-que-usar-mongodb">#</a></h1>
+<img width="438" height="115" alt="image" src="https://github.com/user-attachments/assets/547ab99a-ae9c-4629-bd96-e0d46096baf0" />
+<h3 id="1-flexibilidade-de-esquema-schema-less">1. Flexibilidade de Esquema (Schema-less)<a hidden class="anchor" aria-hidden="true" href="#1-flexibilidade-de-esquema-schema-less">#</a></h3>
+<p>O MongoDB é um banco de dados NoSQL, o que significa que ele não exige que os dados tenham uma estrutura rígida. Cada documento (que é como um JSON) pode ter campos diferentes.</p>
+<ul>
+<li><strong>Vantagem:</strong> Em um projeto de mineração de notícias, o formato dos dados pode variar muito entre as fontes. A flexibilidade do MongoDB permite que a equipe armazene notícias de diferentes jornais sem precisar de um esquema fixo, o que acelera o desenvolvimento.</li>
+</ul>
+<h3 id="2-formato-de-dados-intuitivo-json">2. Formato de Dados Intuitivo (JSON)<a hidden class="anchor" aria-hidden="true" href="#2-formato-de-dados-intuitivo-json">#</a></h3>
+<p>O MongoDB armazena os dados no formato <strong>BSON</strong> (uma versão binária do JSON). Isso o torna muito fácil de usar para desenvolvedores web, que já trabalham com JSON no dia a dia.</p>
+<ul>
+<li><strong>Vantagem:</strong> A equipe de front-end, que lida com dados em JSON, terá uma curva de aprendizado mais suave e poderá integrar a aplicação com o banco de dados de forma mais rápida e natural.</li>
+</ul>
+<h3 id="3-escalabilidade-e-desempenho">3. Escalabilidade e Desempenho<a hidden class="anchor" aria-hidden="true" href="#3-escalabilidade-e-desempenho">#</a></h3>
+<p>O MongoDB é projetado para lidar com grandes volumes de dados de forma eficiente. Ele se expande facilmente (escalabilidade horizontal) e é otimizado para buscas complexas, como as buscas por palavras-chave que o nosso projeto exige.</p>
+<ul>
+<li><strong>Vantagem:</strong> A arquitetura do banco de dados suporta o crescimento do projeto de mineração sem comprometer a performance, o que é crucial para a nossa aplicação.</li>
+</ul>
+<h3 id="4-suporte-e-comunidade">4. Suporte e Comunidade<a hidden class="anchor" aria-hidden="true" href="#4-suporte-e-comunidade">#</a></h3>
+<p>O MongoDB é um dos bancos de dados mais populares do mercado, com uma documentação excelente, tutoriais e uma comunidade ativa.</p>
+<ul>
+<li><strong>Vantagem:</strong> A equipe terá acesso a um vasto material de apoio e poderá resolver dúvidas rapidamente, o que é ideal para um projeto com prazo de entrega definido.</li>
+</ul>
+<h3 id="conclusão">Conclusão<a hidden class="anchor" aria-hidden="true" href="#conclusão">#</a></h3>
+<p>A escolha do MongoDB se justifica por sua <strong>flexibilidade</strong>, <strong>facilidade de uso</strong> e <strong>poder de processamento de dados em escala</strong>. Ele é a ferramenta ideal para garantir que o projeto seja entregue com sucesso, atendendo a todos os requisitos do projeto.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2025-2-SeLiga/estudos/DevOps/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Guia de Estudos sobre DevOps</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2025-2-SeLiga/estudos/protocolo_HTTP/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Protocolo HTTP (Hypertext Transfer Protocol)</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/2025-2-SeLiga/">SeLiga</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

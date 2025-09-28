@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>SeLiga</title>
-    <link>http://localhost:1313/2025-2-SeLiga/</link>
-    <description>Recent content on SeLiga</description>
+    <title>Estudos on SeLiga</title>
+    <link>http://localhost:1313/2025-2-SeLiga/estudos/</link>
+    <description>Recent content in Estudos on SeLiga</description>
     <generator>Hugo -- 0.149.1</generator>
     <language>pt-br</language>
-    <atom:link href="http://localhost:1313/2025-2-SeLiga/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/2025-2-SeLiga/estudos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Análise de requisitos de software</title>
       <link>http://localhost:1313/2025-2-SeLiga/estudos/requisitos/</link>
@@ -172,22 +172,6 @@
 &lt;p&gt;Uma boa arquitetura facilita a &lt;strong&gt;manutenção, extensibilidade e compreensão&lt;/strong&gt; do software, permitindo que ele evolua de forma sustentável ao longo do tempo.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Bem-vindo ao SeLiga 👋</title>
-      <link>http://localhost:1313/2025-2-SeLiga/inicio/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/inicio/</guid>
-      <description>&lt;h1 id=&#34;objetivo-do-projeto&#34;&gt;Objetivo do projeto&lt;/h1&gt;
-&lt;p&gt;O projeto SeLiga coleta reportagens de jornais para alimentar um sistema de detecção automatizada de fake news. O objetivo principal é desenvolver uma aplicação web que permita ao usuário explorar e filtrar notícias e descobrir se são falsas ou não.&lt;/p&gt;
-&lt;p&gt;Este site documenta o andamento e as entregas do projeto &lt;strong&gt;SeLiga&lt;/strong&gt;. Aqui você encontrará:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/equipe/&#34;&gt;Nossa equipe&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/documentacao/&#34;&gt;Documentação do software&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/menu/&#34;&gt;Estudos preparatórios&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;💡 &lt;strong&gt;Dica:&lt;/strong&gt; Explore os ícones e links no topo da página para acessar rapidamente nossa GitHub ou página do curso.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>BENCHMARK</title>
       <link>http://localhost:1313/2025-2-SeLiga/estudos/Benchmarks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -199,48 +183,6 @@
 &lt;h2 id=&#34;como-ele-atua&#34;&gt;Como ele atua&lt;/h2&gt;
 &lt;p&gt;O benchmark mede a eficiência de áreas separadas do projeto (ou benchmarks), sendo diferente dos testes padrões que apenas verificam se o software está atendendo aos requisitos básicos de funcionamento.&lt;br&gt;
 O objetivo é ter um desempenho definido, que faça com que os desenvolvedores entendam como o software se comporta sob diferentes condições.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Criadores do SeLiga</title>
-      <link>http://localhost:1313/2025-2-SeLiga/equipe/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/equipe/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;quem-somos&#34;&gt;Quem somos?&lt;/h2&gt;
-&lt;p&gt;Somos estudantes de engenharia de Software da Unb!&lt;/p&gt;
-&lt;div class=&#34;team-container&#34;&gt; &lt;div class=&#34;team-member&#34;&gt;
-        &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/gustavo.jpg&#34; alt=&#34;Gustavo Emmanuel dos Santos Rodrigues&#34;&gt;
-        &lt;p class=&#34;member-name&#34;&gt;Gustavo E dos Santos Rodrigues&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;team-member&#34;&gt;
-        &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/arthur.jpg&#34; alt=&#34;Arthur Vilas Boas Laterza&#34;&gt;
-        &lt;p class=&#34;member-name&#34;&gt;Arthur Vilas Boas Laterza&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;team-member&#34;&gt;
-        &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/amanda.jpg&#34; alt=&#34;Maria Amanda Lima Pinheiro&#34;&gt;
-        &lt;p class=&#34;member-name&#34;&gt;Maria Amanda Lima Pinheiro&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;team-member&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/marcus.jpg&#34; alt=&#34;Marcus Vinicius Rezende Dos Santos&#34;&gt;
-        &lt;p class=&#34;member-name&#34;&gt;Marcus Vinicius&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;team-member&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/enzo.jpg&#34; alt=&#34;Enzo Lopes Ferreira&#34;&gt;
-        &lt;p class=&#34;member-name&#34;&gt;Enzo Lopes Ferreira&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;team-member&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/erick.jpg&#34; alt=&#34;Erick Ryan Caetano Guimaraes&#34;&gt;
-    &lt;p class=&#34;member-name&#34;&gt;Erick Ryan Caetano Guimaraes&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Documentação</title>
-      <link>http://localhost:1313/2025-2-SeLiga/documentacao/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/documentacao/</guid>
-      <description>&lt;hr&gt;
-&lt;p&gt;Aqui terá a documentacao&lt;/p&gt;</description>
     </item>
     <item>
       <title>Estudo de Metodologia Ágil</title>

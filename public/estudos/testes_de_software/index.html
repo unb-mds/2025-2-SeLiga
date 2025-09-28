@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/2025-2-SeLiga/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025-2-SeLiga/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Estudo sobre Testes de Software | SeLiga</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Conceito
+Testes de software são atividades realizadas para avaliar a qualidade de um sistema ou aplicação e garantir que ele atenda aos requisitos especificados.
+O objetivo principal é encontrar defeitos antes que o software chegue ao usuário final.
+
+Objetivos dos Testes
+
+Avaliar características de um produto como requisitos, histórias de usuários e designs.
+Causar falhas e identificar defeitos.
+Verificar se o software funciona conforme o esperado.
+Corrigir defeitos.
+Reduzir o nível de risco de um software inadequado.
+Garantir qualidade, confiabilidade e segurança.
+Aumentar a confiança do stakeholder e da equipe.
+Reduzir custos a longo prazo (detectar erros cedo é mais barato).
+Melhorar a experiência do usuário.
+
+
+Teste x Debug
+
+Teste e debugging são duas atividades distintas.
+
+→ Teste
+
+Pode acionar falhas do sistema, causadas por defeitos no software ou pode descobrir diretamente esses defeitos no objeto de teste.
+
+→ Debugging
+
+Quando uma falha é acionada pelo teste, o debugging participa e acha as causas da falha, analisando-as e as eliminando.
+O processo se resume à:
+
+1. Reproduzir a falha.
+2. Encontrar o defeito.
+3. Diagnosticar o defeito.
+
+
+
+
+Tipos de Testes
+1 - Quanto ao Nível
+
+Testes de Unidade: verificam funções/módulos isolados.
+Testes de Integração: verificam a interação entre módulos.
+Testes de Sistema: verificam o sistema completo.
+Testes de Aceitação: verificam se o sistema atende às necessidades do cliente.
+
+2 - Quanto à Abordagem
+
+Teste Caixa Branca: avalia a lógica interna do código.
+Teste Caixa Preta: avalia entradas e saídas, sem olhar o código.
+Teste Caixa Cinza: mistura das duas abordagens.
+
+3 - Quanto ao Propósito
+
+Testes Funcionais: verificam se funcionalidades atendem requisitos.
+Testes Não Funcionais: avaliam desempenho, segurança, usabilidade.
+Testes de Regressão: garantem que alterações não quebrem funcionalidades existentes.
+Testes de Stress e Carga: verificam como o sistema reage sob alta demanda.
+
+
+Técnicas de Teste
+
+Particionamento de Equivalência: dividir entradas em classes representativas.
+Análise de Valor Limite: testar valores nos extremos de intervalos.
+Tabela de Decisão: testar combinações de condições.
+Testes Baseados em Estado: avaliar transições entre estados do sistema.
+
+
+Automação de Testes
+
+Usada para agilizar processos e aumentar cobertura.
+Ferramentas populares:
+
+JUnit, NUnit, PyTest → Testes de unidade.
+Selenium, Cypress, Playwright → Testes de interface.
+JMeter, Locust → Testes de carga e desempenho.
+
+
+
+
+Ciclo de Vida dos Testes (STLC)
+
+Análise de Requisitos
+Planejamento de Testes
+Design de Casos de Teste
+Configuração do Ambiente
+Execução dos Testes
+Registro de Defeitos
+Encerramento dos Testes
+
+
+Boas Práticas
+
+Escrever casos de teste claros e objetivos.
+Priorizar testes críticos.
+Manter testes atualizados junto com o código.
+Automatizar sempre que possível.
+Registrar e analisar resultados.
+
+
+Níveis de Teste de Software
+Teste Unitário
+O teste unitário verifica pequenas partes isoladas do código, geralmente funções, métodos ou classes.
+O objetivo dele é garantir que cada “unidade” do programa funciona corretamente de forma independente.
+Normalmente quem faz esses testes são os desenvolvedores, logo após escreverem o código.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2025-2-SeLiga/estudos/testes_de_software/">
+<link crossorigin="anonymous" href="/2025-2-SeLiga/assets/css/stylesheet.bf5658f8b68defa6da5d91a2ecdf95130a49e863ffadf2cd7632e70e4151ebac.css" integrity="sha256-v1ZY&#43;LaN76baXZGi7N&#43;VEwpJ6GP/rfLNdjLnDkFR66w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/2025-2-SeLiga/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/2025-2-SeLiga/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/2025-2-SeLiga/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/2025-2-SeLiga/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/2025-2-SeLiga/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2025-2-SeLiga/estudos/testes_de_software/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="/2025-2-SeLiga/css/custom.min.css">
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/2025-2-SeLiga/" accesskey="h" title="SeLiga (Alt + H)">SeLiga</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/equipe" title="Equipe">
+                    <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
+                    <span>Documentação</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/estudos/menu/" title="Estudos">
+                    <span>Estudos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Estudo sobre Testes de Software
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<h2 id="conceito">Conceito<a hidden class="anchor" aria-hidden="true" href="#conceito">#</a></h2>
+<p>Testes de software são atividades realizadas para avaliar a qualidade de um sistema ou aplicação e garantir que ele atenda aos requisitos especificados.<br>
+O objetivo principal é <strong>encontrar defeitos antes que o software chegue ao usuário final</strong>.</p>
+<hr>
+<h2 id="objetivos-dos-testes">Objetivos dos Testes<a hidden class="anchor" aria-hidden="true" href="#objetivos-dos-testes">#</a></h2>
+<ul>
+<li>Avaliar características de um produto como <strong>requisitos, histórias de usuários e designs</strong>.</li>
+<li><strong>Causar</strong> falhas e <strong>identificar</strong> defeitos.</li>
+<li>Verificar se o software funciona conforme o <strong>esperado</strong>.</li>
+<li><strong>Corrigir</strong> defeitos.</li>
+<li><strong>Reduzir</strong> o nível de <strong>risco</strong> de um software inadequado.</li>
+<li>Garantir <strong>qualidade, confiabilidade e segurança</strong>.</li>
+<li>Aumentar a <strong>confiança</strong> do stakeholder e da equipe.</li>
+<li><strong>Reduzir custos</strong> a longo prazo (detectar erros cedo é mais barato).</li>
+<li>Melhorar a <strong>experiência do usuário</strong>.</li>
+</ul>
+<hr>
+<h2 id="teste-x-debug">Teste x Debug<a hidden class="anchor" aria-hidden="true" href="#teste-x-debug">#</a></h2>
+<ul>
+<li><strong>Teste e debugging</strong> são duas atividades <strong>distintas</strong>.</li>
+</ul>
+<h3 id="-teste">→ Teste<a hidden class="anchor" aria-hidden="true" href="#-teste">#</a></h3>
+<ul>
+<li>Pode <strong>acionar falhas</strong> do sistema, causadas por <strong>defeitos</strong> no software ou pode descobrir <strong>diretamente</strong> esses defeitos no <strong>objeto de teste</strong>.</li>
+</ul>
+<h3 id="-debugging">→ Debugging<a hidden class="anchor" aria-hidden="true" href="#-debugging">#</a></h3>
+<ul>
+<li>Quando uma falha é acionada pelo teste, o <strong>debugging</strong> participa e acha as <strong>causas</strong> da falha, <strong>analisando-as</strong> e as <strong>eliminando</strong>.</li>
+<li>O processo se resume à:
+<ul>
+<li><strong>1. Reproduzir a falha.</strong></li>
+<li><strong>2. Encontrar o defeito.</strong></li>
+<li><strong>3. Diagnosticar o defeito.</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="tipos-de-testes">Tipos de Testes<a hidden class="anchor" aria-hidden="true" href="#tipos-de-testes">#</a></h2>
+<h3 id="1---quanto-ao-nível">1 - Quanto ao Nível<a hidden class="anchor" aria-hidden="true" href="#1---quanto-ao-nível">#</a></h3>
+<ul>
+<li><strong>Testes de Unidade</strong>: verificam funções/módulos isolados.</li>
+<li><strong>Testes de Integração</strong>: verificam a interação entre módulos.</li>
+<li><strong>Testes de Sistema</strong>: verificam o sistema completo.</li>
+<li><strong>Testes de Aceitação</strong>: verificam se o sistema atende às necessidades do cliente.</li>
+</ul>
+<h3 id="2---quanto-à-abordagem">2 - Quanto à Abordagem<a hidden class="anchor" aria-hidden="true" href="#2---quanto-à-abordagem">#</a></h3>
+<ul>
+<li><strong>Teste Caixa Branca</strong>: avalia a lógica interna do código.</li>
+<li><strong>Teste Caixa Preta</strong>: avalia entradas e saídas, sem olhar o código.</li>
+<li><strong>Teste Caixa Cinza</strong>: mistura das duas abordagens.</li>
+</ul>
+<h3 id="3---quanto-ao-propósito">3 - Quanto ao Propósito<a hidden class="anchor" aria-hidden="true" href="#3---quanto-ao-propósito">#</a></h3>
+<ul>
+<li><strong>Testes Funcionais</strong>: verificam se funcionalidades atendem requisitos.</li>
+<li><strong>Testes Não Funcionais</strong>: avaliam desempenho, segurança, usabilidade.</li>
+<li><strong>Testes de Regressão</strong>: garantem que alterações não quebrem funcionalidades existentes.</li>
+<li><strong>Testes de Stress e Carga</strong>: verificam como o sistema reage sob alta demanda.</li>
+</ul>
+<hr>
+<h2 id="técnicas-de-teste">Técnicas de Teste<a hidden class="anchor" aria-hidden="true" href="#técnicas-de-teste">#</a></h2>
+<ul>
+<li><strong>Particionamento de Equivalência</strong>: dividir entradas em classes representativas.</li>
+<li><strong>Análise de Valor Limite</strong>: testar valores nos extremos de intervalos.</li>
+<li><strong>Tabela de Decisão</strong>: testar combinações de condições.</li>
+<li><strong>Testes Baseados em Estado</strong>: avaliar transições entre estados do sistema.</li>
+</ul>
+<hr>
+<h2 id="automação-de-testes">Automação de Testes<a hidden class="anchor" aria-hidden="true" href="#automação-de-testes">#</a></h2>
+<ul>
+<li>Usada para agilizar processos e aumentar cobertura.</li>
+<li>Ferramentas populares:
+<ul>
+<li><strong>JUnit, NUnit, PyTest</strong> → Testes de unidade.</li>
+<li><strong>Selenium, Cypress, Playwright</strong> → Testes de interface.</li>
+<li><strong>JMeter, Locust</strong> → Testes de carga e desempenho.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="ciclo-de-vida-dos-testes-stlc">Ciclo de Vida dos Testes (STLC)<a hidden class="anchor" aria-hidden="true" href="#ciclo-de-vida-dos-testes-stlc">#</a></h2>
+<ol>
+<li><strong>Análise de Requisitos</strong></li>
+<li><strong>Planejamento de Testes</strong></li>
+<li><strong>Design de Casos de Teste</strong></li>
+<li><strong>Configuração do Ambiente</strong></li>
+<li><strong>Execução dos Testes</strong></li>
+<li><strong>Registro de Defeitos</strong></li>
+<li><strong>Encerramento dos Testes</strong></li>
+</ol>
+<hr>
+<h2 id="boas-práticas">Boas Práticas<a hidden class="anchor" aria-hidden="true" href="#boas-práticas">#</a></h2>
+<ul>
+<li>Escrever casos de teste claros e objetivos.</li>
+<li>Priorizar testes críticos.</li>
+<li>Manter testes atualizados junto com o código.</li>
+<li>Automatizar sempre que possível.</li>
+<li>Registrar e analisar resultados.</li>
+</ul>
+<hr>
+<h1 id="níveis-de-teste-de-software">Níveis de Teste de Software<a hidden class="anchor" aria-hidden="true" href="#níveis-de-teste-de-software">#</a></h1>
+<h2 id="teste-unitário">Teste Unitário<a hidden class="anchor" aria-hidden="true" href="#teste-unitário">#</a></h2>
+<p>O <strong>teste unitário</strong> verifica pequenas partes isoladas do código, geralmente funções, métodos ou classes.<br>
+O objetivo dele é garantir que cada “unidade” do programa funciona corretamente de forma independente.<br>
+Normalmente quem faz esses testes são os <strong>desenvolvedores</strong>, logo após escreverem o código.</p>
+<h3 id="exemplo-prático">Exemplo prático<a hidden class="anchor" aria-hidden="true" href="#exemplo-prático">#</a></h3>
+<p>Uma função em Java que soma dois números:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculadora</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">somar</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Escrevendo um teste unitário usando JUnit (framework de testes em Java):</p>
+<pre tabindex="0"><code>import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class CalculadoraTest {
+    @Test
+    public void testSomar() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.somar(2, 3);
+
+        // Verifica se a soma de 2 + 3 é igual a 5
+        assertEquals(5, resultado);
+    }
+}
+</code></pre><p>Esse teste testa apenas uma unidade do código (o método somar),
+não depende de banco de dados, rede ou outro sistema externo,
+além de ser rápido e fácil de rodar.</p>
+<hr>
+<h2 id="teste-de-integração">Teste de Integração<a hidden class="anchor" aria-hidden="true" href="#teste-de-integração">#</a></h2>
+<p>O <strong>teste de integração</strong> verifica se diferentes módulos ou unidades do sistema funcionam bem em conjunto.<br>
+O objetivo é encontrar problemas de comunicação entre partes do sistema (ex: funções, APIs, banco de dados).<br>
+Quem faz esses testes são os <strong>desenvolvedores</strong> ou a equipe de <strong>QA (Quality Assurance)</strong>.</p>
+<h3 id="exemplo-prático-1">Exemplo prático<a hidden class="anchor" aria-hidden="true" href="#exemplo-prático-1">#</a></h3>
+<p>Duas classes em Java:</p>
+<h4 id="usuarioservice-que-busca-um-usuário">UsuarioService que busca um usuário<a hidden class="anchor" aria-hidden="true" href="#usuarioservice-que-busca-um-usuário">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UsuarioService</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getEmailUsuario</span>(<span style="color:#66d9ef">int</span> id) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (id <span style="color:#f92672">==</span> 1) <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;teste@email.com&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>EmailService que envia um e-mail para esse usuário</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">enviarEmail</span>(String email, String mensagem) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (email <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>email.<span style="color:#a6e22e">isEmpty</span>()) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Simulação do envio de e-mail</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Teste de Integração
+Agora um teste de integração para verificar se o UsuarioService e o EmailService funcionam juntos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.junit.Assert.assertTrue;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Test;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IntegracaoTest</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testEnviarEmailParaUsuario</span>() {
+</span></span><span style="display:flex;"><span>        UsuarioService usuarioService <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UsuarioService();
+</span></span><span style="display:flex;"><span>        EmailService emailService <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> EmailService();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String email <span style="color:#f92672">=</span> usuarioService.<span style="color:#a6e22e">getEmailUsuario</span>(1);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">boolean</span> enviado <span style="color:#f92672">=</span> emailService.<span style="color:#a6e22e">enviarEmail</span>(email, <span style="color:#e6db74">&#34;Bem-vindo ao sistema!&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Verifica se o e-mail foi enviado com sucesso</span>
+</span></span><span style="display:flex;"><span>        assertTrue(enviado);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Esse teste garante que:</p>
+<p>O UsuarioService retorna corretamente o e-mail de um usuário.</p>
+<p>O EmailService consegue usar esse e-mail para enviar uma mensagem.</p>
+<p>A integração entre os dois módulos funciona como esperado.</p>
+<hr>
+<h2 id="teste-de-sistema">Teste de Sistema<a hidden class="anchor" aria-hidden="true" href="#teste-de-sistema">#</a></h2>
+<p>O <strong>teste de sistema</strong> avalia o software como um todo, já integrado, verificando se atende aos <strong>requisitos funcionais</strong> e <strong>não funcionais</strong>.<br>
+O objetivo é garantir que o sistema entregue o que foi especificado (funcionalidades completas, performance, segurança, usabilidade).<br>
+Quem faz esses testes é a equipe de <strong>QA/testadores dedicados</strong>.</p>
+<h3 id="exemplo-prático-2">Exemplo prático<a hidden class="anchor" aria-hidden="true" href="#exemplo-prático-2">#</a></h3>
+<p>Testar se o sistema de reservas de uma universidade permite:</p>
+<ul>
+<li>Cadastrar usuários.</li>
+<li>Reservar salas.</li>
+<li>Gerar relatórios corretamente.</li>
+</ul>
+<hr>
+<h2 id="teste-de-acessibilidade">Teste de Acessibilidade<a hidden class="anchor" aria-hidden="true" href="#teste-de-acessibilidade">#</a></h2>
+<p>O <strong>teste de acessibilidade</strong> verifica se o sistema pode ser usado por todas as pessoas, incluindo aquelas com <strong>deficiências visuais, auditivas, motoras ou cognitivas</strong>.<br>
+O objetivo é garantir <strong>inclusão</strong> e conformidade com padrões de acessibilidade (como <strong>WCAG</strong>).<br>
+Quem faz esses testes é a equipe de <strong>QA</strong>, especialistas em acessibilidade e, muitas vezes, <strong>usuários reais</strong> com necessidades específicas.</p>
+<h3 id="exemplo-prático-3">Exemplo prático<a hidden class="anchor" aria-hidden="true" href="#exemplo-prático-3">#</a></h3>
+<p>Testar se um site:</p>
+<ul>
+<li>Pode ser navegado por <strong>leitores de tela</strong>.</li>
+<li>Possui <strong>contraste adequado</strong> nas cores.</li>
+<li>Permite que todos os elementos sejam acessados pelo <strong>teclado</strong>.</li>
+</ul>
+<hr>
+<h2 id="referências">Referências<a hidden class="anchor" aria-hidden="true" href="#referências">#</a></h2>
+<ul>
+<li>ISTQB Foundation Level Syllabus.</li>
+<li>Myers, G. J. <em>The Art of Software Testing</em>.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2025-2-SeLiga/estudos/fastapi/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Estudo sobre FastAPI</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2025-2-SeLiga/estudos/menu/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Estudos 📚</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/2025-2-SeLiga/">SeLiga</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

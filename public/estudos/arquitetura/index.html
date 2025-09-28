@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/2025-2-SeLiga/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025-2-SeLiga/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Arquitetura de Software | SeLiga</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+O que é Arquitetura de Software?
+A arquitetura de software é a estrutura fundamental de um sistema de software.
+Ela define como os componentes são organizados e como eles interagem entre si.
+📌 Analogia:
+Pense no software como uma casa e na arquitetura como a planta da casa.
+
+Os cômodos representam os módulos do sistema (ex.: login, cadastro, carrinho de compras).
+Os canos e fios representam a comunicação entre módulos (ex.: APIs, filas de mensagens).
+Os materiais de construção são as tecnologias usadas (linguagens, frameworks, banco de dados).
+
+Uma boa arquitetura facilita a manutenção, extensibilidade e compreensão do software, permitindo que ele evolua de forma sustentável ao longo do tempo.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2025-2-SeLiga/estudos/arquitetura/">
+<link crossorigin="anonymous" href="/2025-2-SeLiga/assets/css/stylesheet.bf5658f8b68defa6da5d91a2ecdf95130a49e863ffadf2cd7632e70e4151ebac.css" integrity="sha256-v1ZY&#43;LaN76baXZGi7N&#43;VEwpJ6GP/rfLNdjLnDkFR66w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/2025-2-SeLiga/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/2025-2-SeLiga/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/2025-2-SeLiga/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/2025-2-SeLiga/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/2025-2-SeLiga/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2025-2-SeLiga/estudos/arquitetura/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="/2025-2-SeLiga/css/custom.min.css">
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/2025-2-SeLiga/" accesskey="h" title="SeLiga (Alt + H)">SeLiga</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/equipe" title="Equipe">
+                    <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
+                    <span>Documentação</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/estudos/menu/" title="Estudos">
+                    <span>Estudos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Arquitetura de Software
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<h1 id="o-que-é-arquitetura-de-software">O que é Arquitetura de Software?<a hidden class="anchor" aria-hidden="true" href="#o-que-é-arquitetura-de-software">#</a></h1>
+<p>A <strong>arquitetura de software</strong> é a estrutura fundamental de um sistema de software.</p>
+<p>Ela define <strong>como os componentes são organizados</strong> e <strong>como eles interagem entre si</strong>.</p>
+<p>📌 <strong>Analogia:</strong></p>
+<p>Pense no software como uma <strong>casa</strong> e na arquitetura como a <strong>planta da casa</strong>.</p>
+<ul>
+<li>Os <strong>cômodos</strong> representam os módulos do sistema (ex.: login, cadastro, carrinho de compras).</li>
+<li>Os <strong>canos e fios</strong> representam a comunicação entre módulos (ex.: APIs, filas de mensagens).</li>
+<li>Os <strong>materiais de construção</strong> são as tecnologias usadas (linguagens, frameworks, banco de dados).</li>
+</ul>
+<p>Uma boa arquitetura facilita a <strong>manutenção, extensibilidade e compreensão</strong> do software, permitindo que ele evolua de forma sustentável ao longo do tempo.</p>
+<hr>
+<h1 id="objetivos-da-arquitetura">Objetivos da Arquitetura<a hidden class="anchor" aria-hidden="true" href="#objetivos-da-arquitetura">#</a></h1>
+<ul>
+<li>✅ Garantir a <strong>organização</strong> do sistema</li>
+<li>✅ Facilitar a <strong>manutenção e evolução</strong></li>
+<li>✅ Melhorar a <strong>performance e escalabilidade</strong></li>
+<li>✅ Aumentar a <strong>segurança e confiabilidade</strong></li>
+<li>✅ Permitir que equipes diferentes trabalhem em partes distintas</li>
+<li>✅ Garantir uma boa <strong>comunicação entre os módulos</strong></li>
+<li>✅ Apoiar a <strong>tomada de decisões técnicas</strong> a longo prazo</li>
+</ul>
+<p>👉 Em resumo, a arquitetura mantém o software <strong>fácil de manter, seguro, escalável e organizado</strong>.</p>
+<hr>
+<h1 id="passos-para-projetar-uma-boa-arquitetura-de-software">Passos para Projetar uma Boa Arquitetura de Software<a hidden class="anchor" aria-hidden="true" href="#passos-para-projetar-uma-boa-arquitetura-de-software">#</a></h1>
+<p>Agora indo para a prática, aqui estão os passos principais para projetar uma boa arquitetura:</p>
+<h3 id="1-entender-o-problema-e-os-requisitos">1. Entender o problema e os requisitos<a hidden class="anchor" aria-hidden="true" href="#1-entender-o-problema-e-os-requisitos">#</a></h3>
+<ul>
+<li>Identifique <strong>quem vai usar</strong> e <strong>como vai usar</strong> o sistema.</li>
+<li>Levante os <strong>requisitos funcionais</strong> (o que o sistema deve fazer) e os <strong>não funcionais</strong> (performance, segurança, disponibilidade).</li>
+<li>Considere também como lidar com <strong>possíveis falhas e bugs</strong>.</li>
+</ul>
+<h3 id="2-definir-as-restrições">2. Definir as restrições<a hidden class="anchor" aria-hidden="true" href="#2-definir-as-restrições">#</a></h3>
+<ul>
+<li>O sistema será <strong>web, mobile ou desktop</strong>?</li>
+<li>Precisa rodar em <strong>nuvem ou localmente</strong>?</li>
+<li>Existem <strong>tecnologias obrigatórias</strong> (linguagem, framework, banco de dados)?</li>
+<li>Há <strong>limitações de custo, tempo ou equipe</strong>?</li>
+</ul>
+<h3 id="3-escolher-o-estilo-arquitetural">3. Escolher o estilo arquitetural<a hidden class="anchor" aria-hidden="true" href="#3-escolher-o-estilo-arquitetural">#</a></h3>
+<p>Selecione o modelo mais adequado para o projeto:</p>
+<ul>
+<li><strong>Arquitetura em Camadas (Layers):</strong> organiza o sistema em camadas com responsabilidades específicas.</li>
+<li><strong>Cliente-Servidor (Client-Server):</strong> separa a aplicação entre solicitantes e fornecedores de serviços.</li>
+<li><strong>Microsserviços (Microservices):</strong> divide a aplicação em serviços pequenos e independentes.</li>
+<li><strong>Event-Driven:</strong> baseado em eventos e reações assíncronas.</li>
+</ul>
+<p>Cada modelo tem vantagens e casos de uso específicos. A escolha deve estar alinhada aos requisitos.</p>
+<h3 id="4-definir-os-componentes-e-responsabilidades">4. Definir os componentes e responsabilidades<a hidden class="anchor" aria-hidden="true" href="#4-definir-os-componentes-e-responsabilidades">#</a></h3>
+<ul>
+<li>Quebre o sistema em <strong>módulos ou serviços</strong>.</li>
+<li>Garanta que cada um tenha uma <strong>única responsabilidade</strong> (ex.: autenticação, pagamentos, relatórios).</li>
+</ul>
+<h3 id="5-escolher-tecnologias">5. Escolher tecnologias<a hidden class="anchor" aria-hidden="true" href="#5-escolher-tecnologias">#</a></h3>
+<ul>
+<li>Linguagem de programação</li>
+<li>Frameworks</li>
+<li>Banco de dados</li>
+</ul>
+<p>Sempre baseie nas necessidades reais do projeto, não apenas na tecnologia da moda.</p>
+<h3 id="6-tratar-segurança">6. Tratar segurança<a hidden class="anchor" aria-hidden="true" href="#6-tratar-segurança">#</a></h3>
+<ul>
+<li>Autenticação e autorização (Auth/AuthZ)</li>
+<li>Criptografia de dados sensíveis</li>
+<li>Logs, auditoria e backups</li>
+</ul>
+<h3 id="7-planejar-escalabilidade-e-desempenho">7. Planejar escalabilidade e desempenho<a hidden class="anchor" aria-hidden="true" href="#7-planejar-escalabilidade-e-desempenho">#</a></h3>
+<ul>
+<li>O sistema consegue suportar o crescimento de usuários?</li>
+<li>Banco de dados e cache são suficientes?</li>
+<li>Será necessário <strong>balanceamento de carga</strong>?</li>
+<li>Como o sistema se recupera de falhas?</li>
+</ul>
+<h3 id="8-documentar-a-arquitetura">8. Documentar a arquitetura<a hidden class="anchor" aria-hidden="true" href="#8-documentar-a-arquitetura">#</a></h3>
+<ul>
+<li>Diagramas (ex.: C4 Model, UML, fluxos de dados)</li>
+<li>Registros de decisão (ADR – <em>Architecture Decision Records</em>)</li>
+<li>Justificativas para as escolhas feitas</li>
+</ul>
+<h3 id="9-validar-e-revisar">9. Validar e revisar<a hidden class="anchor" aria-hidden="true" href="#9-validar-e-revisar">#</a></h3>
+<ul>
+<li>Feedback de <strong>usuários, devs e stakeholders</strong></li>
+<li>Testes contínuos (automação, integração, performance)</li>
+<li>Revisões periódicas conforme o sistema evolui</li>
+</ul>
+<hr>
+<h1 id="exemplo-simples">Exemplo Simples<a hidden class="anchor" aria-hidden="true" href="#exemplo-simples">#</a></h1>
+<p>Um <strong>e-commerce</strong> pode ser estruturado assim:</p>
+<ul>
+<li><strong>Camada de Apresentação:</strong> site ou app que o cliente usa.</li>
+<li><strong>Camada de Negócio:</strong> regras como cálculo de frete, promoções e carrinho.</li>
+<li><strong>Camada de Dados:</strong> banco de dados que armazena produtos, usuários e pedidos.</li>
+<li><strong>Integrações:</strong> serviços externos como APIs de pagamento e logística.</li>
+</ul>
+<hr>
+<p>✍️ <strong>Resumo:</strong></p>
+<p>Projetar uma boa arquitetura de software significa <strong>entender bem o problema, escolher o estilo adequado, dividir responsabilidades, planejar comunicação, segurança e escalabilidade, documentar e validar</strong>.</p>
+<p>Isso garante que o sistema seja <strong>organizado, seguro e preparado para crescer</strong>.</p>
+<hr>
+<h1 id="melhor-tipo-de-arquitetura-para-o-projeto">Melhor Tipo de Arquitetura para o Projeto<a hidden class="anchor" aria-hidden="true" href="#melhor-tipo-de-arquitetura-para-o-projeto">#</a></h1>
+<h2 id="após-estudos-foi-considerado-que-a-arquitetura-cliente-servidor-se-encaixa-melhor-no-projeto-pelos-seguintes-motivos">Após estudos, foi considerado que a arquitetura <strong>Cliente-Servidor</strong> se encaixa melhor no projeto pelos seguintes motivos:<a hidden class="anchor" aria-hidden="true" href="#após-estudos-foi-considerado-que-a-arquitetura-cliente-servidor-se-encaixa-melhor-no-projeto-pelos-seguintes-motivos">#</a></h2>
+<ul>
+<li><strong>Simplicidade:</strong> Estrutura direta, com cliente solicitando e servidor respondendo.</li>
+<li><strong>Centralização:</strong> O servidor concentra a mineração, organização e disponibilização dos dados.</li>
+<li><strong>Facilidade de manutenção:</strong> Menos complexidade em comparação a outras arquiteturas.</li>
+<li><strong>Escalabilidade adequada:</strong> Possibilidade de replicar o servidor caso a demanda aumente.</li>
+<li><strong>Clareza no fluxo:</strong>
+<ul>
+<li>Cliente → faz requisição.</li>
+<li>Servidor → processa, busca e retorna a informação.</li>
+<li>Cliente → apresenta os dados ao usuário final.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="referências">Referências<a hidden class="anchor" aria-hidden="true" href="#referências">#</a></h1>
+<ul>
+<li><a href="https://www.inf.ufpr.br/andrey/ci163/IntroduzArquiteturaAl.pdf">Introdução à Arquitetura de Software - UFPR</a></li>
+<li><a href="https://mds.lappis.rocks/static_files/presentations/MDS-AULA-01.pdf">Material de Aula - MDS Lappis</a></li>
+<li><a href="https://www.devmedia.com.br/arquitetura-de-software-desenvolvimento-orientado-para-arquitetura/8033">DevMedia - Arquitetura de Software</a></li>
+<li><a href="https://www.controle.net/faq/cliente-servidor-uma-estrutura-para-a-computacao-centralizada">Client-Server by  controle.net</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2025-2-SeLiga/estudos/ArquiteturaClienteServidor/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Arquitetura Cliente-servidor</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2025-2-SeLiga/estudos/Benchmarks/">
+    <span class="title">Next »</span>
+    <br>
+    <span>BENCHMARK</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/2025-2-SeLiga/">SeLiga</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

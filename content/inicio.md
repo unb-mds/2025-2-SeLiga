@@ -13,8 +13,7 @@ Este site documenta o andamento e as entregas do projeto **SeLiga**. Aqui você 
 
 - [Nossa equipe](/2025-2-SeLiga/equipe/)
 - [Documentação do software](/2025-2-SeLiga/documentacao/)
-- [Estudos preparatórios](/2025-2-SeLiga/estudos/index)
-
+- [Estudos preparatórios](/2025-2-SeLiga/estudos/menu/)
 
 ---
 

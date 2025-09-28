@@ -1,0 +1,1 @@
+@charset "UTF-8";.team-member{display:inline-block;text-align:center;margin:20px;vertical-align:top}.team-member img{width:150px;height:150px;object-fit:cover;border-radius:50%;border:2px solid var(--primary-color,#007bff);box-shadow:0 4px 8px rgba(0,0,0,.2)}.team-member .member-name{margin-top:10px;font-size:1.1em;font-weight:700;color:var(--secondary-color,#ccc)}

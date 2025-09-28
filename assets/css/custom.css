@@ -1,0 +1,65 @@
+/* assets/css/custom.css */
+
+/* --- Estilos para a Página da Equipe --- */
+
+/* Contêiner principal para centralizar e organizar os membros */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.team-member {
+    /* Remove o alinhamento de texto, o Flexbox vai cuidar disso */
+    /* text-align: center; */
+
+    width: 180px;
+    
+    /* Adiciona Flexbox para alinhar os itens internos (imagem e nome) */
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center;    /* Centraliza os itens horizontalmente */
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color, #007bff);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Opcional: Efeito ao passar o mouse */
+.team-member img:hover {
+    transform: scale(1.05);
+}
+
+.team-member .member-name {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--secondary-color, #ccc);
+    
+    /* Chave para a simetria: */
+    height: 40px; /* Reserva um espaço fixo para o nome (suficiente para 2 linhas) */
+    display: flex;
+    align-items: center; /* Centraliza o texto verticalmente dentro da caixa */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    text-align: center; /* Garante o alinhamento para nomes com 2 linhas */
+}
+
+/* --- Ajuste para imagens gerais (fora da equipe, se houver) --- */
+/* Esta regra é para outras imagens, como na página inicial, se você ainda precisar dela */
+/* Se a página inicial já está boa, você pode manter como está ou adaptar */
+/* main .post-content > img:not(.team-member img) { */
+    /* max-width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px; */
+/* } */

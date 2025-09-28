@@ -1,26 +1,128 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Bem-vindo ao SeLiga on Seliga</title>
+    <title>SeLiga</title>
     <link>http://localhost:1313/2025-2-SeLiga/</link>
-    <description>Recent content in Bem-vindo ao SeLiga on Seliga</description>
-    <generator>Hugo</generator>
+    <description>Recent content on SeLiga</description>
+    <generator>Hugo -- 0.149.1</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 17 Sep 2025 17:50:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/2025-2-SeLiga/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> Estudos 📚</title>
+      <link>http://localhost:1313/2025-2-SeLiga/estudos/index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/estudos/index/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Ao ingressarmos na matéria de MDS(métodos de desenvolvimento de software) nos deparamos com uma grande variedade de conceitos, nos quais não tínhamos o conhecimento. É aí que todos os alunos mostram suas capacidades, para se aventurar no mundo do software e aprender conceitos novos!&lt;/p&gt;
+&lt;p&gt;Aqui mostraremos os estudos realizados pela nossa equipe, que nos capacitou no processo de desenvolvimento de software!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Foram feitos os seguintes estudos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/API&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/arquitetura&#34;&gt;Arquitetura&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/ArquiteturaClienteServidor&#34;&gt;Arquitetura Cliente-Servidor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/Benchmarks&#34;&gt;Benchmarks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/decisao_de_DB&#34;&gt;Decisão de DB&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/DevOps&#34;&gt;DevOps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/fastapi&#34;&gt;FastAPI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/figma&#34;&gt;Figma&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/Git_e_GitHub&#34;&gt;Git e GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/github_pages_hugo&#34;&gt;Github Pages com Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/metodologia_agil&#34;&gt;Metodologia ágil&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/protocolo_HTTP&#34;&gt;Protocolo HTTP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/react&#34;&gt;React&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/requisitos&#34;&gt;Requisitos&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/testes_de_software&#34;&gt;Testes De Software&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquivos/web_scraping&#34;&gt;Web Scraping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Bem-vindo ao SeLiga 👋</title>
+      <link>http://localhost:1313/2025-2-SeLiga/inicio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/inicio/</guid>
+      <description>&lt;h1 id=&#34;objetivo-do-projeto&#34;&gt;Objetivo do projeto&lt;/h1&gt;
+&lt;p&gt;O projeto SeLiga coleta reportagens de jornais para alimentar um sistema de detecção automatizada de fake news. O objetivo principal é desenvolver uma aplicação web que permita ao usuário explorar e filtrar notícias e descobrir se são falsas ou não.&lt;/p&gt;
+&lt;p&gt;Este site documenta o andamento e as entregas do projeto &lt;strong&gt;SeLiga&lt;/strong&gt;. Aqui você encontrará:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/equipe/&#34;&gt;Nossa equipe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/documentacao/&#34;&gt;Documentação do software&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/index&#34;&gt;Estudos preparatórios&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;💡 &lt;strong&gt;Dica:&lt;/strong&gt; Explore os ícones e links no topo da página para acessar rapidamente nossa GitHub ou página do curso.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Criadores do SeLiga</title>
       <link>http://localhost:1313/2025-2-SeLiga/equipe/</link>
-      <pubDate>Wed, 17 Sep 2025 17:50:00 -0300</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2025-2-SeLiga/equipe/</guid>
-      <description>&lt;h2 id=&#34;quem-somos&#34; class=&#34;relative group&#34;&gt;Quem somos? &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#quem-somos&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Somos estudantes de engenharia de Software da Unb! &#xD;&#xA;* Gustavo E&#xD;&#xA;* Arthur &#xD;&#xA;* Amanda&#xD;&#xA;*...&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;quem-somos&#34;&gt;Quem somos?&lt;/h2&gt;
+&lt;p&gt;Somos estudantes de engenharia de Software da Unb!&lt;/p&gt;
+&lt;div class=&#34;team-container&#34;&gt; &lt;div class=&#34;team-member&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/gustavo.jpg&#34; alt=&#34;Gustavo Emmanuel dos Santos Rodrigues&#34;&gt;
+        &lt;p class=&#34;member-name&#34;&gt;Gustavo E dos Santos Rodrigues&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;team-member&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/arthur.jpg&#34; alt=&#34;Arthur Vilas Boas Laterza&#34;&gt;
+        &lt;p class=&#34;member-name&#34;&gt;Arthur Vilas Boas Laterza&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;team-member&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/amanda.jpg&#34; alt=&#34;Maria Amanda Lima Pinheiro&#34;&gt;
+        &lt;p class=&#34;member-name&#34;&gt;Maria Amanda Lima Pinheiro&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;team-member&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/marcus.jpg&#34; alt=&#34;Marcus Vinicius Rezende Dos Santos&#34;&gt;
+        &lt;p class=&#34;member-name&#34;&gt;Marcus Vinicius&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;team-member&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/enzo.jpg&#34; alt=&#34;Enzo Lopes Ferreira&#34;&gt;
+        &lt;p class=&#34;member-name&#34;&gt;Enzo Lopes Ferreira&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;team-member&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/erick.jpg&#34; alt=&#34;Erick Ryan Caetano Guimaraes&#34;&gt;
+    &lt;p class=&#34;member-name&#34;&gt;Erick Ryan Caetano Guimaraes&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
     <item>
       <title>Documentação</title>
       <link>http://localhost:1313/2025-2-SeLiga/documentacao/</link>
-      <pubDate>Wed, 17 Sep 2025 17:50:00 -0300</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2025-2-SeLiga/documentacao/</guid>
-      <description>&lt;p&gt;Aqui terá a documentacao&lt;/p&gt;</description>
+      <description>&lt;hr&gt;
+&lt;p&gt;Aqui terá a documentacao&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

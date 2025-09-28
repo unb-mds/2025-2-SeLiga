@@ -1,19 +1,75 @@
 baseURL = 'https://unb-mds.github.io/2025-2-SeLiga/'
 languageCode = 'pt-br'
-title = 'Seliga'
-theme = 'congo'
+title = 'SeLiga'
+theme = 'PaperMod'
+#relativeURLs = true
+
+
+[pagination]
+  pagerSize = 5
+enableRobotsTXT = true
+
+# Permite que o Hugo renderize HTML bruto dentro de arquivos Markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
-  # Adiciona arquivos CSS customizados.
-  # O caminho é relativo à pasta 'assets'.
-  customCSS = ["css/custom.css"]
-  #
+  # CSS customizado (assets/css/custom.css)
+  # customCSS = ["css/custom.css"]
+  
+  # Tema automático (claro/escuro)
+  defaultTheme = "auto"
+  
+  # Funcionalidades visuais
+  ShowPostNavLinks = true
+
+#  [params.cover]
+#    linkFullImages = true
+
+  # Destaque do perfil no topo
+  [params.profileMode]
+    enabled = true
+    title = "SeLiga"
+    subtitle = "Documentação e informações sobre o projeto"
+    imageUrl = "imagens/profile.JPG"  
+    imageWidth = 120
+    imageHeight = 120
+    
+
+  # Redes sociais / links externos
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/unb-mds/2025-2-SeLiga"
+
+  [[params.socialIcons]]
+    name = "MDS"
+    url = "https://mds.lappis.rocks"
+
+
 [menu]
+  # Menu principal
   [[menu.main]]
+    identifier = "inicio"
+    name = "Início"
+    url = "/inicio/"
+    weight = 10  
+
+  [[menu.main]]
+    identifier = "equipe"
     name = "Equipe"
-    pageRef = "/equipe"
-    weight = 5
+    url = "/equipe"
+    weight = 15
+
   [[menu.main]]
+    identifier = "documentacao"
     name = "Documentação"
-    pageRef = "/documentacao"
-    weight = 10
+    url = "/documentacao"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "index"
+    name = "Estudos"
+    url = "/estudos/index/"
+    weight = 25

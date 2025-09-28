@@ -1,7 +1,7 @@
 ---
 title: " APIs"
 draft: false
-url: "/estudos/arquivos/API"
+url: "/estudos/arquivos/API/"
 ---
 
 ---

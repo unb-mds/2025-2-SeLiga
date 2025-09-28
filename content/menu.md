@@ -1,7 +1,7 @@
 ---
 title: "Estudos 📚"
 draft: false
-url: "/estudos/menu/"
+url: "/menu/"
 ---
 
 ---

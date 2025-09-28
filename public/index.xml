@@ -182,7 +182,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/equipe/&#34;&gt;Nossa equipe&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/documentacao/&#34;&gt;Documentação do software&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/menu/&#34;&gt;Estudos preparatórios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/menu/&#34;&gt;Estudos preparatórios&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;💡 &lt;strong&gt;Dica:&lt;/strong&gt; Explore os ícones e links no topo da página para acessar rapidamente nossa GitHub ou página do curso.&lt;/p&gt;</description>
@@ -491,9 +491,9 @@ Normalmente quem faz esses testes são os &lt;strong&gt;desenvolvedores&lt;/stro
     </item>
     <item>
       <title>Estudos 📚</title>
-      <link>http://localhost:1313/2025-2-SeLiga/estudos/menu/</link>
+      <link>http://localhost:1313/2025-2-SeLiga/menu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/estudos/menu/</guid>
+      <guid>http://localhost:1313/2025-2-SeLiga/menu/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;Ao ingressarmos na matéria de MDS(métodos de desenvolvimento de software) nos deparamos com uma grande variedade de conceitos, nos quais não tínhamos o conhecimento. É aí que todos os alunos mostram suas capacidades, para se aventurar no mundo do software e aprender conceitos novos!&lt;/p&gt;
 &lt;p&gt;Aqui mostraremos os estudos realizados pela nossa equipe, que nos capacitou no processo de desenvolvimento de software!&lt;/p&gt;

@@ -432,65 +432,6 @@ O objetivo dele é garantir que cada “unidade” do programa funciona corretam
 Normalmente quem faz esses testes são os &lt;strong&gt;desenvolvedores&lt;/strong&gt;, logo após escreverem o código.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Estudos 📚</title>
-      <link>http://localhost:1313/2025-2-SeLiga/estudos/menu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/estudos/menu/</guid>
-      <description>&lt;hr&gt;
-&lt;p&gt;Ao ingressarmos na matéria de MDS(métodos de desenvolvimento de software) nos deparamos com uma grande variedade de conceitos, nos quais não tínhamos o conhecimento. É aí que todos os alunos mostram suas capacidades, para se aventurar no mundo do software e aprender conceitos novos!&lt;/p&gt;
-&lt;p&gt;Aqui mostraremos os estudos realizados pela nossa equipe, que nos capacitou no processo de desenvolvimento de software!&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Foram feitos os seguintes estudos:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/API&#34;&gt;API&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/arquitetura&#34;&gt;Arquitetura&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/ArquiteturaClienteServidor&#34;&gt;Arquitetura Cliente-Servidor&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/Benchmarks&#34;&gt;Benchmarks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/decisao_de_DB&#34;&gt;Decisão de DB&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/DevOps&#34;&gt;DevOps&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/fastapi&#34;&gt;FastAPI&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/figma&#34;&gt;Figma&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/Git_e_GitHub&#34;&gt;Git e GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/github_pages_hugo&#34;&gt;Github Pages com Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/metodologia_agil&#34;&gt;Metodologia ágil&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/protocolo_HTTP&#34;&gt;Protocolo HTTP&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/react&#34;&gt;React&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/requisitos&#34;&gt;Requisitos&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/testes_de_software&#34;&gt;Testes De Software&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/estudos/web_scraping&#34;&gt;Web Scraping&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
       <title>GitHub Pages com HUGO</title>
       <link>http://localhost:1313/2025-2-SeLiga/estudos/github_pages_hugo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

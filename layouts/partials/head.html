@@ -71,7 +71,7 @@
 {{- $stylesheet := $stylesheet | fingerprint }}
 <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink | relURL}}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">
 {{- else }}
-<link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink | relURL}}" rel="preload stylesheet" as="style">
 {{- end }}
 
 {{- /* Search */}}

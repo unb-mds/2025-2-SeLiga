@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/2025-2-SeLiga/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025-2-SeLiga/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Guia de Estudo e Prática: Figma 🎨 | SeLiga</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Este documento serve como um guia abrangente sobre o Figma, com foco em sua aplicação para a criação de protótipos e o design de interfaces de usuário (UI).
+
+O que é o Figma? 💡
+O Figma é uma ferramenta de design de interface e prototipagem, baseada em nuvem. Sua principal característica é a colaboração em tempo real, permitindo que várias pessoas trabalhem no mesmo arquivo simultaneamente.
+
+Design de Interfaces: Permite criar o layout e a estética visual de sites e aplicativos.
+Prototipagem: Transforma designs estáticos em modelos interativos que simulam o funcionamento do produto final.
+Colaboração: Facilita a comunicação entre designers, desenvolvedores e stakeholders (clientes ou professores), que podem comentar e inspecionar o design.
+
+
+Conceitos Fundamentais 🧭
+
+Frame: É a &ldquo;tela&rdquo; do seu projeto. Funciona como uma prancheta de desenho, com dimensões predefinidas para dispositivos (desktop, mobile, tablet) ou tamanhos personalizados.
+Componente: É um elemento de UI reutilizável. Por exemplo, um botão ou um cabeçalho. Criar componentes acelera o processo de design e garante a consistência do projeto.
+Constraints: Regras que definem como os elementos se comportam quando a tela muda de tamanho. Essencial para garantir que seu design seja responsivo.
+Auto Layout: Um recurso poderoso que organiza os elementos em frames automaticamente, facilitando a criação de interfaces flexíveis e responsivas.
+
+
+O Processo de Prototipagem 🛠️
+O processo de design e prototipagem no Figma segue uma hierarquia de fidelidade, que vai do rascunho ao modelo final.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2025-2-SeLiga/estudos/arquivos/figma/">
+<link crossorigin="anonymous" href="/2025-2-SeLiga/assets/css/stylesheet.bf5658f8b68defa6da5d91a2ecdf95130a49e863ffadf2cd7632e70e4151ebac.css" integrity="sha256-v1ZY&#43;LaN76baXZGi7N&#43;VEwpJ6GP/rfLNdjLnDkFR66w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/2025-2-SeLiga/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/2025-2-SeLiga/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/2025-2-SeLiga/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/2025-2-SeLiga/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/2025-2-SeLiga/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2025-2-SeLiga/estudos/arquivos/figma/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="/2025-2-SeLiga/css/custom.min.css">
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/2025-2-SeLiga/" accesskey="h" title="SeLiga (Alt + H)">SeLiga</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/equipe" title="Equipe">
+                    <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
+                    <span>Documentação</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/estudos/index/" title="Estudos">
+                    <span>Estudos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Guia de Estudo e Prática: Figma 🎨
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<p>Este documento serve como um guia abrangente sobre o Figma, com foco em sua aplicação para a criação de protótipos e o design de interfaces de usuário (UI).</p>
+<hr>
+<h3 id="o-que-é-o-figma-">O que é o Figma? 💡<a hidden class="anchor" aria-hidden="true" href="#o-que-é-o-figma-">#</a></h3>
+<p>O Figma é uma ferramenta de design de interface e prototipagem, baseada em nuvem. Sua principal característica é a colaboração em tempo real, permitindo que várias pessoas trabalhem no mesmo arquivo simultaneamente.</p>
+<ul>
+<li><strong>Design de Interfaces:</strong> Permite criar o layout e a estética visual de sites e aplicativos.</li>
+<li><strong>Prototipagem:</strong> Transforma designs estáticos em modelos interativos que simulam o funcionamento do produto final.</li>
+<li><strong>Colaboração:</strong> Facilita a comunicação entre designers, desenvolvedores e stakeholders (clientes ou professores), que podem comentar e inspecionar o design.</li>
+</ul>
+<hr>
+<h3 id="conceitos-fundamentais-">Conceitos Fundamentais 🧭<a hidden class="anchor" aria-hidden="true" href="#conceitos-fundamentais-">#</a></h3>
+<ul>
+<li><strong>Frame:</strong> É a &ldquo;tela&rdquo; do seu projeto. Funciona como uma prancheta de desenho, com dimensões predefinidas para dispositivos (desktop, mobile, tablet) ou tamanhos personalizados.</li>
+<li><strong>Componente:</strong> É um elemento de UI reutilizável. Por exemplo, um botão ou um cabeçalho. Criar componentes acelera o processo de design e garante a consistência do projeto.</li>
+<li><strong>Constraints:</strong> Regras que definem como os elementos se comportam quando a tela muda de tamanho. Essencial para garantir que seu design seja responsivo.</li>
+<li><strong>Auto Layout:</strong> Um recurso poderoso que organiza os elementos em <code>frames</code> automaticamente, facilitando a criação de interfaces flexíveis e responsivas.</li>
+</ul>
+<hr>
+<h3 id="o-processo-de-prototipagem-">O Processo de Prototipagem 🛠️<a hidden class="anchor" aria-hidden="true" href="#o-processo-de-prototipagem-">#</a></h3>
+<p>O processo de design e prototipagem no Figma segue uma hierarquia de fidelidade, que vai do rascunho ao modelo final.</p>
+<ul>
+<li><strong>Wireframing (Baixa Fidelidade):</strong> Foco no layout e na estrutura. Usam-se formas e caixas simples para representar os elementos. É ideal para validar ideias rapidamente e definir o fluxo do usuário sem se preocupar com a estética.</li>
+<li><strong>Mockup (Média Fidelidade):</strong> Adiciona-se cores, fontes e ícones ao wireframe. É uma representação estática da interface, que mostra como o produto vai parecer.</li>
+<li><strong>Protótipo (Alta Fidelidade):</strong> Conecta as telas e os elementos do mockup para simular a interação do usuário. É a fase final do design, onde se testa a usabilidade e o fluxo de navegação.</li>
+</ul>
+<hr>
+<h3 id="aplicação-prática-no-nosso-projeto">Aplicação Prática no Nosso Projeto🚀<a hidden class="anchor" aria-hidden="true" href="#aplicação-prática-no-nosso-projeto">#</a></h3>
+<p>No nosso projeto de dados abertos, o Figma será usado para:</p>
+<ol>
+<li><strong>Criar o Wireframe:</strong> Definir a estrutura da página, a localização dos gráficos, filtros e outras informações.</li>
+<li><strong>Desenhar o Mockup:</strong> Escolher a paleta de cores e o estilo visual que o portal terá.</li>
+<li><strong>Simular o Fluxo:</strong> Criar a navegação entre telas ou a interação de filtros para que a equipe possa testar o fluxo antes da implementação em React.</li>
+</ol>
+<p>O Figma atua como uma <strong>planta baixa do nosso produto</strong>, garantindo que a equipe de front-end tenha um guia claro para a codificação, evitando retrabalho e problemas futuros.</p>
+<hr>
+<h3 id="atalhos-e-comandos-úteis-">Atalhos e Comandos Úteis ⌨️<a hidden class="anchor" aria-hidden="true" href="#atalhos-e-comandos-úteis-">#</a></h3>
+<p>Atalhos e comandos simples no Figma.</p>
+<h4 id="ferramentas-e-criação"><strong>Ferramentas e Criação</strong><a hidden class="anchor" aria-hidden="true" href="#ferramentas-e-criação">#</a></h4>
+<ul>
+<li><strong>V:</strong> Selecionar (move elementos)</li>
+<li><strong>F:</strong> Criar um <strong>Frame</strong> (prancheta)</li>
+<li><strong>R:</strong> Desenhar um retângulo</li>
+<li><strong>O:</strong> Desenhar um círculo</li>
+<li><strong>T:</strong> Criar uma caixa de texto</li>
+<li><strong>L:</strong> Desenhar uma linha</li>
+<li><strong>P:</strong> Ferramenta Caneta (para desenhar formas personalizadas)</li>
+</ul>
+<h4 id="navegação-e-visualização"><strong>Navegação e Visualização</strong><a hidden class="anchor" aria-hidden="true" href="#navegação-e-visualização">#</a></h4>
+<ul>
+<li><strong>Z + clique:</strong> Zoom</li>
+<li><strong>Espaço + arrastar:</strong> Mover a tela</li>
+<li><strong>Shift + 2:</strong> Zoom para o objeto selecionado</li>
+<li><strong>Ctrl/Cmd + Alt/Opt + C:</strong> Copiar as propriedades de um objeto (cor, fonte, etc.)</li>
+<li><strong>Ctrl/Cmd + Alt/Opt + V:</strong> Colar as propriedades em outro objeto</li>
+</ul>
+<h4 id="ações-rápidas"><strong>Ações Rápidas</strong><a hidden class="anchor" aria-hidden="true" href="#ações-rápidas">#</a></h4>
+<ul>
+<li><strong>Ctrl/Cmd + G:</strong> Agrupar objetos selecionados</li>
+<li><strong>Ctrl/Cmd + Shift + G:</strong> Desagrupar objetos</li>
+<li><strong>Ctrl/Cmd + D:</strong> Duplicar um objeto</li>
+<li><strong>Shift + A:</strong> Criar um <strong>Auto Layout</strong> (organiza automaticamente os elementos selecionados)</li>
+</ul>
+<hr>
+<h3 id="referências-de-estudo-">Referências de Estudo 📓<a hidden class="anchor" aria-hidden="true" href="#referências-de-estudo-">#</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=oy5_yJLMZXI">Oque é o Figma</a></li>
+<li><a href="https://www.youtube.com/watch?v=oy5_yJLMZXI">Criando site com o Figma</a></li>
+<li><a href="https://www.youtube.com/watch?v=rbEbsF8o1-8">O que é UI/UX?</a></li>
+<li><a href="https://www.figma.com/community">Figma Community</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/2025-2-SeLiga/">SeLiga</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

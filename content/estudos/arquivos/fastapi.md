@@ -1,4 +1,8 @@
-# Estudo sobre FastAPI
+---
+title: "Estudo sobre FastAPI"
+draft: false
+url: "/estudos/arquivos/fastapi"
+---
 
 ---
 

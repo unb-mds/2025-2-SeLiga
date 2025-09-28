@@ -1,4 +1,8 @@
-# Protocolo HTTP (Hypertext Transfer Protocol)
+---
+title: "Protocolo HTTP (Hypertext Transfer Protocol)"
+draft: false
+url: "/estudos/arquivos/protocolo_HTTP"
+---
 
 ---
 

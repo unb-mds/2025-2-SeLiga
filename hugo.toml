@@ -33,7 +33,7 @@ enableRobotsTXT = true
     enabled = true
     title = "SeLiga"
     subtitle = "Documentação e informações sobre o projeto"
-    imageUrl = "/2025-2-SeLiga/imagens/profile.JPG"  
+    imageUrl = "/2025-2-SeLiga/imagens/profile.jpg"  
     imageWidth = 120
     imageHeight = 120
     

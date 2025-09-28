@@ -1,4 +1,8 @@
-# Arquitetura de Software
+---
+title: "Arquitetura de Software"
+draft: false
+url: "/estudos/arquivos/arquitetura"
+---
 
 ---
 

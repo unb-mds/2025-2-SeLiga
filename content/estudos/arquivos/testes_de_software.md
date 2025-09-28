@@ -1,4 +1,8 @@
-# Estudo sobre Testes de Software
+---
+title: "Estudo sobre Testes de Software"
+draft: false
+url: "/estudos/arquivos/testes_de_software"
+---
 
 ---
 

@@ -1,4 +1,8 @@
-# Estudo de React ⚛️
+---
+title: "Estudo de React ⚛️"
+draft: false
+url: "/estudos/arquivos/react"
+---
 
 ---
 

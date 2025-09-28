@@ -1,4 +1,8 @@
-# Guia de Estudo: Git e GitHub
+---
+title: "Guia de Estudo: Git e GitHub"
+draft: false
+url: "/estudos/arquivos/Git_e_GitHub"
+---
 
 ---
 

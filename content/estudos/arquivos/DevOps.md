@@ -1,4 +1,8 @@
-# Guia de Estudos sobre DevOps
+---
+title: "Guia de Estudos sobre DevOps"
+draft: false
+url: "/estudos/arquivos/DevOps"
+---
 
 ---
 

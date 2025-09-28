@@ -1,4 +1,8 @@
-# Levantamento e Justificativa da Escolha de Banco de Dados 📊
+---
+title: "Levantamento e Justificativa da Escolha de Banco de Dados 📊"
+draft: false
+url: "/estudos/arquivos/decisao_de_DB"
+---
 
 ---
 

@@ -1,4 +1,8 @@
-# Análise de requisitos de software
+---
+title: "Análise de requisitos de software"
+draft: false
+url: "/estudos/arquivos/requisitos"
+---
 
 ---
 

@@ -1,4 +1,8 @@
-# Web Scraping
+---
+title: "Web Scraping"
+draft: false
+url: "/estudos/arquivos/web_scraping"
+---
 
 ---
 

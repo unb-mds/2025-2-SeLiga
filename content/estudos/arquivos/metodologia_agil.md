@@ -1,4 +1,8 @@
-# Estudo de Metodologia Ágil
+---
+title: "Estudo de Metodologia Ágil"
+draft: false
+url: "/estudos/arquivos/metodologia_agil"
+---
 
 ---
 

@@ -1,4 +1,8 @@
-# GitHub Pages com HUGO
+---
+title: "GitHub Pages com HUGO"
+draft: false
+url: "/estudos/arquivos/github_pages_hugo"
+---
 
 ---
 

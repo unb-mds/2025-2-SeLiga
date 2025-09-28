@@ -1,4 +1,8 @@
-# Guia de Estudo e Prática: Figma 🎨
+---
+title: "Guia de Estudo e Prática: Figma 🎨"
+draft: false
+url: "/estudos/arquivos/figma"
+---
 
 ---
 

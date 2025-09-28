@@ -1,4 +1,8 @@
-# Arquitetura Cliente-servidor
+---
+title: "Arquitetura Cliente-servidor"
+draft: false
+url: "/estudos/arquivos/ArquiteturaClienteServidor"
+---
 
 ---
 

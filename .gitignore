@@ -1,0 +1,17 @@
+# ignora package-lock.json
+/package-lock.json
+package-lock.json
+
+# ignore virtual environment
+venv
+.env
+
+# ignora arquivos do node
+node_modules/
+.next/
+dist/
+build/
+out/
+
+# ignora arquivos do fastAPI
+__pycache__/

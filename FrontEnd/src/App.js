@@ -1,121 +1,112 @@
-import Sidebar from './components/Sidebar'; 
-import PaginaNoticias from './components/PaginaNoticias'; 
-import './App.css'; 
+import React, { useState, useEffect } from "react";
+import { Button } from "./components/Button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/Tabs";
+import { Card, CardHeader, CardTitle, CardContent } from "./components/Card";
+import { SearchBar } from "./components/SearchBar";
+import { Badge } from "./components/Badge";
+import api from "./api";
 
 const App = () => {
-  const { filters, filteredArticles, updateSearchTerm, updateVeracity } = useNewsFilters(mockNewsData);
-  const [isLoading, setIsLoading] = useState(false);
+    const [articles, setArticles] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
 
-  const handleRefresh = () => {
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 1000);
-  };
+    // Busca no backend
+    const fetchArticles = async () => {
+        setIsLoading(true);
+        try {
+            const response = await api.get("/");
+            setArticles(response.data.articles || []);
+        } catch (error) {
+            console.error("Erro ao buscar artigos:", error);
+            setArticles([]);
+        }
+        setIsLoading(false);
+    };
 
-  const recentNews = mockNewsData.slice(0, 3);
-  const trendingNews = mockNewsData.filter(article => article.veracity === 'verified').slice(0, 3);
+    useEffect(() => {
+        fetchArticles();
+    }, []);
 
-  return (
-    <div className="p-6 space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-news-header">Central de Notícias</h1>
-          <p className="text-news-subtitle">Acompanhe e analise todas as notícias monitoradas</p>
-        </div>
-        <Button onClick={handleRefresh} disabled={isLoading} className="flex items-center gap-2">
-          <RefreshCw className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
-          Atualizar
-        </Button>
-      </div>
+    const handleRefresh = () => {
+        fetchArticles();
+    };
 
-      {/* Search and Filters */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Filter className="h-5 w-5" />
-            Busca e Filtros
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <SearchBar
-            searchTerm={filters.searchTerm}
-            onSearchChange={updateSearchTerm}
-            placeholder="Buscar notícias por título, fonte ou conteúdo..."
-          />
-          <NewsFilters
-            activeFilter={filters.veracity}
-            onFilterChange={updateVeracity}
-          />
-        </CardContent>
-      </Card>
+    const filteredArticles = articles.filter(article =>
+        article.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
-      <Tabs defaultValue="all" className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="all">Todas as Notícias</TabsTrigger>
-          <TabsTrigger value="recent">Mais Recentes</TabsTrigger>
-          <TabsTrigger value="trending">Em Alta</TabsTrigger>
-        </TabsList>
+    const recentArticles = articles.slice(0, 2);
+    const verifiedArticles = articles.filter(a => a.veracity === "verified");
 
-        <TabsContent value="all" className="space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-news-header">
-              {filters.searchTerm 
-                ? `Resultados para "${filters.searchTerm}"` 
-                : 'Todas as Notícias'
-              }
-            </h2>
-            <div className="flex items-center gap-2">
-              <Badge variant="outline">
-                {filteredArticles.length} {filteredArticles.length === 1 ? 'notícia' : 'notícias'}
-              </Badge>
+    return (
+        <div className="p-6 space-y-6">
+            <div className="flex items-center justify-between">
+                <div>
+                    <h1 className="text-3xl font-bold">Central de Notícias</h1>
+                    <p className="text-gray-600">Acompanhe e analise todas as notícias monitoradas</p>
+                </div>
+                <Button onClick={handleRefresh} disabled={isLoading}>
+                    {isLoading ? "Atualizando..." : "Atualizar"}
+                </Button>
             </div>
-          </div>
 
-          {filteredArticles.length === 0 ? (
             <Card>
-              <CardContent className="text-center py-12">
-                <Newspaper className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                <p className="text-lg font-medium">Nenhuma notícia encontrada</p>
-                <p className="text-sm text-muted-foreground">Tente ajustar os filtros ou termo de busca</p>
-              </CardContent>
+                <CardHeader>
+                    <CardTitle>Busca</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <SearchBar
+                        placeholder="Buscar notícias"
+                        searchTerm={searchTerm}
+                        onSearchChange={setSearchTerm}
+                    />
+                </CardContent>
             </Card>
-          ) : (
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filteredArticles.map((article) => (
-                <NewsCard key={article.id} article={article} />
-              ))}
-            </div>
-          )}
-        </TabsContent>
 
-        <TabsContent value="recent" className="space-y-6">
-          <div className="flex items-center gap-2">
-            <Clock className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-semibold text-news-header">Notícias Mais Recentes</h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {recentNews.map((article) => (
-              <NewsCard key={article.id} article={article} />
-            ))}
-          </div>
-        </TabsContent>
+            <Tabs defaultValue="all" className="w-full">
+                <TabsList>
+                    <TabsTrigger value="all">Todas</TabsTrigger>
+                    <TabsTrigger value="recent">Mais Recentes</TabsTrigger>
+                    <TabsTrigger value="verified">Verificadas</TabsTrigger>
+                </TabsList>
 
-        <TabsContent value="trending" className="space-y-6">
-          <div className="flex items-center gap-2">
-            <Newspaper className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-semibold text-news-header">Notícias Verificadas em Alta</h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {trendingNews.map((article) => (
-              <NewsCard key={article.id} article={article} />
-            ))}
-          </div>
-        </TabsContent>
-      </Tabs>
-    </div>
-  );
+                <TabsContent value="all">
+                    {filteredArticles.map(article => (
+                        <Card key={article.id} className="mb-3">
+                            <CardContent className="flex justify-between items-center">
+                                <span>{article.title}</span>
+                                <Badge variant={article.veracity}>{article.veracity}</Badge>
+                            </CardContent>
+                        </Card>
+                    ))}
+                    {filteredArticles.length === 0 && <p>Nenhuma notícia encontrada.</p>}
+                </TabsContent>
+
+                <TabsContent value="recent">
+                    {recentArticles.map(article => (
+                        <Card key={article.id} className="mb-3">
+                            <CardContent className="flex justify-between items-center">
+                                <span>{article.title}</span>
+                                <Badge variant={article.veracity}>{article.veracity}</Badge>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </TabsContent>
+
+                <TabsContent value="verified">
+                    {verifiedArticles.map(article => (
+                        <Card key={article.id} className="mb-3">
+                            <CardContent className="flex justify-between items-center">
+                                <span>{article.title}</span>
+                                <Badge variant="verified">{article.veracity}</Badge>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </TabsContent>
+            </Tabs>
+        </div>
+    );
 };
 
-
 export default App;
-
-

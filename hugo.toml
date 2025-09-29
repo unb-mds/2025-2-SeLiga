@@ -69,7 +69,7 @@ enableRobotsTXT = true
     weight = 20
 
   [[menu.main]]
-    identifier = "menu"
+    identifier = "menuEstudos"
     name = "Estudos"
-    url = "/menu/"
+    url = "/menuEstudos/"
     weight = 25

@@ -264,7 +264,121 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 * `Link` substitui `<a>` para evitar recarregar a página.
 * React Router organiza a navegação de forma declarativa e simples.
 
+
 ---
+## 6. Estilização no React
+
+### 6.1 CSS Tradicional
+```css
+/* App.css */
+.titulo {
+  color: purple;
+}
+
+import "./App.css";
+
+function App() {
+  return <h1 className="titulo">Hello CSS!</h1>;
+}
+```
+### 6.2 CSS Modules
+```css
+/* Botao.module.css */
+.btn {
+  background: teal;
+  color: white;
+}
+
+import styles from "./Botao.module.css";
+
+function Botao() {
+  return <button className={styles.btn}>Clique</button>;
+}
+```
+### 6.3 Styled Components
+```css
+import styled from "styled-components";
+
+const Botao = styled.button`
+  background: blue;
+  color: white;
+  padding: 10px;
+`;
+
+function App() {
+  return <Botao>Styled!</Botao>;
+}
+```
+## 7. Integração com APIs
+
+### 7.1 Fetch API
+```jsx
+import { useEffect, useState } from "react";
+
+function Usuarios() {
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(data => setDados(data));
+  }, []);
+
+  return <ul>{dados.map(u => <li key={u.id}>{u.name}</li>)}</ul>;
+}
+```
+### 7.2 Axios
+```jsx
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+function Posts() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/posts")
+      .then(res => setPosts(res.data));
+  }, []);
+
+  return <ul>{posts.map(p => <li key={p.id}>{p.title}</li>)}</ul>;
+}
+```
+## 8. Hooks Avançados
+### 8.1 useRef
+```jsx
+import { useRef } from "react";
+function App() {
+  const inputRef = useRef();
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={() => inputRef.current.focus()}>Focar no input</button>
+    </>
+  );
+}
+```
+### 8.2 useReducer
+```jsx
+import { useReducer } from "react";
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment": return { count: state.count + 1 };
+    case "decrement": return { count: state.count - 1 };
+    default: return state;
+  }
+}
+function Contador() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  return (
+    <>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+    </>
+  );
+}
+
+```
 
 ## Guias para Estudo 📓 
 

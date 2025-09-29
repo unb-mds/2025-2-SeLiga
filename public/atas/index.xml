@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Atas on SeLiga</title>
+    <link>http://localhost:1313/2025-2-SeLiga/atas/</link>
+    <description>Recent content in Atas on SeLiga</description>
+    <generator>Hugo -- 0.149.1</generator>
+    <language>pt-br</language>
+    <atom:link href="http://localhost:1313/2025-2-SeLiga/atas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ATA DE REUNIÃO Nº 2 📝</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/03_09_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/03_09_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 03/09/2025
+&lt;strong&gt;Tema:&lt;/strong&gt; Dados Abertos UnB 📊&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;definição-de-cada-integrante-&#34;&gt;&lt;strong&gt;DEFINIÇÃO DE CADA INTEGRANTE&lt;/strong&gt; 🧑‍💻&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Scrum Master:&lt;/strong&gt; Gustavo&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PO (Product Owner):&lt;/strong&gt; Arthur&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Front-end:&lt;/strong&gt; Marcus, Amanda&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Back-end:&lt;/strong&gt; Gustavo, Arthur, Enzo&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Banco de Dados:&lt;/strong&gt; Marcus, Amanda, Enzo&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DevOps:&lt;/strong&gt; Arthur, Erick&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Arquitetura:&lt;/strong&gt; Erick, Enzo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;reuniões-&#34;&gt;&lt;strong&gt;REUNIÕES&lt;/strong&gt; 🗓️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Primeira reunião semanal decidida para toda segunda-feira às 20h30.&lt;/li&gt;
+&lt;li&gt;Segunda reunião semanal (revisão) decidida para toda sexta-feira, com horário a ser votado.&lt;/li&gt;
+&lt;li&gt;As dailys devem ser postadas todos os dias (segunda a sexta) no Telegram.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;abertura-da-sprint-01---análise-de-requisitos-&#34;&gt;&lt;strong&gt;ABERTURA DA SPRINT 01 - Análise de Requisitos&lt;/strong&gt; 🔎&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Cada integrante deve pesquisar e estudar sobre os requisitos do tema escolhido.&lt;/li&gt;
+&lt;li&gt;Ao fim da Sprint, espera-se que as tecnologias tenham sido estudadas para a escolha da que melhor se encaixe no projeto.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Restrições do Tema - Dados Abertos UnB:&lt;/strong&gt; O portal deve ter apenas front-end (GitHub Pages), o banco de dados será em JSON, e a mineração e o processamento dos dados serão feitos por meio de bots executados em pipelines do GitHub Actions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tarefa-para-todos-&#34;&gt;&lt;strong&gt;TAREFA PARA TODOS&lt;/strong&gt; ✅&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Pensar em um nome para o projeto.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO Nº 3🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/08_09_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/08_09_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião onlineData: 08/09/2025&lt;/strong&gt;
+&lt;strong&gt;Tema:&lt;/strong&gt;  Planejamento da semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;sumário-&#34;&gt;&lt;strong&gt;SUMÁRIO&lt;/strong&gt; 📋&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Alinhar a próxima sprint e seus temas prioritários&lt;/li&gt;
+&lt;li&gt;Encerrar a análise de requisitos e iniciar a arquitetura do sistema&lt;/li&gt;
+&lt;li&gt;Aprofundar o entendimento do problema&lt;/li&gt;
+&lt;li&gt;Gerar ideias de requisitos funcionais&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Próxima sprint e temas:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Discussão: Definir objetivos da sprint, priorizar entregas e alinhar critérios de pronto.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Análise de requisitos:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Discussão: Consolidar requisitos atuais, mapear casos de uso e dúvidas em aberto.&lt;/li&gt;
+&lt;li&gt;Decisão: Fechar documentação de requisitos e validar com o time. ✅&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Entendimento do problema:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Discussão: Clarificar escopo, personas e principais dores a resolver.&lt;/li&gt;
+&lt;li&gt;Decisão: Registrar problema-alvo e hipóteses no documento de visão. ✅&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ideias de requisitos funcionais:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Discussão: Brainstorm inicial de funcionalidades essenciais e critérios de aceitação.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ações-e-próximos-passos-&#34;&gt;&lt;strong&gt;AÇÕES E PRÓXIMOS PASSOS&lt;/strong&gt; 🚀&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Planejar próxima sprint (definir objetivo, escopo e critérios de pronto)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fechar análise de requisitos (documento consolidado + validação)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Iniciar arquitetura (diagramas de alto nível, decisões técnicas iniciais)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mapear problema-alvo e personas no doc de visão&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Criar backlog inicial de requisitos funcionais priorizados&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO Nº 4 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/14_09_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/14_09_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 14/09/2025&lt;br&gt;
+&lt;strong&gt;Tema:&lt;/strong&gt; Revisão💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;sumário-&#34;&gt;&lt;strong&gt;SUMÁRIO&lt;/strong&gt; 📋&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Revisão do que foi feito nesta sprint&lt;/li&gt;
+&lt;li&gt;Entender o que foi bom para cada um nessa semana e o que foi ruim&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;O que foi feito:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Discussão:&lt;/strong&gt; cada membro relatou o que fez na semana:&lt;br&gt;
+&lt;strong&gt;Arthur&lt;/strong&gt;&lt;br&gt;
+- Estudou protocolo HTTP&lt;br&gt;
+- Iniciou os estudos sobre o framework fastAPI&lt;br&gt;
+- Ajustou o figma do projeto&lt;br&gt;
+- Desenvolveu os requisitos iniciais e épicos&lt;br&gt;
+&lt;strong&gt;Amanda&lt;/strong&gt;&lt;br&gt;
+- Continuou fazendo a documentação do estudo de React&lt;br&gt;
+- Ainda não começou a analisar o estilo de banco de dados, mas conseguirá na próxima sprint&lt;br&gt;
+&lt;strong&gt;Enzo&lt;/strong&gt;&lt;br&gt;
+- Contribuiu em requisitos&lt;br&gt;
+- Contribuiu nos épicos&lt;br&gt;
+- Quase terminando o estudo de fastAPI com REST&lt;br&gt;
+&lt;strong&gt;Marcus&lt;/strong&gt;&lt;br&gt;
+- Mexeu um pouco em requisitos e épicos&lt;br&gt;
+- Estudou um pouco de React&lt;br&gt;
+- Também ainda não conseguiu analisar os bancos de dados, mas conseguirá na próxima sprint&lt;br&gt;
+&lt;strong&gt;Gustavo&lt;/strong&gt;&lt;br&gt;
+- Tentou criar o gitpages do projeto, mas ainda não encontrou sucesso&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;O que a equipe achou desta sprint:&lt;/strong&gt; em geral, a equipe achou bastante produtiva a sprint, dado que ocorreram alguns imprevistos quanto ao tema. Uma dificuldade, porém, que a equipe vem enfrentando é a falta de tempo e conciliação com outras matérias.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO Nº 5 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/15_09_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/15_09_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 15/09/2025
+&lt;strong&gt;Tema:&lt;/strong&gt; Discussão sobre a Sprint da semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;sumário-&#34;&gt;&lt;strong&gt;SUMÁRIO&lt;/strong&gt; 📋&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Previsão do que será feito nesta próxima sprint.&lt;/li&gt;
+&lt;li&gt;Entender o que será bom para cada um nessa semana e o cada um irá fazer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planejamento da semana:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Discussão: Começamos discutindo o que há de ser feito no projeto pra semana, e quais são os tópicos mais importantes.&lt;/li&gt;
+&lt;li&gt;Decisão: Queremos começar a fazer o protótipo de baixa fidelidade esta semana.  ✅&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Discutimos sobre as datas de entrega:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO Nº 6 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/21_09_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/21_09_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 21/09/2023
+&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Ausente (justificado)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Gustavo: descobriu o que estava dando erro no GitPage e começou o estudo do web scraper&lt;/li&gt;
+&lt;li&gt;Arthur: estudou sobre fast api, focou em como cada método funciona dentro do framework, focando mais na parte de conceito, olhou bastante na parte de testes pretende terminar até amanhã o documento de estudo&lt;/li&gt;
+&lt;li&gt;Enzo: Estudou basicamente a Sprint implementando um back end totalmente funcional usando fast API com rest usando sql Alchemy como banco de dados&lt;/li&gt;
+&lt;li&gt;Erick: Essa semana não deu pra fazer muita coisa mas estudou testes de software , finalizando uma issue com exemplos de códigos que são usados em testes unitários e de integração&lt;/li&gt;
+&lt;li&gt;Marcus: estudou um pouco sobre react e fez o primeiro prototipo de site&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fizemos alinhamentos sobre a release 1&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO Nº 7 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/22_09_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/22_09_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt; 22/09/2025&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tema:&lt;/strong&gt; Discussão sobre a Sprint da semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;PRESENÇA&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;sumário-&#34;&gt;SUMÁRIO 📋&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Previsão do que será feito nesta próxima sprint.&lt;/li&gt;
+&lt;li&gt;Entender o que será bom para cada um nessa semana e o que cada um irá fazer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;TÓPICOS ABORDADOS 🗣️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Planejamento da semana&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Discussão: Começamos discutindo o que há de ser feito no projeto pra semana, e quais são os tópicos mais importantes.&lt;/li&gt;
+&lt;li&gt;Decisão: Cargos e funções designadas pré release 1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Datas de entrega&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Discussão: Nos organizamos melhor, priorizando partes que são de maior importância.&lt;/li&gt;
+&lt;li&gt;Decisão: Decidimos deixar alguns temas de lado para priorizar o que deve ser entregue antes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;ações-e-próximos-passos-&#34;&gt;AÇÕES E PRÓXIMOS PASSOS 🚀&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TAREFA 1:&lt;/strong&gt; &lt;em&gt;Erick&lt;/em&gt; — Terminar toda a parte de Arquitetura de Software. Concluir até [29/09]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TAREFA 2:&lt;/strong&gt; &lt;em&gt;Marcus&lt;/em&gt; —  Terminar protótipo. Concluir até [29/09]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TAREFA 3:&lt;/strong&gt; &lt;em&gt;Amanda&lt;/em&gt; — Terminar protótipo. Concluir até [29/09]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TAREFA 4:&lt;/strong&gt; &lt;em&gt;Arthur&lt;/em&gt; — WebScrapping usando API Spider e documentação do figma. Concluir até [29/09]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TAREFA 5:&lt;/strong&gt; &lt;em&gt;Gustavo&lt;/em&gt; — Concluir o GitPage melhorando o design. Concluir até [29/09]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TAREFA 6:&lt;/strong&gt; &lt;em&gt;Enzo&lt;/em&gt; — Terminar toda a parte de Arquitetura de Software e estudar APIs para mineração de dados. Concluir até [29/09]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;observações-adicionais-&#34;&gt;OBSERVAÇÕES ADICIONAIS ✍️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;O grupo em geral estará um pouco ocupado esta semana, mas tudo está nos conformes.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

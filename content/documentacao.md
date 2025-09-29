@@ -4,4 +4,7 @@ draft: false
 ---
 
 ---
-Aqui terá a documentacao
+
+## ATAS de Reunião
+
+- [Atas](/2025-2-SeLiga/menuAtas/)

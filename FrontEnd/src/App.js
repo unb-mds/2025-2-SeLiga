@@ -11,6 +11,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Busca no backend
   const fetchArticles = async () => {
     setIsLoading(true);
     try {
@@ -40,7 +41,7 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* Navbar */}
+      {/* navbar com button pois não temos rotas ainda*/}
       <nav className="navbar">
         <h1 className="logo">SeLiga</h1>
         <div className="menu">
@@ -51,14 +52,14 @@ const App = () => {
         </div>
       </nav>
 
-      {/* Conteúdo principal */}
+      {/* conteúdo principal */}
       <div className="content-area">
         <h1 className="main-title">Central de Notícias</h1>
         <p className="subtitle">
           Acompanhe e analise todas as notícias monitoradas
         </p>
 
-        {/* Busca centralizada */}
+        {/* busca */}
         <div className="busca-container">
           <SearchBar
             placeholder="Buscar notícias"
@@ -70,7 +71,7 @@ const App = () => {
           </Button>
         </div>
 
-        {/* Tabs */}
+        {/* tabs */}
         <Tabs defaultValue="all">
           <TabsList className="tabs-list">
             <TabsTrigger value="all">Todas</TabsTrigger>

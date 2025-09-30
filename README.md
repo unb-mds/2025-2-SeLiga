@@ -36,7 +36,7 @@ O SeLiga é um sistema dividido em camadas, garantindo uma facil manuntenção e
 | :--- | :--- | :--- |
 | **Backend / API** | Python (FastAPI, Uvicorn) | Gerenciamento de rotas, conexão com o modelo de detecção e entrega de dados. |
 | **Data Base** | MongoDB  | Banco de dados utilizado.|
-| **Machine Learning**| Hugging Face | Utilizado para acessar modelos pré-treinados de Processamento de Linguagem Natural (NLP), fundamentais para a detecção. |
+| **Machine Learning**| Gemini IA | Fornece acesso a modelos de NLP para a detecção, utilizando o poder de modelos pré-treinados.|
 | **Mineração de Dados**| Scrapy|	Framework Python para desenvolver os Spiders que realizam a coleta eficiente e estruturada de artigos de imprensa (web scraping).| 
 | **Frontend / Web** | JavaScript (Reac) | Interface de usuário (UX) para explorar e visualizar os resultados das notícias. |
 | **Ferramentas** | Git, GitHub | Controle de versão e colaboração. |

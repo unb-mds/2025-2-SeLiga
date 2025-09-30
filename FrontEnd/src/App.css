@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1B1E2A; /* preto */
+  background-color: #000000; /* preto */
   padding: 1rem 2rem;
 }
 
@@ -42,10 +42,17 @@ body {
 
 /* Principal */
 .content-area {
-  background-color: #2B303B; /* cinza */
+  background-color: #1B1E2A; /* cinza */
   min-height: 100vh;
-  padding: 2rem;
-}
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 8px; /* Cantos arredondados */
+  margin-bottom: 30px; /* Espaço para a seção de baixo */
+} 
+   
+.main-title {
+  margin-bottom: 20px;
+  color:#e0e0e0; /* Cor do texto do título */
+} 
 
 .main-title {
   font-size: 2rem;
@@ -59,33 +66,72 @@ body {
 
 /* Busca */
 .busca-container {
-  display: flex;
+  display:flex;
+  background-color: #2B303B; 
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 30px;
+  padding: 40px 60px;
+  border-radius: 10px; 
+  margin-bottom: 30px;
+  flex-direction: column;
+  
 }
 
 .busca-container input {
-  width: 300px;
-  padding: 0.5rem;
+  width: 500px;
+  padding: 1rem;
   border-radius: 0.25rem;
   border: 1px solid #FFFFFF;
-  background-color: #1B1E2A;
+  background-color: #030303;
   color: #FFFFFF;
+}
+.container-busca-filtro{
+  display: flex; 
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 600px; 
+  width: 100%
 }
 
 .busca-container input::placeholder {
   color: #CCCCCC;
+  
 }
+
+/* eracidade das noticias */
+.veracidade-filtros{
+  display: flex; 
+  gap: 10px; 
+  margin-top: 15px
+  
+}
+.veracidade-filtros button {
+    /* Sobrescreve o estilo base para o fundo laranja */
+    background-color: #000000; 
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Padding um pouco maior para destacá-los */
+    border-radius: 6px; 
+    font-weight: bold;
+    cursor: pointer;
+    border: 0.5px solid rgb(255, 255, 255); 
+
+    /* Centraliza o ícone e o texto */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+}
+
 
 /* Botões laranja */
 button {
   background-color: #F67655;
   color: #FFFFFF;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
+  padding: 1.05rem;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -106,10 +152,13 @@ button:disabled {
 
 /* Tabs  */
 .tabs-list {
-  display: flex;
-  justify-content: center; /* cent */
-  gap: 2rem; /* espaço entre as tabs */
-  margin-bottom: 1rem;
+    display: flex;
+    justify-content: start;
+    background-color: #2C2F3A;
+    padding: 0;
+    border-radius: 6px;
+    margin-top: 25px;
+    overflow: hidden; 
 }
 
 .tabs-list [data-state="inactive"] {
@@ -131,3 +180,30 @@ button:disabled {
   cursor: pointer;
   border: none;
 }
+
+/* Estilo base dos botões */
+.tabs-list button {
+    flex: 1; /* todos ocupam a mesma altura */
+    color: #C0C0C0;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* pesquisa */
+.mt-4{
+  display: flex; 
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  color: #F67655;
+}
+
+
+
+
+

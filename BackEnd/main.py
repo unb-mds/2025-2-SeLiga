@@ -48,16 +48,19 @@ def equipe():
     return {
         "squad": "Squad 05",
         "membros": [
-            {"nome": "Gustavo", "papeis": ["Scrum Master", "Back-end"]},
-            {"nome": "Arthur", "papeis": ["Product Owner", "Back-end", "DevOps"]},
-            {"nome": "Marcus", "papeis": ["Front-end", "Banco de Dados"]},
-            {"nome": "Amanda", "papeis": ["Front-end", "Banco de Dados"]},
-            {"nome": "Enzo", "papeis": ["Back-end", "Banco de Dados", "Arquitetura"]},
-            {"nome": "Erick", "papeis": ["DevOps", "Arquitetura"]}
+            {"nome": "Gustavo", "papeis": ["Scrum Master", "Back-end"], "imagem_url": "/imagens_equipe/gustavo.jpg"},
+            {"nome": "Arthur", "papeis": ["Product Owner", "Back-end", "DevOps"], "imagem_url": "/imagens_equipe/arthur.jpg"},
+            {"nome": "Marcus", "papeis": ["Front-end", "Banco de Dados"], "imagem_url": "/imagens_equipe/marcus.jpg"},
+            {"nome": "Amanda", "papeis": ["Front-end", "Banco de Dados"], "imagem_url": "/imagens_equipe/amanda.jpg"},
+            {"nome": "Enzo", "papeis": ["Back-end", "Banco de Dados", "Arquitetura"], "imagem_url": "/imagens_equipe/enzo.jpg"},
+            {"nome": "Erick", "papeis": ["DevOps", "Arquitetura"], "imagem_url": "/imagens_equipe/erick.jpg"}
         ]
     }
-    
 # nova endpoint criado para equipe
 # agora quando o front fizer uma requisição para /equipe, receberá a lista de membros do time
 # no caso http://localhost:8000/equipe
+# membro.nome pega o nome
+# membro.papeis pega a lista de papeis
+# memebro.imagem_url pega a url da imagem
+# ai é so fazer a requisição no front pois as rotas ja estao configuradas
 

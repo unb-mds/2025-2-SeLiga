@@ -61,8 +61,6 @@ O projeto segue uma estrutura modular, tipicamente organizada em:
 
 [GitPage](https://unb-mds.github.io/2025-2-SeLiga)
 
-[Figma](https://www.figma.com/board/CIMdLiO4lAXoEHfFq4qZsg/SeLiga?node-id=4006-8018&t=l5rG3v9vWM2C0yq2-1)
-
 ---
 
 ## ⚙️ Como Criar um Ambiente de Desenvolvimento

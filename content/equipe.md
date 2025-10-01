@@ -11,7 +11,7 @@ Somos estudantes de engenharia de Software da Unb!
 
 <div class="team-container"> <div class="team-member">
         <img src="/2025-2-SeLiga/imagens/equipe/gustavo.jpg" alt="Gustavo Emmanuel dos Santos Rodrigues">
-        <p class="member-name">Gustavo E dos Santos Rodrigues</p>
+        <p class="member-name">Gustavo E. dos Santos Rodrigues</p>
     </div>
     <div class="team-member">
         <img src="/2025-2-SeLiga/imagens/equipe/arthur.jpg" alt="Arthur Vilas Boas Laterza">
@@ -23,7 +23,7 @@ Somos estudantes de engenharia de Software da Unb!
     </div>
     <div class="team-member">
     <img src="/2025-2-SeLiga/imagens/equipe/marcus.jpg" alt="Marcus Vinicius Rezende Dos Santos">
-        <p class="member-name">Marcus Vinicius</p>
+        <p class="member-name">Marcus Vinicius R. Dos Santos</p>
     </div>
     <div class="team-member">
     <img src="/2025-2-SeLiga/imagens/equipe/enzo.jpg" alt="Enzo Lopes Ferreira">
@@ -34,3 +34,9 @@ Somos estudantes de engenharia de Software da Unb!
     <p class="member-name">Erick Ryan Caetano Guimaraes</p>
     </div>
 </div>
+
+---
+
+## ATAS de Reunião
+
+- [Atas](/2025-2-SeLiga/menuAtas/)

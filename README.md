@@ -107,6 +107,7 @@ cd frontend
 
 # 3. Instale as dependências JavaScript
 npm install
+npm install concurrently            # Serve para rodar o backend e frontend juntos
 ```
 
 
@@ -115,7 +116,7 @@ npm install
 Inicie o servidor da API (Backend):
 
 ```bash
-npm start 
+npm run start:all
 #Acesse a URL abaixo no seu navegador para começar a usar o SeLiga:
 http://localhost:3000/
 ```

@@ -1,49 +1,209 @@
-.body {
+/* Fundo */
+body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #f7f7f7;
-
+  font-family: Arial, sans-serif;
+  background-color: #2B303B; /* cinza escuro */
+  color: #FFFFFF;
 }
 
-.layout-container {
-    display: flex; 
-    min-height: 100vh; 
+/* Navbar  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000; /* preto */
+  padding: 1rem 2rem;
 }
 
-.Siderbar{
-
-  width: 250px;
-  caret-color: #1B1E2A;
-  color: white;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(17, 26, 141, 0.1);
-
+.navbar .logo {
+  color: #F67655; /* laranja */
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.sidebar-nav ul {
-    list-style: none;
-    padding: 0;
+.navbar .menu {
+  display: flex;
+  gap: 2rem;
 }
 
+.menu button {
+  background: none;
+  border: none;
+  color: #FFFFFF; 
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.menu button:hover {
+  color: #FFFFFF;
+}
+
+/* Principal */
 .content-area {
-    flex-grow: 1;
-    padding: 30px;
-    background-color: #1B1E2A; 
+  background-color: #1B1E2A; /* cinza */
+  min-height: 100vh;
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 8px; /* Cantos arredondados */
+  margin-bottom: 30px; /* Espaço para a seção de baixo */
+} 
+   
+.main-title {
+  margin-bottom: 20px;
+  color:#e0e0e0; /* Cor do texto do título */
+} 
+
+.main-title {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
 }
 
-/* Filtros: */
-.busca-filtros {
-    background-color: #2B303B;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+.subtitle {
+  color: #CCCCCC;
+  margin-bottom: 1.5rem;
 }
-/* Botão de busca*/
-.btn-buscar {
-    background-color: #F67655; 
+
+/* Busca */
+.busca-container {
+  display:flex;
+  background-color: #2B303B; 
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 30px;
+  padding: 40px 60px;
+  border-radius: 10px; 
+  margin-bottom: 30px;
+  flex-direction: column;
+  
+}
+
+.busca-container input {
+  width: 500px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #FFFFFF;
+  background-color: #030303;
+  color: #FFFFFF;
+}
+.container-busca-filtro{
+  display: flex; 
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 600px; 
+  width: 100%
+}
+
+.busca-container input::placeholder {
+  color: #CCCCCC;
+  
+}
+
+/* eracidade das noticias */
+.veracidade-filtros{
+  display: flex; 
+  gap: 10px; 
+  margin-top: 15px
+  
+}
+.veracidade-filtros button {
+    /* Sobrescreve o estilo base para o fundo laranja */
+    background-color: #000000; 
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 20px; /* Padding um pouco maior para destacá-los */
+    border-radius: 6px; 
+    font-weight: bold;
     cursor: pointer;
+    border: 0.5px solid rgb(255, 255, 255); 
+
+    /* Centraliza o ícone e o texto */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
 }
+
+
+/* Botões laranja */
+button {
+  background-color: #F67655;
+  color: #FFFFFF;
+  border: none;
+  padding: 1.05rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Cards */
+.card {
+  background-color: #1B1E2A; /* preto */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+/* Tabs  */
+.tabs-list {
+    display: flex;
+    justify-content: start;
+    background-color: #2C2F3A;
+    padding: 0;
+    border-radius: 6px;
+    margin-top: 25px;
+    overflow: hidden; 
+}
+
+.tabs-list [data-state="inactive"] {
+  background-color: #1B1E2A; /* fundo preto */
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.tabs-list [data-state="active"] {
+  background-color: #F67655; /* laranja */
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+/* Estilo base dos botões */
+.tabs-list button {
+    flex: 1; /* todos ocupam a mesma altura */
+    color: #C0C0C0;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* pesquisa */
+.mt-4{
+  display: flex; 
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  color: #F67655;
+}
+
+
+
+
+

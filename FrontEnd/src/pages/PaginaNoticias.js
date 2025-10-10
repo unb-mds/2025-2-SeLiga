@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "./Button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "./Tabs";
-import { Card, CardContent } from "./Card";
-import { SearchBar } from "./SearchBar";
+import { Button } from "../components/Button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
+import { Card, CardContent } from "../components/Card";
+import { SearchBar } from "../components/SearchBar";
 import api from "../api";
 import "../App.css";
 

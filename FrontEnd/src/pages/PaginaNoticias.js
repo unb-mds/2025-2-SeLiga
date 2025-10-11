@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../components/Button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
-import { Card, CardContent } from "../components/Card";
 import { SearchBar } from "../components/SearchBar";
+import NewsCard from "../components/NewsCard";
+
 import api from "../api";
 import "../App.css";
 
@@ -11,8 +12,23 @@ const PaginaNoticias = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Busca no backend
+  // Teste de Cards de noticias 
+  // APENAS TESTE, PODE EXCLUIR ESSA PARTE QUANDO CONECTAR COM O BACK!
   const fetchArticles = async () => {
+    setIsLoading(true);
+
+    // Simula um pequeno atraso (para parecer uma API real)
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    // Define o estado com os dados de simulação
+    setArticles(MOCK_ARTICLES);
+
+    setIsLoading(false);
+  };
+
+
+  // Busca no backend
+  /*const fetchArticles = async () => {
     setIsLoading(true);
     try {
       const response = await api.get("/");
@@ -23,6 +39,7 @@ const PaginaNoticias = () => {
     }
     setIsLoading(false);
   };
+  */
 
   useEffect(() => {
     fetchArticles();
@@ -80,43 +97,63 @@ const PaginaNoticias = () => {
 
           <TabsContent value="all">
             {filteredArticles.length === 0 ? (
-              <Card className="mt-4">
-                <CardContent>Nenhuma notícia encontrada.</CardContent>
-              </Card>
+
+              <div className="mensagem-vazia mt-4">
+                Nenhuma notícia encontrada.
+              </div>
             ) : (
-              filteredArticles.map((article) => (
-                <Card key={article.id} className="mt-4">
-                  <CardContent>{article.title}</CardContent>
-                </Card>
-              ))
+
+              //O mapeamento dos artigos 
+              <div className="news-grid"> 
+                {filteredArticles.map((article) => (
+                <NewsCard
+                  key={article.id}
+                  title={article.title}
+                  source={article.source || 'Jornal Exemplo'}
+                  date={article.date || '10/10/2025'}
+                  veracity={article.veracity}
+                />
+                ))}
+              </div>
             )}
           </TabsContent>
 
           <TabsContent value="recent">
             {recentArticles.length === 0 ? (
-              <Card className="mt-4">
-                <CardContent>Nenhuma notícia recente.</CardContent>
-              </Card>
+              <div className="mensagem-vazia mt-4">Nenhuma notícia recente.</div>
             ) : (
-              recentArticles.map((article) => (
-                <Card key={article.id} className="mt-4">
-                  <CardContent>{article.title}</CardContent>
-                </Card>
-              ))
+              
+              //Remove o aninhamento e use a sintaxe de props
+              <div className="news-grid"> 
+              {recentArticles.map((article) => (
+                <NewsCard
+                  key={article.id}
+                  title={article.title}
+                  source={article.source || 'Jornal Exemplo'}
+                  date={article.date || '10/10/2025'}
+                  veracity={article.veracity}
+                />
+              ))}
+              </div>
             )}
           </TabsContent>
 
           <TabsContent value="verified">
             {verifiedArticles.length === 0 ? (
-              <Card className="mt-4">
-                <CardContent>Nenhuma notícia verificada.</CardContent>
-              </Card>
+              <div className="mensagem-vazia mt-4">Nenhuma notícia em Alta.</div>
             ) : (
-              verifiedArticles.map((article) => (
-                <Card key={article.id} className="mt-4">
-                  <CardContent>{article.title}</CardContent>
-                </Card>
-              ))
+              //Remove o aninhamento e use a sintaxe de props
+              <div className="news-grid"> 
+              {verifiedArticles.map((article) => (
+                <NewsCard
+                  key={article.id}
+                  title={article.title}
+                  source={article.source || 'Jornal Exemplo'}
+                  date={article.date || '10/10/2025'}
+                  veracity={article.veracity}
+                />
+              ))}
+              </div>
             )}
           </TabsContent>
         </Tabs>
@@ -124,5 +161,13 @@ const PaginaNoticias = () => {
     </div>
   );
 };
-
 export default PaginaNoticias;
+
+// Dados de simulação para testar o visual e o layout dos cards
+const MOCK_ARTICLES = [
+  { id: 101, title: 'Inteligência Artificial substituirá 40% dos empregos até 2030, diz estudo.', veracity: 'dubious', source: 'Tech News Brasil', date: '21/10/2025' },
+  { id: 102, title: 'Novo tratamento COVID-19 aprovado pela Anvisa mostra eficácia de 95%.', veracity: 'verified', source: 'Portal G1', date: '20/10/2025' },
+  { id: 103, title: 'Cura definitiva do câncer descoberta por cientista brasileiro.', veracity: 'fake', source: 'Ciência Hoje', date: '19/10/2025' },
+  { id: 104, title: 'Investimento em educação pública aumenta 15% em 2024.', veracity: 'verified', source: 'Ministério da Educação', date: '18/10/2025' },
+  { id: 105, title: 'Novo aplicativo promete detectar doenças através de selfies.', veracity: 'dubious', source: 'Inovação Digital', date: '17/10/2025' },
+];  

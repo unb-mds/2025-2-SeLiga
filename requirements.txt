@@ -1,3 +1,4 @@
 fastapi==0.117.1
 uvicorn==0.37.0
 pydantic==1.10.14
+Scrapy==2.13.3

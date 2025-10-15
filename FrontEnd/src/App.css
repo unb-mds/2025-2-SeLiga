@@ -1,3 +1,5 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 /* Fundo */
 body {
   margin: 0;
@@ -12,7 +14,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #000000; /* preto */
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
 }
 
 .navbar .logo {
@@ -45,7 +47,6 @@ body {
   background-color: #1B1E2A; /* cinza */
   min-height: 100vh;
   padding: 30px; /* Espaçamento interno */
-  border-radius: 8px; /* Cantos arredondados */
   margin-bottom: 30px; /* Espaço para a seção de baixo */
 } 
    
@@ -100,7 +101,7 @@ body {
   
 }
 
-/* eracidade das noticias */
+/* Veracidade das noticias */
 .veracidade-filtros{
   display: flex; 
   gap: 10px; 
@@ -108,11 +109,10 @@ body {
   
 }
 .veracidade-filtros button {
-    /* Sobrescreve o estilo base para o fundo laranja */
     background-color: #000000; 
     color: white;
     border: none;
-    padding: 10px 20px; /* Padding um pouco maior para destacá-los */
+    padding: 10px 20px; 
     border-radius: 6px; 
     font-weight: bold;
     cursor: pointer;
@@ -130,25 +130,12 @@ button {
   background-color: #F67655;
   color: #FFFFFF;
   border: none;
-  padding: 1.05rem;
-  border-radius: 6px;
+  padding: 0.5rem;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
 }
 
-button:disabled {
-  background-color: #9ca3af;
-  cursor: not-allowed;
-}
-
-/* Cards */
-.card {
-  background-color: #1B1E2A; /* preto */
-  border-radius: 0.5rem;
-  padding: 1rem;
-  color: #FFFFFF;
-  margin-bottom: 0.75rem;
-}
 
 /* Tabs  */
 .tabs-list {
@@ -161,25 +148,6 @@ button:disabled {
     overflow: hidden; 
 }
 
-.tabs-list [data-state="inactive"] {
-  background-color: #1B1E2A; /* fundo preto */
-  color: #FFFFFF;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-}
-
-.tabs-list [data-state="active"] {
-  background-color: #F67655; /* laranja */
-  color: #FFFFFF;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-}
 
 /* Estilo base dos botões */
 .tabs-list button {
@@ -190,7 +158,7 @@ button:disabled {
     border: none;
     cursor: pointer;
     font-size: 0.95rem;
-    font-weight: 500;
+      
     transition: background-color 0.2s, color 0.2s;
 }
 
@@ -203,6 +171,60 @@ button:disabled {
   color: #F67655;
 }
 
+/*------------NewsCards---------------*/
+
+.news-card{
+  background-color: #2B303B;
+  color: #ffffff;
+  padding: 0; 
+  border: none !important;
+  border-radius: 10px;
+
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Área para a Imagem/Placeholder */
+.card-image-placeholder {
+  height: 180px; /* Altura da imagem no seu mockup */
+  background-color: #2B303B; /* Fundo placeholder, pode ser substituído por URL */
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover; 
+  position: relative; 
+}
+
+/* Estilo do Selo de Veracidade (Badge) */
+.veracity-badge {
+    position: absolute !important; 
+    top: 30px; 
+    right: 30px;
+    padding: 12px 20px;
+    font-size: 15px;
+    z-index: 10; /* Garante que o selo fique acima da imagem */
+}
+
+/* Estilo do Corpo do Conteúdo */
+.card-content-body {
+    padding: 15px; /* Espaço interno para o título e rodapé */
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Rodapé (Fonte e Data) */
+.card-footer {
+    font-size: 0.95rem;
+    color: #F67655;
+    margin-top: 10px;
+}
 
 
 

@@ -103,7 +103,7 @@ Use um gerenciador de versão (como o nvm é o mais recomendado) para garantir a
 nvm use 18.19.1
 
 # 2. Navegue para a pasta do frontend
-cd frontend
+cd FrontEnd
 
 # 3. Instale as dependências JavaScript
 npm install

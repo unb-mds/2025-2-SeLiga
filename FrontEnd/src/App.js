@@ -1,4 +1,4 @@
-import PaginaNoticias from "./components/PaginaNoticias";
+import PaginaNoticias from "./pages/PaginaNoticias";
 import NavBar from "./components/NavBar";
 
 

@@ -4,42 +4,43 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #2B303B; /* cinza escuro */
+  background-color: #1B1E2A; 
   color: #FFFFFF;
 }
 
 /* Navbar  */
+
+/* Navbar  */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000000; /* preto */
-  padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    padding: 1rem 5rem;
+}
+.nav-link {
+   
+    /* Cor do texto para o seu tema dark mode */
+    color: white; 
+    font-weight: bold;
+    font-size: 1rem;
+
 }
 
-.navbar .logo {
-  color: #F67655; /* laranja */
-  font-weight: bold;
-  font-size: 1.5rem;
+.nav-link:hover {
+    /* Efeito ao passar o mouse */
+    color: #F67655;
 }
 
-.navbar .menu {
-  display: flex;
-  gap: 2rem;
+/* Estilo para o container dos links */
+.menu-links {
+    display: flex;
+    gap: 2rem; /* Espaçamento entre os links */
+    align-items: center;
+    
+    
 }
-
-.menu button {
-  background: none;
-  border: none;
-  color: #FFFFFF; 
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0;
-}
-
-.menu button:hover {
-  color: #FFFFFF;
+.logo{
+  color: #F67655;
 }
 
 /* Principal */
@@ -226,6 +227,60 @@ button {
     margin-top: 10px;
 }
 
+/* ----------------------------------------------------
+   ---------------- PAGINA: SOBRE ---------------------
+   ---------------------------------------------------- */
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    /* 3 colunas de largura igual, com espaçamento */
+    gap: 25px;                                /* Espaço entre os cartões */
+    margin-top: 40px;                         /* Afastamento do título */
+}
+
+/* Responsividade para Tablets */
+@media (max-width: 992px) {
+    .equipe-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 576px) {
+    .equipe-grid {
+        grid-template-columns: 1fr;           /* 1 coluna em celulares */
+    }
+}
+
+
+/* ESTILO DO CARD INDIVIDUAL (MembroCard.js) */
+.membro-card {
+    background-color: #2B303B !important; 
+    border: none !important;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ESTILO DA FOTO CIRCULAR */
+.membro-foto {
+    width: 160px;                         /* Dimensões do círculo */
+    height: 160px;
+
+    border-radius: 50%;                   /* Faz a div ser um círculo */    
+    margin: 0 auto 15px auto;             /* Centraliza a foto no cartão */
+
+    background-size: cover;               /* Garante que a imagem preencha o círculo */
+    background-position: center;
+    border: 2px solid #F67655;          /* Adiciona uma borda sutil ao redor da foto */
+}
+
+/* ESTILO DOS PAPÉIS (Tags) */
+.card-text {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-style: italic;
+}
 
 
 

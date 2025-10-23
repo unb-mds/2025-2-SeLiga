@@ -1,46 +1,47 @@
 import scrapy
 
-
 class MetropolesSpider(scrapy.Spider):
-    name = "metropoles"
-    allowed_domains = ["metropoles.com"]
-    start_urls = ["https://metropoles.com/ultimas-noticias/"]
+    
+    name = 'metropoles'
+    allowed_domains = ['metropoles.com']
+    start_urls = ['https://www.metropoles.com/ultimas-noticias/']
 
     def parse(self, response):
-        """
-        Aqui analiso a página de "Últimas Notícias".
-        Ele itera sobre cada notícia, verifica se a categoria é "Na Mira",
-        e só então segue o link.
-        """
-        self.log(f'Analisando a página de categoria: {response.url}')
-        
-        noticias = response.css('article.m-feed-news')
+        self.log(f'Analisando a página de últimas notícias: {response.url}')
+
+        noticias = response.css('article[class*="NoticiaWrapper__Article"]')
+
+        self.log(f"Encontrados {len(noticias)} cards de notícia na página.")
 
         for noticia in noticias:
-            categoria = noticia.css('span.m-label::text').get()
+            link = noticia.css('h5.noticia__titulo a::attr(href)').get()
+            
+            if link:
+                yield response.follow(response.urljoin(link), callback=self.parse_artigo)
 
-            if categoria and 'na mira' in categoria.strip().lower():
-                link = noticia.css('a::attr(href)').get()
-
-                if link:
-                    self.log(f'Notícia da categoria "Na Mira" encontrada: {link}')
-                    yield response.follow(link, callback=self.parse_artigo)
-    
     def parse_artigo(self, response):
+        
         self.log(f'Extraindo dados do artigo: {response.url}')
         
-        titulo = response.css('h1.m-headline::text').get()
-        autor = response.css('a.m-author-name__link::text').get()
-        data_publicacao = response.css('time[itemprop="datePublished"]::attr(datetime)').get()
-        paragrafos = response.css('div.m-body p::text').getall()
-        corpo_texto = '\n'.join(paragrafo.strip() for paragrafo in paragrafos if paragrafos.strip())
+        categoria = response.css('div[class*="HeaderNoticiaWrapper__Categoria"] a::text').get()
+        
+        titulo = response.css('h1[class*="Text__TextBase"]::text').get()
+        
+        autor = response.css('div[class*="HeaderNoticiaWrapper__Autor"] a::text').get()
+        
+        data_publicacao = response.css('time[class*="HeaderNoticiaWrapper__DataPublicacao"]::attr(datetime)').get()
+        
+        paragrafos = response.css('div[class*="ConteudoNoticiaWrapper__Artigo"] p::text').getall()
+
+        # combinação dos paragrafos em um só corpo de texto
+        corpo_texto = '\n'.join(paragrafo.strip() for paragrafo in paragrafos if paragrafo.strip())
 
         yield {
-            'url':response.url,
-            'titulo':titulo.strip() if titulo else None,
-            'autor':autor.strip() if autor else None,
-            'data_publicacao':data_publicacao,
-            'corpo_texto':corpo_texto,
-            'fonte':self.name,
-            'categoria': 'Na Mira',
+            'url': response.url,
+            'titulo': titulo.strip() if titulo else None,
+            'autor': autor.strip() if autor else None,
+            'data_publicacao': data_publicacao,
+            'categoria': categoria.strip() if categoria else 'Geral',
+            'corpo_texto': corpo_texto,
+            'fonte': self.name,
         }

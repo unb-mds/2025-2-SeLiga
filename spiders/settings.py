@@ -14,6 +14,8 @@ NEWSPIDER_MODULE = "spiders.spiders"
 
 ADDONS = {}
 
+# Indentação
+FEED_EXPORT_INDENT = 4
 
 # User agent que identifica o projeto
 USER_AGENT = "SeLiga/0.1.0"

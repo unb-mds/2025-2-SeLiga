@@ -19,6 +19,7 @@ FEED_EXPORT_INDENT = 4
 
 # User agent que identifica o projeto
 USER_AGENT = "SeLiga/0.1.0"
+#USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36'
 
 # Isso faz com que o scrapy obedeça as regras de "robots.txt"
 ROBOTSTXT_OBEY = True

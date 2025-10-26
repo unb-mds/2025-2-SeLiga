@@ -27,21 +27,18 @@ class MetropolesSpider(scrapy.Spider):
         
         titulo = response.css('h1[class*="Text__TextBase"]::text').get()
         
-        autor = response.css('div[class*="HeaderNoticiaWrapper__Autor"] a::text').get()
-        
         data_publicacao = response.css('time[class*="HeaderNoticiaWrapper__DataPublicacao"]::attr(datetime)').get()
         
         paragrafos = response.css('div[class*="ConteudoNoticiaWrapper__Artigo"] p::text').getall()
 
         # combinação dos paragrafos em um só corpo de texto
-        corpo_texto = '\n'.join(paragrafo.strip() for paragrafo in paragrafos if paragrafo.strip())
+        corpo_texto = ' '.join(paragrafo.strip() for paragrafo in paragrafos if paragrafo.strip())
 
         yield {
-            'url': response.url,
             'titulo': titulo.strip() if titulo else None,
-            'autor': autor.strip() if autor else None,
-            'data_publicacao': data_publicacao,
-            'categoria': categoria.strip() if categoria else 'Geral',
-            'corpo_texto': corpo_texto,
+            'texto': corpo_texto,
             'fonte': self.name,
+            'url': response.url,
+            'data_coleta': data_publicacao,
+            'categoria': categoria.strip() if categoria else None,
         }

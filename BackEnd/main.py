@@ -248,4 +248,3 @@ def buscar_por_status(status: str):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao buscar notícias: {str(e)}")
-

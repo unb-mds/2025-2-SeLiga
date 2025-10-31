@@ -137,7 +137,6 @@ button {
   cursor: pointer;
 }
 
-
 /* Tabs  */
 .tabs-list {
     display: flex;
@@ -149,7 +148,6 @@ button {
     overflow: hidden; 
 }
 
-
 /* Estilo base dos botões */
 .tabs-list button {
     flex: 1; /* todos ocupam a mesma altura */
@@ -159,7 +157,6 @@ button {
     border: none;
     cursor: pointer;
     font-size: 0.95rem;
-      
     transition: background-color 0.2s, color 0.2s;
 }
 

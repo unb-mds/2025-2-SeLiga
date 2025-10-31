@@ -6,9 +6,10 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1B1E2A; 
   color: #FFFFFF;
+  width: 100%;
+  overflow-x: hidden; 
+  padding: 0;
 }
-
-/* Navbar  */
 
 /* Navbar  */
 .navbar {
@@ -223,7 +224,6 @@ button {
     color: #F67655;
     margin-top: 10px;
 }
-
 /* ----------------------------------------------------
    ---------------- PAGINA: SOBRE ---------------------
    ---------------------------------------------------- */
@@ -279,5 +279,197 @@ button {
     font-style: italic;
 }
 
+/* ----------------------------------------------------
+   ----- PESTILOS DA SEÇÃO PROPÓSITO E VALORES --------
+   ---------------------------------------------------- */
+   
+
+.proposito-card {
+    font-family: Inter;
+    background-color: #2B303B; 
+    border: none;
+    color: white;
+    border-radius: 15px;
+    padding: 48px;
+    text-align: justify;
+    font-size: 21px;
+}
+
+
+/* Estilo para os Cards de Valor (Verificação, Monitoramento, Transparência) */
+.valor-cards-Confiavel, .valor-cards-monitoramento, .valor-cards-trasparencia{
+  font-family: Inter;
+  background-color: rgba(0, 173, 55, 0.3);
+  border-color: #00750A;
+  color: #ebebeb;
+  font-size: 18px ;
+  border-radius: 15px;
+  
+}
+
+.valor-cards-monitoramento{
+  background-color: rgba(246, 128, 85, 0.2);
+  border-color: #ff5c21;
+  
+}
+.valor-cards-trasparencia{
+  background-color: rgba(213, 255, 0, 0.2);
+  border-color: #fffb00;
+
+}
+
+/*------- icones -------*/
+.shild{
+  color: #14d825;
+  margin-right: 15px;
+  width: 3rem;
+}
+.boxes{
+  color: #F67655;
+  margin-right: 15px;
+  width: 3rem;
+}
+.people{
+  color: #EFFF08;
+  margin-right: 15px;
+  width: 3rem;
+}
+.raio{
+  background: linear-gradient(45deg, #FFEE00, #F67655);
+  border-radius: 10%; 
+  margin-right: 15px;
+  fill: rgb(255, 255, 255); 
+}
+.alvo{
+  color: #F67655;
+}
+.retangulo1 {
+  width: 100px; 
+  height: 6px; 
+  background: linear-gradient(45deg, #FFEE00, #F67655);
+}
+.retangulo2 {
+  width: 100px; 
+  height: 6px; 
+  background: linear-gradient(45deg, #F67655, #FFEE00);
+}
+
+/*-------------------------------*/
+
+.titulo-com-icone {
+  font-family:Joanna;
+  display: flex;            /* Alinha horizontalmente */
+  align-items: center;      /* Centraliza verticalmente o ícone e o texto */
+  margin-bottom: 20px;      /* Adiciona espaço abaixo do título */
+}
+.card-title-icon{
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  gap: 15px;
+  font-size: 2.5rem;
+}
+
+.titulo-proposito{
+  font-family: Inter;
+  font-weight: regular;
+  color: #FFFFFF;
+  font-size: 23px;
+}
+
+
+/* ---------------------------------------------------- 
+   ----- ESTILO DO CONTÊINER PRINCIPAL DO HEADER ------
+/* ---------------------------------------------------- */
+.sobre-header-container {
+    padding-top: 80px;                /* Espaço grande acima do título */
+    padding-bottom: 10px;
+    text-align: center;
+    color: white;                   /* Garante que o texto seja branco */
+    z-index: 1; 
+}
+.shield-icon-background {
+  color: #F67655;
+  opacity: 0.3;                       /* Deixa o ícone bem transparente no fundo */
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);   /* Garante centralização exata */
+  z-index: 0;                         /* Coloca o escudo atrás do texto */
+
+}
+.header-title{
+  font-family: Hepta Slab;
+  line-height: 1.2;
+  font-weight: bold;
+  font-size: 4.4rem;
+  color: #ffffff;
+  z-index: 2;                         /* Garante que o texto fique acima do escudo */
+  position: relative;
+
+}
+.header-subtitle{
+  font-family: inter;
+  font-weight: lighter;
+  font-size: 1.8rem;
+  color: #C0C0C0;
+  z-index: 2;
+  position: relative;
+
+}
+.decorative-line-container{
+  align-items: center;      /* Centraliza verticalmente o ícone e o texto */
+  display: flex;
+  gap: 15px;
+  font-size: 2.5rem;
+  z-index: 1; 
+  margin: 0 auto;
+  width: 250px;
+  
+}
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE GERAL (CELULARES E TABLETS) */
+/* ---------------------------------------------------- */
+
+/* Para telas menores que 992px (Tablets) */
+@media (max-width: 992px) {
+    .header-title {
+        font-size: 3.5rem; 
+    }
+        .proposito-section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+/* Para telas menores que 576px (Celulares) */
+@media (max-width: 576px) {
+    
+    .header-title {
+        font-size: 2.7rem; 
+    }
+
+    .header-subtitle {
+        font-size: 1rem; 
+    }
+    .proposito-card {
+      padding: 15px;
+        text-align: left; 
+        font-size: 15px; 
+    }
+    .raio {
+        width: 50px; 
+        height: 70px;
+    }
+
+    .card-title-icon {
+        font-size: 2rem; /* Reduz o tamanho do título dentro do card */
+    }
+    
+    .valor-cards-Confiavel, .valor-cards-monitoramento, .valor-cards-trasparencia {
+        font-size: 12px;
+        padding: 0px;
+    }
+}
 
 

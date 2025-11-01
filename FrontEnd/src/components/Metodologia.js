@@ -20,8 +20,8 @@ function Metodologia() {
             <Row className="justify-content-center">
 
                 {/* Coluna 1: NOSSO PROPÓSITO (Metodologia) */}
-                <Col md={6} className="mb-4">
-                    <Card className="proposito-card">
+                <Col md={6}>
+                    <Card className="metodologia-card">
                         <Card.Body>
                             <div className="titulo-com-icone">
                                 <div className='quadrado'>
@@ -40,18 +40,21 @@ function Metodologia() {
                             </p>
                             {/* Tags de Reunião */}
                             <div className="metodologia-tags">
-                                <Badge className="tag-sprint">Semana por Sprint</Badge>
-                                <Badge className="tag-reuniao">Daily Standups</Badge>
-                                <Badge className="tag-reuniao">Retrospectivas</Badge>
-                                <Badge className="tag-reuniao">Code Review</Badge>
+                                
+                                <Badge className="tag-sprint"> <h5 className='numero-sprint'> 1 </h5> Semana por Sprint</Badge>
+                                <div className="metodologia-tags-menores">
+                                    <Badge className="tag-reuniao">Daily Standups</Badge>
+                                    <Badge className="tag-reuniao">Retrospectivas</Badge>
+                                    <Badge className="tag-reuniao">Code Review</Badge>
+                                </div>
                             </div>
                         </Card.Body>
                     </Card>
                 </Col>
 
                 {/* Coluna 2: ARQUITETURA E DADOS */}
-                <Col md={6} className="mb-4">
-                    <Card className="proposito-card">
+                <Col md={6}>
+                    <Card className="metodologia-card">
                         <Card.Body>
 
                             <div className='titulo-com-icone'>
@@ -93,18 +96,27 @@ function Metodologia() {
 
             {/* Seção Final: Citação de Encerramento */}
             <Row className="justify-content-center mt-5">
-                <Col md={10} className="text-center citacao-block">
-                    {/* Ícone decorativo (círculo) no fundo do texto */}
-                    <div className="decoracao-fundo-citacao"></div>
-                    <p className="citacao">
-                        "Este projeto representa nossa jornada de aprendizado em **Métodos de Desenvolvimento de Software**, aplicando teoria à prática para criar uma solução tecnológica real."
-                    </p>
-                    <p className="assinatura-citacao">Estudantes UnB - MDS 2024</p>
+                <Col md={11}>
+                    <div className="citacao-container text-center py-5">
+                        <div className="citacao-icone-decorativo">
+                            <div className='circulo-grande'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="palette-citacao" viewBox="0 0 16 16">
+                                    <path d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07M8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3M5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        {/* A Citação */}
+                        <p className="citacao-texto">
+                            "Este projeto representa nossa jornada de aprendizado em Métodos de Desenvolvimento de Software,
+                             aplicando teoria à prática para criar uma solução tecnológica real."
+                        </p>
+                        <div className="citacao-assinatura-bloco">
+                            <span className="assinatura-texto">Estudantes UnB - MDS 2024</span>
+                        </div>
+                    </div>
                 </Col>
             </Row>
-
         </Container>
     );
-}
-
-export default Metodologia;
+}export default Metodologia;

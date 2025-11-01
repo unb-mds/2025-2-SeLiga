@@ -37,7 +37,7 @@ function Proposito() {
                 </Col>
 
                 {/*CARDS DE VALOR - Os Três Cartões Menores */}
-                <Col md={5}>
+                <Col md={4} className="mb-3">
                     <div className="valor-cards-proposito">
 
                         {/* 1. CARD: Verificação Confiável */}

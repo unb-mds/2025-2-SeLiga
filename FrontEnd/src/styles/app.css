@@ -7,8 +7,8 @@ body {
   background-color: #1B1E2A;                   /* cor de fundo da página */
   color: #FFFFFF;                              /* cor do texto */
   width: 100%;                                   /* ocupa 100% da largura da tela */
-  overflow-x: hidden;                            /* evita barra de rolagem horizontal */
-  padding: 0;                                    /* remove padding padrão do body */
+  overflow-x: hidden !important;                 /* evita barra de rolagem horizontal */
+  padding: 0; 
 }
 
 /* ------------------ NAVBAR ----------------- */
@@ -16,7 +16,12 @@ body {
   display: flex;                                 /* layout flexível */
   align-items: center;                           /* centraliza verticalmente os itens */
   background-color: #000000;                   /* cor de fundo da navbar */
-  padding: 1rem 5rem;                            /* espaçamento interno: 1rem vertical, 5rem horizontal */
+  padding: 1rem 11rem;                           /* espaçamento interno: 1rem vertical, 5rem horizontal */
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  
 }
 
 .logo {

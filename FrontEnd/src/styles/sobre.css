@@ -11,7 +11,7 @@
   color: #F67655;                   /* cor do ícone */
   opacity: 0.3;                       /* transparência do ícone */
   position: absolute;                 /* posicionamento absoluto */
-  top: 33%;                           /* distância do topo */
+  top: 36%;                           /* distância do topo */
   left: 50%;                          /* distância da esquerda */
   transform: translate(-50%, -50%);   /* centraliza o ícone */
   z-index: 0;                         /* atrás de outros elementos */
@@ -34,6 +34,17 @@
   color: #C0C0C0;                  /* cor do texto */
   z-index: 2;                        /* na frente do ícone */
   position: relative;                /* para z-index funcionar */
+  margin-top: 0; 
+  margin-bottom: 10px;
+}
+.header-subtitle-small{
+  font-family: Inter; 
+  font-weight:300;
+               
+  font-size: 1.4rem;                
+  color: #C0C0C0;                 
+  margin-top: 0; 
+
 }
 
 .decorative-line-container {
@@ -50,6 +61,8 @@
   text-align: center;                /* centraliza o texto */
   padding-top: 50px;                 /* espaçamento superior */
   padding-bottom: 20px;              /* espaçamento inferior */
+  margin-top: 0;                     /* zera a margem superior */
+  padding-top: 0;
 }
 
 .equipe-grid {
@@ -94,6 +107,12 @@
   padding: 48px;                              /* espaçamento interno */
   text-align: justify;                        /* justifica o texto */
   font-size: 21px;                            /* tamanho da fonte */
+  width: 95%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);  /* sombra suave*/
+}
+.roposito-section{
+  margin-bottom: 0; /* Zere a margem inferior aqui */
+    padding-bottom: 0;
 }
 
 /* ------------------ VALORES ------------------ */
@@ -104,6 +123,7 @@
   border-radius: 15px;                        /* bordas arredondadas */
   color: #ebebeb;                           /* cor do texto */
   font-size: 18px;                            /* tamanho da fonte */
+  box-shadow: 5px 5px 10px rgba(3, 3, 3, 0.15);
 }
 
 .valor-cards-Confiavel {
@@ -126,15 +146,56 @@
 .boxes { color: #F67655; margin-right: 15px; width: 3rem; }
 .people { color: #EFFF08; margin-right: 15px; width: 3rem; }
 .people2 { color: #F67655; margin-right: 5px; width: 4rem; }
+.palette { color: #E5FA41; margin-right: 5px; }
+.alvo { color: #F67655; }     
+
+.caixa { 
+  color: #ffffff; 
+  margin-right: 15px; 
+  position: relative;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
 
 .raio {
-  background: linear-gradient(45deg, #FFEE00, #F67655);   /* gradiente */
-  border-radius: 10%;                                         /* cantos arredondados */
-  margin-right: 15px;                                         /* espaço à direita */
-  fill: white;                                              /* cor do preenchimento SVG */
+  color: #ffffff; 
+  margin-right: 15px; 
+  position: relative;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}                                              
+.brain{
+  width: 35px;
+  height: 40px;
+  filter: invert(70%) sepia(60%) saturate(6000%) hue-rotate(340deg) brightness(100%) contrast(100%);
+}
+.quadrado{
+  background: linear-gradient(40deg, #FFEE00, #F67655);
+
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+    
+  margin-right: 15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
 }
 
-.alvo { color: #F67655; }                                   /* cor do ícone alvo */
+.quadrado2{
+  background: linear-gradient(40deg, #FFEE00, #F67655);
+
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+    
+  margin-right: 15px;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
 
 .retangulo1,
 .retangulo2 {
@@ -178,6 +239,11 @@
   justify-content: center;           /* centraliza horizontalmente */
   gap: 10px;                         /* espaço entre elementos */
   margin-bottom: 5px;                /* margem inferior */
+  margin-top: 0;
+}
+.icon-titulo h2{
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .subtitulo {
@@ -185,6 +251,71 @@
   font-size: 3rem;                   /* tamanho do texto */
   font-weight: bold;                 /* negrito */
 }
+/* ------------------ METODOLOGIA ------------------ */
+
+.metodologia-card {
+    /* Fundo escuro sutilmente diferente do fundo da página */
+    background-color: #2B303B; 
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    height: 100%; /* Garante que os dois cards tenham a mesma altura */
+}
+
+/* Estilo para a caixa da Metodologia e Dados no About.js */
+.metodologia-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #1B1E2A; /* Cor de fundo da página */
+}
+
+/* Container dos Cards Internos */
+.internal-card-ia, .internal-card-vis {
+  font-family: Inter; 
+  font-size: 15px;
+  border: 2px solid;
+  padding: 0px;
+  padding-left: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex; 
+  align-items: center;                  /* Centraliza verticalmente */
+  gap: 15px;                            /* Espaço entre ícone e texto */
+
+}
+.internal-card-ia {
+  background-color: rgba(246, 128, 85, 0.22); 
+  border-color: #f6805580;             /* cor da borda */  
+}
+.internal-card-vis {
+  background-color: rgba(255, 255, 86, 0.22); 
+  border-color: #EAF97780; 
+}
+
+.card-text-content {
+  flex-grow: 1;                        /* Permite que o texto ocupe o espaço restante */
+  padding-top: 15px;
+  margin-top: 0;
+}
+
+.subtitulo-metod-card2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-weight: bold;
+    margin-bottom: 3px;                /* Zera margem para aproximar do parágrafo */
+    color: white;
+}
+
+.text-metod{
+  font-size: 1.1rem;
+  margin-top: 3px;                    /* Reduza a margem superior para aproximar do título */
+  display: block;
+  color: rgba(255, 255, 255, 0.753); /* Branco com 70% de opacidade */
+}
+
+
+
 
 /* ------------------ RESPONSIVIDADE ------------------ */
 @media (max-width: 992px) {
@@ -194,7 +325,7 @@
 }
 
 @media (max-width: 576px) {
-  .header-title, .subtitulo { font-size: 2.7rem; }            /* reduz títulos em celulares */
+  .sobre-header-container, .header-title, .subtitulo { font-size: 2.5rem; }
   .header-subtitle { font-size: 1rem; }                       /* subtítulo menor */
   .proposito-card { padding: 15px; font-size: 15px; }         /* card menor */
   .raio { width: 50px; height: 70px; }                        /* ícone menor */
@@ -203,4 +334,30 @@
   .valor-cards-monitoramento,
   .valor-cards-trasparencia { font-size: 12px; padding: 0; }  /* texto menor */
   .equipe-grid { grid-template-columns: 1fr; }                /* 1 coluna no grid */
+  .sobre-header-container, .proposito-section, 
+  .content-area { padding-left: 15px !important; padding-right: 15px !important;}
+  .sobre-page-wrapper { /* Ou a classe que envolve toda a página Sobre */
+        width: 100% !important;
+        overflow-x: hidden !important;
+  }
 }
+
+@media (max-width: 375px) {
+  .sobre-header-container .header-title .subtitulo { font-size: 2rem; }
+  .header-subtitle { font-size: 0.9rem;}
+  .membro-card { padding: 20px 10px;}
+  .sobre-header-container, .proposito-section {
+    padding-left: 10px !important; 
+    padding-right: 10px !important;}
+  .team-icon-svg { width: 40px; height: 40px;}
+  .shield-icon-background{top: 40%; left: 50%; }
+  .sobre-page-wrapper { /* Ou a classe que envolve toda a página Sobre */
+      width: 100% !important;
+      overflow-x: hidden !important;
+  }
+   
+}
+
+
+
+

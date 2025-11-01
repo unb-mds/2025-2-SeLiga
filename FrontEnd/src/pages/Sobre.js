@@ -3,8 +3,9 @@ import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import MembroCard from '../components/MembroCard'; 
 import Proposito from '../components/Proposito'; 
 import api from '../api';
-import '../styles/app.css'
-import '../styles/sobre.css'
+import '../styles/app.css';
+import '../styles/sobre.css';
+import Metodologia from '../components/Metodologia';
 
 
 // --- Defina a Estrutura da Página Sobre  ---
@@ -65,9 +66,9 @@ function Sobre() {
                 </div>
             </div>
 
+            {/* SEÇÃO: PROPÓSITO */}
             <Row className="mb-5">
                 <Col>
-                    {/* SEÇÃO: PROPÓSITO */}
                     <Proposito />        
                 </Col>
             </Row>
@@ -101,13 +102,10 @@ function Sobre() {
                 </Col>
             </Row>
 
-            {/* SEÇÃO: METODOLOGIA (Pode ser estático por enquanto) */}
+            {/* SEÇÃO: METODOLOGIA */}
             <Row>
                 <Col>
-                    <h2>Tecnologia e Metodologia</h2>
-                    <p>
-                        Utilizamos a metodologia Ágil (Scrum) e a arquitetura Full-Stack (Python/FastAPI e React)...
-                    </p>
+                    <Metodologia />
                 </Col>
             </Row>
         </Container>

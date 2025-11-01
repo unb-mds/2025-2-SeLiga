@@ -1,0 +1,206 @@
+/* ------------------ HEADER ------------------ */
+.sobre-header-container {
+  padding-top: 80px;                  /* espaço interno superior */
+  padding-bottom: 10px;               /* espaço interno inferior */
+  text-align: center;                 /* centraliza o texto */
+  color: white;                     /* cor do texto */
+  z-index: 1;                         /* define camada do elemento */
+}
+
+.shield-icon-background {
+  color: #F67655;                   /* cor do ícone */
+  opacity: 0.3;                       /* transparência do ícone */
+  position: absolute;                 /* posicionamento absoluto */
+  top: 33%;                           /* distância do topo */
+  left: 50%;                          /* distância da esquerda */
+  transform: translate(-50%, -50%);   /* centraliza o ícone */
+  z-index: 0;                         /* atrás de outros elementos */
+}
+
+.header-title {
+  font-family: Hepta Slab;           /* fonte específica */
+  line-height: 1.2;                  /* altura da linha */
+  font-weight: bold;                 /* negrito */
+  font-size: 4.4rem;                 /* tamanho do título */
+  color: #ffffff;                  /* cor do texto */
+  z-index: 2;                        /* na frente do ícone */
+  position: relative;                /* para z-index funcionar */
+}
+
+.header-subtitle {
+  font-family: Inter;                /* fonte do subtítulo */
+  font-weight: lighter;              /* fonte mais leve */
+  font-size: 1.8rem;                 /* tamanho do subtítulo */
+  color: #C0C0C0;                  /* cor do texto */
+  z-index: 2;                        /* na frente do ícone */
+  position: relative;                /* para z-index funcionar */
+}
+
+.decorative-line-container {
+  display: flex;                     /* layout flexível */
+  align-items: center;               /* centraliza verticalmente */
+  gap: 15px;                         /* espaço entre itens */
+  font-size: 2.5rem;                 /* tamanho da fonte/ícones */
+  margin: 0 auto;                    /* centraliza horizontalmente */
+  width: 250px;                      /* largura do container */
+}
+
+/* ------------------ EQUIPE ------------------ */
+.sobre-equipe-container {
+  text-align: center;                /* centraliza o texto */
+  padding-top: 50px;                 /* espaçamento superior */
+  padding-bottom: 20px;              /* espaçamento inferior */
+}
+
+.equipe-grid {
+  display: grid;                              /* layout em grade */
+  grid-template-columns: repeat(3, 1fr);      /* 3 colunas iguais */
+  gap: 25px;                                  /* espaçamento entre cards */
+  margin-top: 40px;                           /* margem superior */
+}
+
+.membro-card {
+  background-color: #2B303B !important;     /* cor de fundo */
+  border: none !important;                    /* sem borda */
+  border-radius: 15px;                        /* bordas arredondadas */
+  padding: 40px;                              /* espaçamento interno */
+  text-align: center;                         /* centraliza conteúdo */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);/* sombra */
+}
+
+.membro-foto {
+  width: 160px;                               /* largura da foto */
+  height: 160px;                              /* altura da foto */
+  border-radius: 50%;                         /* formato circular */
+  margin: 0 auto 15px auto;                   /* centraliza horizontal e margem inferior */
+  background-size: cover;                     /* cobre todo o elemento */
+  background-position: center;                /* centraliza a imagem */
+  border: 2px solid #F67655;                /* borda colorida */
+}
+
+.card-text {
+  font-size: 0.9rem;                          /* tamanho do texto */
+  margin-top: 5px;                            /* margem superior */
+  font-style: italic;                         /* texto em itálico */
+}
+
+/* ------------------ PROPÓSITO ------------------ */
+.proposito-card {
+  font-family: Inter;                         /* fonte do card */
+  background-color: #2B303B;                /* cor de fundo */
+  border: none;                               /* sem borda */
+  color: white;                             /* cor do texto */
+  border-radius: 15px;                        /* bordas arredondadas */
+  padding: 48px;                              /* espaçamento interno */
+  text-align: justify;                        /* justifica o texto */
+  font-size: 21px;                            /* tamanho da fonte */
+}
+
+/* ------------------ VALORES ------------------ */
+.valor-cards-Confiavel,
+.valor-cards-monitoramento,
+.valor-cards-trasparencia {
+  font-family: Inter;                         /* fonte dos cards */
+  border-radius: 15px;                        /* bordas arredondadas */
+  color: #ebebeb;                           /* cor do texto */
+  font-size: 18px;                            /* tamanho da fonte */
+}
+
+.valor-cards-Confiavel {
+  background-color: rgba(0, 173, 55, 0.3);  /* fundo semi-transparente */
+  border-color: #00750A;                    /* cor da borda */
+}
+
+.valor-cards-monitoramento {
+  background-color: rgba(246, 128, 85, 0.2); 
+  border-color: #ff5c21;
+}
+
+.valor-cards-trasparencia {
+  background-color: rgba(213, 255, 0, 0.2);
+  border-color: #fffb00;
+}
+
+/* ------------------ ÍCONES ------------------ */
+.shild { color: #14d825; margin-right: 15px; width: 3rem; } /* cor, margem, largura do ícone */
+.boxes { color: #F67655; margin-right: 15px; width: 3rem; }
+.people { color: #EFFF08; margin-right: 15px; width: 3rem; }
+.people2 { color: #F67655; margin-right: 5px; width: 4rem; }
+
+.raio {
+  background: linear-gradient(45deg, #FFEE00, #F67655);   /* gradiente */
+  border-radius: 10%;                                         /* cantos arredondados */
+  margin-right: 15px;                                         /* espaço à direita */
+  fill: white;                                              /* cor do preenchimento SVG */
+}
+
+.alvo { color: #F67655; }                                   /* cor do ícone alvo */
+
+.retangulo1,
+.retangulo2 {
+  width: 100px;                                               /* largura do retângulo */
+  height: 6px;                                                /* altura do retângulo */
+}
+
+.retangulo1 {
+  background: linear-gradient(45deg, #FFEE00, #F67655);  /* gradiente */
+}
+
+.retangulo2 {
+  background: linear-gradient(45deg, #F67655, #FFEE00); 
+}
+
+/* ------------------ TÍTULOS ------------------ */
+.titulo-com-icone {
+  font-family: Joanna;               /* fonte do título */
+  display: flex;                     /* layout flexível */
+  align-items: center;               /* centraliza verticalmente */
+  margin-bottom: 20px;               /* margem inferior */
+}
+
+.card-title-icon {
+  display: flex;                     /* layout flexível */
+  align-items: center;               /* centraliza verticalmente */
+  gap: 15px;                         /* espaço entre elementos */
+  font-size: 2.5rem;                 /* tamanho da fonte */
+  font-weight: bold;                 /* negrito */
+}
+
+.titulo-proposito {
+  font-family: Inter;                /* fonte do título */
+  color: #FFFFFF;                  /* cor do texto */
+  font-size: 23px;                   /* tamanho da fonte */
+}
+
+.icon-titulo {
+  display: flex;                     /* layout flexível */
+  align-items: center;               /* centraliza verticalmente */
+  justify-content: center;           /* centraliza horizontalmente */
+  gap: 10px;                         /* espaço entre elementos */
+  margin-bottom: 5px;                /* margem inferior */
+}
+
+.subtitulo {
+  font-family: Hepta Slab;           /* fonte */
+  font-size: 3rem;                   /* tamanho do texto */
+  font-weight: bold;                 /* negrito */
+}
+
+/* ------------------ RESPONSIVIDADE ------------------ */
+@media (max-width: 992px) {
+  .header-title { font-size: 3.5rem; }                        /* reduz título em telas médias */
+  .proposito-section { padding: 0 20px !important; }          /* padding menor */
+  .equipe-grid { grid-template-columns: repeat(2, 1fr); }     /* 2 colunas */
+}
+
+@media (max-width: 576px) {
+  .header-title, .subtitulo { font-size: 2.7rem; }            /* reduz títulos em celulares */
+  .header-subtitle { font-size: 1rem; }                       /* subtítulo menor */
+  .proposito-card { padding: 15px; font-size: 15px; }         /* card menor */
+  .raio { width: 50px; height: 70px; }                        /* ícone menor */
+  .card-title-icon { font-size: 2rem; }                       /* título do card menor */
+  .valor-cards-Confiavel,
+  .valor-cards-monitoramento,
+  .valor-cards-trasparencia { font-size: 12px; padding: 0; }  /* texto menor */
+  .equipe-grid { grid-template-columns: 1fr; }                /* 1 coluna no grid */
+}

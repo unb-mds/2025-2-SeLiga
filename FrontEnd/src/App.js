@@ -1,21 +1,21 @@
 import React from 'react';
-// Importe o roteador e as rotas
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar'; // Sua barra de navegação
+import NavBar from './components/NavBar'; 
 import PaginaNoticias from './pages/PaginaNoticias';
-import Sobre from './pages/Sobre'; // O componente que você acabou de criar
-import './App.css';
+import Sobre from './pages/Sobre'; 
+import './styles/app.css';
+
 
 
 const App = () => {
   return (
-    // 1. Envolve toda a aplicação com o Router
+    // Envolve toda a aplicação com o Router
     <Router>
       <div className="layout-container">
         {/* NavBar */}
         <NavBar />
 
-        {/* 2. O <Routes> define onde o conteúdo da página será renderizado */}
+        {/* Define onde o conteúdo da página será renderizado */}
         <main className="main-content">
           <Routes>
             {/* Rota para a página de Notícias */}

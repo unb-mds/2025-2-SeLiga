@@ -4,7 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "./Tabs";
 import { Card, CardContent } from "./Card";
 import { SearchBar } from "./SearchBar";
 import api from "../api";
-import "../App.css";
+import "../app.css";
 
 const PaginaNoticias = () => {
   const [articles, setArticles] = useState([]);

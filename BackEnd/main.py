@@ -114,15 +114,8 @@ def buscar_noticia_por_titulo(titulo: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao buscar notícia: {str(e)}")
 
-@app.get("/sobre")
-def sobre():
-    return {
-        "message": "Informações sobre a aplicação SeLiga",
-        "version": "0.1.0",
-        "author": "SeLiga"
-    }
     
-@app.get("/equipe")
+@app.get("/sobre")
 def equipe():
     return {
         "squad": "Squad 05",

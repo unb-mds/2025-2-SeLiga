@@ -1,0 +1,167 @@
+/* ------------------ CONTEÚDO PRINCIPAL ------------------ */
+.content-area {
+  background-color: #1B1E2A;     /* cor de fundo da área principal */
+  min-height: 100vh;               /* altura mínima 100% da tela */
+  padding: 30px;                   /* espaçamento interno */
+  margin-bottom: 30px;             /* margem inferior */
+}
+
+.main-title {
+  color: #e0e0e0;                /* cor do título principal */
+  font-size: 2rem;                 /* tamanho da fonte */
+  margin-bottom: 0.25rem;          /* espaço abaixo do título */
+}
+
+.subtitle {
+  color: #CCCCCC;                /* cor do subtítulo */
+  margin-bottom: 1.5rem;           /* espaço abaixo do subtítulo */
+}
+
+/* ------------------ BUSCA ------------------ */
+.busca-container {
+  display: flex;                   /* layout flexível */
+  flex-direction: column;          /* itens organizados em coluna */
+  background-color: #2B303B;     /* cor de fundo do container */
+  justify-content: center;         /* centraliza verticalmente */
+  align-items: center;             /* centraliza horizontalmente */
+  gap: 1rem;                       /* espaçamento entre os elementos */
+  padding: 40px 60px;              /* espaçamento interno */
+  border-radius: 10px;             /* bordas arredondadas */
+  margin-bottom: 30px;             /* margem inferior */
+}
+
+.busca-container input {
+  width: 500px;                     /* largura do input */
+  padding: 1rem;                    /* espaçamento interno */
+  border-radius: 0.25rem;           /* bordas arredondadas pequenas */
+  border: 1px solid #FFFFFF;      /* borda branca */
+  background-color: #030303;      /* cor de fundo do input */
+  color: #FFFFFF;                 /* cor do texto */
+}
+
+.busca-container input::placeholder {
+  color: #CCCCCC;                 /* cor do placeholder */
+}
+
+.container-busca-filtro {
+  display: flex;                   /* layout flexível */
+  align-items: center;             /* centraliza verticalmente */
+  gap: 0.5rem;                     /* espaçamento entre itens */
+  max-width: 600px;                /* largura máxima */
+  width: 100%;                     /* ocupa toda a largura disponível */
+}
+
+/* ------------------ FILTROS ------------------ */
+.veracidade-filtros {
+  display: flex;                   /* layout flexível */
+  gap: 10px;                       /* espaçamento entre botões */
+  margin-top: 15px;                /* margem superior */
+}
+
+.veracidade-filtros button {
+  background-color: #000000;      /* cor de fundo do botão */
+  color: white;                   /* cor do texto */
+  border: 0.5px solid white;      /* borda fina */
+  padding: 10px 20px;               /* espaçamento interno */
+  border-radius: 6px;               /* bordas arredondadas */
+  font-weight: bold;                /* texto em negrito */
+  cursor: pointer;                  /* cursor muda ao passar o mouse */
+  display: flex;                    /* layout flexível dentro do botão */
+  align-items: center;              /* centraliza verticalmente */
+  gap: 8px;                         /* espaço entre elementos internos do botão */
+}
+/* ------------ News Cards --------------- */
+
+.news-card {
+  background-color: #2B303B;    /* cor de fundo do card */
+  color: #ffffff;               /* cor do texto */
+  padding: 0;                     /* sem padding */
+  border: none !important;        /* sem borda */
+  border-radius: 10px;            /* bordas arredondadas */
+}
+
+/* Grid de Cards */
+.news-grid {
+  display: grid;                         /* layout em grade */
+  grid-template-columns: 1fr 1fr 1fr;    /* 3 colunas iguais */
+  gap: 15px;                             /* espaço entre cards */
+  margin-top: 25px;                      /* margem superior */
+}
+
+/* Área da Imagem / Placeholder */
+.card-image-placeholder {
+  height: 180px;                         /* altura da imagem */
+  background-color: #2B303B;           /* cor de fundo placeholder */
+  border-radius: 10px;                   /* bordas arredondadas */
+  background-position: center;           /* centraliza a imagem */
+  background-size: cover;                /* cobre todo o espaço */
+  position: relative;                    /* permite posicionamento do badge */
+}
+
+/* Selo de Veracidade (Badge) */
+.veracity-badge {
+  position: absolute !important;         /* posicionamento absoluto */
+  top: 30px;                             /* distância do topo */
+  right: 30px;                           /* distância da direita */
+  padding: 12px 20px;                    /* espaçamento interno */
+  font-size: 15px;                       /* tamanho da fonte */
+  z-index: 10;                           /* garante que fique acima da imagem */
+}
+
+.card-content-body {
+  padding: 15px;                         /* espaçamento interno */
+}
+
+.card-title {
+  font-size: 1.2rem;                     /* tamanho da fonte */
+  font-weight: bold;                     /* negrito */
+  margin-bottom: 5px;                    /* margem inferior */
+}
+
+.card-footer {
+  font-size: 0.95rem;                    /* tamanho da fonte */
+  color: #F67655;                      /* cor do texto */
+  margin-top: 10px;                      /* margem superior */
+}
+/* ------------ Botões Laranja --------------- */
+button {
+  background-color: #F67655;           /* cor de fundo do botão */
+  color: #FFFFFF;                      /* cor do texto */
+  border: none;                          /* sem borda */
+  padding: 0.5rem;                       /* espaçamento interno */
+  border-radius: 5px;                    /* bordas arredondadas */
+  font-weight: bold;                     /* texto em negrito */
+  cursor: pointer;                       /* cursor muda ao passar sobre o botão */
+}
+
+/* ------------ Tabs --------------- */
+.tabs-list {
+  display: flex;                         /* layout flexível */
+  justify-content: start;                /* alinha à esquerda */
+  background-color: #2C2F3A;           /* cor de fundo */
+  padding: 0;                            /* sem espaçamento interno */
+  border-radius: 6px;                    /* bordas arredondadas */
+  margin-top: 25px;                      /* margem superior */
+  overflow: hidden;                      /* evita que o conteúdo vaze */
+}
+
+/* Botões das Tabs */
+.tabs-list button {
+  flex: 1;                                /* todos ocupam a mesma largura */
+  color: #C0C0C0;                       /* cor do texto */
+  background-color: transparent;          /* fundo transparente */
+  padding: 10px 20px;                     /* espaçamento interno */
+  border: none;                           /* sem borda */
+  cursor: pointer;                        /* cursor muda ao passar sobre o botão */
+  font-size: 0.95rem;                     /* tamanho da fonte */
+  transition: background-color 0.2s, color 0.2s; /* animação suave */
+}
+
+/* ------------ Pesquisa --------------- */
+.mt-4 {
+  display: flex;                          /* layout flexível */
+  align-items: center;                    /* centraliza verticalmente */
+  flex-direction: column;                 /* organiza itens em coluna */
+  padding: 25px;                          /* espaçamento interno */
+  color: #F67655;                       /* cor do texto */
+}

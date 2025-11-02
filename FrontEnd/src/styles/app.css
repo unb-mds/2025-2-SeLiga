@@ -1,0 +1,68 @@
+@import '~bootstrap/dist/css/bootstrap.min.css'; 
+
+/* ------------------ GERAL ------------------ */
+body {
+  margin: 0;                                     /* remove margens padrão do body */
+  font-family: Arial, sans-serif;                /* define fonte padrão */
+  background-color: #1B1E2A;                   /* cor de fundo da página */
+  color: #FFFFFF;                              /* cor do texto */
+  width: 100%;                                   /* ocupa 100% da largura da tela */
+  overflow-x: hidden !important;                 /* evita barra de rolagem horizontal */
+  padding: 0; 
+}
+
+/* ------------------ NAVBAR ----------------- */
+.navbar {
+  display: flex;                                 /* layout flexível */
+  align-items: center;                           /* centraliza verticalmente os itens */
+  background-color: #000000;                   /* cor de fundo da navbar */
+  padding: 1rem 11rem;                           /* espaçamento interno: 1rem vertical, 5rem horizontal */
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  
+}
+
+.logo {
+  color: #F67655;                              /* cor da logo */
+}
+
+.menu-links {
+  display: flex;                                 /* layout flexível para os links */
+  gap: 2rem;                                     /* espaçamento entre os links */
+  align-items: center;                           /* centraliza verticalmente */
+}
+
+.nav-link {
+  color: white;                                /* cor do link */
+  font-weight: bold;                             /* deixa o texto em negrito */
+  font-size: 1rem;                               /* tamanho da fonte */
+}
+
+.nav-link:hover {
+  color: #F67655;                              /* cor do link ao passar o mouse */
+}
+
+/* ------------------ BOTÕES ----------------- */
+button {
+  background-color: #F67655;                   /* cor de fundo do botão */
+  color: #FFFFFF;                              /* cor do texto do botão */
+  border: none;                                  /* sem borda */
+  padding: 0.5rem;                               /* espaçamento interno do botão */
+  border-radius: 5px;                            /* bordas arredondadas */
+  font-weight: bold;                             /* texto em negrito */
+  cursor: pointer;                               /* cursor muda ao passar sobre o botão */
+}
+
+/* ------------------ UTILITÁRIOS ------------- */
+.mt-4 {
+  display: flex;                                 /* layout flexível */
+  flex-direction: column;                        /* organiza os itens em coluna */
+  align-items: center;                           /* centraliza os itens horizontalmente */
+  padding: 25px;                                 /* espaçamento interno */
+  color: #F67655;                              /* cor do texto */
+}
+
+
+

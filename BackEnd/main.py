@@ -6,13 +6,12 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
 import os
-from datetime import datetime
 
 # Carrega variáveis do arquivo .env
 load_dotenv()
 
 # Conecta ao MongoDB Atlas
-MONGO_URI = os.getenv("MONGO_DB")
+MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db_mongo = client['DadosSeLIga']
 news_collection = db_mongo['Dados']
@@ -92,23 +91,24 @@ def listar_noticias():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao buscar notícias: {str(e)}")
 
-@app.get("/noticias/{noticia_id}")
-def buscar_noticia(noticia_id: str):
-    """Busca uma notícia específica por ID"""
+@app.get("/noticias/buscar/{titulo}")
+def buscar_noticia_por_titulo(titulo: str):
+    """Busca notícias por título (busca parcial, case-insensitive)"""
     try:
-        # Valida se é um ObjectId válido
-        if not ObjectId.is_valid(noticia_id):
-            raise HTTPException(status_code=400, detail="ID inválido")
+        # Busca usando regex para permitir busca parcial e ignorar maiúsculas/minúsculas
+        noticias = list(news_collection.find({"titulo": {"$regex": titulo, "$options": "i"}}))
         
-        noticia = news_collection.find_one({"_id": ObjectId(noticia_id)})
-        
-        if not noticia:
-            raise HTTPException(status_code=404, detail="Notícia não encontrada")
+        if not noticias:
+            raise HTTPException(status_code=404, detail="Nenhuma notícia encontrada com esse título")
         
         # Converte ObjectId para string
-        noticia['_id'] = str(noticia['_id'])
+        for noticia in noticias:
+            noticia['_id'] = str(noticia['_id'])
         
-        return noticia
+        return {
+            "total": len(noticias),
+            "noticias": noticias
+        }
     except HTTPException:
         raise
     except Exception as e:
@@ -143,37 +143,6 @@ def equipe():
 # memebro.imagem_url pega a url da imagem
 # ai é so fazer a requisição no front pois as rotas ja estao configuradas
 
-
-@app.post("/noticias")
-def criar_noticia(noticia: NewsCreate):
-    """Cria uma nova notícia no banco de dados"""
-    try:
-        # Prepara o documento para inserção no modelo ja feito no mongo ATLAS
-        documento = {
-            "titulo": noticia.titulo,
-            "texto": noticia.texto,
-            "fonte": noticia.fonte,
-            "url": noticia.url,
-            "data_coleta": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "status_verificacao": "pendente",
-            "verificacao": {
-                "classificacao": "",
-                "confianca_percentual": "",
-                "justificativa": "",
-                "fontes_consultadas": "",
-                "data_verificacao": ""
-            }
-        }
-        
-        resultado = news_collection.insert_one(documento)
-        
-        return {
-            "message": "Notícia criada com sucesso!",
-            "id": str(resultado.inserted_id),
-            "noticia": documento
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Erro ao criar notícia: {str(e)}") # Um erro genérico caso nao consiga puxar a notícia
 
 @app.put("/noticias/{noticia_id}")
 def atualizar_noticia(noticia_id: str, noticia: NewsCreate):

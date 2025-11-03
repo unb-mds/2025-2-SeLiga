@@ -1,0 +1,209 @@
+@import '~bootstrap/dist/css/bootstrap.min.css'; 
+/* Fundo que cobre toda a tela */
+/* PopUp.css: Estilos essenciais para o modal */
+.popup-overlay {
+    position: fixed; /* Fundo que cobre toda a tela */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo escuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #1b1e2a;
+    width: 90%; 
+    max-width: 750px;              /* Largura máxima profissional */
+    max-height: 750px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1px 15px;
+    
+}
+.modal-footer {
+    padding: 20px 30px;
+    gap: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* Padrão: Cor de fundo e texto forte */
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 0;
+}
+
+/* Cores dinâmicas para o Rodapé */
+.modal-footer.verified {
+    background-color: #0d421d; /* Verde escuro */
+}
+
+/* Cor VERMELHA para Fake News */
+.modal-footer.fake {
+    background-color: #4d0000;                              /* Vermelho escuro */
+    border-top: 3px solid #e74c3c;                          /* Linha de destaque vermelha */
+}
+
+.modal-header {
+    align-items: center;
+    padding: 15px; 
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.status-tag{
+    display: flex;
+    align-items: center;
+    background-color: #49cc3746;
+    color: rgb(90, 202, 67);
+    padding: 3px 13px;
+    border-radius: 15px;
+    gap: 1px;
+}
+/* Botão "Voltar para Notícias" (Estilo de Link) */
+.back-button {
+    background: none;
+    border: none;
+    color: #999; 
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    
+}
+
+/* Título Principal */
+.news-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px; 
+    margin-bottom: 20px;
+}
+
+/* Metadados (Fonte, Autor, Data) */
+.news-meta {
+    font-size: 1.1rem;
+    color: #C0C0C0; /* Cor do texto (cinza claro) */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333; 
+    padding: 5px;
+}
+
+.news-meta .news-source {
+    color: #ff6347; /* Destaque laranja para a fonte (como no design) */
+    font-weight: bold;
+}
+
+.news-meta .news-separator {
+    margin: 0 5px;
+    color: #444; /* Separador sutil */
+}
+
+.news-image {
+    width: 100%;
+    height: auto;                   /* Deixa a altura flexível */
+    max-height: 400px;              /* Limita a altura para que não fique gigante */
+    object-fit: cover;              /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+.news-image {
+    /* Cor de fundo que aparece se a imagem falhar */
+    background-color: #383838; 
+    
+    /* Configurações para o Fallback (Exibe um ícone no centro) */
+    display: block; 
+    min-height: 300px;              
+}
+
+.original-link {
+    color: #ff6347; /* Cor laranja de destaque */
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex; /* Alinha o texto e o ícone na mesma linha */
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+.original-link:hover {
+    text-decoration: underline;
+}
+
+/* ESTILO DA BARRA DE STATUS (Rodapé) */
+.modal-footer {
+    /* Mantém o padding e o flexbox */
+    padding: 1px; 
+    display: flex;
+    flex-direction: column; /* Empilha o Status/Título e o Parágrafo */
+    gap: 5px;
+    
+    /* Configuração padrão de texto */
+    color: white;
+    font-size: 1rem;
+    border-radius: 50px; /* Cantos arredondados apenas na base */
+    font-weight: bold;
+
+}
+
+.modal-footer.verified {
+    background-color: #124b17d5; /* Verde escuro forte (quase preto) */
+}
+
+.modal-footer .footer-icon {
+    margin-right: 10px;
+    color: #2ecc71; /* Ícone verde claro */
+}
+
+.modal-footer .footer-text {
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1.4;
+    color: #c0c0c0;
+    margin-top: 5px;
+}
+
+.status-tag.verified {
+    background-color: #2ecc71; /* Verde */
+    color: #1b1e2a; /* Texto escuro para contraste no topo */
+}
+.status-tag.dubious {
+    background-color: #f1c40f; /* Amarelo */
+    color: #1b1e2a; /* Texto escuro */
+}
+.status-tag.fake {
+    background-color: #e74c3c; /* Vermelho */
+    color: white; /* Texto branco fica melhor no fundo vermelho */
+}
+
+/* Ajuste o ícone para herdar a cor do texto */
+.status-tag .status-icon {
+    color: inherit; 
+}
+.modal-footer.dubious {
+    /* CORREÇÃO AQUI: Garante o fundo amarelo/laranja escuro */
+    background-color: #5d4000; /* Tom marrom/escuro para o background */
+    border-top: 3px solid #ffbf00; /* Linha de destaque amarela */
+}
+
+/* Estilo para o ícone de Duvidosa no rodapé */
+.modal-footer.dubious .footer-icon {
+    color: #ffbf00; /* Ícone amarelo de destaque */
+}
+
+/* Estilo para o ícone de Duvidosa no rodapé */
+.modal-footer.dubious .footer-text {
+    /* Garante que o texto de justificativa não seja muito escuro */
+    color: #c0c0c0;
+}
+/* Estilo para o ícone de Duvidosa no rodapé */
+.modal-footer.fake .footer-icon {
+    color: #ff0000; /* Ícone amarelo de destaque */
+}
+

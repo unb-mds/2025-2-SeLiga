@@ -142,28 +142,34 @@
 }
 
 /* ------------------ ÍCONES ------------------ */
-.shild { color: #14d825; margin-right: 15px; width: 3rem; } /* cor, margem, largura do ícone */
-.boxes { color: #F67655; margin-right: 15px; width: 3rem; }
-.people { color: #EFFF08; margin-right: 15px; width: 3rem; }
-.people2 { color: #F67655; margin-right: 5px; width: 4rem; }
-.palette { color: #E5FA41; margin-right: 5px; }
-.alvo { color: #F67655; }     
+.shild { color: #14d825; margin-right: 15px; width: 3rem; width:70px ; height:70px}  /* cor, margem, largura e tamanho do icone */
+.boxes { color: #F67655; margin-right: 15px; width: 3rem; width:70px ; height:70px }
+.people { color: #EFFF08; margin-right: 15px; width: 3rem; width:70px ; height:70px}
+.people2 { color: #F67655; margin-right: 5px; width: 4rem; width:45px ; height:45px }
+.palette { color: #E5FA41; margin-right: 0px; width:40px ; height:40px }
+.alvo { color: #F67655; width:45px ; height:45px}     
+.alvo2 { color: #eeeeee; width:45px ; height:45px}     
+.escudo-fundo{width:400px ; height:400px}
 
 .caixa { 
   color: #ffffff; 
   margin-right: 15px; 
   position: relative;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);}
-
+  top: 30%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  width:40px; 
+  height:40px;
+}
 .raio {
   color: #ffffff; 
   margin-right: 15px; 
   position: relative;
-  top: 30%;
-  left: 40%;
+  top: 38%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  width:50px; 
+  height:50px;
 }                                              
 .brain{
   width: 35px;
@@ -178,8 +184,8 @@
   align-items: center;     /* Centraliza verticalmente */
     
   margin-right: 15px;
-  width: 55px;
-  height: 55px;
+  width: 70px;
+  height: 70px;
   border-radius: 15px;
 }
 
@@ -215,11 +221,11 @@
    width: 70px;
   height: 70px;
 }
-.palette-citacao{
+.escudo-citacao{
   border-radius: 50px;
   color: white;
-  width: 53px;
-  height: 70px;
+  width: 55px;
+  height: 77px;
 }
 
 .citacao-assinatura-bloco:before,
@@ -428,39 +434,30 @@
 
 /* ------------------- RESPONSIVO -------------------- */
 @media (max-width: 992px) {
-    /* Telas Médias (TABLETS - Regras aplicadas entre 992px e 577px) */
-    
-    /* LAYOUT: Grid da Equipe e Ajuste de Colunas */
     .equipe-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
         gap: 20px;
     }
-
-    /* CARD: Diminui foto para que o card caiba melhor */
     .membro-foto {
         width: 120px; 
         height: 120px;
     }
 
-    /* CARDS PRINCIPAIS: Ajuste de Conteúdo */
     .proposito-card, 
     .metodologia-card {
         padding: 25px;            /* Reduz o padding interno do card */
         font-size: 18px;          /* Reduz o tamanho da fonte principal */
     }
 
-    /* TÍTULOS E ÍCONES */
     .card-title-icon {
         font-size: 2rem;          /* Reduz o título interno (ex: Arquitetura e Dados) */
         gap: 10px; 
     }
 
-    /* TITULOS DE NAVEGAÇÃO */
     .subtitulo {                  /* Título da seção (Nossa Equipe) */
         font-size: 2.5rem; 
     }
     
-    /* CARDS DE VALOR: Ajuste do Texto */
     .valor-cards-Confiavel,
     .valor-cards-monitoramento,
     .valor-cards-trasparencia {
@@ -478,10 +475,6 @@
     }
 }
 
-
-/* ---------------------------------------------------- */
-/* AJUSTES AGRESSIVOS PARA CELULARES (max-width: 576px) */
-/* ---------------------------------------------------- */
 @media (max-width: 576px) {
     
     html, body {
@@ -537,23 +530,18 @@
         font-size: 0.85rem;
     }
     
-    /* CITAÇÃO FINAL */
     .citacao-container {
         padding: 40px 15px;
         font-size: 1rem;
     }
 }
 
-/* ---------------------------------------------------- */
-/* AJUSTE FINAL PARA TELAS ULTRA PEQUENAS (375px e menos) */
-/* ---------------------------------------------------- */
 @media (max-width: 375px) {
     /* Título principal para telas minúsculas */
     .header-title {
         font-size: 2rem; 
     }
     
-    /* Subtítulo da seção para evitar vazamento */
     .subtitulo {
         font-size: 1.8rem;
     }
@@ -562,4 +550,5 @@
     .proposito-card, .metodologia-card {
         padding: 12px;
     }
+    .escudo-fundo{width:300px ; height:300px}
 }

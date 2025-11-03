@@ -49,7 +49,8 @@ app = FastAPI(
 )
 
 origins = [
-    "http://localhost:3000"                 # informa a porta para o frontend
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"                # informa a porta para o frontend
 ]
 
 app.add_middleware(
@@ -217,3 +218,4 @@ def buscar_por_status(status: str):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao buscar notícias: {str(e)}")
+

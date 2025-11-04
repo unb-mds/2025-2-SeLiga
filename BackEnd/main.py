@@ -65,12 +65,11 @@ def root():
     """Endpoint raiz - retorna informações da API"""
     return {
         "message": "SeLiga API - Sistema de Verificação de Notícias",
-        "version": "1.0.0",
+        "version": "0.1.0",
         "endpoints": {
             "docs": "/docs",
             "noticias": "/noticias",
-            "sobre": "/sobre",
-            "equipe": "/equipe"
+            "sobre": "/sobre"
         }
     }
 

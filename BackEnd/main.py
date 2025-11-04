@@ -49,7 +49,8 @@ app = FastAPI(
 )
 
 origins = [
-    "http://localhost:3000"                 # informa a porta para o frontend
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"                # informa a porta para o frontend
 ]
 
 app.add_middleware(
@@ -65,12 +66,11 @@ def root():
     """Endpoint raiz - retorna informações da API"""
     return {
         "message": "SeLiga API - Sistema de Verificação de Notícias",
-        "version": "1.0.0",
+        "version": "0.1.0",
         "endpoints": {
             "docs": "/docs",
             "noticias": "/noticias",
-            "sobre": "/sobre",
-            "equipe": "/equipe"
+            "sobre": "/sobre"
         }
     }
 
@@ -114,15 +114,8 @@ def buscar_noticia_por_titulo(titulo: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao buscar notícia: {str(e)}")
 
-@app.get("/sobre")
-def sobre():
-    return {
-        "message": "Informações sobre a aplicação SeLiga",
-        "version": "0.1.0",
-        "author": "SeLiga"
-    }
     
-@app.get("/equipe")
+@app.get("/sobre")
 def equipe():
     return {
         "squad": "Squad 05",

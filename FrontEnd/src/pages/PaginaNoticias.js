@@ -13,6 +13,7 @@ const PaginaNoticias = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [veracityFilter, setVeracityFilter] = useState("todas");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedNews, setSelectedNews] = useState(null);
 
@@ -89,9 +90,12 @@ const PaginaNoticias = () => {
     fetchArticlesList(); // Botão 'Buscar' chama a lista
   };
 
-  // Funções para manipulação de estado e filtros
-  const filteredArticles = articles.filter((article) =>
-    article.titulo?.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredArticles = articles
+  .filter((article) =>
+    article.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .filter((article) =>
+    veracityFilter === "todas" ? true : article.veracity === veracityFilter
   );
 
   const recentArticles = articles.slice(0, 2);
@@ -129,9 +133,33 @@ const PaginaNoticias = () => {
             </Button>
           </div>
           <div className="veracidade-filtros">
-            <button>✅ Verificados</button>
-            <button>⚠️ Duvidosas</button>
-            <button>❌ Fake News</button>
+            <button
+              onClick={() => setVeracityFilter("verified")}
+              className={veracityFilter === "verified" ? "ativo" : ""}
+            >
+            ✅ Verificadas
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("dubious")}
+              className={veracityFilter === "dubious" ? "ativo" : ""}
+            >
+            ⚠️ Duvidosas
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("fake")}
+              className={veracityFilter === "fake" ? "ativo" : ""}
+            >
+            ❌ Fake News
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("todas")}
+              className={veracityFilter === "todas" ? "ativo" : ""}
+            >
+            📋 Todas
+            </button>
           </div>
         </div>
 

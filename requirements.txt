@@ -5,3 +5,4 @@ pymongo==4.10.1
 python-dotenv==1.0.0
 Scrapy==2.13.3
 pytest==8.4.2
+google-generativeai

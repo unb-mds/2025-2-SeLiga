@@ -1,0 +1,565 @@
+/* ------------------ HEADER ------------------ */
+.sobre-header-container {
+  padding-top: 80px;                  /* espaço interno superior */
+  padding-bottom: 10px;               /* espaço interno inferior */
+  text-align: center;                 /* centraliza o texto */
+  color: white;                     /* cor do texto */
+  z-index: 1;                         /* define camada do elemento */
+}
+
+.shield-icon-background {
+  color: #F67655;                   /* cor do ícone */
+  opacity: 0.3;                       /* transparência do ícone */
+  position: absolute;                 /* posicionamento absoluto */
+  top: 36%;                           /* distância do topo */
+  left: 50%;                          /* distância da esquerda */
+  transform: translate(-50%, -50%);   /* centraliza o ícone */
+  z-index: 0;                         /* atrás de outros elementos */
+}
+
+.header-title {
+  font-family: Hepta Slab;           /* fonte específica */
+  line-height: 1.2;                  /* altura da linha */
+  font-weight: bold;                 /* negrito */
+  font-size: 4.4rem;                 /* tamanho do título */
+  color: #ffffff;                  /* cor do texto */
+  z-index: 2;                        /* na frente do ícone */
+  position: relative;                /* para z-index funcionar */
+}
+
+.header-subtitle {
+  font-family: Inter;                /* fonte do subtítulo */
+  font-weight: lighter;              /* fonte mais leve */
+  font-size: 1.8rem;                 /* tamanho do subtítulo */
+  color: #C0C0C0;                  /* cor do texto */
+  z-index: 2;                        /* na frente do ícone */
+  position: relative;                /* para z-index funcionar */
+  margin-top: 0; 
+  margin-bottom: 10px;
+}
+.header-subtitle-small{
+  font-family: Inter; 
+  font-weight:300;
+               
+  font-size: 1.4rem;                
+  color: #C0C0C0;                 
+  margin-top: 0; 
+
+}
+
+.decorative-line-container {
+  display: flex;                     /* layout flexível */
+  align-items: center;               /* centraliza verticalmente */
+  gap: 15px;                         /* espaço entre itens */
+  font-size: 2.5rem;                 /* tamanho da fonte/ícones */
+  margin: 0 auto;                    /* centraliza horizontalmente */
+  width: 250px;                      /* largura do container */
+}
+
+/* ------------------ EQUIPE ------------------ */
+.sobre-equipe-container {
+  text-align: center;                /* centraliza o texto */
+  padding-top: 50px;                 /* espaçamento superior */
+  padding-bottom: 20px;              /* espaçamento inferior */
+  margin-top: 0;                     /* zera a margem superior */
+  padding-top: 0;
+}
+
+.equipe-grid {
+  display: grid;                              /* layout em grade */
+  grid-template-columns: repeat(3, 1fr);      /* 3 colunas iguais */
+  gap: 25px;                                  /* espaçamento entre cards */
+  margin-top: 40px;                           /* margem superior */
+}
+
+.membro-card {
+  background-color: #2B303B !important;     /* cor de fundo */
+  border: none !important;                    /* sem borda */
+  border-radius: 15px;                        /* bordas arredondadas */
+  padding: 40px;                              /* espaçamento interno */
+  text-align: center;                         /* centraliza conteúdo */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);/* sombra */
+}
+
+.membro-foto {
+  width: 160px;                               /* largura da foto */
+  height: 160px;                              /* altura da foto */
+  border-radius: 50%;                         /* formato circular */
+  margin: 0 auto 15px auto;                   /* centraliza horizontal e margem inferior */
+  background-size: cover;                     /* cobre todo o elemento */
+  background-position: center;                /* centraliza a imagem */
+  border: 2px solid #F67655;                /* borda colorida */
+}
+
+.card-text {
+  font-size: 0.9rem;                          /* tamanho do texto */
+  margin-top: 5px;                            /* margem superior */
+  font-style: italic;                         /* texto em itálico */
+}
+
+/* ------------------ PROPÓSITO ------------------ */
+.proposito-card {
+  font-family: Inter;                         /* fonte do card */
+  background-color: #2B303B;                /* cor de fundo */
+  border: none;                               /* sem borda */
+  color: white;                             /* cor do texto */
+  border-radius: 15px;                        /* bordas arredondadas */
+  padding: 48px;                              /* espaçamento interno */
+  text-align: justify;                        /* justifica o texto */
+  font-size: 21px;                            /* tamanho da fonte */
+  width: 95%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);  /* sombra suave*/
+}
+.roposito-section{
+  margin-bottom: 0; /* Zere a margem inferior aqui */
+    padding-bottom: 0;
+}
+
+/* ------------------ VALORES ------------------ */
+.valor-cards-Confiavel,
+.valor-cards-monitoramento,
+.valor-cards-trasparencia {
+  font-family: Inter;                         /* fonte dos cards */
+  border-radius: 15px;                        /* bordas arredondadas */
+  color: #ebebeb;                           /* cor do texto */
+  font-size: 18px;                            /* tamanho da fonte */
+  box-shadow: 5px 5px 10px rgba(3, 3, 3, 0.15);
+}
+
+.valor-cards-Confiavel {
+  background-color: rgba(0, 173, 55, 0.3);  /* fundo semi-transparente */
+  border-color: #00750A;                    /* cor da borda */
+}
+
+.valor-cards-monitoramento {
+  background-color: rgba(246, 128, 85, 0.2); 
+  border-color: #ff5c21;
+}
+
+.valor-cards-trasparencia {
+  background-color: rgba(213, 255, 0, 0.2);
+  border-color: #fffb00;
+}
+
+/* ------------------ ÍCONES ------------------ */
+.shild { color: #14d825; margin-right: 15px; width: 3rem; } /* cor, margem, largura do ícone */
+.boxes { color: #F67655; margin-right: 15px; width: 3rem; }
+.people { color: #EFFF08; margin-right: 15px; width: 3rem; }
+.people2 { color: #F67655; margin-right: 5px; width: 4rem; }
+.palette { color: #E5FA41; margin-right: 5px; }
+.alvo { color: #F67655; }     
+
+.caixa { 
+  color: #ffffff; 
+  margin-right: 15px; 
+  position: relative;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+
+.raio {
+  color: #ffffff; 
+  margin-right: 15px; 
+  position: relative;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}                                              
+.brain{
+  width: 35px;
+  height: 40px;
+  filter: invert(70%) sepia(60%) saturate(6000%) hue-rotate(340deg) brightness(100%) contrast(100%);
+}
+.quadrado{
+  background: linear-gradient(40deg, #FFEE00, #F67655);
+
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+    
+  margin-right: 15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+}
+
+.quadrado2{
+  background: linear-gradient(40deg, #FFEE00, #F67655);
+
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+    
+  margin-right: 15px;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.retangulo1,
+.retangulo2 {
+  width: 100px;                                               /* largura do retângulo */
+  height: 6px;                                                /* altura do retângulo */
+}
+
+.retangulo1 {
+  background: linear-gradient(45deg, #FFEE00, #F67655);  /* gradiente */
+}
+
+.retangulo2 {
+  background: linear-gradient(45deg, #F67655, #FFEE00); 
+}
+.circulo-grande{
+  border-radius: 50px;
+  background: linear-gradient(45deg, #F67655, #FFEE00); 
+   width: 70px;
+  height: 70px;
+}
+.palette-citacao{
+  border-radius: 50px;
+  color: white;
+  width: 53px;
+  height: 70px;
+}
+
+.citacao-assinatura-bloco:before,
+.citacao-assinatura-bloco:after {
+    content: '';
+    width: 100px; 
+    height: 4px;
+    background: linear-gradient(90deg, #F67655, #FFEE00); 
+    border-radius: 10px;
+    display: block;
+}
+.citacao-assinatura-bloco:before {
+    background: linear-gradient(90deg, #FFEE00, #F67655); 
+}
+
+/* ------------------ TÍTULOS ------------------ */
+.titulo-com-icone {
+  font-family: Joanna;               /* fonte do título */
+  display: flex;                     /* layout flexível */
+  align-items: center;               /* centraliza verticalmente */
+  margin-bottom: 20px;               /* margem inferior */
+}
+
+.card-title-icon {
+  display: flex;                     /* layout flexível */
+  align-items: center;               /* centraliza verticalmente */
+  gap: 15px;                         /* espaço entre elementos */
+  font-size: 2.5rem;                 /* tamanho da fonte */
+  font-weight: bold;                 /* negrito */
+}
+
+.titulo-proposito {
+  font-family: Inter;                /* fonte do título */
+  color: #FFFFFF;                  /* cor do texto */
+  font-size: 23px;                   /* tamanho da fonte */
+}
+
+.icon-titulo {
+  display: flex;                     /* layout flexível */
+  align-items: center;               /* centraliza verticalmente */
+  justify-content: center;           /* centraliza horizontalmente */
+  gap: 10px;                         /* espaço entre elementos */
+  margin-bottom: 5px;                /* margem inferior */
+  margin-top: 0;
+}
+.icon-titulo h2{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.subtitulo {
+  font-family: Hepta Slab;           /* fonte */
+  font-size: 3rem;                   /* tamanho do texto */
+  font-weight: bold;                 /* negrito */
+}
+/* ------------------ METODOLOGIA ------------------ */
+
+
+.metodologia-card {
+    /* Fundo escuro sutilmente diferente do fundo da página */
+  background-color: #2B303B; 
+  border: none;
+  border-radius: 12px;
+  padding: 30px;
+  height: 100%; /* Garante que os dois cards tenham a mesma altura */
+  font-family: Inter;                         /* fonte do card */
+  color: white;                             /* cor do texto */
+  text-align: justify;                        /* justifica o texto */
+  font-size: 21px;                            /* tamanho da fonte */
+  width: 95%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);  /* sombra suave*/
+}
+.metodologia-section .row {
+    margin-bottom: 0 !important;
+}
+.citacao-block { /* A coluna que contém a citação */
+    margin-top: 0 !important; 
+}
+/* Estilo para a caixa da Metodologia e Dados no About.js */
+.metodologia-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #1B1E2A; /* Cor de fundo da página */
+    margin-bottom: 0 !important; 
+    padding-bottom: 0 !important;
+}
+
+/* Container dos Cards Internos */
+.internal-card-ia, .internal-card-vis {
+  font-family: Inter; 
+  font-size: 15px;
+  border: 2px solid;
+  padding: 0px;
+  padding-left: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex; 
+  align-items: center;                  /* Centraliza verticalmente */
+  gap: 15px;                            /* Espaço entre ícone e texto */
+
+}
+.internal-card-ia {
+  background-color: rgba(246, 128, 85, 0.22); 
+  border-color: #f6805580;             /* cor da borda */  
+}
+.internal-card-vis {
+  background-color: rgba(255, 255, 86, 0.22); 
+  border-color: #EAF97780; 
+}
+
+.card-text-content {
+  flex-grow: 1;                         /* Permite que o texto ocupe o espaço restante */
+  padding-top: 15px;
+  margin-top: 0;
+}
+
+.subtitulo-metod-card2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-weight: bold;
+  margin-bottom: 3px;                   /* Zera margem para aproximar do parágrafo */
+  color: white;
+}
+
+.text-metod{
+  font-size: 1.1rem;
+  margin-top: 3px;                            /* Reduza a margem superior para aproximar do título */
+  display: block;
+  color: rgba(255, 255, 255, 0.753);        /* Branco com 70% de opacidade */
+}
+
+.tag-reuniao{
+  background-color: #4A1507!important;     /* Branco com 70% de opacidade */
+  color: #F67655;
+  border-radius: 50px;
+  font-size: 1rem;
+  border: 2px solid #f6755524;
+  gap: 50px;
+  
+}
+.metodologia-tags-menores {
+    display: flex;
+    flex-wrap: wrap;                          /* Permite que as tags quebrem para a próxima linha em telas pequenas */
+    gap: 10px;                                /* Adiciona espaço entre as tags (horizontal e vertical) */
+    margin-top: 15px;                         /* Espaço para afastar do texto acima */
+    padding: 20px 0px;
+    
+}
+.numero-sprint{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FF0000;
+  text-align: left;
+}
+
+.tag-sprint{
+  position: relative;
+  font-family: inter;
+  font-size: 1.4rem;
+  background-color: #F6805522!important; 
+  color: #ffffffab;
+  border: 2px solid #F6765533;
+  border-radius: 15px;
+}
+
+/* ESTILO DO BLOCO DE CITAÇÃO FINAL */
+
+.citacao-container {
+    background-color: #2B303B; 
+    border-radius: 12px;
+    padding: 60px 40px;                   /* Grande padding vertical e horizontal */
+    position: relative;                    /* Essencial para posicionar o ícone no topo */
+    text-align: center;
+    color: #f0f0f0d3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 0 !important;
+}
+
+.citacao-texto {
+    font-size: 1.5rem; 
+    font-style: italic;
+    font-weight: 200;
+    margin-bottom: 20px;
+    line-height: 1.4  ;
+}
+
+.citacao-icone-decorativo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px auto; 
+  }
+
+/* Estilo da Assinatura e Linhas Decorativas */
+.citacao-assinatura-bloco {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 0.9rem;
+    color: #C0C0C0;
+    margin-top: 10px;
+}
+
+.assinatura-texto {
+    margin: 0 15px; 
+}
+
+/* ------------------- RESPONSIVO -------------------- */
+@media (max-width: 992px) {
+    /* Telas Médias (TABLETS - Regras aplicadas entre 992px e 577px) */
+    
+    /* LAYOUT: Grid da Equipe e Ajuste de Colunas */
+    .equipe-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        gap: 20px;
+    }
+
+    /* CARD: Diminui foto para que o card caiba melhor */
+    .membro-foto {
+        width: 120px; 
+        height: 120px;
+    }
+
+    /* CARDS PRINCIPAIS: Ajuste de Conteúdo */
+    .proposito-card, 
+    .metodologia-card {
+        padding: 25px;            /* Reduz o padding interno do card */
+        font-size: 18px;          /* Reduz o tamanho da fonte principal */
+    }
+
+    /* TÍTULOS E ÍCONES */
+    .card-title-icon {
+        font-size: 2rem;          /* Reduz o título interno (ex: Arquitetura e Dados) */
+        gap: 10px; 
+    }
+
+    /* TITULOS DE NAVEGAÇÃO */
+    .subtitulo {                  /* Título da seção (Nossa Equipe) */
+        font-size: 2.5rem; 
+    }
+    
+    /* CARDS DE VALOR: Ajuste do Texto */
+    .valor-cards-Confiavel,
+    .valor-cards-monitoramento,
+    .valor-cards-trasparencia {
+        font-size: 16px;
+    }
+
+    /* CARDS INTERNOS */
+    .subtitulo-metod-card2 {
+        font-size: 1.1rem;
+    }
+    
+    /* AJUSTE DA CITAÇÃO */
+    .citacao-container {
+        padding: 40px 30px; 
+    }
+}
+
+
+/* ---------------------------------------------------- */
+/* AJUSTES AGRESSIVOS PARA CELULARES (max-width: 576px) */
+/* ---------------------------------------------------- */
+@media (max-width: 576px) {
+    
+    html, body {
+        width: 100%;
+        overflow-x: hidden !important; 
+        margin: 0;
+        padding: 0;
+    }
+    
+    .equipe-grid {
+        grid-template-columns: 1fr;       /* 1 coluna (empilhamento) */
+        gap: 30px; 
+    }
+    
+    /* ESPAÇAMENTO E PADDING LATERAL */
+    .sobre-header-container, 
+    .sobre-equipe-container, 
+    .metodologia-section {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box; 
+    }
+    
+    /* REDUÇÃO DE TAMANHO */
+    .header-title {
+        font-size: 2.5rem;                /* Título principal menor */
+    }
+    
+    .subtitulo {
+        font-size: 2rem;                  /* Título de seção menor */
+    }
+    
+    /* CARDS E CONTEÚDO */
+    .proposito-card, 
+    .metodologia-card {
+        padding: 15px;                    /* Padding interno menor */
+        font-size: 15px;
+        text-align: left;                 /* Alinha o texto à esquerda no mobile */
+    }
+    
+    /* ÍCONES E SVG */
+    .brain, .caixa, .palette {
+        width: 30px;                     /* Redução para 30px no mobile */
+        height: 35px;
+    }
+
+    /* TAGS E BOTÕES */
+    .metodologia-tags-menores {
+        gap: 8px;                       /* Espaçamento menor para as tags */
+    }
+    .metodologia-tags-menores button {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+    
+    /* CITAÇÃO FINAL */
+    .citacao-container {
+        padding: 40px 15px;
+        font-size: 1rem;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* AJUSTE FINAL PARA TELAS ULTRA PEQUENAS (375px e menos) */
+/* ---------------------------------------------------- */
+@media (max-width: 375px) {
+    /* Título principal para telas minúsculas */
+    .header-title {
+        font-size: 2rem; 
+    }
+    
+    /* Subtítulo da seção para evitar vazamento */
+    .subtitulo {
+        font-size: 1.8rem;
+    }
+    
+    /* Redução extrema do padding horizontal */
+    .proposito-card, .metodologia-card {
+        padding: 12px;
+    }
+}

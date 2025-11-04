@@ -3,9 +3,9 @@ import { Button } from "../components/Button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
 import { SearchBar } from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
-
 import api from "../api";
-import "../App.css";
+import '../styles/app.css'
+import '../styles/noticias.css'
 
 const PaginaNoticias = () => {
   const [articles, setArticles] = useState([]);

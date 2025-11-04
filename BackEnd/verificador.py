@@ -58,8 +58,8 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Conecta no banco de dados MongoDB
 mongo_client = pymongo.MongoClient(os.getenv("MONGO_URI"))
-db = mongo_client["seliga_db_teste"]  # Abre o banco chamado "seliga_db_teste"
-noticias_collection = db["noticias"]  # Abre a gaveta "noticias" dentro do banco
+db = mongo_client["DadosSeLIga"]  # Abre o banco chamado "DadosSeLIga"
+noticias_collection = db["Dados"]  # Abre a gaveta "Dados" dentro do banco
 
 # Escolhe qual IA vamos usar tendo varios modelos no site da API 2.5 flash vai atender bem as nossas necessidades
 model = genai.GenerativeModel('gemini-2.5-flash')  

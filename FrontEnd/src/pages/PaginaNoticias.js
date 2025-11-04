@@ -11,6 +11,7 @@ const PaginaNoticias = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [veracityFilter, setVeracityFilter] = useState("todas");
 
   // Teste de Cards de noticias 
   // APENAS TESTE, PODE EXCLUIR ESSA PARTE QUANDO CONECTAR COM O BACK!
@@ -49,8 +50,12 @@ const PaginaNoticias = () => {
     fetchArticles();
   };
 
-  const filteredArticles = articles.filter((article) =>
+  const filteredArticles = articles
+  .filter((article) =>
     article.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .filter((article) =>
+    veracityFilter === "todas" ? true : article.veracity === veracityFilter
   );
 
   const recentArticles = articles.slice(0, 2);
@@ -81,9 +86,33 @@ const PaginaNoticias = () => {
 
           {/*Veracidade das noticias*/}
           <div className="veracidade-filtros">
-            <button>✅ Verificados</button>
-            <button>⚠️ Duvidosas</button>
-            <button>❌ Fake News</button>
+            <button
+              onClick={() => setVeracityFilter("verified")}
+              className={veracityFilter === "verified" ? "ativo" : ""}
+            >
+            ✅ Verificadas
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("dubious")}
+              className={veracityFilter === "dubious" ? "ativo" : ""}
+            >
+            ⚠️ Duvidosas
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("fake")}
+              className={veracityFilter === "fake" ? "ativo" : ""}
+            >
+            ❌ Fake News
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("todas")}
+              className={veracityFilter === "todas" ? "ativo" : ""}
+            >
+            📋 Todas
+            </button>
           </div>
         </div>
 

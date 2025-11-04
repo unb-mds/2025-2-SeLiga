@@ -90,3 +90,16 @@ DOWNLOAD_DELAY = 3
 
 # Set settings whose default value is deprecated to a future-proof value
 FEED_EXPORT_ENCODING = "utf-8"
+
+#define o Pipeline de Itens (ITEM_PINELINES) que o Scrapy deve usar. 
+# Pipeline de Itens processa os dados (chamados Items) depois que eles são extraídos pelo spider.
+ITEM_PIPELINES = {
+    'spiders.pipelines.MongoDBPipeline': 300, 
+    #código do pipeline está no arquivo pipelines.py dentro da pasta spiders, e o nome da classe é MongoDBPipeline.
+    # 300: É um valor numérico que define a ordem de execução do pipeline.O valor pode ir de 0 a 1000. Pipelines com números menores são executados primeiro. Como este é o único pipeline listado e o valor padrão para a maioria é 300, ele será o primeiro (e único) a ser executado.   
+}
+
+# endereço de conexão (URI) do servidor MongoDB:
+MONGO_URI = "mongodb+srv://erickrguara_db_user:<squad5Seliga2025#>@cluster0.jia9stf.mongodb.net/?appName=Cluster0"
+#nome do banco de dados dentro do MongoDB onde as notícias serão salvas.
+MONGO_DATABASE = "DadosSeLIga"                

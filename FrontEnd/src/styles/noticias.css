@@ -78,6 +78,18 @@
   padding: 0;                     /* sem padding */
   border: none !important;        /* sem borda */
   border-radius: 10px;            /* bordas arredondadas */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card .card-footer {
+  font-size: 0.95rem;
+  color: #F67655;
+  margin-top: auto;
+}
+.news-card .card-title {
+  flex-shrink: 0;
 }
 
 /* Grid de Cards */
@@ -86,6 +98,7 @@
   grid-template-columns: 1fr 1fr 1fr;    /* 3 colunas iguais */
   gap: 15px;                             /* espaço entre cards */
   margin-top: 25px;                      /* margem superior */
+  align-items: stretch;
 }
 
 /* Área da Imagem / Placeholder */
@@ -110,6 +123,7 @@
 
 .card-content-body {
   padding: 15px;                         /* espaçamento interno */
+  flex-grow: 1;
 }
 
 .card-title {
@@ -122,6 +136,8 @@
   font-size: 0.95rem;                    /* tamanho da fonte */
   color: #F67655;                      /* cor do texto */
   margin-top: 10px;                      /* margem superior */
+  flex-shrink: 0;
+  padding: 0 15px 15px 15px;
 }
 /* ------------ Botões Laranja --------------- */
 button {

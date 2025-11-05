@@ -6,19 +6,28 @@ const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
   // Lógica para definir a cor do selo (Badge)
   // getVeracityStyle = obtenha o estilo Veracidade
   const getVeracityStyle = (status) => {
-    // VERIFICAÇÃO DE SEGURANÇA: Se o status for nulo ou vazio, retorna o default imediatamente.
     if (!status) {
-      return { text: 'AGUARDANDO CLASSIFICAÇÃO', color: 'secondary' };
+      return { text: 'NÃO CLASSIFICADA', color: 'secondary' };
     }
 
-    // Processa o status se ele existir
-    switch (status.toLowerCase()) {
-      case 'verified':
-        return { text: 'VERIFICADA', color: 'success' }; // Verde
+    // Deixa o status em minúsculas para comparar
+    const lowerStatus = status.toLowerCase();
+
+    switch (lowerStatus) {
+      case 'verdadeira':   
+      case 'verificado': 
+      case 'verified':    
+        return { text: 'VERIFICADA', color: 'success' };
+
+      case 'falsa':    
       case 'fake':
-        return { text: 'FAKE NEWS', color: 'danger' }; // Vermelho
+        return { text: 'FAKE NEWS', color: 'danger' };
+
+      case 'inconclusiva':
       case 'dubious':
-        return { text: 'DUVIDOSA', color: 'warning' }; // Amarelo
+        return { text: 'DUVIDOSA', color: 'warning' };
+
+      case 'pendente': 
       default:
         return { text: 'NÃO CLASSIFICADA', color: 'secondary' };
     }
@@ -33,7 +42,7 @@ const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
       {/* Imagem Placeholder */}
       <div
         className="card-image-placeholder"
-        style={{ backgroundImage: `url(${imageUrl})` }}
+        style={{ backgroundImage: `url(${imageUrl || '/noticia.webp'})` }}
       >
         {/* O Selo de Veracidade (Badge) deve ficar dentro do placeholder */}
         <Badge pill bg={statusData.color} className="veracity-badge">

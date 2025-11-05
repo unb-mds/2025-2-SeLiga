@@ -10,17 +10,21 @@ const PopUp = ({ isOpen, onClose, news }) => {
 
     // Define o estilo e ícone de acordo com o status de veracidade
     const getVeracidadeInfo = (status) => {
-        const lowerStatus = status?.toLowerCase() || '';
-        if (lowerStatus === 'verified' || lowerStatus === 'verificado') {
+        const lowerStatus = status?.toLowerCase() || 'pendente'; // Garante que nunca seja nulo
+
+        if (lowerStatus === 'verdadeira' || lowerStatus === 'verificado' || lowerStatus === 'verified') {
             return { texto: 'VERIFICADA', Icone: FaCheckCircle, classe: 'verified' };
         }
-        if (lowerStatus === 'fake' || lowerStatus === 'falsa') {
+        if (lowerStatus === 'falsa' || lowerStatus === 'fake') {
             return { texto: 'FAKE NEWS', Icone: FaCircleXmark, classe: 'fake' };
         }
-        return { texto: 'DUVIDOSA', Icone: FaExclamationTriangle, classe: 'dubious' };
+        if (lowerStatus === 'inconclusiva' || lowerStatus === 'dubious') {
+            return { texto: 'DUVIDOSA', Icone: FaExclamationTriangle, classe: 'dubious' };
+        }
+        return { texto: 'NÃO CLASSIFICADA', Icone: FaExclamationTriangle, classe: 'dubious' };
     };
 
-    const veracidadeInfo = getVeracidadeInfo(news.status_verificacao);
+    const veracidadeInfo = getVeracidadeInfo(news.verificacao?.classificacao || news.status_verificacao);
 
     return (
         <div className="popup-overlay" onClick={onClose}>
@@ -55,11 +59,11 @@ const PopUp = ({ isOpen, onClose, news }) => {
                         className="news-image"
                     />
 
-                    <p className="news-full-text">{news.fullText}</p>
+                    <p className="news-full-text">{news.texto}</p>
 
-                    {news.originalLink && (
+                    {news.url && (
                         <a
-                            href={news.originalLink}
+                            href={news.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="original-link"
@@ -71,7 +75,11 @@ const PopUp = ({ isOpen, onClose, news }) => {
 
                 {/* Rodapé */}
                 <div className={`modal-footer ${veracidadeInfo.classe}`}>
-                    <veracidadeInfo.Icone className="footer-icon" /> Status: {veracidadeInfo.texto}
+
+                    <div className="status-line">
+                        <veracidadeInfo.Icone className="footer-icon" /> 
+                        <span> {veracidadeInfo.texto}</span>
+                    </div>
                     <p className="footer-text">
                         {veracidadeInfo.classe === 'verified' &&
                             'Esta notícia foi verificada e confirmada por fontes confiáveis.'}

@@ -49,8 +49,8 @@ app = FastAPI(
 )
 
 origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"                # informa a porta para o frontend
+    "http://localhost:3000",               # informa a porta para o frontend
+    "http://127.0.0.1:3000"                
 ]
 
 app.add_middleware(

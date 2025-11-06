@@ -49,36 +49,28 @@ app = FastAPI(
 )
 
 origins = [
-    "http://localhost:3000"                 # informa a porta para o frontend
+    "http://localhost:3000"             
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"], # se precisar bloquear algum método (GET ou POST)  
-    allow_headers=["*"], # ou header, apenas modificar linha
+    allow_methods=["GET"],  # APENAS LEITURA 
+    allow_headers=["*"],
 )
 
 @app.get("/")
-def root():
-    """Endpoint raiz - retorna informações da API"""
-    return {
-        "message": "SeLiga API - Sistema de Verificação de Notícias",
-        "version": "1.0.0",
-        "endpoints": {
-            "docs": "/docs",
-            "noticias": "/noticias",
-            "sobre": "/sobre",
-            "equipe": "/equipe"
-        }
-    }
-
-@app.get("/noticias")
-def listar_noticias():
-    """Lista todas as notícias do banco de dados"""
+def root(titulo: Optional[str] = None):
+    """Endpoint raiz - retorna apenas notícias verificadas (ou filtra por título se fornecido)"""
     try:
-        noticias = list(news_collection.find({}))
+        filtro = {"status_verificacao": "verificado"}
+        
+        if titulo:
+            filtro["titulo"] = {"$regex": titulo, "$options": "i"}
+
+        # Puxa as notícias com os filtros aplicados
+        noticias = list(news_collection.find(filtro))
         
         # Converte ObjectId para string
         for noticia in noticias:
@@ -91,30 +83,6 @@ def listar_noticias():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao buscar notícias: {str(e)}")
 
-@app.get("/noticias/buscar/{titulo}")
-def buscar_noticia_por_titulo(titulo: str):
-    """Busca notícias por título (busca parcial, case-insensitive)"""
-    try:
-        # Busca usando regex para permitir busca parcial e ignorar maiúsculas/minúsculas
-        noticias = list(news_collection.find({"titulo": {"$regex": titulo, "$options": "i"}}))
-        
-        if not noticias:
-            raise HTTPException(status_code=404, detail="Nenhuma notícia encontrada com esse título")
-        
-        # Converte ObjectId para string
-        for noticia in noticias:
-            noticia['_id'] = str(noticia['_id'])
-        
-        return {
-            "total": len(noticias),
-            "noticias": noticias
-        }
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Erro ao buscar notícia: {str(e)}")
-
-    
 @app.get("/sobre")
 def equipe():
     return {
@@ -128,85 +96,3 @@ def equipe():
             {"nome": "Erick", "papeis": ["DevOps", "Arquitetura"], "imagem_url": "/imagens_equipe/erick.jpg"}
         ]
     }
-# nova endpoint criado para equipe
-# agora quando o front fizer uma requisição para /equipe, receberá a lista de membros do time
-# no caso http://localhost:8000/equipe
-# membro.nome pega o nome
-# membro.papeis pega a lista de papeis
-# memebro.imagem_url pega a url da imagem
-# ai é so fazer a requisição no front pois as rotas ja estao configuradas
-
-
-@app.put("/noticias/{noticia_id}")
-def atualizar_noticia(noticia_id: str, noticia: NewsCreate):
-    """Atualiza uma notícia existente"""
-    try:
-        # Valida se é um ObjectId válido
-        if not ObjectId.is_valid(noticia_id):
-            raise HTTPException(status_code=400, detail="ID inválido")
-        
-        # Prepara os dados para atualização
-        dados_atualizacao = {
-            "titulo": noticia.titulo,
-            "texto": noticia.texto,
-            "fonte": noticia.fonte,
-            "url": noticia.url
-        }
-        
-        resultado = news_collection.update_one(
-            {"_id": ObjectId(noticia_id)},
-            {"$set": dados_atualizacao}
-        )
-        
-        if resultado.matched_count == 0:
-            raise HTTPException(status_code=404, detail="Notícia não encontrada")
-        
-        return {
-            "message": "Notícia atualizada com sucesso!",
-            "id": noticia_id,
-            "modificado": resultado.modified_count > 0
-        }
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Erro ao atualizar notícia: {str(e)}")
-
-@app.delete("/noticias/{noticia_id}")
-def deletar_noticia(noticia_id: str):
-    """Remove uma notícia do banco de dados"""
-    try:
-        # Valida se é um ObjectId válido
-        if not ObjectId.is_valid(noticia_id):
-            raise HTTPException(status_code=400, detail="ID inválido")
-        
-        resultado = news_collection.delete_one({"_id": ObjectId(noticia_id)})
-        
-        if resultado.deleted_count == 0:
-            raise HTTPException(status_code=404, detail="Notícia não encontrada")
-        
-        return {
-            "message": "Notícia deletada com sucesso!",
-            "id": noticia_id
-        }
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Erro ao deletar notícia: {str(e)}")
-
-@app.get("/noticias/status/{status}")
-def buscar_por_status(status: str):
-    """Busca notícias por status de verificação"""
-    try:
-        noticias = list(news_collection.find({"status_verificacao": status}))
-        
-        # Converte ObjectId para string
-        for noticia in noticias:
-            noticia['_id'] = str(noticia['_id'])
-        
-        return {
-            "status": status,
-            "total": len(noticias),
-            "noticias": noticias
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Erro ao buscar notícias: {str(e)}")

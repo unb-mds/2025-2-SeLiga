@@ -11,9 +11,7 @@ import { FiTarget } from "react-icons/fi";
 import { BsPeople } from "react-icons/bs";
 
 
-// --- Defina a Estrutura da Página Sobre  ---
 function Sobre() {
-    // --- ADICIONE A LÓGICA DE ESTADO E BUSCA ---
     const [squadData, setSquadData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -22,10 +20,10 @@ function Sobre() {
             try {
                 //Chama a nova rota equipe do backend
                 const response = await api.get("/equipe");
-                setSquadData(response.data); // Recebe o objeto completo (squad e membros)
+                setSquadData(response.data); 
             } catch (error) {
                 console.error("Erro ao buscar dados da equipe:", error);
-                setSquadData({ membros: [] }); // Evita quebrar o app
+                setSquadData({ membros: [] }); 
             } finally {
                 setIsLoading(false);
             }
@@ -34,13 +32,11 @@ function Sobre() {
         fetchEquipe();
     }, []);
 
-    // --- Lógica de Renderização ---
-    // Opcional: Se os dados ainda não chegaram
     if (isLoading) {
         return <Container className="text-center py-5"><Spinner animation="border" variant="light" /></Container>;
     }
 
-    const membros = squadData?.membros || []; // Garante que a lista não é nula
+    const membros = squadData?.membros || [];
 
     return (
         <Container className="py-5 sobre-container">
@@ -54,7 +50,6 @@ function Sobre() {
                 <h1 className="header-title">Sobre o Projeto</h1>
                 <p className="header-subtitle">Trabalho Acadêmico - Métodos de Desenvolvimento de Software</p>
 
-                {/* O Círculo e a Linha de Destaque */}
                 <div className="decorative-line-container">
                     <div class="retangulo1"></div>
                         <FiTarget className='alvo'/>
@@ -88,7 +83,7 @@ function Sobre() {
                                 key={membro.nome}
                                 nome={membro.nome}
                                 papeis={membro.papeis}
-                                imageUrl={membro.imagem_url} // Passa a URL da imagem
+                                imageUrl={membro.imagem_url} 
                             />
                         ))}
                     </div>

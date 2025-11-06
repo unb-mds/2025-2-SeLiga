@@ -156,7 +156,7 @@
   margin-right: 15px; 
   position: relative;
   top: 30%;
-  left: 43%;
+  left: 40%;
   transform: translate(-50%, -50%);
   width:40px; 
   height:40px;
@@ -285,12 +285,11 @@
 
 
 .metodologia-card {
-    /* Fundo escuro sutilmente diferente do fundo da página */
   background-color: #2B303B; 
   border: none;
   border-radius: 12px;
   padding: 30px;
-  height: 100%; /* Garante que os dois cards tenham a mesma altura */
+  height: 100%;                               /* Garante que os dois cards tenham a mesma altura */
   font-family: Inter;                         /* fonte do card */
   color: white;                             /* cor do texto */
   text-align: justify;                        /* justifica o texto */
@@ -301,14 +300,13 @@
 .metodologia-section .row {
     margin-bottom: 0 !important;
 }
-.citacao-block { /* A coluna que contém a citação */
+.citacao-block {
     margin-top: 0 !important; 
 }
-/* Estilo para a caixa da Metodologia e Dados no About.js */
 .metodologia-section {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #1B1E2A; /* Cor de fundo da página */
+    background-color: #1B1E2A; 
     margin-bottom: 0 !important; 
     padding-bottom: 0 !important;
 }
@@ -367,11 +365,11 @@
   
 }
 .metodologia-tags-menores {
-    display: flex;
-    flex-wrap: wrap;                          /* Permite que as tags quebrem para a próxima linha em telas pequenas */
-    gap: 10px;                                /* Adiciona espaço entre as tags (horizontal e vertical) */
-    margin-top: 15px;                         /* Espaço para afastar do texto acima */
-    padding: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;                          /* Permite que as tags quebrem para a próxima linha em telas pequenas */
+  gap: 10px;                                /* Adiciona espaço entre as tags (horizontal e vertical) */
+  margin-top: 15px;                         /* Espaço para afastar do texto acima */
+  padding: 20px 0px;
     
 }
 .numero-sprint{
@@ -433,122 +431,223 @@
 }
 
 /* ------------------- RESPONSIVO -------------------- */
-@media (max-width: 992px) {
-    .equipe-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
-        gap: 20px;
-    }
-    .membro-foto {
-        width: 120px; 
-        height: 120px;
-    }
 
-    .proposito-card, 
-    .metodologia-card {
-        padding: 25px;            /* Reduz o padding interno do card */
-        font-size: 18px;          /* Reduz o tamanho da fonte principal */
-    }
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr 1fr; }
 
-    .card-title-icon {
-        font-size: 2rem;          /* Reduz o título interno (ex: Arquitetura e Dados) */
-        gap: 10px; 
-    }
+  .content-area {
+    padding: 20px; }
 
-    .subtitulo {                  /* Título da seção (Nossa Equipe) */
-        font-size: 2.5rem; 
-    }
-    
-    .valor-cards-Confiavel,
-    .valor-cards-monitoramento,
-    .valor-cards-trasparencia {
-        font-size: 16px;
-    }
+  .main-title {
+    font-size: 1.9rem; text-align: center; }
 
-    /* CARDS INTERNOS */
-    .subtitulo-metod-card2 {
-        font-size: 1.1rem;
-    }
-    
-    /* AJUSTE DA CITAÇÃO */
-    .citacao-container {
-        padding: 40px 30px; 
-    }
+  .subtitle {
+    text-align: center; margin-bottom: 1rem; }
+
+  .busca-container {
+    padding: 30px 20px; }
+
+  .container-busca-filtro {
+    max-width: 100%; }
+
+  .container-busca-filtro input {
+    width: 100%;
+    max-width: none;
+    flex-grow: 1;
+    min-width: 0; }
+
+  .container-busca-filtro button .texto-botao {
+    display: inline;}
+
+  .tabs-list {
+    margin-top: 20px; }
+
+  .tabs-list button {
+    padding: 8px 10px;
+    font-size: 0.85rem; }
+
+  .veracidade-filtros {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px; }
+
+  .veracidade-filtros button {
+    flex: 1 1 45%;
+    min-width: 120px;
+    padding: 8px 10px;
+    font-size: 13px;
+    justify-content: center;}
+
+  .news-card .card-title {
+    font-size: 1.1rem; }
+
+  .card-image-placeholder {
+    height: 170px; }
+
+  .veracity-badge {
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 13px; }
+
+  .news-card .card-footer {
+    font-size: 0.9rem; }
 }
-
 @media (max-width: 576px) {
-    
-    html, body {
-        width: 100%;
-        overflow-x: hidden !important; 
-        margin: 0;
-        padding: 0;
-    }
-    
-    .equipe-grid {
-        grid-template-columns: 1fr;       /* 1 coluna (empilhamento) */
-        gap: 30px; 
-    }
-    
-    /* ESPAÇAMENTO E PADDING LATERAL */
-    .sobre-header-container, 
-    .sobre-equipe-container, 
-    .metodologia-section {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        box-sizing: border-box; 
-    }
-    
-    /* REDUÇÃO DE TAMANHO */
-    .header-title {
-        font-size: 2.5rem;                /* Título principal menor */
-    }
-    
-    .subtitulo {
-        font-size: 2rem;                  /* Título de seção menor */
-    }
-    
-    /* CARDS E CONTEÚDO */
-    .proposito-card, 
-    .metodologia-card {
-        padding: 15px;                    /* Padding interno menor */
-        font-size: 15px;
-        text-align: left;                 /* Alinha o texto à esquerda no mobile */
-    }
-    
-    /* ÍCONES E SVG */
-    .brain, .caixa, .palette {
-        width: 30px;                     /* Redução para 30px no mobile */
-        height: 35px;
-    }
 
-    /* TAGS E BOTÕES */
-    .metodologia-tags-menores {
-        gap: 8px;                       /* Espaçamento menor para as tags */
-    }
-    .metodologia-tags-menores button {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-    }
-    
-    .citacao-container {
-        padding: 40px 15px;
-        font-size: 1rem;
-    }
+  .sobre-header-container {
+    padding-top: 80px; }
+
+  .header-title { 
+    font-size: 2.5rem; line-height: 1.1; }
+
+  .header-subtitle {
+    font-size: 1.3rem; }
+
+  .shield-icon-background {
+    top: 36%; }
+
+  .escudo-fundo {
+    width: 300px; height: 300px; }
+
+  .proposito-card,
+  .metodologia-card {
+    padding: 0px;
+    font-size: 14px;
+    text-align: justify;
+    width: 100%; margin-bottom: 20px; }
+  
+  .header-subtitle-small {
+    font-size: 1rem; }
+
+  .titulo-proposito {
+    font-size: 20px; }
+
+  .shild,
+  .boxes,
+  .people {
+    width: 70px; height: 70px; }
+
+  .subtitulo {
+    font-size: 2.4rem; }
+
+  .membro-card {
+    padding: 10px;}
+
+  .valor-cards-proposito{
+    padding: 5px;}
+
+  .membro-foto {
+    width: 100px; height: 100px; }
+
+  .quadrado,
+  .quadrado2 {
+    width: 80px; height: 80px; }
+
+  .raio{
+    width: 40px;
+    height: 40px;
+    transform: translate(-70%, -70%); }
+  
+  .metodologia-tags-menores {
+    padding: 0;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: flex-start;}
+
+  .people2 {
+    width: 35px; height: 35px; }
+
+  .retangulo1,
+  .retangulo2,
+  .citacao-assinatura-bloco:before,
+  .citacao-assinatura-bloco:after {
+    width: 80px;}
+
+  .circulo-grande {
+    width: 60px;
+    height: 60px; }
+
+  .escudo-citacao {
+    width: 45px;
+    height: 60px; }
+  
+  .card-title-icon {
+    font-size: 1.8rem;
+    gap: 10px;}
+
+  .internal-card-ia,
+  .internal-card-vis {
+    padding: 10px;
+    gap: 10px;}
+
+  .subtitulo-metod-card2 {
+    font-size: 1.1rem;}
+
+  .text-metod {
+    font-size: 0.9rem;}
+
+  .tag-reuniao {
+    font-size: 0.8rem;}
+
+  .tag-sprint {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 5px;}
+
+  .numero-sprint {
+    font-size: 1.5rem;}
+
+  .citacao-container {
+    padding: 30px 20px;}
+
+  .citacao-texto {
+    font-size: 1.1rem;}
+
+  .assinatura-texto {
+    font-size: 0.8rem;}
+
+  .caixa {
+    width: 45px; height: 45px; transform: translate(-55%, -50%); }
+  
+    .metodologia-section .row>[class*="col-"] { margin-bottom: 40px; }
 }
-
 @media (max-width: 375px) {
-    /* Título principal para telas minúsculas */
-    .header-title {
-        font-size: 2rem; 
-    }
-    
-    .subtitulo {
-        font-size: 1.8rem;
-    }
-    
-    /* Redução extrema do padding horizontal */
-    .proposito-card, .metodologia-card {
-        padding: 12px;
-    }
-    .escudo-fundo{width:300px ; height:300px}
+  .raio {
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -70%);}
+
+  .caixa {
+    width: 45px;
+    height: 45px;
+    transform: translate(-36%, -50%);}
+
+  .alvo {
+    color: #F67655;
+    width: 55px;
+    height: 55px;
+    transform: translate(0%, 0%); }
+
+  .alvo2 {
+    width: 60px;
+    height: 60px;
+    transform: translate(-0%, 0%);}
+
+  .tag-sprint {
+    font-size: 1rem;
+    margin-top: 0px;
+    margin-bottom: 0px; }
+  
+    .proposito-card,
+  .metodologia-card {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 20px; }
+  .alvo {
+    color: #F67655; width: 45px; height: 45px }
+  
+  .metodologia-section .row>[class*="col-"] { margin-bottom: 40px; }
 }

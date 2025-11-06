@@ -9,10 +9,9 @@ function Proposito() {
     return (
         <Container fluid className="mt-5 mb-5">
 
-            {/* O Layout de Duas Colunas (Bloco 1 e Bloco 2) */}
             <Row className="justify-content-center">
 
-                {/* Coluna 1 (7 de 12): NOSSO PROPÓSITO - Ocupa mais espaço */}
+                {/*  NOSSO PROPÓSITO */}
                 <Col md={7} className="mb-3">
                     <Card className="proposito-card h-100">
                         <Card.Body>
@@ -41,7 +40,7 @@ function Proposito() {
                 <Col md={4} className="mb-3">
                     <div className="valor-cards-proposito">
 
-                        {/* 1. CARD: Verificação Confiável */}
+                        {/* CARD: Verificação Confiável */}
                         <Card className="valor-cards-Confiavel bg-success-dark mb-3">
                             <Card.Body className="proposito-section d-flex align-items-center">
                                 <LuShield className='shild'/>
@@ -51,7 +50,7 @@ function Proposito() {
                                 </div>
                             </Card.Body>
                         </Card>
-                        {/* 2. CARD: Monitoramento */}
+                        {/* CARD: Monitoramento */}
                         <Card className="valor-cards-monitoramento bg-danger-dark mb-3">
                             <Card.Body className="d-flex align-items-center">
                                     <BsBoxes className='boxes'/>
@@ -61,7 +60,7 @@ function Proposito() {
                                 </div>
                             </Card.Body>
                         </Card>
-                        {/* 3. CARD: Transparência Total */}
+                        {/* CARD: Transparência Total */}
                             <Card className="valor-cards-trasparencia">
                             <Card.Body className="d-flex align-items-center">
                                     <BsPeople className='people'/>

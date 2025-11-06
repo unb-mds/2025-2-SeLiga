@@ -24,6 +24,22 @@ const PopUp = ({ isOpen, onClose, news }) => {
         return { texto: 'NÃO CLASSIFICADA', Icone: FaExclamationTriangle, classe: 'dubious' };
     };
 
+    const formatDate = (dateString) => {
+        if (!dateString) {
+            return 'Data não informada';
+        }
+        try {
+            const dateObj = new Date(dateString);
+            if (isNaN(dateObj.getTime())) {
+                return dateString; 
+            }
+            // Usa a formatação local do Brasil (dd/mm/aaaa)
+            return dateObj.toLocaleDateString('pt-BR');
+        } catch (error) {
+            return dateString; 
+        }
+    };
+
     const veracidadeInfo = getVeracidadeInfo(news.verificacao?.classificacao || news.status_verificacao);
 
     return (
@@ -50,7 +66,8 @@ const PopUp = ({ isOpen, onClose, news }) => {
                     <div className="news-meta">
                         <span className="news-source">{news.source || news.fonte}</span>
                         <span className="news-separator">|</span>
-                        <span className="news-date">{news.data_coleta}</span>
+
+                        <span className="news-date">{formatDate(news.data_coleta)}</span>
                     </div>
 
                     <img
@@ -77,7 +94,7 @@ const PopUp = ({ isOpen, onClose, news }) => {
                 <div className={`modal-footer ${veracidadeInfo.classe}`}>
 
                     <div className="status-line">
-                        <veracidadeInfo.Icone className="footer-icon" /> 
+                        <veracidadeInfo.Icone className="footer-icon" />
                         <span> {veracidadeInfo.texto}</span>
                     </div>
                     <p className="footer-text">

@@ -3,8 +3,6 @@ import { Card, Badge } from 'react-bootstrap';
 
 const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
 
-  // Lógica para definir a cor do selo (Badge)
-  // getVeracityStyle = obtenha o estilo Veracidade
   const getVeracityStyle = (status) => {
     if (!status) {
       return { text: 'NÃO CLASSIFICADA', color: 'secondary' };
@@ -14,12 +12,12 @@ const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
     const lowerStatus = status.toLowerCase();
 
     switch (lowerStatus) {
-      case 'verdadeira':   
-      case 'verificado': 
-      case 'verified':    
+      case 'verdadeira':
+      case 'verificado':
+      case 'verified':
         return { text: 'VERIFICADA', color: 'success' };
 
-      case 'falsa':    
+      case 'falsa':
       case 'fake':
         return { text: 'FAKE NEWS', color: 'danger' };
 
@@ -27,9 +25,23 @@ const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
       case 'dubious':
         return { text: 'DUVIDOSA', color: 'warning' };
 
-      case 'pendente': 
+      case 'pendente':
       default:
         return { text: 'NÃO CLASSIFICADA', color: 'secondary' };
+    }
+  }; 
+  const formatDate = (dateString) => {
+    if (!dateString) {
+      return 'Data não informada';
+    }
+    try {
+      const dateObj = new Date(dateString);
+      if (isNaN(dateObj.getTime())) {
+        return dateString; 
+      }
+      return dateObj.toLocaleDateString('pt-BR');
+    } catch (error) {
+      return dateString; 
     }
   };
 
@@ -63,7 +75,8 @@ const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
         {/* Rodapé (Fonte e Data) */}
         <div className="card-footer d-flex justify-content-between mt-3">
           <span className="card-source">{source}</span>
-          <span className="card-date">{date}</span>
+
+          <span className="card-date">{formatDate(date)}</span>
         </div>
       </Card.Body>
     </Card>

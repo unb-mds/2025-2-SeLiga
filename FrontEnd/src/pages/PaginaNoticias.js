@@ -3,6 +3,7 @@ import { Button } from "../components/Button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
 import { SearchBar } from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
+import { IoIosSearch } from "react-icons/io";
 import PopUp from "../components/PopUp";
 import api from "../api";
 import '../styles/app.css'
@@ -44,17 +45,13 @@ const PaginaNoticias = () => {
       console.error(`Erro ao buscar detalhes da notícia ${noticiaId}:`, error);
     }
     setIsLoading(false);
-  };/*
+  };
    
-  
-  */
-  // --- CICLO DE VIDA (useEffect) ---
   useEffect(() => {
     // Chamamos a função de LISTAR ao carregar a página
     fetchArticlesList();
   }, []);
 
-  // --- HANDLERS ---
   const handleRefresh = () => {
     fetchArticlesList(); // Botão 'Buscar' chama a lista
   };
@@ -93,13 +90,17 @@ const PaginaNoticias = () => {
 
         <div className="busca-container">
           <div className="container-busca-filtro">
+            
             <SearchBar
               placeholder="Buscar notícias"
               searchTerm={searchTerm}
               onSearchChange={setSearchTerm}
             />
             <Button onClick={handleRefresh} disabled={isLoading}>
-              {isLoading ? "Atualizando..." : "Buscar"}
+              <IoIosSearch className="pesquisa" />
+              <span className="texto-botao">
+                {isLoading ? "Atualizando..." : "Buscar"}
+              </span>
             </Button>
           </div>
           <div className="veracidade-filtros">

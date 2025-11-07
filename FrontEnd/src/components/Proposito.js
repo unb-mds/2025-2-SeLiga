@@ -43,7 +43,7 @@ function Proposito() {
                         {/* CARD: Verificação Confiável */}
                         <Card className="valor-cards-Confiavel bg-success-dark mb-3">
                             <Card.Body className="proposito-section d-flex align-items-center">
-                                <LuShield className='shild'/>
+                                <LuShield className='shield'/>
                                 <div>
                                     <h5 className='titulo-proposito'>Verificação Confiável</h5>
                                     <p>Algoritmos avançados para identificar e classificar conteúdo suspeito</p>

@@ -24,7 +24,7 @@ const PaginaNoticias = () => {
   const fetchArticlesList = async () => {
     setIsLoading(true);
     try {
-      const response = await api.get("/noticias");
+      const response = await api.get("/");
       setArticles(response.data.noticias || []);
     } catch (error) {
       console.error("Erro ao buscar lista de artigos:", error);
@@ -56,12 +56,23 @@ const PaginaNoticias = () => {
     fetchArticlesList(); // Botão 'Buscar' chama a lista
   };
 
+  const getVeracityStatus = (article) => {
+    const status = (article.verificacao?.classificacao || article.status_verificacao || 'pendente').toLowerCase();
+
+    if (status === 'verdadeira' || status === 'verificado' || status === 'verified') return 'verified';
+    if (status === 'falsa' || status === 'fake') return 'fake';
+    if (status === 'inconclusiva' || status === 'dubious') return 'dubious';
+    return 'pendente';
+  };
+
   const filteredArticles = articles.filter((article) =>
     article.titulo?.toLowerCase().includes(searchTerm.toLowerCase())
   )
-    .filter((article) =>
-      veracityFilter === "todas" ? true : article.veracity === veracityFilter
-    );
+    .filter((article) => {
+      if (veracityFilter === "todas") return true;
+
+      return getVeracityStatus(article) === veracityFilter;
+    });
   
 
   const recentArticles = articles.slice(0, 2);

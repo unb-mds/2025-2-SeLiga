@@ -19,7 +19,7 @@ function Sobre() {
         const fetchEquipe = async () => {
             try {
                 //Chama a nova rota equipe do backend
-                const response = await api.get("/equipe");
+                const response = await api.get("/sobre");
                 setSquadData(response.data); 
             } catch (error) {
                 console.error("Erro ao buscar dados da equipe:", error);

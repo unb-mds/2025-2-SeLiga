@@ -3,24 +3,45 @@ import { Card, Badge } from 'react-bootstrap';
 
 const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
 
-  // Lógica para definir a cor do selo (Badge)
-  // getVeracityStyle = obtenha o estilo Veracidade
   const getVeracityStyle = (status) => {
-    // VERIFICAÇÃO DE SEGURANÇA: Se o status for nulo ou vazio, retorna o default imediatamente.
     if (!status) {
-      return { text: 'AGUARDANDO CLASSIFICAÇÃO', color: 'secondary' };
+      return { text: 'NÃO CLASSIFICADA', color: 'secondary' };
     }
 
-    // Processa o status se ele existir
-    switch (status.toLowerCase()) {
+    // Deixa o status em minúsculas para comparar
+    const lowerStatus = status.toLowerCase();
+
+    switch (lowerStatus) {
+      case 'verdadeira':
+      case 'verificado':
       case 'verified':
-        return { text: 'VERIFICADA', color: 'success' }; // Verde
+        return { text: 'VERIFICADA', color: 'success' };
+
+      case 'falsa':
       case 'fake':
-        return { text: 'FAKE NEWS', color: 'danger' }; // Vermelho
+        return { text: 'FAKE NEWS', color: 'danger' };
+
+      case 'inconclusiva':
       case 'dubious':
-        return { text: 'DUVIDOSA', color: 'warning' }; // Amarelo
+        return { text: 'DUVIDOSA', color: 'warning' };
+
+      case 'pendente':
       default:
         return { text: 'NÃO CLASSIFICADA', color: 'secondary' };
+    }
+  }; 
+  const formatDate = (dateString) => {
+    if (!dateString) {
+      return 'Data não informada';
+    }
+    try {
+      const dateObj = new Date(dateString);
+      if (isNaN(dateObj.getTime())) {
+        return dateString; 
+      }
+      return dateObj.toLocaleDateString('pt-BR');
+    } catch (error) {
+      return dateString; 
     }
   };
 
@@ -33,7 +54,7 @@ const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
       {/* Imagem Placeholder */}
       <div
         className="card-image-placeholder"
-        style={{ backgroundImage: `url(${imageUrl})` }}
+        style={{ backgroundImage: `url(${imageUrl || '/noticia.webp'})` }}
       >
         {/* O Selo de Veracidade (Badge) deve ficar dentro do placeholder */}
         <Badge pill bg={statusData.color} className="veracity-badge">
@@ -54,7 +75,8 @@ const NewsCard = ({ title, source, date, veracity, imageUrl }) => {
         {/* Rodapé (Fonte e Data) */}
         <div className="card-footer d-flex justify-content-between mt-3">
           <span className="card-source">{source}</span>
-          <span className="card-date">{date}</span>
+
+          <span className="card-date">{formatDate(date)}</span>
         </div>
       </Card.Body>
     </Card>

@@ -3,116 +3,170 @@ import { Button } from "../components/Button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
 import { SearchBar } from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
+import { IoIosSearch } from "react-icons/io";
+import PopUp from "../components/PopUp";
 import api from "../api";
 import '../styles/app.css'
 import '../styles/noticias.css'
+
 
 const PaginaNoticias = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [veracityFilter, setVeracityFilter] = useState("todas");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedNews, setSelectedNews] = useState(null);
 
-  // Teste de Cards de noticias 
-  // APENAS TESTE, PODE EXCLUIR ESSA PARTE QUANDO CONECTAR COM O BACK!
-  const fetchArticles = async () => {
-    setIsLoading(true);
+  
 
-    // Simula um pequeno atraso (para parecer uma API real)
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    // Define o estado com os dados de simulação
-    setArticles(MOCK_ARTICLES);
-
-    setIsLoading(false);
-  };
-
-
-  // Busca no backend
-  /*const fetchArticles = async () => {
+  // FUNÇÃO PARA LISTAR TODAS AS NOTÍCIAS 
+  const fetchArticlesList = async () => {
     setIsLoading(true);
     try {
       const response = await api.get("/");
-      setArticles(response.data.articles || []);
+      setArticles(response.data.noticias || []);
     } catch (error) {
-      console.error("Erro ao buscar artigos:", error);
+      console.error("Erro ao buscar lista de artigos:", error);
       setArticles([]);
     }
     setIsLoading(false);
   };
-  */
 
+  // FUNÇÃO PARA BUSCAR DETALHE DE UMA ÚNICA NOTÍCIA 
+  const fetchArticleDetail = async (article) => {
+    const noticiaId = article._id;
+    setIsLoading(true);
+    try {
+      const response = await api.get(`/noticias/${noticiaId}`);
+      setSelectedNews(response.data);
+      setIsModalOpen(true);
+    } catch (error) {
+      console.error(`Erro ao buscar detalhes da notícia ${noticiaId}:`, error);
+    }
+    setIsLoading(false);
+  };
+   
   useEffect(() => {
-    fetchArticles();
+    // Chamamos a função de LISTAR ao carregar a página
+    fetchArticlesList();
   }, []);
 
   const handleRefresh = () => {
-    fetchArticles();
+    fetchArticlesList(); // Botão 'Buscar' chama a lista
+  };
+
+  const getVeracityStatus = (article) => {
+    const status = (article.verificacao?.classificacao || article.status_verificacao || 'pendente').toLowerCase();
+
+    if (status === 'verdadeira' || status === 'verificado' || status === 'verified') return 'verified';
+    if (status === 'falsa' || status === 'fake') return 'fake';
+    if (status === 'inconclusiva' || status === 'dubious') return 'dubious';
+    return 'pendente';
   };
 
   const filteredArticles = articles.filter((article) =>
-    article.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    article.titulo?.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+    .filter((article) => {
+      if (veracityFilter === "todas") return true;
+
+      return getVeracityStatus(article) === veracityFilter;
+    });
+  
 
   const recentArticles = articles.slice(0, 2);
-  const verifiedArticles = articles.filter((a) => a.veracity === "verified");
+  const verifiedArticles = articles.filter(
+    (a) => a.status_verificacao === "verificado"
+  );
+
+  // O clique do Card chama a busca de detalhes
+  const handleCardClick = (article) => {
+    setSelectedNews(article); // Define o artigo selecionado
+    setIsModalOpen(true);     // Abre o modal
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedNews(null);
+  };
 
   return (
     <div className="noticias-pagina">
-      {/* conteúdo principal */}
       <div className="content-area">
         <h1 className="main-title">Central de Notícias</h1>
         <p className="subtitle">
           Acompanhe e analise todas as notícias monitoradas
         </p>
 
-        {/* busca */}
-
         <div className="busca-container">
           <div className="container-busca-filtro">
+            
             <SearchBar
               placeholder="Buscar notícias"
               searchTerm={searchTerm}
               onSearchChange={setSearchTerm}
             />
             <Button onClick={handleRefresh} disabled={isLoading}>
-              {isLoading ? "Atualizando..." : "Buscar"}
+              <IoIosSearch className="pesquisa" />
+              <span className="texto-botao">
+                {isLoading ? "Atualizando..." : "Buscar"}
+              </span>
             </Button>
           </div>
-
-          {/*Veracidade das noticias*/}
           <div className="veracidade-filtros">
-            <button>✅ Verificados</button>
-            <button>⚠️ Duvidosas</button>
-            <button>❌ Fake News</button>
+            <button
+              onClick={() => setVeracityFilter("verified")}
+              className={veracityFilter === "verified" ? "ativo" : ""}
+            >
+            ✅ Verificadas
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("dubious")}
+              className={veracityFilter === "dubious" ? "ativo" : ""}
+            >
+            ⚠️ Duvidosas
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("fake")}
+              className={veracityFilter === "fake" ? "ativo" : ""}
+            >
+            ❌ Fake News
+            </button>
+
+            <button
+              onClick={() => setVeracityFilter("todas")}
+              className={veracityFilter === "todas" ? "ativo" : ""}
+            >
+            📋 Todas
+            </button>
           </div>
         </div>
 
-        {/* tabs */}
         <Tabs defaultValue="all">
           <TabsList className="tabs-list">
-            <TabsTrigger value="all">Todas as noticias</TabsTrigger>
-            <TabsTrigger value="recent">Mais Recentes</TabsTrigger>
-            <TabsTrigger value="verified">Em Alta</TabsTrigger>
+            <TabsTrigger value="all">Todas</TabsTrigger>
+            <TabsTrigger value="recent">Recentes</TabsTrigger>
+            <TabsTrigger value="em-alta ">Em alta</TabsTrigger>
           </TabsList>
 
           <TabsContent value="all">
             {filteredArticles.length === 0 ? (
-
-              <div className="mensagem-vazia mt-4">
-                Nenhuma notícia encontrada.
-              </div>
+              <div className="mensagem-vazia mt-4">Nenhuma notícia encontrada.</div>
             ) : (
-
-              //O mapeamento dos artigos 
-              <div className="news-grid"> 
+              <div className="news-grid">
                 {filteredArticles.map((article) => (
-                <NewsCard
-                  key={article.id}
-                  title={article.title}
-                  source={article.source || 'Jornal Exemplo'}
-                  date={article.date || '10/10/2025'}
-                  veracity={article.veracity}
-                />
+                  <div key={article._id} onClick={() => handleCardClick(article)}>
+                    <NewsCard
+                      title={article.titulo}
+                      source={article.fonte || "Fonte desconhecida"}
+                      date={article.data_coleta || "Data não informada"}
+                      veracity={article.verificacao?.classificacao || article.status_verificacao}
+                      imageUrl={article.imageUrl}
+                    />
+                  </div>
                 ))}
               </div>
             )}
@@ -122,52 +176,51 @@ const PaginaNoticias = () => {
             {recentArticles.length === 0 ? (
               <div className="mensagem-vazia mt-4">Nenhuma notícia recente.</div>
             ) : (
-              
-              //Remove o aninhamento e use a sintaxe de props
-              <div className="news-grid"> 
-              {recentArticles.map((article) => (
-                <NewsCard
-                  key={article.id}
-                  title={article.title}
-                  source={article.source || 'Jornal Exemplo'}
-                  date={article.date || '10/10/2025'}
-                  veracity={article.veracity}
-                />
-              ))}
+              <div className="news-grid">
+                {recentArticles.map((article) => (
+                  <div key={article._id} onClick={() => handleCardClick(article)}>
+                    <NewsCard
+                      title={article.titulo}
+                      source={article.fonte}
+                      date={article.data_coleta}
+                      veracity={article.status_verificacao}
+                      imageUrl={article.imageUrl}
+                    />
+                  </div>
+                ))}
               </div>
             )}
           </TabsContent>
 
           <TabsContent value="verified">
             {verifiedArticles.length === 0 ? (
-              <div className="mensagem-vazia mt-4">Nenhuma notícia em Alta.</div>
+              <div className="mensagem-vazia mt-4">Nenhuma notícia verificada.</div>
             ) : (
-              //Remove o aninhamento e use a sintaxe de props
-              <div className="news-grid"> 
-              {verifiedArticles.map((article) => (
-                <NewsCard
-                  key={article.id}
-                  title={article.title}
-                  source={article.source || 'Jornal Exemplo'}
-                  date={article.date || '10/10/2025'}
-                  veracity={article.veracity}
-                />
-              ))}
+              <div className="news-grid">
+                {verifiedArticles.map((article) => (
+                  <div key={article._id} onClick={() => handleCardClick(article)}>
+                    <NewsCard
+                      title={article.titulo}
+                      source={article.fonte}
+                      date={article.data_coleta}
+                      veracity={article.status_verificacao}
+                      imageUrl={article.imageUrl}
+                    />
+                  </div>
+                ))}
               </div>
             )}
           </TabsContent>
         </Tabs>
       </div>
+
+      <PopUp
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        news={selectedNews}
+      />
     </div>
   );
 };
 export default PaginaNoticias;
 
-// Dados de simulação para testar o visual e o layout dos cards
-const MOCK_ARTICLES = [
-  { id: 101, title: 'Inteligência Artificial substituirá 40% dos empregos até 2030, diz estudo.', veracity: 'dubious', source: 'Tech News Brasil', date: '21/10/2025' },
-  { id: 102, title: 'Novo tratamento COVID-19 aprovado pela Anvisa mostra eficácia de 95%.', veracity: 'verified', source: 'Portal G1', date: '20/10/2025' },
-  { id: 103, title: 'Cura definitiva do câncer descoberta por cientista brasileiro.', veracity: 'fake', source: 'Ciência Hoje', date: '19/10/2025' },
-  { id: 104, title: 'Investimento em educação pública aumenta 15% em 2024.', veracity: 'verified', source: 'Ministério da Educação', date: '18/10/2025' },
-  { id: 105, title: 'Novo aplicativo promete detectar doenças através de selfies.', veracity: 'dubious', source: 'Inovação Digital', date: '17/10/2025' },
-];  

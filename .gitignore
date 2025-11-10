@@ -1,7 +1,3 @@
-# ignora package-lock.json
-/package-lock.json
-package-lock.json
-
 # ignore virtual environment
 venv
 .env

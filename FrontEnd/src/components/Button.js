@@ -10,7 +10,7 @@ export const Button = ({ onClick, disabled, className, children, variant = 'defa
     return (
         <button
             onClick={onClick}
-            discabled={disabled}
+            disabled={disabled}
             className={`${baseStyle} ${variantStyle} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
         >
             {children}

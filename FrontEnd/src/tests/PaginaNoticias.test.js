@@ -48,7 +48,7 @@ describe('PaginaNoticias', () => {
     });
 
     // teste 1: carregamento e exibição
-    test('deve carregar e exibir as notícias da API usando os componentes reais', async() => {
+    test('carregar e exibir as notícias da API usando os componentes', async() => {
         render(<PaginaNoticias/>);      // carrega a pagina de notícias
 
         // o botão deve mostrar "Atualizando..."
@@ -63,5 +63,42 @@ describe('PaginaNoticias', () => {
         // botão voltou ao estado "Buscar"
         expect(screen.getByRole('button', {name: /Buscar/i})).toBeInTheDocument();
     });
+
+    // teste 2: SearchBar
+    test('filtrar as notícias ao digitar na SearchBar', async() => {
+        render(<PaginaNoticias/>);      // carrega a pagina de noticias
+
+        await waitFor(() => {
+            // newsCard deve renderizar o título da notícia
+            expect(screen.getByText('Noticia teste 1')).toBeInTheDocument();
+        });
+        // verifica se a outra notícia também está la
+        expect(screen.getByText('Noticia teste 2')).toBeInTheDocument();
+
+        // simulação do usuário utilizando a search bar
+        const inputBusca = screen.getByPlaceholderText('Buscar notícias')       // placeholder presente em PaginaNoticias.js
+        await userEvent.type(inputBusca, 'Noticia teste 2');
+
+        // verificação do resultado da busca pela notícia
+        expect(screen.queryByText('Noticia teste 1')).not.toBeInTheDocument();      // não queremos que a notícia 1 esteja no documento já que o usuário pesquisou 'Notícia 2'
+        expect(screen.getByText('Noticia teste 2')).toBeInTheDocument();            // 'Noticia teste 2' deve aparecer no documento  
+    });
     
+    // teste 3: integração dos filtros
+    test('filtrar notícias ao clicar no botão de filtro', async() => {
+        render(<PaginaNoticias/>);
+
+        await waitFor(() => {
+            // newsCard deve renderizar o título da notícia
+            expect(screen.getByText('Noticia teste 1')).toBeInTheDocument();
+        });
+
+        // clica no botão de filtro
+        const botaoFake = screen.getByRole('button', {name: /❌ Fake News/i });
+        await userEvent.click(botaoFake);
+
+        // verificação do resultado do filtro pelo botão
+        expect(screen.queryByText('Noticia teste 2')).not.toBeInTheDocument();      // como 'Noticia teste 2' é verdadeira, não deveria aparecer no documento
+        expect(screen.getByText('Noticia teste 1')).toBeInTheDocument();            // como 'Noticia teste 1' é falsa, deveria aparecer no documento
+    });
 });

@@ -163,7 +163,7 @@ const PaginaNoticias = () => {
                       title={article.titulo}
                       source={article.fonte || "Fonte desconhecida"}
                       date={article.data_coleta || "Data não informada"}
-                      veracity={article.verificacao?.classificacao || article.status_verificacao}
+                      veracity={getVeracityStatus(article)}
                       imageUrl={article.imageUrl}
                     />
                   </div>
@@ -223,4 +223,5 @@ const PaginaNoticias = () => {
   );
 };
 export default PaginaNoticias;
+
 

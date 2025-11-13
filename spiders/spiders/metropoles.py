@@ -1,5 +1,6 @@
 import scrapy
 import datetime
+from spiders.items import NoticiaItem
 
 class MetropolesSpider(scrapy.Spider):
     
@@ -11,13 +12,7 @@ class MetropolesSpider(scrapy.Spider):
     CATEGORIAS_PERMITIDAS = ['brasil', 'mundo', 'ciência', 'saúde', 'política'] 
 
     def parse(self, response):
-        self.log(f'\n\nAnalisando a página de últimas notícias: {response.url}\n')
-
-        noticias = response.css('article[class*="NoticiaWrapper__Article"]')
-        self.log(f"\n\nEncontrados {len(noticias)} cards de notícia na página.\n")
-
-        for noticia in noticias:
-            
+        for noticia in response.css('article[class*="NoticiaWrapper__Article"]'):
             categoria_texto = noticia.css('div[class*="NoticiaWrapper__Categoria"] a::text').get()
             
             if not categoria_texto:
@@ -26,35 +21,27 @@ class MetropolesSpider(scrapy.Spider):
             categoria_limpa = categoria_texto.strip().lower()
 
             if categoria_limpa in self.CATEGORIAS_PERMITIDAS:
-                self.log(f"\n\nCategoria '{categoria_limpa}' encontrada! Seguindo link...\n")
-                
                 link = noticia.css('h5.noticia__titulo a::attr(href)').get()
 
                 if link:
                     yield response.follow(response.urljoin(link), callback=self.parse_artigo)
             
             else:
-                self.log(f"\n\nCategoria '{categoria_limpa}' não permitida. Pulando.\n")
-                pass
+                pass # Categoria não permitida
 
     def parse_artigo(self, response):
+        item = NoticiaItem()
         
-        self.log(f'\n\nExtraindo dados do artigo: {response.url}\n')
-        
-        categoria = response.css('div[class*="HeaderNoticiaWrapper__Categoria"] a::text').get()
-        titulo = response.css('h1[class*="Text__TextBase"]::text').get()
+        item["titulo"] = response.css('h1[class*="Text__TextBase"]::text').get()
+        item["categoria"] = response.css('div[class*="HeaderNoticiaWrapper__Categoria"] a::text').get()
+        item["fonte"] = self.name
+        item["url"] = response.url
 
         agora = datetime.datetime.now()
         data_publicacao = agora.strftime("%d/%m/%Y")
+        item["data_coleta"] = data_publicacao
 
         paragrafos = response.css('div[class*="ConteudoNoticiaWrapper__Artigo"] p::text').getall()
-        corpo_texto = ' '.join(paragrafo.strip() for paragrafo in paragrafos if paragrafo.strip())
+        item["texto"] = ' '.join(paragrafo.strip() for paragrafo in paragrafos if paragrafo.strip())
 
-        yield {
-            'titulo': titulo.strip() if titulo else None,
-            'texto': corpo_texto,
-            'fonte': self.name,
-            'url': response.url,
-            'data_coleta': data_publicacao,
-            'categoria': categoria.strip() if categoria else None,
-        }
+        yield item

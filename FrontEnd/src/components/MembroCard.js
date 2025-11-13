@@ -1,24 +1,43 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import '../styles/sobre.css'; 
 
-// Este componente exibe um único membro da equipe
 function MembroCard({ nome, papeis, imageUrl }) {
-    return (
-        <Card className="membro-card" bg="dark" text="white">
-            {/* Imagem do Membro */}
-            <div className="membro-foto" style={{ backgroundImage: `url(${imageUrl})` }}>
-                {/* Aqui vai a foto */}
-            </div>
 
-            <Card.Body>
-                {/* Nome e Papel */}
-                <Card.Title>{nome}</Card.Title>
-                <Card.Text className="text-secondary">
-                    {/* Junta os papéis em uma string (ex: "Scrum Master, Back-end") */}
-                    {papeis.join(', ')}
-                </Card.Text>
-            </Card.Body>
-        </Card>
+    const papelPrincipal = papeis && papeis.length > 0 ? papeis[0] : null;
+
+    const papeisSecundarios = papeis && papeis.length > 1 ? papeis.slice(1) : [];
+
+    return (
+        <div className="membro-card"> 
+
+            {/* Elemento decorativo de fundo */}
+            <div className="membro-card-background-deco"></div>
+
+            {/* Foto Principal */}
+            <div className="membro-foto" style={{ backgroundImage: `url(${imageUrl})` }}></div>
+
+            {/* Nome do Membro */}
+            <h3 className="membro-nome">{nome}</h3>
+
+            {/* Papel Principal  */}
+            {papelPrincipal && (
+                <div className="papel-principal-tag">
+                    {papelPrincipal}
+                </div>
+            )}
+
+            <div className="membro-role-categoria"></div>
+
+            {/* Papéis Secundários*/}
+            <div className="papeis-secundarios-container">
+                {papeisSecundarios.map((papel) => (
+                    <span key={papel} className="papel-secundario-tag">
+                        {papel}
+                    </span>
+                ))}
+            </div>
+        </div>
     );
 }
+
 export default MembroCard;

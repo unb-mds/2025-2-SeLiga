@@ -7,6 +7,7 @@
 }
 
 .main-title {
+  font-weight: 600;
   color: #e0e0e0;                /* cor do título principal */
   font-size: 2rem;                 /* tamanho da fonte */
   margin-bottom: 0.25rem;          /* espaço abaixo do título */
@@ -31,12 +32,14 @@
 }
 
 .busca-container input {
-  width: 500px;                     /* largura do input */
+  flex-grow: 1;                     /* largura do input */
   padding: 1rem;                    /* espaçamento interno */
   border-radius: 0.25rem;           /* bordas arredondadas pequenas */
   border: 1px solid #FFFFFF;      /* borda branca */
   background-color: #030303;      /* cor de fundo do input */
   color: #FFFFFF;                 /* cor do texto */
+  box-sizing: border-box; 
+  height: 50px;
 }
 
 .busca-container input::placeholder {
@@ -47,9 +50,21 @@
   display: flex;                   /* layout flexível */
   align-items: center;             /* centraliza verticalmente */
   gap: 0.5rem;                     /* espaçamento entre itens */
-  max-width: 600px;                /* largura máxima */
+  max-width: 800px;                /* largura máxima */
   width: 100%;                     /* ocupa toda a largura disponível */
 }
+
+.container-busca-filtro button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;                   /* Espaço entre o ícone e o texto */
+  flex-shrink: 0;                 /* Impede o botão de encolher */
+  box-sizing: border-box;
+  height: 50px;
+
+}
+
 
 /* ------------------ FILTROS ------------------ */
 .veracidade-filtros {
@@ -78,6 +93,18 @@
   padding: 0;                     /* sem padding */
   border: none !important;        /* sem borda */
   border-radius: 10px;            /* bordas arredondadas */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card .card-footer {
+  font-size: 0.95rem;
+  color: #F67655;
+  margin-top: auto;
+}
+.news-card .card-title {
+  flex-shrink: 0;
 }
 
 /* Grid de Cards */
@@ -86,6 +113,7 @@
   grid-template-columns: 1fr 1fr 1fr;    /* 3 colunas iguais */
   gap: 15px;                             /* espaço entre cards */
   margin-top: 25px;                      /* margem superior */
+  align-items: stretch;
 }
 
 /* Área da Imagem / Placeholder */
@@ -110,6 +138,7 @@
 
 .card-content-body {
   padding: 15px;                         /* espaçamento interno */
+  flex-grow: 1;
 }
 
 .card-title {
@@ -122,6 +151,8 @@
   font-size: 0.95rem;                    /* tamanho da fonte */
   color: #F67655;                      /* cor do texto */
   margin-top: 10px;                      /* margem superior */
+  flex-shrink: 0;
+  padding: 0 15px 15px 15px;
 }
 /* ------------ Botões Laranja --------------- */
 button {
@@ -132,7 +163,7 @@ button {
   border-radius: 5px;                    /* bordas arredondadas */
   font-weight: bold;                     /* texto em negrito */
   cursor: pointer;                       /* cursor muda ao passar sobre o botão */
-}
+}                       
 
 /* ------------ Tabs --------------- */
 .tabs-list {
@@ -164,4 +195,145 @@ button {
   flex-direction: column;                 /* organiza itens em coluna */
   padding: 25px;                          /* espaçamento interno */
   color: #F67655;                       /* cor do texto */
+}
+
+.news-card .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+/*------------- RESPONSIVO -------------*/
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr 1fr; }
+
+  .content-area {
+    padding: 20px; }
+
+  .main-title {
+    font-size: 1.9rem; text-align: center; }
+
+  .subtitle {
+    text-align: center; margin-bottom: 1rem; }
+
+  .busca-container { 
+    padding: 30px 20px; }
+  
+  .container-busca-filtro { 
+    max-width: 100%; }
+  
+  .container-busca-filtro input {
+    width: 100%; max-width: none; flex-grow: 1; min-width: 0; }
+  
+  .container-busca-filtro button .texto-botao {
+    display: inline; }
+  
+  .tabs-list {
+    margin-top: 20px; }
+
+  .tabs-list button {
+    padding: 8px 10px; font-size: 0.85rem; }
+
+  .veracidade-filtros {
+    flex-wrap: wrap; justify-content: center; gap: 6px; }
+
+  .veracidade-filtros button {
+    flex: 1 1 45%;
+    min-width: 120px;
+    padding: 8px 10px;
+    font-size: 13px;
+    justify-content: center; }
+
+  .news-card .card-title {
+    font-size: 1.1rem; }
+
+  .card-image-placeholder {
+    height: 170px; } 
+
+  .veracity-badge {
+    top: 20px; right: 20px; padding: 10px 15px; font-size: 13px; }
+
+  .news-card .card-footer {
+    font-size: 0.9rem; }
+}
+
+@media (max-width: 576px) {
+
+  .news-grid { 
+    grid-template-columns: 1fr; }
+
+  .content-area { 
+    padding: 15px;}
+  
+  .main-title { 
+    font-size: 1.8rem; margin-bottom: 0.5rem; text-align: center; }
+  
+  .subtitle { 
+    text-align: center; margin-bottom: 1rem; }
+  
+  .busca-container {
+    padding: 20px 15px; }
+  
+  .container-busca-filtro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100%; }
+  
+  .tabs-list {margin-top: 20px; }
+  
+  .tabs-list button {padding: 8px 10px; font-size: 0.85rem;}
+  
+  .container-busca-filtro input {
+      width: 100%; 
+      max-width: none; 
+      flex-grow: 1;
+      min-width: 0; 
+      padding: 1rem;
+      font-size: 14px; 
+      border-radius: 6px;
+      height: 42px; 
+      box-sizing: border-box;}
+    
+    .container-busca-filtro button {
+      flex: 0 0 42px; 
+      width: 42px; 
+      height: 42px;
+      padding: 0; 
+      border-radius: 6px;
+      justify-content: center; 
+      font-size: 12px; }
+
+  .veracidade-filtros { flex-wrap: wrap; justify-content: center; gap: 6px; }
+  
+  .veracidade-filtros button {
+    flex: 1 1 45%; min-width: 120px;
+    padding: 8px 10px; font-size: 13px; justify-content: center; }
+  
+  .card-title { 
+    font-size: 1rem; }
+  
+  .card-image-placeholder { 
+    height: 160px; }
+  
+  .veracity-badge { 
+    top: 15px; right: 15px; padding: 8px 12px; font-size: 12px; }
+  
+  .card-footer { 
+    font-size: 0.85rem; margin-top: 30px; }
+  
+  .news-card .card-title { 
+    font-size: 1rem;}
+  
+  .card-image-placeholder { 
+    height: 160px; } 
+  
+  .veracity-badge { 
+    top: 15px; right: 15px; padding: 8px 12px; font-size: 12px;}
+  
+  .news-card .card-footer { 
+    font-size: 0.9rem; }
 }

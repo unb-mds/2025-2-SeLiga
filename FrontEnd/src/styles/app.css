@@ -9,39 +9,76 @@ body {
   width: 100%;                                   /* ocupa 100% da largura da tela */
   overflow-x: hidden !important;                 /* evita barra de rolagem horizontal */
   padding: 0; 
+  min-height: 90px;
 }
 
 /* ------------------ NAVBAR ----------------- */
 .navbar {
   display: flex;                                 /* layout flexível */
-  align-items: center;                           /* centraliza verticalmente os itens */
   background-color: #000000;                   /* cor de fundo da navbar */
-  padding: 1rem 11rem;                           /* espaçamento interno: 1rem vertical, 5rem horizontal */
+  align-items: stretch;
+  padding: 0;                           
   width: 100%;
   z-index: 1000;
-  top: 0;
+  top: 0; 
   left: 0;
-  
-}
-
-.logo {
-  color: #F67655;                              /* cor da logo */
+  justify-content: space-between;
+  align-items: stretch;
+  position: fixed;
 }
 
 .menu-links {
   display: flex;                                 /* layout flexível para os links */
   gap: 2rem;                                     /* espaçamento entre os links */
   align-items: center;                           /* centraliza verticalmente */
+  padding-right: 11rem;
 }
 
 .nav-link {
   color: white;                                /* cor do link */
   font-weight: bold;                             /* deixa o texto em negrito */
-  font-size: 1rem;                               /* tamanho da fonte */
+  font-size: 1.2rem;                             /* tamanho da fonte */
+  text-decoration: none;                         /* Garante que o Link não seja sublinhado */
 }
-
+.nav-link:hover {
+  color: #F67655;
+}
 .nav-link:hover {
   color: #F67655;                              /* cor do link ao passar o mouse */
+}
+
+.logo {
+  
+  display: flex;                                 /* Para alinhar imagem e texto */
+  align-items: stretch;;                         /* Centraliza verticalmente */
+  gap: 0.75rem;                                  /* Espaço entre a logo e o texto */
+  text-decoration: none;                         /* Remove sublinhado do Link */
+  padding-left: 11rem;
+}
+
+.logo-img {
+  height: 70px;                                  /* Altura da logo */
+  width: 70px;                                   /* Largura da logo */
+  
+}
+.logo-img-wrapper {
+  background-color: #F67655;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  
+}
+
+.logo-text {
+  color: #F67655;                              /* Cor laranja original */
+  font-size: 2rem;                               /* Tamanho da fonte */
+  font-weight: bold;
+  margin: 0;                                     /* Remove margem padrão do h1 */
+  display: flex;
+  align-items: center
 }
 
 /* ------------------ BOTÕES ----------------- */
@@ -62,6 +99,93 @@ button {
   align-items: center;                           /* centraliza os itens horizontalmente */
   padding: 25px;                                 /* espaçamento interno */
   color: #F67655;                              /* cor do texto */
+}
+
+.main-content {
+  padding-top: 90px;
+}
+
+.mobile-menu-icon {
+  display: none;
+  /* Escondido no desktop */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding-right: 1.5rem;
+  /* Espaçamento da borda direita */
+}
+
+.mobile-menu-dropdown {
+  display: none;
+  /* Escondido por padrão */
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #000000;
+  padding: 2rem;
+  position: fixed;
+  /* Começa logo abaixo da navbar */
+  top: 90px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  /* Abaixo da navbar (1000) mas acima do resto */
+  border-top: 1px solid #333;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Classe 'show' que é ativada pelo React */
+.mobile-menu-dropdown.show {
+  display: flex;
+}
+
+.mobile-menu-dropdown .nav-link {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+
+  .menu-links {
+    display: none;
+  }
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .logo {
+    padding-left: 1.5rem;
+    gap: 0.5rem;
+  }
+  .navbar {
+    min-height: 70px;
+  }
+
+  .logo-img-wrapper {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    transform: translate(1%, 18%);
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  .main-content {
+    padding-top: 70px;
+  }
+
+  .mobile-menu-dropdown {
+    top: 70px;
+  }
 }
 
 

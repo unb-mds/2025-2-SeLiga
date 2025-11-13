@@ -4,6 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
 import { SearchBar } from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
 import { IoIosSearch } from "react-icons/io";
+import PopUp from "../components/PopUp";
 import api from "../api";
 import '../styles/app.css'
 import '../styles/noticias.css'
@@ -212,7 +213,15 @@ const PaginaNoticias = () => {
           </TabsContent>
         </Tabs>
       </div>
+
+      <PopUp
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        news={selectedNews}
+      />
     </div>
   );
 };
 export default PaginaNoticias;
+
+

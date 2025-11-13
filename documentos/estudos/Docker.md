@@ -43,7 +43,7 @@ Cada container roda de forma **independente e isolada**, mas compartilha o mesmo
 
 # Principais comandos do Docker:
 
-**docker ps:** serve para saber quantos e quais containers estão sendo executados na máquina. Mostrando:  
+###**docker ps:**### serve para saber quantos e quais containers estão sendo executados na máquina. Mostrando:  
 uma tabela que terá o ID do container (CONTAINER ID)  
 a imagem de que ele foi criado  (IMAGE)  
 o comando ultilizado para a inicialização do container (COMMAND)  

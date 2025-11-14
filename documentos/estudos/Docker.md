@@ -77,3 +77,66 @@ e o nome do container (NAME)
 **docker rmi imagem:** remove uma imagem  
 
 **docker push imagem:** envia uma imagem para o Docker Hub  
+
+---
+
+## Docker Compose
+
+Docker Compose é uma ferramenta que permite **construir e gerenciar múltiplos containers** usando um único arquivo de configuração (`docker-compose.yml`), sem precisar ficar executando comandos individuais para cada container.
+
+---
+
+### **Principais comandos**
+
+- **`docker-compose up`**  
+  Sobe (inicia) todos os containers definidos no arquivo `docker-compose.yml`.
+
+- **`docker-compose down`**  
+  Para e remove todos os containers criados pelo `docker-compose up`.
+
+- **`docker-compose ps`**  
+  Mostra o status dos containers gerenciados pelo Compose.
+
+- **`docker-compose logs`**  
+  Exibe os logs de todos os serviços definidos no arquivo.
+
+## Exemplo de arquivo docker-compose.yml:
+
+```yaml
+# Define a versão do formato do arquivo docker-compose 
+version: '3.8' 
+
+# Define os serviços (containers) que compõem a aplicação 
+services: 
+  # Primeiro serviço: o aplicativo web 
+  web: 
+    # Indica que o Docker deve construir a imagem a partir do Dockerfile 
+    # localizado no diretório atual (.) 
+    build: . 
+
+    # Mapeia a porta 8000 do host (sua máquina) para a porta 8000 do container 
+    # Assim você pode acessar o app em http://localhost:8000 
+    ports: 
+      - "8000:8000" 
+
+    # Indica que o serviço "web" depende do serviço "db" 
+    # Isso faz o Compose garantir que o container do banco de dados 
+    # seja iniciado antes do container da aplicação web 
+    depends_on: 
+      - db 
+
+  # Segundo serviço: o banco de dados 
+  db: 
+    # Usa uma imagem oficial do PostgreSQL, versão 13, do Docker Hub 
+    image: postgres:13 
+
+    # Define variáveis de ambiente necessárias para configurar o PostgreSQL 
+    environment: 
+      POSTGRES_USER: usuario        # nome do usuário do banco 
+      POSTGRES_PASSWORD: senha      # senha do usuário 
+      POSTGRES_DB: minha_base       # nome do banco de dados padrão a ser criado 
+
+    # Mapeia um volume local (./dados) para o diretório de dados do PostgreSQL 
+    # Isso garante que os dados do banco persistam mesmo que o container seja removido 
+    volumes: 
+      - ./dados:/var/lib/postgresql/data

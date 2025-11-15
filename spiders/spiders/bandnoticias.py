@@ -33,5 +33,13 @@ class BandnoticiasSpider(scrapy.Spider):
         paragrafos = response.css('div.text p::text').getall()
         item["texto"] = ' '.join(p.strip() for p in paragrafos if p.strip())
 
-        # 4. Gerar o item final com todos os dados extraídos da PÁGINA DO ARTIGO
+        item["status_verificacao"] = "pendente"
+        item["verificacao"] = {
+            "classificacao": "",  # String vazia
+            "confianca_percentual": 0,  # Número 0
+            "justificativa": "",      # String vazia
+            "fontes_consultadas": [], # Array vazio
+            "data_verificacao": None  # Nulo (None vira null no MongoDB)
+        }
+
         yield item

@@ -33,4 +33,13 @@ class YahooSpider(scrapy.Spider):
         paragrafos = response.css('div[class*="max-w-screen-sm"] p::text').getall()
         item["texto"] = ' '.join(paragrafo.strip() for paragrafo in paragrafos if paragrafo.strip())
 
+        item["status_verificacao"] = "pendente"
+        item["verificacao"] = {
+            "classificacao": "",  # String vazia
+            "confianca_percentual": 0,  # Número 0
+            "justificativa": "",      # String vazia
+            "fontes_consultadas": [], # Array vazio
+            "data_verificacao": None  # Nulo (None vira null no MongoDB)
+        }
+
         yield item

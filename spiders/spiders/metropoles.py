@@ -9,7 +9,7 @@ class MetropolesSpider(scrapy.Spider):
     start_urls = ['https://www.metropoles.com/ultimas-noticias/']
 
     # Defina aqui as categorias que você quer minerar.
-    CATEGORIAS_PERMITIDAS = ['brasil', 'mundo', 'ciência', 'saúde', 'política'] 
+    CATEGORIAS_PERMITIDAS = ['brasil', 'mundo', 'ciência', 'saúde', 'política', 'são paulo', 'distrito federal'] 
 
     def parse(self, response):
         for noticia in response.css('article[class*="NoticiaWrapper__Article"]'):

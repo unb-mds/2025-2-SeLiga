@@ -2,35 +2,34 @@ import scrapy
 import datetime
 from spiders.items import NoticiaItem
 
-class BandnoticiasSpider(scrapy.Spider):
 
-    name = "band"
-    allowed_domains = ['www.band.com.br']
-    start_urls = ["https://www.band.com.br/noticias"]
+class LeodiasSpider(scrapy.Spider):
+    name = "leodias"
+    allowed_domains = ["portalleodias.com"]
+    start_urls = ["https://portalleodias.com/politica"]
 
     def parse(self, response):
-        # 1. Encontrar todos os "cards" de notícia
-        for noticia in response.css('div.item-headline'):
-            # 2. Pegar o link de cada notícia
-            link = noticia.css('a::attr(href)').get() # O link está dentro de uma tag <a> dentro da div
+        
+        for noticia in response.css('div.ld-list article:has(div.ld-info)'):
             
+            link = noticia.css('h3 a::attr(href)').get()
+
             if link:
-                # 3. Mandar o Scrapy "seguir" o link
                 yield response.follow(response.urljoin(link), callback=self.parse_artigo)
 
     def parse_artigo(self, response):
         item = NoticiaItem()
 
-        item["titulo"] = response.css('h1.title::text').get() 
-        item["categoria"] = response.css('ul.tags a::text').get()
+        item["titulo"] = response.css('div.ld-single-content article h1::text')
+        item["categoria"] = "Politica"
         item["fonte"] = self.name
         item["url"] = response.url
 
         agora = datetime.datetime.now()
-        data_publicacao = agora.strftime("%d/%m/%Y")        
+        data_publicacao = agora.strftime("%d/%m/%Y")
         item["data_coleta"] = data_publicacao
-        
-        paragrafos = response.css('div.text p::text').getall()
+
+        paragrafos = response.css('article div.ld-cms-content p::text').getall()
         item["texto"] = ' '.join(p.strip() for p in paragrafos if p.strip())
 
         item["status_verificacao"] = "pendente"

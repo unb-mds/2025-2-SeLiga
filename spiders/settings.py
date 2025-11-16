@@ -37,11 +37,12 @@ DOWNLOAD_DELAY = 3
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
 
-# Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
-#    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-#    "Accept-Language": "en",
-#}
+# isso configura a linguagem do web scrapping para pt-BR
+# user agent definido para evitar que o website nos veja como um bot
+DEFAULT_REQUEST_HEADERS = {
+    "Accept-Language": "pt-BR",
+    "User-Agent": "Mozilla/5.0"
+}
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
@@ -63,9 +64,9 @@ DOWNLOAD_DELAY = 3
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "spiders.pipelines.SpidersPipeline": 300,
-#}
+ITEM_PIPELINES = {
+    "spiders.pipelines.MongoPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

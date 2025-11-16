@@ -1,76 +1,54 @@
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-
-
-# useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 import pymongo
+import os
+import logging
+from spiders.items import NoticiaItem 
 
-class SpidersPipeline:
-    def process_item(self, item, spider):
-        return item
+log = logging.getLogger(__name__)
+
+class MongoPipeline:
+
+    def __init__(self):
+        # O pipeline vai tentar pegar a URI da variável de ambiente "MONGO_URI"
+        # Isso é mais seguro para não colocar a senha no código
+        self.mongo_uri = os.environ.get('MONGO_URI') 
         
-#AUTOMATIZAR O ARMAZENAMENTO DE NOTICIAS COLETADAS NO BANDO DE DADOS:
-class MongoDBPipeline:
-    #O init vai definir o que será guardado ao criar o pipeline
-    def __init__(self, mongo_uri, mongo_db):
-        # Endereço do servidor do mongoDB,    "uri" é uma string de conexao que conecta o scrapy ao mongo
-        #mongo_uri é uma nomenclatura padrao da biblioteca pymongo
-        self.mongo_uri = mongo_uri
-        # Nome do banco de dados onde as notícias serão salvas
-        self.mongo_db = mongo_db
+        # Coloque o nome do seu banco de dados
+        self.mongo_db = "DadosSeLIga" 
+        
+        self.collection_name = "Dados" 
+        
+        if not self.mongo_uri:
+            raise ValueError("MONGO_URI não foi definida. Defina a variável de ambiente.")
 
-# Método especial usado pelo Scrapy para criar o pipeline com base nas configurações do settings.py
-    @classmethod
-    def from_crawler(cls, crawler):
-        # Retorna uma instância da classe passando os valores definidos no settings.py
-        return cls(
-            #Essa linha busca no arquivo settings.py a configuração chamada MONGO_URI,
-            # armazena o valor encontrado na variável mongo_uri.
-            mongo_uri=crawler.settings.get('MONGO_URI'),
-            #essa linha faz a mesma coisa, mas agora busca a variável MONGO_DATABASE, que é o nome do banco dentro do MongoDB.
-            mongo_db=crawler.settings.get('MONGO_DATABASE')
-        )
+        # Variáveis de estado da conexão
+        self.client = None
+        self.db = None
 
-# É executado automaticamente quando a spider é aberta
-    # (ou seja, antes de começar a coletar)
     def open_spider(self, spider):
-        # Cria uma conexão com o servidor MongoDB
-        self.client = pymongo.MongoClient(self.mongo_uri)
-        # Acessa o banco de dados especificado
-        self.db = self.client[self.mongo_db]
-        # Define a coleção (tabela) onde os dados serão armazenados
-        self.collection = self.db['noticias']
+        
+        try:
+            self.client = pymongo.MongoClient(self.mongo_uri)
+            self.db = self.client[self.mongo_db]
+            log.info(f"Conectado ao MongoDB: {self.mongo_db}")
+        except pymongo.errors.ConfigurationError as e:
+            log.error(f"Erro ao conectar no MongoDB (verifique a URI): {e}")
+            raise
 
-
-    # É executado automaticamente quando a spider termina
     def close_spider(self, spider):
-        # Fecha a conexão com o Mongo
-        self.client.close()
+        
+        if self.client:
+            self.client.close()
+            log.info("Conexão com o MongoDB fechada.")
 
-
-    # Essa função é chamada para cada item que a spider coleta
     def process_item(self, item, spider):
-        # Usa o ItemAdapter para acessar os campos do item
-        adapter = ItemAdapter(item)
-        # Pega a URL da notícia, vamos usar pra evitar duplicadas
-        url = adapter.get('url')
-
-        # Verifica se já existe uma notícia com essa URL no banco
-        if not self.collection.find_one({'url': url}):
-            # Se não existir, insere o item convertido em dicionário
-            self.collection.insert_one(dict(adapter))
-            # Mostra no log que a notícia foi inserida com sucesso
-            spider.logger.info(f"Notícia inserida: {adapter.get('titulo')}")
-        else:
-            # Caso já exista, exibe aviso no log e não insere de novo
-            spider.logger.info(f"Notícia duplicada ignorada: {url}")
-
-
-        # Retorna o item
+                
+        # Verifica se o item é do tipo NoticiaItem 
+        if isinstance(item, NoticiaItem):
+            try:
+                # Insere o item (convertido para dict) na collection "noticias"
+                self.db[self.collection_name].insert_one(dict(item))
+                log.debug(f"Item salvo na collection '{self.collection_name}'")
+            except Exception as e:
+                log.error(f"Erro ao salvar item no MongoDB: {e}")
+        
         return item
-
-
-

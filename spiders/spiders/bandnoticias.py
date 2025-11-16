@@ -35,11 +35,12 @@ class BandnoticiasSpider(scrapy.Spider):
 
         item["status_verificacao"] = "pendente"
         item["verificacao"] = {
-            "classificacao": "",  # String vazia
-            "confianca_percentual": 0,  # Número 0
-            "justificativa": "",      # String vazia
-            "fontes_consultadas": [], # Array vazio
-            "data_verificacao": None  # Nulo (None vira null no MongoDB)
+            "classificacao": None,
+            "confianca_percentual": None,
+            "justificativa": None,
+            "fontes_consultadas": [],
+            "data_verificacao": None
         }
 
+        # 4. Gerar o item final com todos os dados extraídos da PÁGINA DO ARTIGO
         yield item

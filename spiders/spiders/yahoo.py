@@ -9,11 +9,13 @@ class YahooSpider(scrapy.Spider):
     start_urls = ['https://www.yahoo.com/news/world/']
 
     def parse(self, response):
+        # 1. Encontrar todos os "cards" de notícia
         for noticia in response.css('li[class*="list-none"]'):
-            
+            # 2. Pegar o link de cada notícia
             link = noticia.css('a[class*="stretched-box"]::attr(href)').get()
 
             if link:
+                # 3. Mandar o Scrapy "seguir" o link
                 yield response.follow(response.urljoin(link), callback=self.parse_artigo)
 
     def parse_artigo(self, response):
@@ -35,11 +37,11 @@ class YahooSpider(scrapy.Spider):
 
         item["status_verificacao"] = "pendente"
         item["verificacao"] = {
-            "classificacao": "",  # String vazia
-            "confianca_percentual": 0,  # Número 0
-            "justificativa": "",      # String vazia
-            "fontes_consultadas": [], # Array vazio
-            "data_verificacao": None  # Nulo (None vira null no MongoDB)
+            "classificacao": None,
+            "confianca_percentual": None,
+            "justificativa": None,
+            "fontes_consultadas": [],
+            "data_verificacao": None
         }
 
         yield item

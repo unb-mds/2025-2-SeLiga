@@ -12,6 +12,7 @@ class MetropolesSpider(scrapy.Spider):
     CATEGORIAS_PERMITIDAS = ['brasil', 'mundo', 'ciência', 'saúde', 'política', 'são paulo', 'distrito federal'] 
 
     def parse(self, response):
+        # 1. Encontrar todos os "cards" de notícia
         for noticia in response.css('article[class*="NoticiaWrapper__Article"]'):
             categoria_texto = noticia.css('div[class*="NoticiaWrapper__Categoria"] a::text').get()
             
@@ -21,9 +22,11 @@ class MetropolesSpider(scrapy.Spider):
             categoria_limpa = categoria_texto.strip().lower()
 
             if categoria_limpa in self.CATEGORIAS_PERMITIDAS:
+                # 2. Pegar o link de cada notícia
                 link = noticia.css('h5.noticia__titulo a::attr(href)').get()
 
                 if link:
+                    # 3. Mandar o Scrapy "seguir" o link
                     yield response.follow(response.urljoin(link), callback=self.parse_artigo)
             
             else:
@@ -46,11 +49,11 @@ class MetropolesSpider(scrapy.Spider):
 
         item["status_verificacao"] = "pendente"
         item["verificacao"] = {
-            "classificacao": "",  # String vazia
-            "confianca_percentual": 0,  # Número 0
-            "justificativa": "",      # String vazia
-            "fontes_consultadas": [], # Array vazio
-            "data_verificacao": None  # Nulo (None vira null no MongoDB)
+            "classificacao": None,
+            "confianca_percentual": None,
+            "justificativa": None,
+            "fontes_consultadas": [],
+            "data_verificacao": None
         }
 
         yield item

@@ -48,7 +48,7 @@ body {
 }
 
 .logo {
-  
+  font-family: 'Poppins', sans-serif;
   display: flex;                                 /* Para alinhar imagem e texto */
   align-items: stretch;;                         /* Centraliza verticalmente */
   gap: 0.75rem;                                  /* Espaço entre a logo e o texto */

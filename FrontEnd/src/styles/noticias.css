@@ -71,6 +71,7 @@
   display: flex;                   /* layout flexível */
   gap: 10px;                       /* espaçamento entre botões */
   margin-top: 15px;                /* margem superior */
+  align-items: center;
 }
 
 .veracidade-filtros button {
@@ -84,6 +85,12 @@
   display: flex;                    /* layout flexível dentro do botão */
   align-items: center;              /* centraliza verticalmente */
   gap: 8px;                         /* espaço entre elementos internos do botão */
+}
+
+.veracidade-filtros button.ativo {
+  background-color: #1B1E2A;     /* cor laranja */
+  border-color: #FFFFFF;         /* borda também laranja */
+  color: #FFFFFF;
 }
 /* ------------ News Cards --------------- */
 

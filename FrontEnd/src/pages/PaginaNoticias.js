@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../components/Button";
+import { CheckCircle, AlertTriangle, XCircle, List } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
 import { SearchBar } from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
@@ -119,28 +120,28 @@ const PaginaNoticias = () => {
               onClick={() => setVeracityFilter("verified")}
               className={veracityFilter === "verified" ? "ativo" : ""}
             >
-            ✅ Verificadas
+            <CheckCircle size={18} /> Verificadas
             </button>
 
             <button
               onClick={() => setVeracityFilter("dubious")}
               className={veracityFilter === "dubious" ? "ativo" : ""}
             >
-            ⚠️ Duvidosas
+            <AlertTriangle size={18} /> Duvidosas
             </button>
 
             <button
               onClick={() => setVeracityFilter("fake")}
               className={veracityFilter === "fake" ? "ativo" : ""}
             >
-            ❌ Fake News
+            <XCircle size={18} /> Fake News
             </button>
 
             <button
               onClick={() => setVeracityFilter("todas")}
               className={veracityFilter === "todas" ? "ativo" : ""}
             >
-            📋 Todas
+            <List size={18} /> Todas
             </button>
           </div>
         </div>
@@ -149,7 +150,7 @@ const PaginaNoticias = () => {
           <TabsList className="tabs-list">
             <TabsTrigger value="all">Todas</TabsTrigger>
             <TabsTrigger value="recent">Recentes</TabsTrigger>
-            <TabsTrigger value="em-alta ">Em alta</TabsTrigger>
+            <TabsTrigger value="em-alta">Em alta</TabsTrigger>
           </TabsList>
 
           <TabsContent value="all">

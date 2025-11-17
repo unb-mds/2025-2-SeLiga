@@ -67,7 +67,7 @@ function Metodologia() {
                             </p>
                             {/* Cards Internos (Processamento IA e Visualização) */}
                             <div className="internal-card-ia">       
-                                <img src="/brain.svg" className='brain' />  
+                                <img src="/brain.svg" className='brain' alt="brain"/>  
                                 <div className='card-text-content'>  
                                     <h4 className='subtitulo-metod-card2'> Processamento IA </h4>
                                     <p className='text-metod'>Análise semântica e classificação</p>

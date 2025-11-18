@@ -49,8 +49,8 @@ app = FastAPI(
 )
 
 origins = [
-    "http://localhost:3000",           
-    "http://127.0.0.1:3000"                
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"                # informa a porta para o frontend
 ]
 
 app.add_middleware(
@@ -97,3 +97,86 @@ def equipe():
             {"nome": "Erick", "papeis": ["DevOps", "Arquitetura"], "imagem_url": "/imagens_equipe/erick.jpg"}
         ]
     }
+# nova endpoint criado para equipe
+# agora quando o front fizer uma requisição para /equipe, receberá a lista de membros do time
+# no caso http://localhost:8000/equipe
+# membro.nome pega o nome
+# membro.papeis pega a lista de papeis
+# memebro.imagem_url pega a url da imagem
+# ai é so fazer a requisição no front pois as rotas ja estao configuradas
+
+
+@app.put("/noticias/{noticia_id}")
+def atualizar_noticia(noticia_id: str, noticia: NewsCreate):
+    """Atualiza uma notícia existente"""
+    try:
+        # Valida se é um ObjectId válido
+        if not ObjectId.is_valid(noticia_id):
+            raise HTTPException(status_code=400, detail="ID inválido")
+        
+        # Prepara os dados para atualização
+        dados_atualizacao = {
+            "titulo": noticia.titulo,
+            "texto": noticia.texto,
+            "fonte": noticia.fonte,
+            "url": noticia.url
+        }
+        
+        resultado = news_collection.update_one(
+            {"_id": ObjectId(noticia_id)},
+            {"$set": dados_atualizacao}
+        )
+        
+        if resultado.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Notícia não encontrada")
+        
+        return {
+            "message": "Notícia atualizada com sucesso!",
+            "id": noticia_id,
+            "modificado": resultado.modified_count > 0
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao atualizar notícia: {str(e)}")
+
+@app.delete("/noticias/{noticia_id}")
+def deletar_noticia(noticia_id: str):
+    """Remove uma notícia do banco de dados"""
+    try:
+        # Valida se é um ObjectId válido
+        if not ObjectId.is_valid(noticia_id):
+            raise HTTPException(status_code=400, detail="ID inválido")
+        
+        resultado = news_collection.delete_one({"_id": ObjectId(noticia_id)})
+        
+        if resultado.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Notícia não encontrada")
+        
+        return {
+            "message": "Notícia deletada com sucesso!",
+            "id": noticia_id
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao deletar notícia: {str(e)}")
+
+@app.get("/noticias/status/{status}")
+def buscar_por_status(status: str):
+    """Busca notícias por status de verificação"""
+    try:
+        noticias = list(news_collection.find({"status_verificacao": status}))
+        
+        # Converte ObjectId para string
+        for noticia in noticias:
+            noticia['_id'] = str(noticia['_id'])
+        
+        return {
+            "status": status,
+            "total": len(noticias),
+            "noticias": noticias
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao buscar notícias: {str(e)}")
+

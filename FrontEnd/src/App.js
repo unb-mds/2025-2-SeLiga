@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar'; 
 import PaginaNoticias from './pages/PaginaNoticias';
 import Sobre from './pages/Sobre'; 
+import Painel from './pages/Painel'; 
 import './styles/app.css';
-
-
 
 const App = () => {
   return (
@@ -26,7 +25,7 @@ const App = () => {
             <Route path="/sobre" element={<Sobre />} />
 
             {/* Rota para a página de painel */}
-            <Route path="/painel" element={<h2>Em Breve: Painel</h2>} />
+            <Route path="/painel" element={<Painel />} />
           </Routes>
         </main>
       </div>

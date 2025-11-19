@@ -1,0 +1,231 @@
+.container-painel {
+  padding: 2rem;
+  color: var(--text-color);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo-painel {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* --- CARTÕES SUPERIORES --- */
+.grid-estatisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cartao-estatistica {
+  background-color: #2B303B; 
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.info-estatistica h3 {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.info-estatistica .numero-estatistica {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.caixa-icone {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+/* Cores específicas dos Cartões */
+.cartao-total .caixa-icone {
+  background-color: #333;
+  color: #fff;
+}
+
+.cartao-verdadeira .caixa-icone {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+.cartao-falsa .caixa-icone {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+/* SEÇÃO DO MEIO (Gráfico + Rastreadores) */
+.secao-meio {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cartao-painel {
+  background-color: #2B303B;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.cartao-painel h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+/* Gráfico de Pizza Customizado */
+.container-grafico {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.grafico-pizza {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #28a745 0% 45%,   
+    #dc3545 45% 75%,  
+    #ffc107 75% 100%  
+  );
+  position: relative;
+}
+
+/* Buraco no meio para efeito Donut */
+.grafico-pizza::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background-color: #2B303B;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+}
+
+.legenda-grafico ul {
+  list-style: none;
+  padding: 0;
+}
+
+.legenda-grafico li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.ponto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Lista de Rastreadores (Spiders) */
+.lista-rastreadores {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-rastreador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: #1B1E2A;
+  border-radius: 8px;
+}
+
+.info-rastreador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ponto-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.tempo-rastreador {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* --- TABELA --- */
+.tabela-responsiva {
+  overflow-x: auto;
+}
+
+.tabela-noticias {
+  width: 100%;
+  border-collapse: collapse;
+  color: #eaeaea;
+}
+
+.tabela-noticias th {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid #333;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.tabela-noticias td {
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+  vertical-align: middle;
+}
+
+.selo-status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.selo-status.verdadeira { background-color: rgba(40, 167, 69, 0.2); color: #28a745; }
+.selo-status.falsa { background-color: rgba(220, 53, 69, 0.2); color: #dc3545; }
+
+.botao-detalhes {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.botao-detalhes:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .secao-meio {
+    grid-template-columns: 1fr;
+  }
+}

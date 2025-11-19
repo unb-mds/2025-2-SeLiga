@@ -102,15 +102,11 @@ Use um gerenciador de versão (como o nvm é o mais recomendado) para garantir a
 # 1. (Opcional, mas recomendado) Garanta a versão correta do Node:
 nvm use 18.19.1
 
-# 2. Instale a biblioteca de ícones
-npm install react-icons
-
-# 3. Navegue para a pasta do frontend
+# 2. Navegue para a pasta do frontend
 cd FrontEnd
 
-# 4. Instale as dependências JavaScript
-npm install
-npm install concurrently            # Serve para rodar o backend e frontend juntos
+# 3. Instale as dependências JavaScript
+npm install react-icons concurrently          # Serve para rodar o backend e frontend juntos
 ```
 
 ### 6\. Rodar o Serviço Localmente

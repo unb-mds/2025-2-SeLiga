@@ -20,7 +20,7 @@ class LeodiasSpider(scrapy.Spider):
     def parse_artigo(self, response):
         item = NoticiaItem()
 
-        item["titulo"] = response.css('div.ld-single-content article h1::text')
+        item["titulo"] = response.css('div.ld-single-content article h1::text').get()
         item["categoria"] = "Politica"
         item["fonte"] = self.name
         item["url"] = response.url

@@ -97,3 +97,35 @@ def equipe():
             {"nome": "Erick", "papeis": ["DevOps", "Arquitetura"], "imagem_url": "/imagens_equipe/erick.jpg"}
         ]
     }
+
+@app.get("/painel")
+def get_estatisticas():
+    try:
+        noticias_verificadas = list(news_collection.find({"status_verificacao": "verificado"}))
+        
+        estatisticas = {
+            "verdadeiras": 0,
+            "falsas": 0,
+            "duvidosas": 0,
+            "inconclusivas": 0,
+            "total_verificadas": 0
+        }
+
+        for noticia in noticias_verificadas:
+  
+            classificacao = noticia.get("verificacao", {}).get("classificacao", "").lower()
+            
+            if classificacao == "verdadeira":
+                estatisticas["verdadeiras"] += 1
+            elif classificacao == "falsa":
+                estatisticas["falsas"] += 1
+            elif classificacao == "duvidosa":
+                estatisticas["duvidosas"] += 1
+            elif classificacao == "inconclusiva":
+                estatisticas["inconclusivas"] += 1
+        
+        estatisticas["total_verificadas"] = len(noticias_verificadas)
+        
+        return estatisticas
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao buscar estatísticas: {str(e)}")

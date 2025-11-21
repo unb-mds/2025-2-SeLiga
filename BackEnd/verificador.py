@@ -237,7 +237,7 @@ def criar_prompt_verificacao(titulo, texto, noticias_encontradas=None, fontes=No
        - Se fontes DISCORDAM entre si = provavelmente inconclusivo
        - Se NENHUMA fonte confirma = provavelmente falso
     
-    ⚠️ REGRA DE OURO: TODAS as fontes contam igualmente!
+     REGRA DE OURO: TODAS as fontes contam igualmente!
        Não importa se é G1, CNN, Metrópoles, Band ou qualquer outra.
        O que importa é o CONSENSO entre TODAS as fontes.
     
@@ -465,4 +465,5 @@ def verificar_noticias_pendentes():
 
 
 if __name__ == "__main__":
+
     verificar_noticias_pendentes()  

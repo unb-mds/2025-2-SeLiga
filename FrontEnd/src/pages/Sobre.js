@@ -51,9 +51,9 @@ function Sobre() {
                 <p className="header-subtitle">Trabalho Acadêmico - Métodos de Desenvolvimento de Software</p>
 
                 <div className="decorative-line-container">
-                    <div class="retangulo1"></div>
+                    <div className="retangulo1"></div>
                         <FiTarget className='alvo'/>
-                    <div class="retangulo2"></div>
+                    <div className="retangulo2"></div>
                 </div>
             </div>
 

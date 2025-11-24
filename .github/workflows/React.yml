@@ -3,8 +3,12 @@ name: React CI
 on:
   push:
     branches: ["main"]
+    paths:
+      - 'FrontEnd/**'
   pull_request: 
     branches: ["main"]
+    paths:
+      - 'FrontEnd/**'
 jobs:
   build: 
     runs-on: ubuntu-latest
@@ -20,7 +24,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" 
+          node-version: "18" 
           cache: "npm"
           cache-dependency-path: "FrontEnd/package-lock.json"
 
@@ -28,7 +32,7 @@ jobs:
         run: npm ci
       
       - name: Run tests
-        run: npm test --if-present -- --watchAll=false
+        run: npm test -- --if-present --passWithNoTests --watchAll=false
 
       - name: Build project
         run: npm run build

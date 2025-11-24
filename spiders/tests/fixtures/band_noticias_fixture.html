@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock Notícia Band</title>
+</head>
+<body>
+    
+    <main class="container">
+        
+        <!-- SEÇÃO DE CABEÇALHO -->
+        <header class="article-header">
+            <!-- 
+               Seletor do spider: item["categoria"] = response.css('ul.tags a::text').get()
+               Ele vai pegar o primeiro link, no caso: "Economia"
+            -->
+            <div class="tags-wrapper">
+                <ul class="tags">
+                    <li><a href="/economia">Economia</a></li>
+                    <li><a href="/brasil">Brasil</a></li>
+                    <li><a href="/mercado">Mercado</a></li>
+                </ul>
+            </div>
+
+            <!-- 
+               Seletor do spider: item["titulo"] = response.css('h1.title::text').get()
+            -->
+            <h1 class="title">Inflação cai e mercado reage positivamente nesta sexta</h1>
+            
+            <p class="description">Este é um subtítulo que seu spider não coleta.</p>
+        </header>
+
+        <!-- SEÇÃO DE CONTEÚDO -->
+        <article class="article-content">
+            <!-- 
+               Seletor do spider: paragrafos = response.css('div.text p::text').getall()
+               Seletor do spider: item["texto"] = ' '.join(...)
+            -->
+            <div class="text">
+                <p>O índice de preços ao consumidor apresentou queda inesperada hoje.</p>
+                
+                <p>Especialistas afirmam que isso se deve às novas políticas fiscais adotadas recentemente pelo governo.</p>
+                
+                <!-- Parágrafo vazio para testar se o seu .strip() funciona -->
+                <p>   </p> 
+                
+                <p>A bolsa de valores fechou em alta de 2%.</p>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Rodapé (Ignorado pelo spider) -->
+    <footer>
+        <p>Copyright Band 2023</p>
+    </footer>
+
+</body>
+</html>

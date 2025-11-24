@@ -39,7 +39,6 @@ describe('Componente <Sobre />', () => {
     });
 
     test('deve exibir o Spinner de carregamento inicialmente', () => {
-        // Mockamos uma promessa que nunca resolve imediatamente para pegar o estado de loading
         api.get.mockImplementation(() => new Promise(() => {}));
 
         render(<Sobre />);
@@ -51,17 +50,19 @@ describe('Componente <Sobre />', () => {
     });
 
     test('deve renderizar o conteúdo e a lista de membros após buscar dados da API com sucesso', async () => {
-        // Dados simulados de retorno da API
         const mockData = {
             data: {
                 membros: [
-                    { nome: 'João Silva', papeis: 'Desenvolvedor', imagem_url: 'joao.jpg' },
-                    { nome: 'Maria Souza', papeis: 'Designer', imagem_url: 'maria.jpg' }
+                    { nome: 'Arthur', papeis: 'PO', imagem_url: 'Arthur.jpg' },
+                    { nome: 'Gustavo', papeis: 'Scrum master', imagem_url: 'Gustavo.jpg' },
+                    { nome: 'Amanda', papeis: 'Front end', imagem_url: 'Amanda.jpg' },
+                    { nome: 'Marcus', papeis: 'Banco de dados', imagem_url: 'Marcus.jpg' },
+                    { nome: 'Erick', papeis: 'DevOps', imagem_url: 'Erick.jpg' },
+                    { nome: 'Enzo', papeis: 'Backend', imagem_url: 'Enzo.jpg' },
                 ]
             }
         };
 
-        // Configura o mock da API para resolver com sucesso
         api.get.mockResolvedValue(mockData);
 
         render(<Sobre />);

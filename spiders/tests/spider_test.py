@@ -3,6 +3,7 @@ from scrapy.http import HtmlResponse, Request
 from spiders.spiders.metropoles import MetropolesSpider
 from spiders.spiders.bandnoticias import BandnoticiasSpider
 from spiders.spiders.leodias import LeodiasSpider
+from spiders.spiders.jovempan import JovempanSpider
 
 def mock_response (url, body):
     request = Request(url=url)
@@ -18,6 +19,7 @@ casos_teste = [
     (MetropolesSpider, "spiders/tests/fixtures/metropoles_fixture.html", "Governo anuncia novas medidas econômicas nesta manhã"),
     (BandnoticiasSpider, "spiders/tests/fixtures/band_noticias_fixture.html", "Inflação cai e mercado reage positivamente nesta sexta"),
     (LeodiasSpider, "spiders/tests/fixtures/leo_dias_fixture.html", "Governo propõe mudanças na reforma administrativa"),
+    (JovempanSpider, "spiders/tests/fixtures/jovem_pan_fixture.html", "Senado aprova novo projeto de lei sobre tecnologia e inovação"),
 ]
 
 # Parametrização de cada spider: classe, html, título

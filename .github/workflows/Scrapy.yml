@@ -4,10 +4,12 @@ on:
   push:
     branches: ["main"]
     paths:
+      - 'spiders/**'   # Adicionado para garantir que mudanças na pasta spiders disparem o workflow
       - 'BackEnd/**'
   pull_request: 
     branches: ["main"]
     paths:
+      - 'spiders/**'
       - 'BackEnd/**'
 
 jobs:
@@ -16,7 +18,7 @@ jobs:
 
     defaults:
       run:
-        working directory: spiders
+        working-directory: spiders # CORREÇÃO: Adicionado hífen (era 'working directory')
 
     steps:
       - name: Checkout repository
@@ -32,7 +34,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install pytest
+          pip install pytest scrapy # Garante que scrapy esteja instalado para os testes
 
       - name: Run tests
         run: |

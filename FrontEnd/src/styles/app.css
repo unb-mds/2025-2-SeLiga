@@ -146,6 +146,48 @@ button {
   text-align: center;
 }
 
+/* --- PAGINAÇÃO --- */
+.paginacao-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-paginacao {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; /* O "quadradinho" com ponta arredondada */
+  border: 1px solid #333;
+  background-color: #252A3C;
+  color: #aaa;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-paginacao:hover:not(:disabled) {
+  background-color: #F67655; /* Laranja do tema */
+  color: white;
+  border-color: #F67655;
+}
+
+.btn-paginacao.ativo {
+  background-color: #F67655;
+  color: white;
+  border-color: #F67655;
+}
+
+.btn-paginacao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
 
   .menu-links {

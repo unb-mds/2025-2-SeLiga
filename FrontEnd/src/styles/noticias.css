@@ -138,7 +138,7 @@
   position: absolute !important;         /* posicionamento absoluto */
   top: 30px;                             /* distância do topo */
   right: 30px;                           /* distância da direita */
-  padding: 12px 20px;                    /* espaçamento interno */
+  padding: 15px 18px;                    /* espaçamento interno */
   font-size: 15px;                       /* tamanho da fonte */
   z-index: 10;                           /* garante que fique acima da imagem */
 }

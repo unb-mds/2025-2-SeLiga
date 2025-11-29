@@ -36,7 +36,7 @@ def test_spider(spider_class, fixture, expected_title):
     if not os.path.exists(fixture_path):
         pytest.fail(f"Arquivo de fixture não encontrado no caminho: {fixture_path}")
 
-    with open(fixture, 'r', encoding='utf-8') as f:
+    with open(fixture_path, 'r', encoding='utf-8') as f:
         conteudo_html = f.read()
     
     spider = spider_class()

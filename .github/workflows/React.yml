@@ -2,7 +2,7 @@ name: React CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main","feat/workflows"]
     paths:
       - 'FrontEnd/**'
   pull_request: 

@@ -2,15 +2,13 @@ name: Scrapy CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main","feat/workflows"]
     paths:
       - 'spiders/**'
-      - 'BackEnd/**'
   pull_request: 
     branches: ["main"]
     paths:
       - 'spiders/**'
-      - 'BackEnd/**'
 
 jobs:
   build:

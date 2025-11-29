@@ -5,6 +5,8 @@ from spiders.spiders.bandnoticias import BandnoticiasSpider
 from spiders.spiders.leodias import LeodiasSpider
 from spiders.spiders.jovempan import JovempanSpider
 
+# LINHA TESTE PARA OS WORKFLOWS!
+
 def mock_response (url, body):
     request = Request(url=url)
     return HtmlResponse(

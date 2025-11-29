@@ -92,7 +92,7 @@ source venv/bin/activate
 ### 4\. Instalar as Dependências
 
 ```bash
-pip install -r requirements.txt
+source venv/bin/activate
 ```
 ### 5. Configurar o Frontend (Node.js)
 

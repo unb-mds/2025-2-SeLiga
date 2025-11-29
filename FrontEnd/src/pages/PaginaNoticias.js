@@ -12,8 +12,8 @@ import '../styles/noticias.css';
 
 const ITEMS_PER_PAGE = 9;
 
-// --- COMPONENTE DE PAGINAÇÃO ---
-const PaginationControl = ({ lista, currentPage, setCurrentPage }) => {
+// --- COMPONENTE DE PAGINAÇÃO (CORRI ---
+const PaginationControl = ({ lista, currentPage, setCurrentPage, onCardClick }) => {
   if (lista.length === 0) return null;
 
   const totalPages = Math.ceil(lista.length / ITEMS_PER_PAGE);
@@ -31,7 +31,7 @@ const PaginationControl = ({ lista, currentPage, setCurrentPage }) => {
     <>
       <div className="news-grid">
         {currentItems.map((article) => (
-          <div key={article._id} onClick={() => article.onClick(article)}>
+          <div key={article._id} onClick={() => onCardClick(article)}>
             <NewsCard
               title={article.titulo}
               source={article.fonte || "Fonte desconhecida"}
@@ -84,9 +84,12 @@ const PaginaNoticias = () => {
   const [veracityFilter, setVeracityFilter] = useState("todas");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedNews, setSelectedNews] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  
+  // Estados independentes de página
+  const [pageMural, setPageMural] = useState(1);
+  const [pageAnalysis, setPageAnalysis] = useState(1);
 
-  // --- BUSCA DAS NOTÍCIAS ---
+  // --- BUSCA ---
   const fetchArticlesList = async () => {
     setIsLoading(true);
     try {
@@ -108,8 +111,7 @@ const PaginaNoticias = () => {
       
       setArticles(uniqueNews.reverse());
 
-    } catch (error) {
-      console.error("Erro ao carregar notícias:", error);
+    } catch {
       setArticles([]);
     } finally {
       setIsLoading(false);
@@ -117,7 +119,12 @@ const PaginaNoticias = () => {
   };
    
   useEffect(() => { fetchArticlesList(); }, []);
-  useEffect(() => { setCurrentPage(1); }, [searchTerm, veracityFilter]);
+
+  // Reseta paginações ao filtrar
+  useEffect(() => { 
+    setPageMural(1);
+    setPageAnalysis(1);
+  }, [searchTerm, veracityFilter]);
 
   const handleRefresh = () => fetchArticlesList();
 
@@ -128,7 +135,6 @@ const PaginaNoticias = () => {
 
   const handleCloseModal = () => setIsModalOpen(false);
 
-  // --- LÓGICA DE ÍCONES ---
   const getVeracityStatus = (article) => {
     const status = (article.verificacao?.classificacao || article.status_verificacao || 'pendente').toString().toLowerCase();
     
@@ -140,8 +146,7 @@ const PaginaNoticias = () => {
   };
 
   const getStatusIcon = (status) => {
-    const iconSize = 20;
-
+    const iconSize = 20; 
     switch (status) {
       case 'verified': return <CheckCircle size={iconSize} />;
       case 'fake': return <XCircle size={iconSize} />;
@@ -150,13 +155,14 @@ const PaginaNoticias = () => {
       default: return <Clock size={iconSize} />;
     }
   };
+
   const processedArticles = articles.map(a => {
     const status = getVeracityStatus(a);
     return {
       ...a,
       veracityStatus: status,
       statusIcon: getStatusIcon(status),
-      onClick: handleCardClick
+      imageUrl: a.imageUrl 
     };
   });
 
@@ -211,7 +217,7 @@ const PaginaNoticias = () => {
           </div>
         </div>
 
-        <Tabs defaultValue="main" onValueChange={() => { setCurrentPage(1); setVeracityFilter("todas"); }}>
+        <Tabs defaultValue="main">
           <TabsList className="tabs-list">
             <TabsTrigger value="main">Mural de Notícias</TabsTrigger>
             <TabsTrigger value="analysis">Em Análise </TabsTrigger>
@@ -225,8 +231,9 @@ const PaginaNoticias = () => {
             ) : (
               <PaginationControl 
                 lista={displayedMainArticles} 
-                currentPage={currentPage} 
-                setCurrentPage={setCurrentPage} 
+                currentPage={pageMural}      
+                setCurrentPage={setPageMural}
+                onCardClick={handleCardClick}
               />
             )}
           </TabsContent>
@@ -239,8 +246,9 @@ const PaginaNoticias = () => {
             ) : (
               <PaginationControl 
                 lista={displayedPendingArticles} 
-                currentPage={currentPage} 
-                setCurrentPage={setCurrentPage} 
+                currentPage={pageAnalysis}      
+                setCurrentPage={setPageAnalysis}
+                onCardClick={handleCardClick} 
               />
             )}
           </TabsContent>

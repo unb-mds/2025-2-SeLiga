@@ -82,12 +82,16 @@ describe('Componente <Sobre />', () => {
 
         // Verifica se os membros foram renderizados
         // Como mockamos o MembroCard para exibir o nome, buscamos pelo texto
-        expect(screen.getByText('João Silva')).toBeInTheDocument();
-        expect(screen.getByText('Maria Souza')).toBeInTheDocument();
+        expect(screen.getByText('Arthur')).toBeInTheDocument();
+        expect(screen.getByText('Gustavo')).toBeInTheDocument();
+        expect(screen.getByText('Enzo')).toBeInTheDocument();
+        expect(screen.getByText('Marcus')).toBeInTheDocument();
+        expect(screen.getByText('Amanda')).toBeInTheDocument();
+        expect(screen.getByText('Erick')).toBeInTheDocument();
         
         // Verifica a quantidade de cards renderizados
         const cards = screen.getAllByTestId('membro-card');
-        expect(cards).toHaveLength(2);
+        expect(cards).toHaveLength(6);
     });
 
     test('deve lidar com erro na API e renderizar a página sem membros', async () => {

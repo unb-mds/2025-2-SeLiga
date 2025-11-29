@@ -10,7 +10,6 @@ import api from "../api";
 import '../styles/app.css'
 import '../styles/noticias.css'
 
-
 const PaginaNoticias = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

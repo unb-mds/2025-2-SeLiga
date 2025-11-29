@@ -2,7 +2,7 @@ name: React CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main","feat/workflows"]
     paths:
       - 'FrontEnd/**'
   pull_request: 
@@ -36,4 +36,4 @@ jobs:
         run: CI=true npm test -- --watchAll=false --passWithNoTests
 
       - name: Build project
-        run: npm run build
+        run: CI=false npm run build

@@ -10,8 +10,6 @@ import api from "../api";
 import '../styles/app.css'
 import '../styles/noticias.css'
 
-// LINHA TESTE PARA OS WORKFLOWS!
-
 const PaginaNoticias = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

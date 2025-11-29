@@ -73,7 +73,6 @@ app.add_middleware(
 @app.get("/")
 def root(titulo: Optional[str] = None):
     """Endpoint raiz - retorna apenas notícias verificadas (ou filtra por título se fornecido)"""
-    """LINHA TESTE PARA OS WORKFLOWS!"""
     try:
         filtro = {"status_verificacao": "verificado"}
         

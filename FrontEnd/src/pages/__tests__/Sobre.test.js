@@ -82,8 +82,8 @@ describe('Componente <Sobre />', () => {
 
         // Verifica se os membros foram renderizados
         // Como mockamos o MembroCard para exibir o nome, buscamos pelo texto
-        expect(screen.getByText('João Silva')).toBeInTheDocument();
-        expect(screen.getByText('Maria Souza')).toBeInTheDocument();
+        expect(screen.getByText('Arthur')).toBeInTheDocument();
+        expect(screen.getByText('Gustavo')).toBeInTheDocument();
         
         // Verifica a quantidade de cards renderizados
         const cards = screen.getAllByTestId('membro-card');

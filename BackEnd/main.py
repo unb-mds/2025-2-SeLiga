@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 import os
 import ssl
 
+# teste
+
 # Carrega variáveis do arquivo .env
 load_dotenv()
 

@@ -6,13 +6,22 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
 import os
+import ssl
 
 # Carrega variáveis do arquivo .env
 load_dotenv()
 
-# Conecta ao MongoDB Atlas
+# Conecta ao MongoDB Atlas 
 MONGO_URI = os.getenv("MONGO_URI")
-client = MongoClient(MONGO_URI)
+
+client = MongoClient(
+    MONGO_URI,
+    tlsAllowInvalidCertificates=True,
+    serverSelectionTimeoutMS=10000,
+    connectTimeoutMS=10000,
+    socketTimeoutMS=10000
+)
+
 db_mongo = client['DadosSeLIga']
 news_collection = db_mongo['Dados']
 
@@ -97,3 +106,52 @@ def equipe():
             {"nome": "Erick", "papeis": ["DevOps", "Arquitetura"], "imagem_url": "/imagens_equipe/erick.jpg"}
         ]
     }
+
+@app.get("/painel")
+def get_estatisticas():
+    
+    try:
+
+        pipeline = [
+    
+            {
+                "$match": {"status_verificacao": "verificado"}
+            },
+            
+            {
+                "$group": {
+                    "_id": {"$toLower": "$verificacao.classificacao"},
+                    "count": {"$sum": 1}
+                }
+            }
+        ]
+        
+     
+        resultados = list(news_collection.aggregate(pipeline))
+        
+        estatisticas = {
+            "verdadeiras": 0,
+            "falsas": 0,
+            "duvidosas": 0,
+            "inconclusivas": 0,
+            "total_verificadas": 0
+        }
+
+        for resultado in resultados:
+            classificacao = resultado["_id"]
+            count = resultado["count"]
+            
+            if classificacao == "verdadeira":
+                estatisticas["verdadeiras"] = count
+            elif classificacao == "falsa":
+                estatisticas["falsas"] = count
+            elif classificacao == "duvidosa":
+                estatisticas["duvidosas"] = count
+            elif classificacao == "inconclusiva":
+                estatisticas["inconclusivas"] = count
+            
+            estatisticas["total_verificadas"] += count
+        
+        return estatisticas
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao buscar estatísticas: {str(e)}")

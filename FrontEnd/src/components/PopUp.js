@@ -1,110 +1,93 @@
 import React from 'react';
 import '../styles/popUp.css';
-import { FaArrowLeft, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
-import { RiExternalLinkLine } from 'react-icons/ri';
-import { FaCircleXmark } from "react-icons/fa6";
+import { ArrowLeft, CheckCircle, AlertTriangle, XCircle, Clock, ExternalLink, Scale } from 'lucide-react';
 
 const PopUp = ({ isOpen, onClose, news }) => {
-    // Se o PopUp não estiver aberto ou não houver dados, não renderiza nada
     if (!isOpen || !news) return null;
 
-    // Define o estilo e ícone de acordo com o status de veracidade
+    // --- 1. CONFIGURAÇÃO VISUAL (Classes em Português) ---
     const getVeracidadeInfo = (status) => {
-        const lowerStatus = status?.toLowerCase() || 'pendente'; // Garante que nunca seja nulo
+        const lowerStatus = (status || 'pendente').toString().toLowerCase();
 
-        if (lowerStatus === 'verdadeira' || lowerStatus === 'verificado' || lowerStatus === 'verified') {
-            return { texto: 'VERIFICADA', Icone: FaCheckCircle, classe: 'verified' };
+        if (['verdadeira', 'verificado', 'verified', 'true'].some(k => lowerStatus.includes(k))) {
+            return { texto: 'VERIFICADA', Icone: CheckCircle, classe: 'verdadeira' };
         }
-        if (lowerStatus === 'falsa' || lowerStatus === 'fake') {
-            return { texto: 'FAKE NEWS', Icone: FaCircleXmark, classe: 'fake' };
+        if (['falsa', 'fake', 'false'].some(k => lowerStatus.includes(k))) {
+            return { texto: 'FAKE NEWS', Icone: XCircle, classe: 'falsa' };
         }
-        if (lowerStatus === 'inconclusiva' || lowerStatus === 'dubious') {
-            return { texto: 'DUVIDOSA', Icone: FaExclamationTriangle, classe: 'dubious' };
+        if (['duvidosa', 'inconclusiva', 'dubious'].some(k => lowerStatus.includes(k))) {
+            return { texto: 'DUVIDOSA', Icone: AlertTriangle, classe: 'duvidosa' };
         }
-        return { texto: 'NÃO CLASSIFICADA', Icone: FaExclamationTriangle, classe: 'dubious' };
+        return { texto: 'EM ANÁLISE', Icone: Clock, classe: 'pendente' };
     };
 
     const formatDate = (dateString) => {
-        if (!dateString) {
-            return 'Data não informada';
-        }
+        if (!dateString) return 'Data n/d';
         try {
             const dateObj = new Date(dateString);
-            if (isNaN(dateObj.getTime())) {
-                return dateString; 
-            }
-            // Usa a formatação local do Brasil (dd/mm/aaaa)
-            return dateObj.toLocaleDateString('pt-BR');
-        } catch (error) {
-            return dateString; 
-        }
+            if (isNaN(dateObj.getTime())) return dateString; 
+            return dateObj.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+        } catch { return dateString; }
     };
 
-    const veracidadeInfo = getVeracidadeInfo(news.verificacao?.classificacao || news.status_verificacao);
+    const info = getVeracidadeInfo(news.verificacao?.classificacao || news.status_verificacao || news.veracityStatus);
+    const justificativaIA = news.verificacao?.justificativa || "A análise detalhada desta notícia ainda está sendo processada pelos nossos sistemas.";
 
     return (
         <div className="popup-overlay" onClick={onClose}>
             <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                {/* Cabeçalho */}
-                <div className="modal-header">
-                    <button className="back-button" onClick={onClose}>
-                        <FaArrowLeft /> Voltar para Notícias
+                
+                {/* --- CABEÇALHO --- */}
+                <div className="popup-header">
+                    <button className="popup-back-button" onClick={onClose}>
+                        <ArrowLeft size={18} /> Voltar
                     </button>
+                    <div className={`popup-status-badge ${info.classe}`}>
+                        <info.Icone size={16} strokeWidth={2.5} />
+                        {info.texto}
+                    </div>
+                </div>
 
-                    {veracidadeInfo.classe && (
-                        <div className={`status-tag ${veracidadeInfo.classe}`}>
-                            <veracidadeInfo.Icone className="status-icon" />
-                            {veracidadeInfo.texto}
+                <div className="popup-scroll-area">
+                    
+                    {/* --- TÍTULO E META --- */}
+                    <div className="popup-article-header">
+                        <h1 className="popup-news-title">{news.titulo}</h1>
+                        <div className="popup-news-meta">
+                            <span className="popup-source-tag">{news.fonte || "FONTE DESCONHECIDA"}</span>
+                            <span className="popup-date-text">{formatDate(news.data_coleta)}</span>
                         </div>
-                    )}
-                </div>
-
-                {/* Corpo da notícia */}
-                <div className="modal-body">
-                    <h1 className="news-title">{news.titulo}</h1>
-
-                    <div className="news-meta">
-                        <span className="news-source">{news.source || news.fonte}</span>
-                        <span className="news-separator">|</span>
-
-                        <span className="news-date">{formatDate(news.data_coleta)}</span>
                     </div>
 
-                    <img
-                        src={news.imageUrl || '/noticia.webp'}
-                        alt={news.titulo}
-                        className="news-image"
-                    />
-
-                    <p className="news-full-text">{news.texto}</p>
-
-                    {news.url && (
-                        <a
-                            href={news.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="original-link"
-                        >
-                            Ver notícia original <RiExternalLinkLine />
-                        </a>
-                    )}
-                </div>
-
-                {/* Rodapé */}
-                <div className={`modal-footer ${veracidadeInfo.classe}`}>
-
-                    <div className="status-line">
-                        <veracidadeInfo.Icone className="footer-icon" />
-                        <span> {veracidadeInfo.texto}</span>
+                    {/* --- BOX DO VEREDITO --- */}
+                    <div className={`popup-verdict-box ${info.classe}`}>
+                        <div className="popup-verdict-header">
+                            <info.Icone size={28} strokeWidth={2.5} />
+                            <span>Veredito: {info.texto}</span>
+                        </div>
+                        
+                        <div className="popup-justification">
+                            <span className="justification-label"><Scale size={14} /> Análise da IA:</span>
+                            <p>"{justificativaIA}"</p>
+                        </div>
                     </div>
-                    <p className="footer-text">
-                        {veracidadeInfo.classe === 'verified' &&
-                            'Esta notícia foi verificada e confirmada por fontes confiáveis.'}
-                        {veracidadeInfo.classe === 'fake' &&
-                            'ATENÇÃO: Esta notícia é classificada como desinformação. Verifique a fonte original.'}
-                        {veracidadeInfo.classe === 'dubious' &&
-                            'Esta notícia exige verificação. As fontes não são totalmente claras.'}
-                    </p>
+
+                    {/* --- CONTEÚDO --- */}
+                    <div className="popup-article-body">
+                        <h3 className="popup-section-label">Matéria Original</h3>
+                        <p className="popup-full-text">
+                            {news.texto || "Texto da notícia não disponível."}
+                        </p>
+                    </div>
+
+                    {/* --- RODAPÉ --- */}
+                    <div className="popup-article-footer">
+                        {news.url && (
+                            <a href={news.url} target="_blank" rel="noopener noreferrer" className="popup-original-link">
+                                Ler na íntegra <ExternalLink size={20} />
+                            </a>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

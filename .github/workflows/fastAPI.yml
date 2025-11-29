@@ -2,7 +2,7 @@ name: fastAPI CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main","feat/workflows"]
     paths:
       - 'BackEnd/**'
   pull_request: 
@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -r ../requirements.txt
           pip install pytest httpx
       
       - name: Run tests

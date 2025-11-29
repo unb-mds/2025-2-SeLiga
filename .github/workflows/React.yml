@@ -2,13 +2,14 @@ name: React CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main","feat/workflows"]
     paths:
       - 'FrontEnd/**'
   pull_request: 
     branches: ["main"]
     paths:
       - 'FrontEnd/**'
+
 jobs:
   build: 
     runs-on: ubuntu-latest
@@ -30,9 +31,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-      
+        
       - name: Run tests
-        run: npm test -- --watchAll=false --passWithNoTests
+        run: CI=true npm test -- --watchAll=false --passWithNoTests
 
       - name: Build project
-        run: npm run build
+        run: CI=false npm run build

@@ -2,8 +2,6 @@ import scrapy
 import datetime
 from spiders.items import NoticiaItem
 
-# teste
-
 class BandnoticiasSpider(scrapy.Spider):
 
     name = "band"

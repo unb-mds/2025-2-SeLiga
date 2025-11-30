@@ -119,12 +119,23 @@ seliga-project/
 ├── 📄 requirements.txt
 ├── 📂 docs/               # Documentação técnica e relatórios
 ├── 🚀 backend/            # Lógica da API e do modelo de detecção
-│   ├── 🐍 main.py
-│   ├── 🕷️ scraper/         # Módulo de mineração de dados com Scrapy
-│   └── 🧠 model/          # Módulo de integração com a IA
-└── 💻 frontend/           # Código da aplicação web (React)
-    ├── 📁 public/
-    └── 📁 src/
+│   ├── 🧠 verificador.py
+│   ├── 🧠 verifica_duplicatas.py
+│   └── 🐍 main.py
+├── 💻 frontend/           # Código da aplicação web (React)
+│   ├── 📁 public/
+│   └── 📁 src/
+├── 🕷️ spiders/         # Módulo de mineração de dados com Scrapy
+│   ├── 📁 itens.py
+│   ├── 📁 spiders/
+│       ├── 🕸️ band.py
+│       ├── 🕸️ metropoles.py
+│       ├── 🕸️ jovempan.py
+│       ├── 🕸️ yahoo.py
+│       ├── 🕸️ leodias.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+|   └── ⚙️ settings.py🕸️
 
 ```
 

@@ -357,7 +357,7 @@ def criar_prompt_verificacao(titulo, texto, noticias_encontradas=None, fontes=No
 
 
 def verificar_noticias_pendentes():
-    noticias_pendentes = list(noticias_collection.find())
+    noticias_pendentes = list(noticias_collection.find({"status_verificacao": "pendente"}))
 
     if not noticias_pendentes:
         print("Nenhuma notícia pendente encontrada. Tudo em dia!")
@@ -370,7 +370,7 @@ def verificar_noticias_pendentes():
     verificadas_com_sucesso = 0
     verificadas_com_erro = 0  
 
-    for i, noticia_para_verificar in enumerate(noticias_pendentes[15:], 16):
+    for i, noticia_para_verificar in enumerate(noticias_pendentes, 1):
         print(f"\n[{i}/{len(noticias_pendentes)}] Verificando: '{noticia_para_verificar['titulo']}'")
         print("-" * 80)
 

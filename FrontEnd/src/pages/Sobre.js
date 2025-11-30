@@ -73,7 +73,7 @@ function Sobre() {
                                 <BsPeople className='people2'/>
                             <h2 className='subtitulo'> Nossa Equipe </h2>
                         </div>
-                    <p className='header-subtitle'>Estudantes da UnB aplicando conhecimentos em desenvolvimento de software</p>
+                    <p className='header-subtitle'>Estudantes da UnB aplicando conhecimentos em Desenvolvimento de Software</p>
                      </div>
 
                     {/* O grid onde os cartões serão organizados */}

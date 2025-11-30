@@ -89,7 +89,7 @@ function Metodologia() {
 
             {/* Seção Final: Citação de Encerramento */}
             <Row className="justify-content-center mt-5">
-                <Col md={11}>
+                <Col md={12} className="px-3">
                     <div className="citacao-container text-center py-5">
                         <div className="citacao-icone-decorativo">
                             <div className='circulo-grande'>
@@ -103,7 +103,7 @@ function Metodologia() {
                              aplicando teoria à prática para criar uma solução tecnológica real."
                         </p>
                         <div className="citacao-assinatura-bloco">
-                            <span className="assinatura-texto">Estudantes UnB - MDS 2024</span>
+                            <span className="assinatura-texto">Estudantes UnB - MDS 2025</span>
                         </div>
                     </div>
                 </Col>

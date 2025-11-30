@@ -2,7 +2,7 @@ name: Scrapy CI
 
 on:
   push:
-    branches: ["main","feat/linter"]
+    branches: ["main"]
     paths:
       - 'spiders/**'
   pull_request: 

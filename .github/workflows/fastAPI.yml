@@ -2,7 +2,7 @@ name: fastAPI CI
 
 on:
   push:
-    branches: ["main","feat/workflows"]
+    branches: ["main"]
     paths:
       - 'BackEnd/**'
   pull_request: 

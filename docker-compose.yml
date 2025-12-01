@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - ./BackEnd/.env  # <--- MUDANÇA AQUI: Apontei para a pasta correta
+      - ./BackEnd/.env 
     volumes:
       - ./BackEnd:/app
 

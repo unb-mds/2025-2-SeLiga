@@ -1,6 +1,6 @@
 /* ------------------ HEADER ------------------ */
 .sobre-header-container {
-  padding-top: 80px; /* espaço interno superior */
+  padding-top: 95px; /* espaço interno superior */
   padding-bottom: 10px; /* espaço interno inferior */
   text-align: center; /* centraliza o texto */
   color: white; /* cor do texto */
@@ -11,7 +11,7 @@
   color: #F67655; /* cor do ícone */
   opacity: 0.3; /* transparência do ícone */
   position: absolute; /* posicionamento absoluto */
-  top: 36%; /* distância do topo */
+  top: 35%; /* distância do topo */
   left: 50%; /* distância da esquerda */
   transform: translate(-50%, -50%); /* centraliza o ícone */
   z-index: 0; /* atrás de outros elementos */
@@ -89,10 +89,10 @@
   background-color: #2B303B;
   border: 1px solid #424242;
   border-radius: 15px;
-  padding: 30px 20px;
+  padding: 35px 20px;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   font-family: Inter, sans-serif;
   height: 100%;
   display: flex;
@@ -102,7 +102,7 @@
 
 .membro-card-background-deco {
   position: absolute;
-  top: -5px;
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
   width: 240px;
@@ -114,6 +114,7 @@
 
 .membro-nome {
   font-family: Hepta Slab;
+  margin-top: 18px;
   font-size: 2rem;
   font-weight: bold;
   color: #FFFFFF;
@@ -429,7 +430,7 @@
   color: white; /* cor do texto */
   text-align: justify; /* justifica o texto */
   font-size: 21px; /* tamanho da fonte */
-  width: 95%;
+  width: 100%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15); /* sombra suave*/
 }
 
@@ -543,6 +544,9 @@
   color: #f0f0f0d3;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   margin-top: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .citacao-texto {
@@ -580,6 +584,9 @@
   .equipe-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+    .shield-icon-background {
+    top: 28%;
+  }
 }
 @media (max-width: 576px) {
 
@@ -597,7 +604,7 @@
   }
 
   .shield-icon-background {
-    top: 36%;
+    top: 27%;
   }
 
   .escudo-fundo {
@@ -758,6 +765,9 @@
     transform: translate(-50%, -70%);
   }
 
+  .shield-icon-background {
+    top: 32%;
+  }
   .caixa {
     width: 45px;
     height: 45px;
@@ -808,5 +818,14 @@
 .header-title { 
   font-size: 2.5rem; 
   line-height: 1.1; 
+  }
+}
+
+@media (max-width: 1444px) {
+
+  .shield-icon-background {
+    top: 40%;
+    left: 50%;
+    z-index: 0; 
   }
 }

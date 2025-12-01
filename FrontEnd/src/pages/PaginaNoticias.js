@@ -1,14 +1,68 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../components/Button";
-import { CheckCircle, AlertTriangle, XCircle, List } from "lucide-react";
+import { CheckCircle, AlertTriangle, XCircle, List, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
 import { SearchBar } from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
 import { IoIosSearch } from "react-icons/io";
 import PopUp from "../components/PopUp";
 import api from "../api";
-import '../styles/app.css'
-import '../styles/noticias.css'
+import '../styles/app.css';
+import '../styles/noticias.css';
+
+const ITEMS_PER_PAGE = 15;
+
+//COMPONENTE DE PAGINAÇÃO 
+const PaginationButtons = ({ totalItems, currentPage, setCurrentPage }) => {
+  if (totalItems === 0) return null;
+
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+  
+  // Se só tem 1 página, não mostra botões
+  if (totalPages <= 1) return null;
+
+  const pageNumbers = [];
+  let startPage = Math.max(1, currentPage - 2);
+  let endPage = Math.min(totalPages, startPage + 4);
+  
+  if (endPage - startPage < 4) {
+    startPage = Math.max(1, endPage - 4);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <div className="paginacao-container">
+      <button 
+        className="btn-paginacao" 
+        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+        disabled={currentPage === 1}
+      >
+        <ChevronLeft size={20} />
+      </button>
+      
+      {pageNumbers.map(number => (
+        <button
+          key={number}
+          className={`btn-paginacao ${currentPage === number ? 'ativo' : ''}`}
+          onClick={() => setCurrentPage(number)}
+        >
+          {number}
+        </button>
+      ))}
+
+      <button 
+        className="btn-paginacao" 
+        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+        disabled={currentPage === totalPages}
+      >
+        <ChevronRight size={20} />
+      </button>
+    </div>
+  );
+};
 
 const PaginaNoticias = () => {
   const [articles, setArticles] = useState([]);
@@ -17,91 +71,119 @@ const PaginaNoticias = () => {
   const [veracityFilter, setVeracityFilter] = useState("todas");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedNews, setSelectedNews] = useState(null);
-
   
+  const [pageMural, setPageMural] = useState(1);
+  const [pageAnalysis, setPageAnalysis] = useState(1);
 
-  // FUNÇÃO PARA LISTAR TODAS AS NOTÍCIAS 
+  // --- BUSCA ---
   const fetchArticlesList = async () => {
     setIsLoading(true);
     try {
-      const response = await api.get("/");
-      setArticles(response.data.noticias || []);
-    } catch (error) {
-      console.error("Erro ao buscar lista de artigos:", error);
-      setArticles([]);
-    }
-    setIsLoading(false);
-  };
+      const endpoints = [
+        "/", 
+        "/noticias/status/pendente",
+        "/noticias/status/Pendente",
+        "/noticias/status/verificado",
+        "/noticias/status/fake",
+        "/noticias/status/falsa"
+      ];
 
-  // FUNÇÃO PARA BUSCAR DETALHE DE UMA ÚNICA NOTÍCIA 
-  const fetchArticleDetail = async (article) => {
-    const noticiaId = article._id;
-    setIsLoading(true);
-    try {
-      const response = await api.get(`/noticias/${noticiaId}`);
-      setSelectedNews(response.data);
-      setIsModalOpen(true);
-    } catch (error) {
-      console.error(`Erro ao buscar detalhes da notícia ${noticiaId}:`, error);
+      const responses = await Promise.all(
+        endpoints.map(url => api.get(url).catch(() => ({ data: { noticias: [] } })))
+      );
+
+      const allNews = responses.flatMap(res => res.data.noticias || []);
+      const uniqueNews = Array.from(new Map(allNews.map(item => [item._id, item])).values());
+      
+      setArticles(uniqueNews.reverse());
+
+    } catch {
+      setArticles([]);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
    
-  useEffect(() => {
-    // Chamamos a função de LISTAR ao carregar a página
-    fetchArticlesList();
-  }, []);
+  useEffect(() => { fetchArticlesList(); }, []);
 
-  const handleRefresh = () => {
-    fetchArticlesList(); // Botão 'Buscar' chama a lista
+  // Reseta paginações ao filtrar
+  useEffect(() => { 
+    setPageMural(1);
+    setPageAnalysis(1);
+  }, [searchTerm, veracityFilter]);
+
+  const handleRefresh = () => fetchArticlesList();
+
+  const handleCardClick = (article) => {
+    setSelectedNews(article);
+    setIsModalOpen(true);
   };
 
-  const getVeracityStatus = (article) => {
-    const status = (article.verificacao?.classificacao || article.status_verificacao || 'pendente').toLowerCase();
+  const handleCloseModal = () => setIsModalOpen(false);
 
-    if (status === 'verdadeira' || status === 'verificado' || status === 'verified') return 'verified';
-    if (status === 'falsa' || status === 'fake') return 'fake';
-    if (status === 'inconclusiva' || status === 'dubious') return 'dubious';
+  const getVeracityStatus = (article) => {
+    const status = (article.verificacao?.classificacao || article.status_verificacao || 'pendente').toString().toLowerCase();
+    
+    if (['falsa', 'fake', 'false'].some(k => status.includes(k))) return 'fake';
+    if (['verdadeira', 'verificado', 'verified', 'true'].some(k => status.includes(k))) return 'verified';
+    if (['duvidosa', 'inconclusiva', 'dubious'].some(k => status.includes(k))) return 'dubious';
+    
     return 'pendente';
   };
 
-  const filteredArticles = articles.filter((article) =>
-    article.titulo?.toLowerCase().includes(searchTerm.toLowerCase())
-  )
-    .filter((article) => {
-      if (veracityFilter === "todas") return true;
+  const getStatusIcon = (status) => {
+    const iconSize = 20; 
+    switch (status) {
+      case 'verified': return <CheckCircle size={iconSize} />;
+      case 'fake': return <XCircle size={iconSize} />;
+      case 'dubious': return <AlertTriangle size={iconSize} />;
+      case 'pendente': return <Clock size={iconSize} />;
+      default: return <Clock size={iconSize} />;
+    }
+  };
 
-      return getVeracityStatus(article) === veracityFilter;
-    });
-  
+  const processedArticles = articles.map(a => {
+    const status = getVeracityStatus(a);
+    return {
+      ...a,
+      veracityStatus: status,
+      statusIcon: getStatusIcon(status),
+      imageUrl: a.imageUrl 
+    };
+  });
 
-  const recentArticles = articles.slice(0, 2);
-  const verifiedArticles = articles.filter(
-    (a) => a.status_verificacao === "verificado"
+  // Separa listas
+  const pendingList = processedArticles.filter(a => a.veracityStatus === 'pendente');
+  const mainList = processedArticles.filter(a => a.veracityStatus !== 'pendente');
+
+  // Filtros visuais
+  const displayedMainArticles = mainList.filter(article => {
+    const matchSearch = article.titulo?.toLowerCase().includes(searchTerm.toLowerCase());
+    if (veracityFilter === "todas") return matchSearch;
+    return matchSearch && article.veracityStatus === veracityFilter;
+  });
+
+  const displayedPendingArticles = pendingList.filter(a => 
+    a.titulo?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // O clique do Card chama a busca de detalhes
-  const handleCardClick = (article) => {
-    setSelectedNews(article); // Define o artigo selecionado
-    setIsModalOpen(true);     // Abre o modal
+  const getPaginatedData = (list, page) => {
+      const startIndex = (page - 1) * ITEMS_PER_PAGE;
+      return list.slice(startIndex, startIndex + ITEMS_PER_PAGE);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedNews(null);
-  };
+  // Dados paginados prontos
+  const currentMainItems = getPaginatedData(displayedMainArticles, pageMural);
+  const currentPendingItems = getPaginatedData(displayedPendingArticles, pageAnalysis);
 
   return (
     <div className="noticias-pagina">
       <div className="content-area">
         <h1 className="main-title">Central de Notícias</h1>
-        <p className="subtitle">
-          Acompanhe e analise todas as notícias monitoradas
-        </p>
+        <p className="subtitle">Acompanhe e analise todas as notícias monitoradas</p>
 
         <div className="busca-container">
           <div className="container-busca-filtro">
-            
             <SearchBar
               placeholder="Buscar notícias"
               searchTerm={searchTerm}
@@ -109,119 +191,104 @@ const PaginaNoticias = () => {
             />
             <Button onClick={handleRefresh} disabled={isLoading}>
               <IoIosSearch className="pesquisa" />
-              <span className="texto-botao">
-                {isLoading ? "Atualizando..." : "Buscar"}
-              </span>
+              <span className="texto-botao">{isLoading ? "..." : "Buscar"}</span>
             </Button>
           </div>
+          
           <div className="veracidade-filtros">
-            <button
-              onClick={() => setVeracityFilter("verified")}
-              className={veracityFilter === "verified" ? "ativo" : ""}
-            >
-            <CheckCircle size={18} /> Verificadas
-            </button>
-
-            <button
-              onClick={() => setVeracityFilter("dubious")}
-              className={veracityFilter === "dubious" ? "ativo" : ""}
-            >
-            <AlertTriangle size={18} /> Duvidosas
-            </button>
-
-            <button
-              onClick={() => setVeracityFilter("fake")}
-              className={veracityFilter === "fake" ? "ativo" : ""}
-            >
-            <XCircle size={18} /> Fake News
-            </button>
-
-            <button
-              onClick={() => setVeracityFilter("todas")}
-              className={veracityFilter === "todas" ? "ativo" : ""}
-            >
-            <List size={18} /> Todas
-            </button>
+            {[
+              { id: 'verified', icon: <CheckCircle size={18} />, label: 'Verificadas' },
+              { id: 'dubious', icon: <AlertTriangle size={18} />, label: 'Duvidosas' },
+              { id: 'fake', icon: <XCircle size={18} />, label: 'Fake News' },
+              { id: 'todas', icon: <List size={18} />, label: 'Todas' }
+            ].map(btn => (
+              <button
+                key={btn.id}
+                onClick={() => setVeracityFilter(btn.id)}
+                className={veracityFilter === btn.id ? "ativo" : ""}
+              >
+                {btn.icon} {btn.label}
+              </button>
+            ))}
           </div>
         </div>
 
-        <Tabs defaultValue="all">
+        <Tabs defaultValue="main">
           <TabsList className="tabs-list">
-            <TabsTrigger value="all">Todas</TabsTrigger>
-            <TabsTrigger value="recent">Recentes</TabsTrigger>
-            <TabsTrigger value="em-alta">Em alta</TabsTrigger>
+            <TabsTrigger value="main">Mural de Notícias</TabsTrigger>
+            <TabsTrigger value="analysis">Em Análise </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="all">
-            {filteredArticles.length === 0 ? (
-              <div className="mensagem-vazia mt-4">Nenhuma notícia encontrada.</div>
-            ) : (
-              <div className="news-grid">
-                {filteredArticles.map((article) => (
-                  <div key={article._id} onClick={() => handleCardClick(article)}>
-                    <NewsCard
-                      title={article.titulo}
-                      source={article.fonte || "Fonte desconhecida"}
-                      date={article.data_coleta || "Data não informada"}
-                      veracity={getVeracityStatus(article)}
-                      imageUrl={article.imageUrl}
-                    />
-                  </div>
-                ))}
+          {/* MURAL */}
+          <TabsContent value="main">
+            {displayedMainArticles.length === 0 && !isLoading ? (
+              <div className="mensagem-vazia mt-4" style={{textAlign: 'center', color: '#888'}}>
+                Nenhuma notícia encontrada com este filtro.
               </div>
+            ) : (
+              <>
+                {/* Grid Renderizado Aqui */}
+                <div className="news-grid">
+                    {currentMainItems.map((article) => (
+                        <div key={article._id} onClick={() => handleCardClick(article)}>
+                            <NewsCard
+                                title={article.titulo}
+                                source={article.fonte || "Fonte desconhecida"}
+                                date={article.data_coleta || "Data não informada"}
+                                veracity={article.veracityStatus}
+                                statusIcon={article.statusIcon}
+                                imageUrl={article.imageUrl}
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                <PaginationButtons 
+                    totalItems={displayedMainArticles.length}
+                    currentPage={pageMural}
+                    setCurrentPage={setPageMural}
+                />
+              </>
             )}
           </TabsContent>
 
-          <TabsContent value="recent">
-            {recentArticles.length === 0 ? (
-              <div className="mensagem-vazia mt-4">Nenhuma notícia recente.</div>
-            ) : (
-              <div className="news-grid">
-                {recentArticles.map((article) => (
-                  <div key={article._id} onClick={() => handleCardClick(article)}>
-                    <NewsCard
-                      title={article.titulo}
-                      source={article.fonte}
-                      date={article.data_coleta}
-                      veracity={article.status_verificacao}
-                      imageUrl={article.imageUrl}
-                    />
-                  </div>
-                ))}
+          {/* EM ANÁLISE  */}
+          <TabsContent value="analysis">
+            {displayedPendingArticles.length === 0 && !isLoading ? (
+              <div className="mensagem-vazia mt-4" style={{textAlign: 'center', color: '#888'}}>
+                Tudo limpo! Nenhuma notícia aguardando análise.
               </div>
-            )}
-          </TabsContent>
+            ) : (
+               <>
+                <div className="news-grid">
+                    {currentPendingItems.map((article) => (
+                        <div key={article._id} onClick={() => handleCardClick(article)}>
+                            <NewsCard
+                                title={article.titulo}
+                                source={article.fonte || "Fonte desconhecida"}
+                                date={article.data_coleta || "Data não informada"}
+                                veracity={article.veracityStatus}
+                                statusIcon={article.statusIcon}
+                                imageUrl={article.imageUrl}
+                            />
+                        </div>
+                    ))}
+                </div>
 
-          <TabsContent value="verified">
-            {verifiedArticles.length === 0 ? (
-              <div className="mensagem-vazia mt-4">Nenhuma notícia verificada.</div>
-            ) : (
-              <div className="news-grid">
-                {verifiedArticles.map((article) => (
-                  <div key={article._id} onClick={() => handleCardClick(article)}>
-                    <NewsCard
-                      title={article.titulo}
-                      source={article.fonte}
-                      date={article.data_coleta}
-                      veracity={article.status_verificacao}
-                      imageUrl={article.imageUrl}
-                    />
-                  </div>
-                ))}
-              </div>
+                <PaginationButtons 
+                    totalItems={displayedPendingArticles.length}
+                    currentPage={pageAnalysis}
+                    setCurrentPage={setPageAnalysis}
+                />
+              </>
             )}
           </TabsContent>
         </Tabs>
       </div>
-
-      <PopUp
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        news={selectedNews}
-      />
+      
+      <PopUp isOpen={isModalOpen} onClose={handleCloseModal} news={selectedNews} />
     </div>
   );
 };
+
 export default PaginaNoticias;
-
-

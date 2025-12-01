@@ -1,108 +1,106 @@
 /* ------------------ CONTEÚDO PRINCIPAL ------------------ */
 .content-area {
-  background-color: #1B1E2A;     /* cor de fundo da área principal */
-  min-height: 100vh;               /* altura mínima 100% da tela */
-  padding: 30px;                   /* espaçamento interno */
-  margin-bottom: 30px;             /* margem inferior */
+  background-color: #1B1E2A;
+  min-height: 100vh;
+  padding: 30px;
+  margin-bottom: 30px;
 }
 
 .main-title {
   font-weight: 600;
-  color: #e0e0e0;                /* cor do título principal */
-  font-size: 2rem;                 /* tamanho da fonte */
-  margin-bottom: 0.25rem;          /* espaço abaixo do título */
+  color: #e0e0e0;
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
 }
 
 .subtitle {
-  color: #CCCCCC;                /* cor do subtítulo */
-  margin-bottom: 1.5rem;           /* espaço abaixo do subtítulo */
+  color: #CCCCCC;
+  margin-bottom: 1.5rem;
 }
 
 /* ------------------ BUSCA ------------------ */
 .busca-container {
-  display: flex;                   /* layout flexível */
-  flex-direction: column;          /* itens organizados em coluna */
-  background-color: #2B303B;     /* cor de fundo do container */
-  justify-content: center;         /* centraliza verticalmente */
-  align-items: center;             /* centraliza horizontalmente */
-  gap: 1rem;                       /* espaçamento entre os elementos */
-  padding: 40px 60px;              /* espaçamento interno */
-  border-radius: 10px;             /* bordas arredondadas */
-  margin-bottom: 30px;             /* margem inferior */
+  display: flex;
+  flex-direction: column;
+  background-color: #2B303B;
+  justify-content: center0;
+  align-items: center;
+  gap: 1rem;
+  padding: 40px 60px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 .busca-container input {
-  flex-grow: 1;                     /* largura do input */
-  padding: 1rem;                    /* espaçamento interno */
-  border-radius: 0.25rem;           /* bordas arredondadas pequenas */
-  border: 1px solid #FFFFFF;      /* borda branca */
-  background-color: #030303;      /* cor de fundo do input */
-  color: #FFFFFF;                 /* cor do texto */
-  box-sizing: border-box; 
+  flex-grow: 1;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #FFFFFF;
+  background-color: #030303;
+  color: #FFFFFF;
+  box-sizing: border-box;
   height: 50px;
 }
 
 .busca-container input::placeholder {
-  color: #CCCCCC;                 /* cor do placeholder */
+  color: #CCCCCC;
 }
 
 .container-busca-filtro {
-  display: flex;                   /* layout flexível */
-  align-items: center;             /* centraliza verticalmente */
-  gap: 0.5rem;                     /* espaçamento entre itens */
-  max-width: 800px;                /* largura máxima */
-  width: 100%;                     /* ocupa toda a largura disponível */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 800px;
+  width: 100%;
 }
 
 .container-busca-filtro button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;                   /* Espaço entre o ícone e o texto */
-  flex-shrink: 0;                 /* Impede o botão de encolher */
+  gap: 0.25rem;
+  flex-shrink: 0;
   box-sizing: border-box;
   height: 50px;
-
 }
-
 
 /* ------------------ FILTROS ------------------ */
 .veracidade-filtros {
-  display: flex;                   /* layout flexível */
-  gap: 10px;                       /* espaçamento entre botões */
-  margin-top: 15px;                /* margem superior */
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
   align-items: center;
 }
 
 .veracidade-filtros button {
-  background-color: #000000;      /* cor de fundo do botão */
-  color: white;                   /* cor do texto */
-  border: 0.5px solid white;      /* borda fina */
-  padding: 10px 20px;               /* espaçamento interno */
-  border-radius: 6px;               /* bordas arredondadas */
-  font-weight: bold;                /* texto em negrito */
-  cursor: pointer;                  /* cursor muda ao passar o mouse */
-  display: flex;                    /* layout flexível dentro do botão */
-  align-items: center;              /* centraliza verticalmente */
-  gap: 8px;                         /* espaço entre elementos internos do botão */
+  background-color: #000000;
+  color: white;
+  border: 0.5px solid white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .veracidade-filtros button.ativo {
-  background-color: #1B1E2A;     /* cor laranja */
-  border-color: #FFFFFF;         /* borda também laranja */
+  background-color: #1B1E2A;
+  border-color: #FFFFFF;
   color: #FFFFFF;
 }
-/* ------------ News Cards --------------- */
 
+/* ------------ News Cards --------------- */
 .news-card {
-  background-color: #2B303B;    /* cor de fundo do card */
-  color: #ffffff;               /* cor do texto */
-  padding: 0;                     /* sem padding */
-  border: none !important;        /* sem borda */
-  border-radius: 10px;            /* bordas arredondadas */
+  background-color: #2B303B;
+  color: #ffffff;
+  padding: 0;
+  border: none !important;
+  border-radius: 10px;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
 }
 
 .news-card .card-footer {
@@ -110,98 +108,98 @@
   color: #F67655;
   margin-top: auto;
 }
+
 .news-card .card-title {
   flex-shrink: 0;
 }
 
 /* Grid de Cards */
 .news-grid {
-  display: grid;                         /* layout em grade */
-  grid-template-columns: 1fr 1fr 1fr;    /* 3 colunas iguais */
-  gap: 15px;                             /* espaço entre cards */
-  margin-top: 25px;                      /* margem superior */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
   align-items: stretch;
 }
 
-/* Área da Imagem / Placeholder */
+/* Área da Imagem */
 .card-image-placeholder {
-  height: 180px;                         /* altura da imagem */
-  background-color: #2B303B;           /* cor de fundo placeholder */
-  border-radius: 10px;                   /* bordas arredondadas */
-  background-position: center;           /* centraliza a imagem */
-  background-size: cover;                /* cobre todo o espaço */
-  position: relative;                    /* permite posicionamento do badge */
+  height: 85px;
+  background-color: #2B303B;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
-/* Selo de Veracidade (Badge) */
+/* Selo */
 .veracity-badge {
-  position: absolute !important;         /* posicionamento absoluto */
-  top: 30px;                             /* distância do topo */
-  right: 30px;                           /* distância da direita */
-  padding: 12px 20px;                    /* espaçamento interno */
-  font-size: 15px;                       /* tamanho da fonte */
-  z-index: 10;                           /* garante que fique acima da imagem */
+  position: absolute !important;
+  top: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  font-size: 15px;
+  z-index: 10;
 }
 
 .card-content-body {
-  padding: 15px;                         /* espaçamento interno */
+  padding: 15px;
   flex-grow: 1;
 }
 
 .card-title {
-  font-size: 1.2rem;                     /* tamanho da fonte */
-  font-weight: bold;                     /* negrito */
-  margin-bottom: 5px;                    /* margem inferior */
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .card-footer {
-  font-size: 0.95rem;                    /* tamanho da fonte */
-  color: #F67655;                      /* cor do texto */
-  margin-top: 10px;                      /* margem superior */
-  flex-shrink: 0;
+  font-size: 0.95rem;
+  color: #F67655;
+  margin-top: 10px;
   padding: 0 15px 15px 15px;
 }
+
 /* ------------ Botões Laranja --------------- */
 button {
-  background-color: #F67655;           /* cor de fundo do botão */
-  color: #FFFFFF;                      /* cor do texto */
-  border: none;                          /* sem borda */
-  padding: 0.5rem;                       /* espaçamento interno */
-  border-radius: 5px;                    /* bordas arredondadas */
-  font-weight: bold;                     /* texto em negrito */
-  cursor: pointer;                       /* cursor muda ao passar sobre o botão */
-}                       
+  background-color: #F67655;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 /* ------------ Tabs --------------- */
 .tabs-list {
-  display: flex;                         /* layout flexível */
-  justify-content: start;                /* alinha à esquerda */
-  background-color: #2C2F3A;           /* cor de fundo */
-  padding: 0;                            /* sem espaçamento interno */
-  border-radius: 6px;                    /* bordas arredondadas */
-  margin-top: 25px;                      /* margem superior */
-  overflow: hidden;                      /* evita que o conteúdo vaze */
+  display: flex;
+  justify-content: start;
+  background-color: #2C2F3A;
+  padding: 0;
+  border-radius: 6px;
+  margin-top: 25px;
+  overflow: hidden;
 }
 
-/* Botões das Tabs */
 .tabs-list button {
-  flex: 1;                                /* todos ocupam a mesma largura */
-  color: #C0C0C0;                       /* cor do texto */
-  background-color: transparent;          /* fundo transparente */
-  padding: 10px 20px;                     /* espaçamento interno */
-  border: none;                           /* sem borda */
-  cursor: pointer;                        /* cursor muda ao passar sobre o botão */
-  font-size: 0.95rem;                     /* tamanho da fonte */
-  transition: background-color 0.2s, color 0.2s; /* animação suave */
+  flex: 1;
+  color: #C0C0C0;
+  background-color: transparent;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 /* ------------ Pesquisa --------------- */
 .mt-4 {
-  display: flex;                          /* layout flexível */
-  align-items: center;                    /* centraliza verticalmente */
-  flex-direction: column;                 /* organiza itens em coluna */
-  padding: 25px;                          /* espaçamento interno */
-  color: #F67655;                       /* cor do texto */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  color: #F67655;
 }
 
 .news-card .card-body {
@@ -210,137 +208,310 @@ button {
   flex-grow: 1 !important;
 }
 
+/* --- CARD ESTILO PROFISSIONAL --- */
+.news-card.professional-style {
+  background-color: #2B303B;
+  border: 1px solid #333;
+  border-left-width: 6px;
+  border-left-style: solid;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 200px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.news-card.professional-style:hover {
+  background-color: #323846;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Cabeçalho */
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.status-tag {
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Status */
+.status-verified {
+  color: #0bdd2a;
+  background-color: #25ad393d;
+  border: 1px solid #25AD39;
+
+}
+
+.status-fake {
+  color: #FF4444;
+  background-color: #e9000038;
+  border: 1px solid #E90000;
+
+}
+
+.status-dubious {
+  color: #C0CA31;
+  background-color: #c0ca3146;
+  border: 1px solid #C0CA31;
+
+}
+
+.status-pending {
+  color: #ffffffb9;
+  background-color: #ffffff62;
+  border: 1px solid #ffffff;
+}
+
+.card-date {
+  font-size: 0.95rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Rodapé */
+.card-footer-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.source-label {
+  color: #888;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.source-name {
+  color: #F67655;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/*------------- RESPONSIVO -------------*/
 /*------------- RESPONSIVO -------------*/
 @media (max-width: 768px) {
   .news-grid {
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr;
+  }
 
   .content-area {
-    padding: 20px; }
+    padding: 20px;
+  }
 
   .main-title {
-    font-size: 1.9rem; text-align: center; }
+    font-size: 1.9rem;
+    text-align: center;
+  }
 
   .subtitle {
-    text-align: center; margin-bottom: 1rem; }
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 
-  .busca-container { 
-    padding: 30px 20px; }
-  
-  .container-busca-filtro { 
-    max-width: 100%; }
-  
+  .busca-container {
+    padding: 30px 20px;
+  }
+
+  .container-busca-filtro {
+    max-width: 100%;
+  }
+
   .container-busca-filtro input {
-    width: 100%; max-width: none; flex-grow: 1; min-width: 0; }
-  
+    width: 100%;
+    max-width: none;
+    flex-grow: 1;
+    min-width: 0;
+  }
+
   .container-busca-filtro button .texto-botao {
-    display: inline; }
-  
+    display: inline;
+  }
+
   .tabs-list {
-    margin-top: 20px; }
+    margin-top: 20px;
+  }
 
   .tabs-list button {
-    padding: 8px 10px; font-size: 0.85rem; }
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
 
   .veracidade-filtros {
-    flex-wrap: wrap; justify-content: center; gap: 6px; }
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
 
   .veracidade-filtros button {
     flex: 1 1 45%;
     min-width: 120px;
-    padding: 8px 10px;
+    padding: 5px 10px;
     font-size: 13px;
-    justify-content: center; }
+    justify-content: center;
+  }
 
   .news-card .card-title {
-    font-size: 1.1rem; }
+    font-size: 1.1rem;
+  }
 
   .card-image-placeholder {
-    height: 170px; } 
+    height: 170px;
+  }
 
   .veracity-badge {
-    top: 20px; right: 20px; padding: 10px 15px; font-size: 13px; }
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
 
   .news-card .card-footer {
-    font-size: 0.9rem; }
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 576px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .news-grid { 
-    grid-template-columns: 1fr; }
+  .content-area {
+    padding: 15px;
+  }
 
-  .content-area { 
-    padding: 15px;}
-  
-  .main-title { 
-    font-size: 1.8rem; margin-bottom: 0.5rem; text-align: center; }
-  
-  .subtitle { 
-    text-align: center; margin-bottom: 1rem; }
-  
+  .main-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
   .busca-container {
-    padding: 20px 15px; }
-  
+    padding: 20px 15px;
+  }
+
   .container-busca-filtro {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 0.5rem;
     width: 100%;
-    max-width: 100%; }
-  
-  .tabs-list {margin-top: 20px; }
-  
-  .tabs-list button {padding: 8px 10px; font-size: 0.85rem;}
-  
-  .container-busca-filtro input {
-      width: 100%; 
-      max-width: none; 
-      flex-grow: 1;
-      min-width: 0; 
-      padding: 1rem;
-      font-size: 14px; 
-      border-radius: 6px;
-      height: 42px; 
-      box-sizing: border-box;}
-    
-    .container-busca-filtro button {
-      flex: 0 0 42px; 
-      width: 42px; 
-      height: 42px;
-      padding: 0; 
-      border-radius: 6px;
-      justify-content: center; 
-      font-size: 12px; }
+    max-width: 100%;
+  }
 
-  .veracidade-filtros { flex-wrap: wrap; justify-content: center; gap: 6px; }
-  
+  .tabs-list {
+    margin-top: 20px;
+  }
+
+  .tabs-list button {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .container-busca-filtro input {
+    width: 100%;
+    max-width: none;
+    flex-grow: 1;
+    min-width: 0;
+    padding: 1rem;
+    font-size: 14px;
+    border-radius: 6px;
+    height: 42px;
+    box-sizing: border-box;
+  }
+
+  .container-busca-filtro button {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 6px;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .veracidade-filtros {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
   .veracidade-filtros button {
-    flex: 1 1 45%; min-width: 120px;
-    padding: 8px 10px; font-size: 13px; justify-content: center; }
-  
-  .card-title { 
-    font-size: 1rem; }
-  
-  .card-image-placeholder { 
-    height: 160px; }
-  
-  .veracity-badge { 
-    top: 15px; right: 15px; padding: 8px 12px; font-size: 12px; }
-  
-  .card-footer { 
-    font-size: 0.85rem; margin-top: 30px; }
-  
-  .news-card .card-title { 
-    font-size: 1rem;}
-  
-  .card-image-placeholder { 
-    height: 160px; } 
-  
-  .veracity-badge { 
-    top: 15px; right: 15px; padding: 8px 12px; font-size: 12px;}
-  
-  .news-card .card-footer { 
-    font-size: 0.9rem; }
+    flex: 1 1 45%;
+    min-width: 120px;
+    padding: 8px 10px;
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-image-placeholder {
+    height: 160px;
+  }
+
+  .veracity-badge {
+    top: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .card-footer {
+    font-size: 0.85rem;
+    margin-top: 30px;
+  }
+
+  .news-card .card-title {
+    font-size: 1rem;
+  }
+
+  .card-image-placeholder {
+    height: 160px;
+  }
+
+  .veracity-badge {
+    top: 15px;
+    right: 15px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .news-card .card-footer {
+    font-size: 0.9rem;
+  }
 }

@@ -1,11 +1,11 @@
-import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import api from '../api';
-import PaginaNoticias from '../pages/PaginaNoticias';
+import api from '../../api';
+import PaginaNoticias from '../PaginaNoticias';
 
-jest.mock('../api');            // mock da api para evitar falha desnecessárias nos testes devido a falhas de conexão
+// mock da api
+jest.mock('../../api');      
 
 jest.mock('react-icons/io', () => ({
     IoIosSearch: () => <span>Texto exemplo</span>,      // texto que substitui o ícone
@@ -94,7 +94,7 @@ describe('PaginaNoticias', () => {
         });
 
         // clica no botão de filtro
-        const botaoFake = screen.getByRole('button', {name: /❌ Fake News/i });
+        const botaoFake = screen.getByRole('button', {name: /Fake News/i });
         await userEvent.click(botaoFake);
 
         // verificação do resultado do filtro pelo botão

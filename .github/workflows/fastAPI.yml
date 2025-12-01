@@ -1,0 +1,40 @@
+name: fastAPI CI
+
+on:
+  push:
+    branches: ["main","feat/workflows"]
+    paths:
+      - 'BackEnd/**'
+  pull_request: 
+    branches: ["main"]
+    paths:
+      - 'BackEnd/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: BackEnd
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+        
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ../requirements.txt
+          pip install pytest httpx
+      
+      - name: Run tests
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          pytest

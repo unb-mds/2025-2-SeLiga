@@ -18,7 +18,7 @@ class MongoPipeline:
         self.collection_name = "Dados" 
         
         if not self.mongo_uri:
-            raise ValueError("MONGO_URI não foi definida. Defina a variável de ambiente.")
+            raise ValueError("\n\nMONGO_URI não foi definida. Defina a variável de ambiente.\n\n")
 
         # Variáveis de estado da conexão
         self.client = None
@@ -29,16 +29,16 @@ class MongoPipeline:
         try:
             self.client = pymongo.MongoClient(self.mongo_uri)
             self.db = self.client[self.mongo_db]
-            log.info(f"Conectado ao MongoDB: {self.mongo_db}")
+            log.info(f"\n\nConectado ao MongoDB: {self.mongo_db}\n\n")
         except pymongo.errors.ConfigurationError as e:
-            log.error(f"Erro ao conectar no MongoDB (verifique a URI): {e}")
+            log.error(f"\n\nErro ao conectar no MongoDB (verifique a URI): {e}\n\n")
             raise
 
     def close_spider(self, spider):
         
         if self.client:
             self.client.close()
-            log.info("Conexão com o MongoDB fechada.")
+            log.info("\n\nConexão com o MongoDB fechada.\n\n")
 
     def process_item(self, item, spider):
                 
@@ -47,8 +47,8 @@ class MongoPipeline:
             try:
                 # Insere o item (convertido para dict) na collection "noticias"
                 self.db[self.collection_name].insert_one(dict(item))
-                log.debug(f"Item salvo na collection '{self.collection_name}'")
+                log.debug(f"I\n\ntem salvo na collection '{self.collection_name}'\n\n")
             except Exception as e:
-                log.error(f"Erro ao salvar item no MongoDB: {e}")
+                log.error(f"\n\nErro ao salvar item no MongoDB: {e}\n\n")
         
         return item

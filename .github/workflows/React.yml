@@ -1,0 +1,39 @@
+name: React CI
+
+on:
+  push:
+    branches: ["main","feat/workflows"]
+    paths:
+      - 'FrontEnd/**'
+  pull_request: 
+    branches: ["main"]
+    paths:
+      - 'FrontEnd/**'
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: FrontEnd
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18" 
+          cache: "npm"
+          cache-dependency-path: "FrontEnd/package-lock.json"
+
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: CI=true npm test -- --watchAll=false --passWithNoTests
+
+      - name: Build project
+        run: CI=false npm run build

@@ -5,74 +5,62 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/Tabs";
 import { SearchBar } from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
 import { IoIosSearch } from "react-icons/io";
+import PopUp from "../components/PopUp";
 import api from "../api";
 import '../styles/app.css';
 import '../styles/noticias.css';
 
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_PAGE = 15;
 
-// --- COMPONENTE DE PAGINAÇÃO ---
-const PaginationControl = ({ lista, currentPage, setCurrentPage, onCardClick }) => {
-  if (lista.length === 0) return null;
+//COMPONENTE DE PAGINAÇÃO 
+const PaginationButtons = ({ totalItems, currentPage, setCurrentPage }) => {
+  if (totalItems === 0) return null;
 
-  const totalPages = Math.ceil(lista.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentItems = lista.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+  
+  // Se só tem 1 página, não mostra botões
+  if (totalPages <= 1) return null;
 
   const pageNumbers = [];
   let startPage = Math.max(1, currentPage - 2);
   let endPage = Math.min(totalPages, startPage + 4);
-  if (endPage - startPage < 4) startPage = Math.max(1, endPage - 4);
+  
+  if (endPage - startPage < 4) {
+    startPage = Math.max(1, endPage - 4);
+  }
 
-  for (let i = startPage; i <= endPage; i++) pageNumbers.push(i);
+  for (let i = startPage; i <= endPage; i++) {
+    pageNumbers.push(i);
+  }
 
   return (
-    <>
-      <div className="news-grid">
-        {currentItems.map((article) => (
-          <div key={article._id} onClick={() => onCardClick(article)}>
-            <NewsCard
-              title={article.titulo}
-              source={article.fonte || "Fonte desconhecida"}
-              date={article.data_coleta || "Data não informada"}
-              veracity={article.veracityStatus}
-              statusIcon={article.statusIcon} 
-              imageUrl={article.imageUrl}
-            />
-          </div>
-        ))}
-      </div>
+    <div className="paginacao-container">
+      <button 
+        className="btn-paginacao" 
+        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+        disabled={currentPage === 1}
+      >
+        <ChevronLeft size={20} />
+      </button>
+      
+      {pageNumbers.map(number => (
+        <button
+          key={number}
+          className={`btn-paginacao ${currentPage === number ? 'ativo' : ''}`}
+          onClick={() => setCurrentPage(number)}
+        >
+          {number}
+        </button>
+      ))}
 
-      {totalPages > 1 && (
-        <div className="paginacao-container">
-          <button 
-            className="btn-paginacao" 
-            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-            disabled={currentPage === 1}
-          >
-            <ChevronLeft size={20} />
-          </button>
-          
-          {pageNumbers.map(number => (
-            <button
-              key={number}
-              className={`btn-paginacao ${currentPage === number ? 'ativo' : ''}`}
-              onClick={() => setCurrentPage(number)}
-            >
-              {number}
-            </button>
-          ))}
-
-          <button 
-            className="btn-paginacao" 
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-            disabled={currentPage === totalPages}
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
-      )}
-    </>
+      <button 
+        className="btn-paginacao" 
+        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+        disabled={currentPage === totalPages}
+      >
+        <ChevronRight size={20} />
+      </button>
+    </div>
   );
 };
 
@@ -84,7 +72,6 @@ const PaginaNoticias = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedNews, setSelectedNews] = useState(null);
   
-  // Estados independentes de página
   const [pageMural, setPageMural] = useState(1);
   const [pageAnalysis, setPageAnalysis] = useState(1);
 
@@ -165,10 +152,11 @@ const PaginaNoticias = () => {
     };
   });
 
-  // Filtros
+  // Separa listas
   const pendingList = processedArticles.filter(a => a.veracityStatus === 'pendente');
   const mainList = processedArticles.filter(a => a.veracityStatus !== 'pendente');
 
+  // Filtros visuais
   const displayedMainArticles = mainList.filter(article => {
     const matchSearch = article.titulo?.toLowerCase().includes(searchTerm.toLowerCase());
     if (veracityFilter === "todas") return matchSearch;
@@ -179,9 +167,17 @@ const PaginaNoticias = () => {
     a.titulo?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const getPaginatedData = (list, page) => {
+      const startIndex = (page - 1) * ITEMS_PER_PAGE;
+      return list.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  };
+
+  // Dados paginados prontos
+  const currentMainItems = getPaginatedData(displayedMainArticles, pageMural);
+  const currentPendingItems = getPaginatedData(displayedPendingArticles, pageAnalysis);
+
   return (
     <div className="noticias-pagina">
-      {/* conteúdo principal */}
       <div className="content-area">
         <h1 className="main-title">Central de Notícias</h1>
         <p className="subtitle">Acompanhe e analise todas as notícias monitoradas</p>
@@ -223,37 +219,74 @@ const PaginaNoticias = () => {
             <TabsTrigger value="analysis">Em Análise </TabsTrigger>
           </TabsList>
 
+          {/* MURAL */}
           <TabsContent value="main">
             {displayedMainArticles.length === 0 && !isLoading ? (
               <div className="mensagem-vazia mt-4" style={{textAlign: 'center', color: '#888'}}>
                 Nenhuma notícia encontrada com este filtro.
               </div>
             ) : (
-              <PaginationControl 
-                lista={displayedMainArticles} 
-                currentPage={pageMural}      
-                setCurrentPage={setPageMural}
-                onCardClick={handleCardClick}
-              />
+              <>
+                {/* Grid Renderizado Aqui */}
+                <div className="news-grid">
+                    {currentMainItems.map((article) => (
+                        <div key={article._id} onClick={() => handleCardClick(article)}>
+                            <NewsCard
+                                title={article.titulo}
+                                source={article.fonte || "Fonte desconhecida"}
+                                date={article.data_coleta || "Data não informada"}
+                                veracity={article.veracityStatus}
+                                statusIcon={article.statusIcon}
+                                imageUrl={article.imageUrl}
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                <PaginationButtons 
+                    totalItems={displayedMainArticles.length}
+                    currentPage={pageMural}
+                    setCurrentPage={setPageMural}
+                />
+              </>
             )}
           </TabsContent>
 
+          {/* EM ANÁLISE  */}
           <TabsContent value="analysis">
             {displayedPendingArticles.length === 0 && !isLoading ? (
               <div className="mensagem-vazia mt-4" style={{textAlign: 'center', color: '#888'}}>
                 Tudo limpo! Nenhuma notícia aguardando análise.
               </div>
             ) : (
-              <PaginationControl 
-                lista={displayedPendingArticles} 
-                currentPage={pageAnalysis}      
-                setCurrentPage={setPageAnalysis}
-                onCardClick={handleCardClick} 
-              />
+               <>
+                <div className="news-grid">
+                    {currentPendingItems.map((article) => (
+                        <div key={article._id} onClick={() => handleCardClick(article)}>
+                            <NewsCard
+                                title={article.titulo}
+                                source={article.fonte || "Fonte desconhecida"}
+                                date={article.data_coleta || "Data não informada"}
+                                veracity={article.veracityStatus}
+                                statusIcon={article.statusIcon}
+                                imageUrl={article.imageUrl}
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                <PaginationButtons 
+                    totalItems={displayedPendingArticles.length}
+                    currentPage={pageAnalysis}
+                    setCurrentPage={setPageAnalysis}
+                />
+              </>
             )}
           </TabsContent>
         </Tabs>
       </div>
+      
+      <PopUp isOpen={isModalOpen} onClose={handleCloseModal} news={selectedNews} />
     </div>
   );
 };

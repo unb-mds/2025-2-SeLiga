@@ -19,10 +19,10 @@ function Metodologia() {
             </div>
 
 
-            {/* Layout de Duas Colunas (Propósito e Arquitetura) */}
+            {/* Layout de Duas Colunas*/}
             <Row className="justify-content-center">
 
-                {/* Coluna 1: NOSSO PROPÓSITO (Metodologia) */}
+                {/* NOSSO PROPÓSITO */}
                 <Col md={6}>
                     <Card className="metodologia-card">
                         <Card.Body>
@@ -36,7 +36,6 @@ function Metodologia() {
                                 Como projeto acadêmico, aplicamos metodologia Scrum para 
                                 aprender na prática sobre gestão ágil e desenvolvimento em equipe.
                             </p>
-                            {/* Tags de Reunião */}
                             <div className="metodologia-tags">
                                 
                                 <Badge className="tag-sprint"> <h5 className='numero-sprint'> 1 </h5> Semana por Sprint</Badge>
@@ -50,7 +49,7 @@ function Metodologia() {
                     </Card>
                 </Col>
 
-                {/* Coluna 2: ARQUITETURA E DADOS */}
+                {/* ARQUITETURA E DADOS */}
                 <Col md={6}>
                     <Card className="metodologia-card">
                         <Card.Body>
@@ -65,7 +64,6 @@ function Metodologia() {
                                 O projeto simula um sistema real de análise de notícias, 
                                 implementando arquitetura moderna e boas práticas de desenvolvimento de software.
                             </p>
-                            {/* Cards Internos (Processamento IA e Visualização) */}
                             <div className="internal-card-ia">       
                                 <img src="/brain.svg" className='brain' alt="brain"/>  
                                 <div className='card-text-content'>  

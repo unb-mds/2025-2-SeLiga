@@ -11,7 +11,7 @@
   color: #F67655; /* cor do ícone */
   opacity: 0.3; /* transparência do ícone */
   position: absolute; /* posicionamento absoluto */
-  top: 47%; /* distância do topo */
+  top: 35%; /* distância do topo */
   left: 50%; /* distância da esquerda */
   transform: translate(-50%, -50%); /* centraliza o ícone */
   z-index: 0; /* atrás de outros elementos */
@@ -818,5 +818,14 @@
 .header-title { 
   font-size: 2.5rem; 
   line-height: 1.1; 
+  }
+}
+
+@media (max-width: 1444px) {
+
+  .shield-icon-background {
+    top: 40%;
+    left: 50%;
+    z-index: 0; 
   }
 }

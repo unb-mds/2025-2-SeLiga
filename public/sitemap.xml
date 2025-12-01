@@ -2,28 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/02_11_2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/03_11_2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/09-11-2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/10_11_2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/16_11_2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/17-11-2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/21_10_2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/23_11_2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/24_11_2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/26_10_2025/</loc>
-  </url><url>
-    <loc>http://localhost:1313/2025-2-SeLiga/atas/28_10_2025/</loc>
-  </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/estudos/requisitos/</loc>
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/estudos/API/</loc>
@@ -32,13 +10,21 @@
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/estudos/arquitetura/</loc>
   </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/02_11_2025/</loc>
+  </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/03_09_2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/03_11_2025/</loc>
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/05_10_2025/</loc>
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/08_09_2025/</loc>
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/08_10_2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/09_11_2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/10_11_2025/</loc>
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/12_10_2025/</loc>
   </url><url>
@@ -48,11 +34,25 @@
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/15_09_2025/</loc>
   </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/16_11_2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/17_11_2025/</loc>
+  </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/19_10_2025/</loc>
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/21_09_2025/</loc>
   </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/21_10_2025/</loc>
+  </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/22_09_2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/23_11_2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/24_11_2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/26_10_2025/</loc>
+  </url><url>
+    <loc>http://localhost:1313/2025-2-SeLiga/atas/28_10_2025/</loc>
   </url><url>
     <loc>http://localhost:1313/2025-2-SeLiga/atas/29_09_2025/</loc>
   </url><url>

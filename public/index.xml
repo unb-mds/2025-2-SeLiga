@@ -1821,11 +1821,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2025-2-SeLiga/inicio/</guid>
       <description>&lt;hr&gt;
-&lt;h1 id=&#34;objetivo-do-projeto&#34;&gt;Objetivo do projeto&lt;/h1&gt;
+&lt;h1 id=&#34;1-visão-geral&#34;&gt;1. Visão Geral&lt;/h1&gt;
 &lt;h2 id=&#34;-seliga-o-portal-da-verdade&#34;&gt;🔎 SeLiga: O Portal da Verdade&lt;/h2&gt;
 &lt;p&gt;Sua ferramenta confiável na luta contra a desinformação.&lt;/p&gt;
-&lt;p&gt;Na era da informação instantânea, diferenciar fato de ficção é um desafio constante. O SeLiga nasceu para ser seu aliado, automatizando a checagem de notícias e trazendo clareza para o que você lê.&lt;/p&gt;
-&lt;p&gt;Nosso sistema inteligente minera, analisa e classifica reportagens de mais de 10 grandes veículos da imprensa brasileira, oferecendo um veredito sobre sua confiabilidade em uma plataforma web simples e intuitiva.&lt;/p&gt;</description>
+&lt;h3 id=&#34;contextualização-do-problema&#34;&gt;Contextualização do Problema&lt;/h3&gt;
+&lt;p&gt;Vivemos imersos em um fluxo interminável de notícias. A velocidade com que a informação se espalha, especialmente nas redes sociais, torna quase impossível verificar cada fato. Como podemos confiar no que lemos? Como proteger a nós e à nossa comunidade da desinformação?&lt;/p&gt;
+&lt;h3 id=&#34;motivação&#34;&gt;Motivação&lt;/h3&gt;
+&lt;p&gt;Na era da informação instantânea, diferenciar fato de ficção é um desafio constante. O SeLiga nasceu para ser seu aliado, automatizando a checagem de notícias e trazendo clareza para o que você lê.&lt;/p&gt;</description>
     </item>
     <item>
       <title>BENCHMARK</title>

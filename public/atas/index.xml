@@ -8,23 +8,50 @@
     <language>pt-br</language>
     <atom:link href="http://localhost:1313/2025-2-SeLiga/atas/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
+      <title>ATA DE REUNIÃO 🗓️</title>
       <link>http://localhost:1313/2025-2-SeLiga/atas/02_11_2025/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2025-2-SeLiga/atas/02_11_2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-&#34;&gt;ATA DE REUNIÃO 🗓️&lt;/h1&gt;
+      <description>&lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
 &lt;strong&gt;Data:&lt;/strong&gt; 02/11/2025
 &lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;presença--nome--presença-&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt; | Nome | Presença |&lt;/h3&gt;
-&lt;p&gt;|&amp;mdash;|&amp;mdash;|
-| Arthur | Presente |
-| Amanda | Presente |
-| Gustavo | Presente |
-| Marcus | Presente |
-| Enzo | Presente |
-| Erick | Presente |&lt;/p&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
@@ -33,603 +60,10 @@
 &lt;p&gt;Arthur: Desenvolveu testes unitarios do back end pra 5 funcoes.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Marcus: Adiantou front end, arrumou rota sobre das noticias, criei um &amp;ldquo;Pop Up&amp;rdquo; do card de noticias, e comecei a deixar as rotas responsivas&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/03_11_2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/03_11_2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-&#34;&gt;ATA DE REUNIÃO 🗓️&lt;/h1&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt; 03/10/2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento 💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Nome&lt;/th&gt;
-          &lt;th&gt;Presença&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Arthur&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Amanda&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Gustavo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Marcus&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enzo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Erick&lt;/td&gt;
-          &lt;td&gt;Falta Justificada&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Arthur: Vai ficar na parte de testes, tentando criar a parte de teste para o FrontEnd. E talvez mexer na parte de WebScraping.&lt;/li&gt;
-&lt;li&gt;Marcus: Vai dar uma lapidada no site, deixando a aparência dele melhor. Talvez dê uma mexida no BD também.&lt;/li&gt;
-&lt;li&gt;Gustavo: Vai ficar responsável por automatizar a mineração de noticias, junto as aranhas.&lt;/li&gt;
-&lt;li&gt;Amanda: Vai fazer a responsividade da página notícia.&lt;/li&gt;
-&lt;li&gt;Enzo: Vai pesquisar sobre a parte da segurança e tentar consertar essa parte.&lt;/li&gt;
-&lt;li&gt;Erick: Está de viagem esta semana, logo não terá tempo para nada.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Foi conversado sobre definição das rotas. Pois foi observado algumas falhas nas seguranças.&lt;/li&gt;
-&lt;li&gt;Foi conversado sobre a quantidade de notícias falsas que terá nosso site, e como melhorar.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/09-11-2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/09-11-2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-&#34;&gt;ATA DE REUNIÃO 🗓️&lt;/h1&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt; 03/10/2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Nome&lt;/th&gt;
-          &lt;th&gt;Presença&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Arthur&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Amanda&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Gustavo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Marcus&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enzo&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Erick&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Arthur: Ele esteve muito ocupado, mas mesmo assim, conseguiu progredir na parte de testes unitários que era sua issue.&lt;/li&gt;
-&lt;li&gt;Marcus: Conseguiu arrumar a responsividade do frontend. Conseguiu juntar o frontend com o backend fazendo com que apareça noticias no site.&lt;/li&gt;
-&lt;li&gt;Gustavo: Pesquisou sobre como automatizar a mineração de notícias para atualização do bando de dados.&lt;/li&gt;
-&lt;li&gt;Amanda: Ajustou a responsividade do front (ajuste de tamanho de tela para celular) e mudou a fonte do SeLiga, só não deu commit ainda.&lt;/li&gt;
-&lt;li&gt;Enzo: Arrumou a brecha de segurança do nosso programa que tihamos conversado na reunião anterior.&lt;/li&gt;
-&lt;li&gt;Erick: Não fez nada, pois estava de viagem.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Foi conversado sobre como iremos fazer a automatização da mineração. Foi definido que não faz sentido usar github actions já que o banco é online.&lt;/li&gt;
-&lt;li&gt;Foi falado que falta pouco para temrinar o frontend. Apenas alguns detalhes e animações de botões adicionais.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/10_11_2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/10_11_2025/</guid>
-      <description>&lt;h1 id=&#34;-ata-de-reunião&#34;&gt;📝 ATA DE REUNIÃO&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;Data:&lt;/strong&gt; 10/11/2025&lt;br&gt;
-&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-presença&#34;&gt;👥 PRESENÇA&lt;/h2&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Nome&lt;/th&gt;
-          &lt;th&gt;Presença&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Arthur&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Amanda&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Gustavo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Marcus&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enzo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Erick&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-tópicos-abordados&#34;&gt;🧩 TÓPICOS ABORDADOS&lt;/h2&gt;
-&lt;h3 id=&#34;resumo-da-semana-de-cada-integrante&#34;&gt;Resumo da semana de cada integrante&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Arthur:&lt;/strong&gt; Terminar a parte do teste de front-end e fazer a parte de pipelines.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Marcus:&lt;/strong&gt; Criar a página para depois a Amanda fazer a revisão.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gustavo:&lt;/strong&gt; &lt;em&gt;(não informado)&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Amanda:&lt;/strong&gt; Revisar as páginas e fazer a modificação do buscar, implementar o login dos filtros e mudar a fonte do &lt;em&gt;SeLiga&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Enzo:&lt;/strong&gt; Pesquisar sobre o Docker.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Erick:&lt;/strong&gt; Ajudar na pesquisa sobre Docker.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-issues-feitas-nessa-semana&#34;&gt;🧾 ISSUES FEITAS NESSA SEMANA&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;(nenhuma registrada)&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-observações-adicionais&#34;&gt;🗒️ OBSERVAÇÕES ADICIONAIS&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;(Sem observações adicionais)&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/16_11_2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/16_11_2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-&#34;&gt;ATA DE REUNIÃO 🗓️&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
-&lt;strong&gt;Data:&lt;/strong&gt; 16/11/2025
-&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;presença--nome--presença-&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt; | Nome | Presença |&lt;/h3&gt;
-&lt;p&gt;|&amp;mdash;|&amp;mdash;|
-| Arthur | Presente |
-| Amanda | Presente |
-| Gustavo | Presente |
-| Marcus | Presente |
-| Enzo | Presente |
-| Erick | Presente |&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Arthur: Montou o servidor e o script que ficará rodando, com dois horários, e mineirando os dados e mandando para o banco de dados.&lt;/li&gt;
-&lt;li&gt;Marcus:  Não mexeu tanto essa semana, mas atualizou o figma do protótipo para ficar cada vez mais parecido com o nosso protótipo de alta fidelidade.&lt;/li&gt;
-&lt;li&gt;Gustavo: Criou a conexão para enviar diretamente para o MongoDB as notícias mineradas pelo scrap, sem necessidade de gerar arquivos intermediários.&lt;/li&gt;
-&lt;li&gt;Amanda: Definiu a fonte da logo (agora com Poppins), atualizou os ícones dos filtros usando Lucide React, melhorou o design e alterou o estilo da aba ativa nos tabs.&lt;/li&gt;
-&lt;li&gt;Enzo: Aprimorou a API de IA, tentando diminuir o tempo de resposta e qualidade de retorno, melhorando o raciocínio.&lt;/li&gt;
-&lt;li&gt;Erick: Fez uma parte da issue de estudo de docker, pra que serve, dos principais comandos e docker compose.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;issues-feitas-nessa-semana-&#34;&gt;&lt;strong&gt;Issues Feitas nessa semana:&lt;/strong&gt; ✅&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Atualizar o template do figma&lt;/li&gt;
-&lt;li&gt;Automatizar o webscraping&lt;/li&gt;
-&lt;li&gt;Estudo sobre dockers&lt;/li&gt;
-&lt;li&gt;Design dos botões de filtro&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;A equipe conseguiu concluir todas as issues da semana.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/17-11-2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/17-11-2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-&#34;&gt;ATA DE REUNIÃO 🗓️&lt;/h1&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt; 17/11/2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento  💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Nome&lt;/th&gt;
-          &lt;th&gt;Presença&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Arthur&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Amanda&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Gustavo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Marcus&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enzo&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Erick&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Arthur: Essa sprint vai cuidar da parte de testes. Vai focar nos testes em geral, vai tentar fazer teste unitários pras spiders e mais testes para o frontend. Vai TENTAR fazer o workflow de testes.&lt;/li&gt;
-&lt;li&gt;Marcus: Vai começar a última parte do frontend, que é a parte do painel do site.&lt;/li&gt;
-&lt;li&gt;Gustavo: Vai testar a spider do portal &amp;ldquo;Leo Dias&amp;rdquo;, e tentar implementar mais spiders.&lt;/li&gt;
-&lt;li&gt;Amanda: Vai se juntar com o Marcus para fazer a parte do painel.&lt;/li&gt;
-&lt;li&gt;Enzo: Vai continuar melhorando a configuração da API do gemini. Ajudar o Erick com o Docker.&lt;/li&gt;
-&lt;li&gt;Erick: Vai fazer a parte prática do Docker que havia estudado na sprint anterior. E vai gerenciar as notícias no banco de dados.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Todas as issues que ficaram pendentes foram concluídas antes do prazo.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/21_10_2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/21_10_2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-&#34;&gt;ATA DE REUNIÃO 🗓️&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
-&lt;strong&gt;Data:&lt;/strong&gt; 21/10/2025
-&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Nome&lt;/th&gt;
-          &lt;th&gt;Presença&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Arthur&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Amanda&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Gustavo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Marcus&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enzo&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Erick&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Planejamento da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Arthur e Gustavo:&lt;/strong&gt; Vão desenvlover duas spider em portais que possuem possiveis noticias falsas&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Amanda:&lt;/strong&gt; Começar o design responsivo do site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Marcus:&lt;/strong&gt; Vai implementar a rota &amp;ldquo;sobre&amp;rdquo; e começar o design responsivo&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Erick:&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Enzo:&lt;/strong&gt;  Conectar a IA para validar as noticias do banco de dados com o back end&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;issues-planejadas-nessa-semana-&#34;&gt;&lt;strong&gt;Issues Planejadas nessa semana:&lt;/strong&gt; ✅&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Implementar integração das notícias com Backend&lt;/li&gt;
-&lt;li&gt;Aprimorar a rota &amp;ldquo;sobre&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Procurar portais que podem conter conteúdo falso e posicionar spiders&lt;/li&gt;
-&lt;li&gt;Dar início ao design responsivo&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/23_11_2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/23_11_2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-&#34;&gt;ATA DE REUNIÃO 🗓️&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
-&lt;strong&gt;Data:&lt;/strong&gt; 23/11/2025
-&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Nome&lt;/th&gt;
-          &lt;th&gt;Presença&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Arthur&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Amanda&lt;/td&gt;
-          &lt;td&gt;Ausente (justificado)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Gustavo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Marcus&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enzo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Erick&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Arthur: Configurou os workflows de CI (Continuous Integration) para verificação automática e realizou a implementação de testes unitários abrangendo Frontend, backend, Scraper e a página &amp;ldquo;Sobre&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Marcus: Iniciou a página &amp;ldquo;Painel&amp;rdquo; do site e implementou partes visuais, como os contadores de &amp;rsquo;total de notícias&amp;rsquo;, &amp;rsquo;notícias verdadeiras&amp;rsquo; e &amp;rsquo;notícias falsas&amp;rsquo;. Adicionou também um gráfico contendo essas informações e as notícias duvidosas; a rota está praticamente pronta, restando apenas alguns detalhes para finalização.&lt;/li&gt;
-&lt;li&gt;Gustavo: Pesquisou outros portais de notícias para a criação de spiders.&lt;/li&gt;
-&lt;li&gt;Amanda: Iniciou a implementação da responsividade da página &amp;ldquo;Painel&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Enzo: Testou a API do verificador e realizou a correção de pequenos erros, como a duplicata de notícias, além de ter começado o desenvolvimento do backend da rota do &amp;ldquo;Painel&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Erick: Excluiu as notícias que estavam em inglês e iniciou a configuração da parte de Docker.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;issues-feitas-nessa-semana-&#34;&gt;&lt;strong&gt;Issues Feitas nessa semana:&lt;/strong&gt; ✅&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Criar testes unitários para frontend e spiders&lt;/li&gt;
-&lt;li&gt;Feat/spider unit test&lt;/li&gt;
-&lt;li&gt;Verificar notícias duplicadas&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;issues-criadas-nessa-semana-mas-que-precisam-de-revisão&#34;&gt;&lt;strong&gt;Issues criadas nessa semana mas que precisam de revisão:&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Implementar Docker&lt;/li&gt;
-&lt;li&gt;Implementar mais spiders&lt;/li&gt;
-&lt;li&gt;Desenvolver painel do site&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Nenhuma observação adicional registrada&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/24_11_2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/24_11_2025/</guid>
-      <description>&lt;h1 id=&#34;-ata-de-reunião&#34;&gt;🗓️ ATA DE REUNIÃO&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;Data:&lt;/strong&gt; 24/11/2025&lt;br&gt;
-&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-presença&#34;&gt;📋 Presença&lt;/h2&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Nome&lt;/th&gt;
-          &lt;th&gt;Presença&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Arthur&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Amanda&lt;/td&gt;
-          &lt;td&gt;Falta justificada&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Gustavo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Marcus&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enzo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Erick&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-tópicos-abordados--resumo-da-semana&#34;&gt;🗣️ Tópicos Abordados — Resumo da Semana&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Arthur:&lt;/strong&gt; Talvez ajudar o Erick no Docker; ajudar o Gustavo nas spiders.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Marcus:&lt;/strong&gt; Focar na parte do painel e corrigir bugs do frontend.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gustavo:&lt;/strong&gt; Continuar criando spiders; talvez mexer no GitHub Pages.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Amanda:&lt;/strong&gt; Vai continuar a responsividade da pagina painel&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Enzo:&lt;/strong&gt; Continuar mexendo na API de duplicatas; prosseguir na rota de painel; arrumar a rota root que está com erro.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Erick:&lt;/strong&gt; Fazer o Dockerfile do backend, frontend e conexão com o MongoDB.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;observações-adicionais&#34;&gt;Observações adicionais&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/26_10_2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/26_10_2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-10-&#34;&gt;ATA DE REUNIÃO 10 🗓️&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
-&lt;strong&gt;Data:&lt;/strong&gt; 26/10/2025
-&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;presença--nome--presença-&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt; | Nome | Presença |&lt;/h3&gt;
-&lt;p&gt;|&amp;mdash;|&amp;mdash;|
-| Arthur | Presente |
-| Amanda | Presente |
-| Gustavo | Presente |
-| Marcus | Presente |
-| Enzo | Presente |
-| Erick | Presente |&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Arthur: Prestou auxílio ao Gustavo e desenvolveu o &lt;em&gt;spider&lt;/em&gt; para o portal Metrópoles, preparando o envio dos dados para o banco de dados.&lt;/li&gt;
-&lt;li&gt;Marcus: Focou em tornar o &lt;em&gt;front-end&lt;/em&gt; responsivo. A &lt;em&gt;navbar&lt;/em&gt; foi implementada e as seções &amp;ldquo;Sobre&amp;rdquo; e &amp;ldquo;Equipe&amp;rdquo; já estão funcionais (clicáveis) e em fase de finalização.&lt;/li&gt;
-&lt;li&gt;Gustavo: Concluiu a &lt;em&gt;issue&lt;/em&gt; de &lt;em&gt;web scraping&lt;/em&gt;, implementando os &lt;em&gt;spiders&lt;/em&gt; para o portal Band.&lt;/li&gt;
-&lt;li&gt;Amanda: Pesquisou sobre as melhores práticas para implementação de responsividade no &lt;em&gt;front-end&lt;/em&gt; com React. Não foi possível aplicar o conhecimento devido à falta de tempo.&lt;/li&gt;
-&lt;li&gt;Enzo: A contribuição nesta semana foi focada na pesquisa sobre automatização de processos.&lt;/li&gt;
-&lt;li&gt;Erick: Não apresentou contribuições nesta semana.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;issues-feitas-nessa-semana-&#34;&gt;&lt;strong&gt;Issues Feitas nessa semana:&lt;/strong&gt; ✅&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Implementar seções Sobre e Equipe.&lt;/li&gt;
-&lt;li&gt;Front-end responsivo.&lt;/li&gt;
-&lt;li&gt;Implementação de spiders em portais de notícias&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Conseguimos concluir todas as issues dessa semana&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/2025-2-SeLiga/atas/28_10_2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/atas/28_10_2025/</guid>
-      <description>&lt;h1 id=&#34;ata-de-reunião-&#34;&gt;ATA DE REUNIÃO 🗓️&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;Data:&lt;/strong&gt; 28/10/2025&lt;br&gt;
-&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento💡&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Nome&lt;/th&gt;
-          &lt;th&gt;Presença&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Arthur&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Amanda&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Gustavo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Marcus&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enzo&lt;/td&gt;
-          &lt;td&gt;Presente&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Erick&lt;/td&gt;
-          &lt;td&gt;Ausente&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Arthur:&lt;/strong&gt; Fazer a implementação de testes de software unitários&lt;/p&gt;
+&lt;p&gt;Marcus: Adiantou front end, arrumou rota sobre das noticias, criei um &amp;ldquo;Pop Up&amp;rdquo; do card de noticias, e comecei a deixar as rotas responsivas&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Amanda:&lt;/strong&gt; Fazer os botões de filtro (verificadas, duvidosas e fake news) funcionarem e começar a rota de notícias&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Erick:&lt;/strong&gt; Tratar as notícias coletadas no web scraping e armazenar no banco de dados de forma automatizada&lt;/p&gt;</description>
+&lt;p&gt;Gustavo: Arrumou as spiders, criou uma spider do yahoo, arrumou o gitpages colocando as datas desse mes, mexeu no spiders de noticias&lt;/p&gt;</description>
     </item>
     <item>
       <title>ATA DE REUNIÃO 🗓️</title>
@@ -705,6 +139,69 @@
 &lt;h3 id=&#34;tarefa-para-todos-&#34;&gt;&lt;strong&gt;TAREFA PARA TODOS&lt;/strong&gt; ✅&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Pensar em um nome para o projeto.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/03_11_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/03_11_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt; 03/10/2025&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Falta Justificada&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arthur: Vai ficar na parte de testes, tentando criar a parte de teste para o FrontEnd. E talvez mexer na parte de WebScraping.&lt;/li&gt;
+&lt;li&gt;Marcus: Vai dar uma lapidada no site, deixando a aparência dele melhor. Talvez dê uma mexida no BD também.&lt;/li&gt;
+&lt;li&gt;Gustavo: Vai ficar responsável por automatizar a mineração de noticias, junto as aranhas.&lt;/li&gt;
+&lt;li&gt;Amanda: Vai fazer a responsividade da página notícia.&lt;/li&gt;
+&lt;li&gt;Enzo: Vai pesquisar sobre a parte da segurança e tentar consertar essa parte.&lt;/li&gt;
+&lt;li&gt;Erick: Está de viagem esta semana, logo não terá tempo para nada.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Foi conversado sobre definição das rotas. Pois foi observado algumas falhas nas seguranças.&lt;/li&gt;
+&lt;li&gt;Foi conversado sobre a quantidade de notícias falsas que terá nosso site, e como melhorar.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>
@@ -929,6 +426,134 @@
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;AÇÕES E PRÓXIMOS PASSOS 🚀&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/09_11_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/09_11_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt; 03/10/2025&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arthur: Ele esteve muito ocupado, mas mesmo assim, conseguiu progredir na parte de testes unitários que era sua issue.&lt;/li&gt;
+&lt;li&gt;Marcus: Conseguiu arrumar a responsividade do frontend. Conseguiu juntar o frontend com o backend fazendo com que apareça noticias no site.&lt;/li&gt;
+&lt;li&gt;Gustavo: Pesquisou sobre como automatizar a mineração de notícias para atualização do bando de dados.&lt;/li&gt;
+&lt;li&gt;Amanda: Ajustou a responsividade do front (ajuste de tamanho de tela para celular) e mudou a fonte do SeLiga, só não deu commit ainda.&lt;/li&gt;
+&lt;li&gt;Enzo: Arrumou a brecha de segurança do nosso programa que tihamos conversado na reunião anterior.&lt;/li&gt;
+&lt;li&gt;Erick: Não fez nada, pois estava de viagem.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Foi conversado sobre como iremos fazer a automatização da mineração. Foi definido que não faz sentido usar github actions já que o banco é online.&lt;/li&gt;
+&lt;li&gt;Foi falado que falta pouco para temrinar o frontend. Apenas alguns detalhes e animações de botões adicionais.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/10_11_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/10_11_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 10/11/2025&lt;br&gt;
+&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-presença&#34;&gt;👥 PRESENÇA&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-tópicos-abordados&#34;&gt;🧩 TÓPICOS ABORDADOS&lt;/h2&gt;
+&lt;h3 id=&#34;resumo-da-semana-de-cada-integrante&#34;&gt;Resumo da semana de cada integrante&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Arthur:&lt;/strong&gt; Terminar a parte do teste de front-end e fazer a parte de pipelines.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Marcus:&lt;/strong&gt; Criar a página para depois a Amanda fazer a revisão.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gustavo:&lt;/strong&gt; &lt;em&gt;(não informado)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amanda:&lt;/strong&gt; Revisar as páginas e fazer a modificação do buscar, implementar o login dos filtros e mudar a fonte do &lt;em&gt;SeLiga&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enzo:&lt;/strong&gt; Pesquisar sobre o Docker.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Erick:&lt;/strong&gt; Ajudar na pesquisa sobre Docker.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-issues-feitas-nessa-semana&#34;&gt;🧾 ISSUES FEITAS NESSA SEMANA&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;(nenhuma registrada)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-observações-adicionais&#34;&gt;🗒️ OBSERVAÇÕES ADICIONAIS&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(Sem observações adicionais)&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>ATA DE REUNIÃO 🗓️</title>
@@ -1206,6 +831,138 @@
     </item>
     <item>
       <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/16_11_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/16_11_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 16/11/2025
+&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arthur: Montou o servidor e o script que ficará rodando, com dois horários, e mineirando os dados e mandando para o banco de dados.&lt;/li&gt;
+&lt;li&gt;Marcus:  Não mexeu tanto essa semana, mas atualizou o figma do protótipo para ficar cada vez mais parecido com o nosso protótipo de alta fidelidade.&lt;/li&gt;
+&lt;li&gt;Gustavo: Criou a conexão para enviar diretamente para o MongoDB as notícias mineradas pelo scrap, sem necessidade de gerar arquivos intermediários.&lt;/li&gt;
+&lt;li&gt;Amanda: Definiu a fonte da logo (agora com Poppins), atualizou os ícones dos filtros usando Lucide React, melhorou o design e alterou o estilo da aba ativa nos tabs.&lt;/li&gt;
+&lt;li&gt;Enzo: Aprimorou a API de IA, tentando diminuir o tempo de resposta e qualidade de retorno, melhorando o raciocínio.&lt;/li&gt;
+&lt;li&gt;Erick: Fez uma parte da issue de estudo de docker, pra que serve, dos principais comandos e docker compose.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;issues-feitas-nessa-semana-&#34;&gt;&lt;strong&gt;Issues Feitas nessa semana:&lt;/strong&gt; ✅&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Atualizar o template do figma&lt;/li&gt;
+&lt;li&gt;Automatizar o webscraping&lt;/li&gt;
+&lt;li&gt;Estudo sobre dockers&lt;/li&gt;
+&lt;li&gt;Design dos botões de filtro&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A equipe conseguiu concluir todas as issues da semana.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/17_11_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/17_11_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt; 17/11/2025&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento  💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arthur: Essa sprint vai cuidar da parte de testes. Vai focar nos testes em geral, vai tentar fazer teste unitários pras spiders e mais testes para o frontend. Vai TENTAR fazer o workflow de testes.&lt;/li&gt;
+&lt;li&gt;Marcus: Vai começar a última parte do frontend, que é a parte do painel do site.&lt;/li&gt;
+&lt;li&gt;Gustavo: Vai testar a spider do portal &amp;ldquo;Leo Dias&amp;rdquo;, e tentar implementar mais spiders.&lt;/li&gt;
+&lt;li&gt;Amanda: Vai se juntar com o Marcus para fazer a parte do painel.&lt;/li&gt;
+&lt;li&gt;Enzo: Vai continuar melhorando a configuração da API do gemini. Ajudar o Erick com o Docker.&lt;/li&gt;
+&lt;li&gt;Erick: Vai fazer a parte prática do Docker que havia estudado na sprint anterior. E vai gerenciar as notícias no banco de dados.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Todas as issues que ficaram pendentes foram concluídas antes do prazo.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
       <link>http://localhost:1313/2025-2-SeLiga/atas/19_10_2025/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2025-2-SeLiga/atas/19_10_2025/</guid>
@@ -1344,6 +1101,70 @@
     </item>
     <item>
       <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/21_10_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/21_10_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 21/10/2025
+&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Planejamento da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Arthur e Gustavo:&lt;/strong&gt; Vão desenvlover duas spider em portais que possuem possiveis noticias falsas&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amanda:&lt;/strong&gt; Começar o design responsivo do site&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Marcus:&lt;/strong&gt; Vai implementar a rota &amp;ldquo;sobre&amp;rdquo; e começar o design responsivo&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Erick:&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enzo:&lt;/strong&gt;  Conectar a IA para validar as noticias do banco de dados com o back end&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;issues-planejadas-nessa-semana-&#34;&gt;&lt;strong&gt;Issues Planejadas nessa semana:&lt;/strong&gt; ✅&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Implementar integração das notícias com Backend&lt;/li&gt;
+&lt;li&gt;Aprimorar a rota &amp;ldquo;sobre&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Procurar portais que podem conter conteúdo falso e posicionar spiders&lt;/li&gt;
+&lt;li&gt;Dar início ao design responsivo&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
       <link>http://localhost:1313/2025-2-SeLiga/atas/22_09_2025/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2025-2-SeLiga/atas/22_09_2025/</guid>
@@ -1424,6 +1245,269 @@
 &lt;ul&gt;
 &lt;li&gt;O grupo em geral estará um pouco ocupado esta semana, mas tudo está nos conformes.&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/23_11_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/23_11_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 23/11/2025
+&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Ausente (justificado)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arthur: Configurou os workflows de CI (Continuous Integration) para verificação automática e realizou a implementação de testes unitários abrangendo Frontend, backend, Scraper e a página &amp;ldquo;Sobre&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Marcus: Iniciou a página &amp;ldquo;Painel&amp;rdquo; do site e implementou partes visuais, como os contadores de &amp;rsquo;total de notícias&amp;rsquo;, &amp;rsquo;notícias verdadeiras&amp;rsquo; e &amp;rsquo;notícias falsas&amp;rsquo;. Adicionou também um gráfico contendo essas informações e as notícias duvidosas; a rota está praticamente pronta, restando apenas alguns detalhes para finalização.&lt;/li&gt;
+&lt;li&gt;Gustavo: Pesquisou outros portais de notícias para a criação de spiders.&lt;/li&gt;
+&lt;li&gt;Amanda: Iniciou a implementação da responsividade da página &amp;ldquo;Painel&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Enzo: Testou a API do verificador e realizou a correção de pequenos erros, como a duplicata de notícias, além de ter começado o desenvolvimento do backend da rota do &amp;ldquo;Painel&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Erick: Excluiu as notícias que estavam em inglês e iniciou a configuração da parte de Docker.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;issues-feitas-nessa-semana-&#34;&gt;&lt;strong&gt;Issues Feitas nessa semana:&lt;/strong&gt; ✅&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Criar testes unitários para frontend e spiders&lt;/li&gt;
+&lt;li&gt;Feat/spider unit test&lt;/li&gt;
+&lt;li&gt;Verificar notícias duplicadas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;issues-criadas-nessa-semana-mas-que-precisam-de-revisão&#34;&gt;&lt;strong&gt;Issues criadas nessa semana mas que precisam de revisão:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Implementar Docker&lt;/li&gt;
+&lt;li&gt;Implementar mais spiders&lt;/li&gt;
+&lt;li&gt;Desenvolver painel do site&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Nenhuma observação adicional registrada&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/24_11_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/24_11_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 24/11/2025&lt;br&gt;
+&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-presença&#34;&gt;📋 Presença&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Falta justificada&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-tópicos-abordados--resumo-da-semana&#34;&gt;🗣️ Tópicos Abordados — Resumo da Semana&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Arthur:&lt;/strong&gt; Talvez ajudar o Erick no Docker; ajudar o Gustavo nas spiders.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Marcus:&lt;/strong&gt; Focar na parte do painel e corrigir bugs do frontend.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gustavo:&lt;/strong&gt; Continuar criando spiders; talvez mexer no GitHub Pages.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amanda:&lt;/strong&gt; Vai continuar a responsividade da pagina painel&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enzo:&lt;/strong&gt; Continuar mexendo na API de duplicatas; prosseguir na rota de painel; arrumar a rota root que está com erro.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Erick:&lt;/strong&gt; Fazer o Dockerfile do backend, frontend e conexão com o MongoDB.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;observações-adicionais&#34;&gt;Observações adicionais&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/26_10_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/26_10_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 26/10/2025
+&lt;strong&gt;Tema:&lt;/strong&gt; Resumo da Semana 💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Resumo da semana de cada integrante:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arthur: Prestou auxílio ao Gustavo e desenvolveu o &lt;em&gt;spider&lt;/em&gt; para o portal Metrópoles, preparando o envio dos dados para o banco de dados.&lt;/li&gt;
+&lt;li&gt;Marcus: Focou em tornar o &lt;em&gt;front-end&lt;/em&gt; responsivo. A &lt;em&gt;navbar&lt;/em&gt; foi implementada e as seções &amp;ldquo;Sobre&amp;rdquo; e &amp;ldquo;Equipe&amp;rdquo; já estão funcionais (clicáveis) e em fase de finalização.&lt;/li&gt;
+&lt;li&gt;Gustavo: Concluiu a &lt;em&gt;issue&lt;/em&gt; de &lt;em&gt;web scraping&lt;/em&gt;, implementando os &lt;em&gt;spiders&lt;/em&gt; para o portal Band.&lt;/li&gt;
+&lt;li&gt;Amanda: Pesquisou sobre as melhores práticas para implementação de responsividade no &lt;em&gt;front-end&lt;/em&gt; com React. Não foi possível aplicar o conhecimento devido à falta de tempo.&lt;/li&gt;
+&lt;li&gt;Enzo: A contribuição nesta semana foi focada na pesquisa sobre automatização de processos.&lt;/li&gt;
+&lt;li&gt;Erick: Não apresentou contribuições nesta semana.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;issues-feitas-nessa-semana-&#34;&gt;&lt;strong&gt;Issues Feitas nessa semana:&lt;/strong&gt; ✅&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Implementar seções Sobre e Equipe.&lt;/li&gt;
+&lt;li&gt;Front-end responsivo.&lt;/li&gt;
+&lt;li&gt;Implementação de spiders em portais de notícias&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;observações-adicionais-&#34;&gt;&lt;strong&gt;OBSERVAÇÕES ADICIONAIS&lt;/strong&gt; ✍️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Conseguimos concluir todas as issues dessa semana&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ATA DE REUNIÃO 🗓️</title>
+      <link>http://localhost:1313/2025-2-SeLiga/atas/28_10_2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/atas/28_10_2025/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Reunião online&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;Data:&lt;/strong&gt; 28/10/2025&lt;br&gt;
+&lt;strong&gt;Tema:&lt;/strong&gt; Planejamento💡&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;presença&#34;&gt;&lt;strong&gt;PRESENÇA&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Nome&lt;/th&gt;
+          &lt;th&gt;Presença&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arthur&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Amanda&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gustavo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Enzo&lt;/td&gt;
+          &lt;td&gt;Presente&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Erick&lt;/td&gt;
+          &lt;td&gt;Ausente&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tópicos-abordados-&#34;&gt;&lt;strong&gt;TÓPICOS ABORDADOS&lt;/strong&gt; 🗣️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Arthur:&lt;/strong&gt; Fazer a implementação de testes de software unitários&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Amanda:&lt;/strong&gt; Fazer os botões de filtro (verificadas, duvidosas e fake news) funcionarem e começar a rota de notícias&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Erick:&lt;/strong&gt; Tratar as notícias coletadas no web scraping e armazenar no banco de dados de forma automatizada&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Enzo:&lt;/strong&gt; Tentar implementar automação do tratamento de dados e comunicar a api no banco de dados com o backend&lt;/p&gt;</description>
     </item>
     <item>
       <title>ATA DE REUNIÃO 🗓️</title>

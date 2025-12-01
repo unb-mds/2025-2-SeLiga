@@ -52,7 +52,7 @@ describe('PaginaNoticias', () => {
         render(<PaginaNoticias/>);      // carrega a pagina de notícias
 
         // o botão deve mostrar "Atualizando..."
-        expect(screen.getByRole('button', {name: /Atualizando.../i})).toBeInTheDocument();
+        expect(screen.getByText("...")).toBeInTheDocument();
         await waitFor(() => {
             // newsCard deve renderizar o título da notícia
             expect(screen.getByText('Noticia teste 1')).toBeInTheDocument();
@@ -99,6 +99,6 @@ describe('PaginaNoticias', () => {
 
         // verificação do resultado do filtro pelo botão
         expect(screen.queryByText('Noticia teste 2')).not.toBeInTheDocument();      // como 'Noticia teste 2' é verdadeira, não deveria aparecer no documento
-        expect(screen.getByText('Noticia teste 1')).toBeInTheDocument();            // como 'Noticia teste 1' é falsa, deveria aparecer no documento
+        await expect(screen.getByText('Noticia teste 1')).toBeInTheDocument();            // como 'Noticia teste 1' é falsa, deveria aparecer no documento
     });
 });

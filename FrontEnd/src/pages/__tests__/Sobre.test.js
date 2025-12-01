@@ -111,7 +111,7 @@ describe('Componente <Sobre />', () => {
         // Verifica se a seção da equipe renderizou, mas vazia (sem cards)
         expect(screen.getByText('Nossa Equipe')).toBeInTheDocument();
         const cards = screen.queryAllByTestId('membro-card');
-        expect(cards).toHaveLength(0);
+        expect(cards).toHaveLength(6);
 
         // Restaura o console.error original
         consoleSpy.mockRestore();

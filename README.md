@@ -67,7 +67,7 @@ O projeto segue uma estrutura modular, tipicamente organizada em:
 Esta é a maneira mais simples de rodar o projeto, sem a necessidade de configurar ambientes Python ou Node.js manualmente.
 
 ### Pré-requisitos
-* **Docker Desktop** instalado e em execução.
+* **[Docker Desktop](https://www.docker.com/products/docker-desktop)** instalado e em execução.
 
 ### Passo a Passo
 

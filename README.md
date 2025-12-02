@@ -11,7 +11,7 @@
       <img src="https://img.shields.io/badge/Design%20Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Acessar Figma" />
     </a>
     <h3>
-    🚀 <a href="https://seliga-front.onrender.com">Clique aqui para acessar a aplicação online</a>
+    🚀 <a href="https://https://seliga-portal.onrender.com/">Clique aqui para acessar a aplicação online</a>
   </h3>
   </p>
   <p>

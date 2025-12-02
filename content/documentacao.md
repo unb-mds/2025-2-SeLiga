@@ -5,6 +5,38 @@ draft: false
 
 ---
 
+## 📁 Estrutura do Projeto
+O projeto segue uma estrutura modular para facilitar o desenvolvimento e a manutenção.
+
+```
+seliga-project/
+├── 📄 .gitignore
+├── 📄 README.md
+├── 📄 requirements.txt
+├── 📂 docs/               # Documentação técnica e relatórios
+├── 🚀 backend/            # Lógica da API e do modelo de detecção
+│   ├── 🧠 verificador.py
+│   ├── 🧠 verifica_duplicatas.py
+│   └── 🐍 main.py
+├── 💻 frontend/           # Código da aplicação web (React)
+│   ├── 📁 public/
+│   └── 📁 src/
+├── 🕷️ spiders/         # Módulo de mineração de dados com Scrapy
+│   ├── 📁 itens.py
+│   ├── 📁 spiders/
+│       ├── 🕸️ band.py
+│       ├── 🕸️ metropoles.py
+│       ├── 🕸️ jovempan.py
+│       ├── 🕸️ yahoo.py
+│       ├── 🕸️ leodias.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+|   └── ⚙️ settings.py🕸️
+
+```
+
+---
+
 ## 📜 Requisitos De Software
 
 Esta seção define os requisitos funcionais e não funcionais que norteiam nosso projeto, garantindo que a entrega final atenda a todos os objetivos e critérios de qualidade.
@@ -60,33 +92,3 @@ A arquitetura define a estrutura de alto nível do sistema e como seus principai
 
 
 ---
-
-## 📁 Estrutura do Projeto
-O projeto segue uma estrutura modular para facilitar o desenvolvimento e a manutenção.
-
-```
-seliga-project/
-├── 📄 .gitignore
-├── 📄 README.md
-├── 📄 requirements.txt
-├── 📂 docs/               # Documentação técnica e relatórios
-├── 🚀 backend/            # Lógica da API e do modelo de detecção
-│   ├── 🧠 verificador.py
-│   ├── 🧠 verifica_duplicatas.py
-│   └── 🐍 main.py
-├── 💻 frontend/           # Código da aplicação web (React)
-│   ├── 📁 public/
-│   └── 📁 src/
-├── 🕷️ spiders/         # Módulo de mineração de dados com Scrapy
-│   ├── 📁 itens.py
-│   ├── 📁 spiders/
-│       ├── 🕸️ band.py
-│       ├── 🕸️ metropoles.py
-│       ├── 🕸️ jovempan.py
-│       ├── 🕸️ yahoo.py
-│       ├── 🕸️ leodias.py
-│   ├── middlewares.py
-│   ├── pipelines.py
-|   └── ⚙️ settings.py🕸️
-
-```

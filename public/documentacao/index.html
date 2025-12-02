@@ -8,17 +8,34 @@
 <title>Documentação | SeLiga</title>
 <meta name="keywords" content="">
 <meta name="description" content="
+📁 Estrutura do Projeto
+O projeto segue uma estrutura modular para facilitar o desenvolvimento e a manutenção.
+seliga-project/
+├── 📄 .gitignore
+├── 📄 README.md
+├── 📄 requirements.txt
+├── 📂 docs/               # Documentação técnica e relatórios
+├── 🚀 backend/            # Lógica da API e do modelo de detecção
+│   ├── 🧠 verificador.py
+│   ├── 🧠 verifica_duplicatas.py
+│   └── 🐍 main.py
+├── 💻 frontend/           # Código da aplicação web (React)
+│   ├── 📁 public/
+│   └── 📁 src/
+├── 🕷️ spiders/         # Módulo de mineração de dados com Scrapy
+│   ├── 📁 itens.py
+│   ├── 📁 spiders/
+│       ├── 🕸️ band.py
+│       ├── 🕸️ metropoles.py
+│       ├── 🕸️ jovempan.py
+│       ├── 🕸️ yahoo.py
+│       ├── 🕸️ leodias.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+|   └── ⚙️ settings.py🕸️
+
 📜 Requisitos De Software
-Esta seção define os requisitos funcionais e não funcionais que norteiam nosso projeto, garantindo que a entrega final atenda a todos os objetivos e critérios de qualidade.
-
-  
-
-
-  
-
-
-🏗️ Arquitetura de Software
-A arquitetura define a estrutura de alto nível do sistema e como seus principais componentes (frontend, backend, banco de dados, APIs) se organizam e se comunicam. Para este projeto, foi adotado o modelo cliente-servidor (client-server), que separa claramente as responsabilidades da interface de usuário (cliente) da lógica de negócio e armazenamento de dados (servidor). Esta estrutura é crucial para garantir o desempenho, a escalabilidade e a manutenibilidade da aplicação.">
+Esta seção define os requisitos funcionais e não funcionais que norteiam nosso projeto, garantindo que a entrega final atenda a todos os objetivos e critérios de qualidade.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/2025-2-SeLiga/documentacao/">
 <link crossorigin="anonymous" href="/2025-2-SeLiga/assets/css/stylesheet.0352c0849e1e5917401774d6e72e0cfa0940fab6da16bbeeb0da011434ee9cfc.css" integrity="sha256-A1LAhJ4eWRdAF3TW5y4M&#43;glA&#43;rbaFrvusNoBFDTunPw=" rel="preload stylesheet" as="style">
@@ -150,6 +167,32 @@ A arquitetura define a estrutura de alto nível do sistema e como seus principai
 </div>
   </header> 
   <div class="post-content"><hr>
+<h2 id="-estrutura-do-projeto">📁 Estrutura do Projeto<a hidden class="anchor" aria-hidden="true" href="#-estrutura-do-projeto">#</a></h2>
+<p>O projeto segue uma estrutura modular para facilitar o desenvolvimento e a manutenção.</p>
+<pre tabindex="0"><code>seliga-project/
+├── 📄 .gitignore
+├── 📄 README.md
+├── 📄 requirements.txt
+├── 📂 docs/               # Documentação técnica e relatórios
+├── 🚀 backend/            # Lógica da API e do modelo de detecção
+│   ├── 🧠 verificador.py
+│   ├── 🧠 verifica_duplicatas.py
+│   └── 🐍 main.py
+├── 💻 frontend/           # Código da aplicação web (React)
+│   ├── 📁 public/
+│   └── 📁 src/
+├── 🕷️ spiders/         # Módulo de mineração de dados com Scrapy
+│   ├── 📁 itens.py
+│   ├── 📁 spiders/
+│       ├── 🕸️ band.py
+│       ├── 🕸️ metropoles.py
+│       ├── 🕸️ jovempan.py
+│       ├── 🕸️ yahoo.py
+│       ├── 🕸️ leodias.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+|   └── ⚙️ settings.py🕸️
+</code></pre><hr>
 <h2 id="-requisitos-de-software">📜 Requisitos De Software<a hidden class="anchor" aria-hidden="true" href="#-requisitos-de-software">#</a></h2>
 <p>Esta seção define os requisitos funcionais e não funcionais que norteiam nosso projeto, garantindo que a entrega final atenda a todos os objetivos e critérios de qualidade.</p>
 <div align="center">
@@ -198,32 +241,7 @@ A arquitetura define a estrutura de alto nível do sistema e como seus principai
   <img src="/2025-2-SeLiga/imagens/documentacao/storymap/5.png">
 </div>
 <hr>
-<h2 id="-estrutura-do-projeto">📁 Estrutura do Projeto<a hidden class="anchor" aria-hidden="true" href="#-estrutura-do-projeto">#</a></h2>
-<p>O projeto segue uma estrutura modular para facilitar o desenvolvimento e a manutenção.</p>
-<pre tabindex="0"><code>seliga-project/
-├── 📄 .gitignore
-├── 📄 README.md
-├── 📄 requirements.txt
-├── 📂 docs/               # Documentação técnica e relatórios
-├── 🚀 backend/            # Lógica da API e do modelo de detecção
-│   ├── 🧠 verificador.py
-│   ├── 🧠 verifica_duplicatas.py
-│   └── 🐍 main.py
-├── 💻 frontend/           # Código da aplicação web (React)
-│   ├── 📁 public/
-│   └── 📁 src/
-├── 🕷️ spiders/         # Módulo de mineração de dados com Scrapy
-│   ├── 📁 itens.py
-│   ├── 📁 spiders/
-│       ├── 🕸️ band.py
-│       ├── 🕸️ metropoles.py
-│       ├── 🕸️ jovempan.py
-│       ├── 🕸️ yahoo.py
-│       ├── 🕸️ leodias.py
-│   ├── middlewares.py
-│   ├── pipelines.py
-|   └── ⚙️ settings.py🕸️
-</code></pre>
+
 
   </div>
 

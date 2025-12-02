@@ -107,21 +107,34 @@ _Isso iniciará o Backend na porta 8000 e o Frontend na porta 3000._
 ## 📂 Estrutura do Projeto
 
 ```
-.
-├── BackEnd/
-│   ├── main.py          # Ponto de entrada da API
-│   ├── scraper/         # Scripts de automação
-│   ├── spiders/         # Robôs de coleta (Scrapy)
-│   └── tests/           # Testes unitários e de integração
-├── FrontEnd/
-│   ├── src/             # Componentes React e páginas
-│   ├── public/          # Assets estáticos
-│   └── package.json     # Dependências e scripts
-├── documentos/          # Documentação de arquitetura e estudos
-└── docker-compose.yml   # Orquestração dos containers
-```
+seliga-project/
+├── 📄 .gitignore             # Lista arquivos que o Git deve ignorar (ex: senhas, pasta venv, node_modules).
+├── 📄 README.md              # O cartão de visitas do projeto. Contém a apresentação, instalação e autores.
+├── 📄 requirements.txt       # Lista de bibliotecas Python necessárias (FastAPI, Scrapy, Pymongo, etc.).
+├── 📂 docs/                  # Documentação extra (diagramas, relatórios da faculdade, manuais).
+│
+├── 🚀 backend/               # O "cérebro" da aplicação (API + Regras de Negócio).
+│   ├── 🧠 verificador.py     # Lógica de IA (Gemini). Recebe o texto e decide se é verdade ou fake.
+│   ├── 🧠 verifica_duplicatas.py # Script de limpeza. Impede que a mesma notícia seja salva 2x no banco.
+│   └── 🐍 main.py            # O motor da API (FastAPI). Define as rotas (URLs) que o Frontend vai chamar.
+│
+├── 💻 frontend/              # A "cara" da aplicação (Site em React).
+│   ├── 📁 public/            # Arquivos estáticos (imagens da equipe, logo, favicon) que não mudam.
+│   └── 📁 src/               # Código fonte do React (Páginas, Componentes, Estilos CSS).
+│
+└── 🕷️ spiders/               # O módulo de "Web Scraping" (Onde os robôs vivem).
+    ├── 📁 itens.py           # Define o "molde" dos dados (ex: toda notícia tem Título, Data, Link).
+    ├── 📁 spiders/           # Pasta com os robôs específicos de cada site.
+    │   ├── 🕸️ band.py        # Robô que entra no site da Band e copia as notícias.
+    │   ├── 🕸️ metropoles.py  # Robô que copia notícias do Metrópoles.
+    │   ├── 🕸️ jovempan.py    # Robô que copia notícias da Jovem Pan.
+    │   ├── 🕸️ yahoo.py       # Robô que copia notícias do Yahoo.
+    │   └── 🕸️ leodias.py     # Robô que copia notícias do Leo Dias.
+    ├── middlewares.py        # Configurações de requisição (ex: fingir ser um navegador real).
+    ├── pipelines.py          # O "Pós-Processamento". Depois que o robô pega a notícia, este arquivo limpa os dados e salva no MongoDB.
+    └── ⚙️ settings.py        # Configurações globais do Scrapy (velocidade de coleta, user-agent, etc.).
 
----
+```
 
 ## 👥 Autores (Squad 05)
 

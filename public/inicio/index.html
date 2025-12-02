@@ -106,13 +106,18 @@ Na era da informação instantânea, diferenciar fato de ficção é um desafio 
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
-                    <span class="active">Início</span>
+                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Visão Geral">
+                    <span class="active">Visão Geral</span>
                 </a>
             </li>
             <li>
                 <a href="http://localhost:1313/2025-2-SeLiga/equipe" title="Equipe">
                     <span>Equipe</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
+                    <span>Documentação</span>
                 </a>
             </li>
             <li>
@@ -157,10 +162,10 @@ Na era da informação instantânea, diferenciar fato de ficção é um desafio 
 <p><strong>Objetivo Geral:</strong> Automatizar a checagem de notícias através de um sistema inteligente que minera, analisa e classifica reportagens de grandes veículos da imprensa brasileira.</p>
 <p><strong>Objetivos Específicos:</strong></p>
 <ul>
-<li>Coletar artigos em tempo real de mais de 10 portais de notícias brasileiros</li>
-<li>Processar e analisar o conteúdo utilizando inteligência artificial</li>
-<li>Classificar notícias quanto à sua confiabilidade</li>
-<li>Disponibilizar os resultados em uma plataforma web simples e intuitiva</li>
+<li>Coletar artigos em tempo real de mais de 10 portais de notícias brasileiros.</li>
+<li>Processar e analisar o conteúdo utilizando inteligência artificial.</li>
+<li>Classificar notícias quanto à sua confiabilidade.</li>
+<li>Disponibilizar os resultados em uma plataforma web simples e intuitiva.</li>
 </ul>
 <h3 id="escopo-inicial">Escopo Inicial<a hidden class="anchor" aria-hidden="true" href="#escopo-inicial">#</a></h3>
 <p><strong>Funcionalidades Principais:</strong></p>
@@ -168,45 +173,45 @@ Na era da informação instantânea, diferenciar fato de ficção é um desafio 
 <li>
 <p><strong>Coleta Automatizada de Notícias</strong></p>
 <ul>
-<li>Mineração de artigos de mais de 10 portais de notícias brasileiros em tempo real</li>
-<li>Utilização de spiders (Scrapy) para web scraping estruturado</li>
+<li>Mineração de artigos de mais de 10 portais de notícias brasileiros em tempo real.</li>
+<li>Utilização de spiders (Scrapy) para web scraping estruturado.</li>
 </ul>
 </li>
 <li>
 <p><strong>Processamento e Análise de Dados</strong></p>
 <ul>
-<li>Pipeline de limpeza e pré-processamento de texto</li>
-<li>Extração de metadados das notícias</li>
-<li>Normalização de conteúdo</li>
+<li>Pipeline de limpeza e pré-processamento de texto.</li>
+<li>Extração de metadados das notícias.</li>
+<li>Normalização de conteúdo.</li>
 </ul>
 </li>
 <li>
 <p><strong>Detecção de Desinformação</strong></p>
 <ul>
-<li>Integração com Gemini IA para análise de conteúdo</li>
-<li>Classificação automática de notícias quanto à confiabilidade</li>
-<li>Geração de vereditos sobre potenciais Fake News</li>
+<li>Integração com Gemini IA para análise de conteúdo.</li>
+<li>Classificação automática de notícias quanto à confiabilidade.</li>
+<li>Geração de vereditos sobre potenciais Fake News.</li>
 </ul>
 </li>
 <li>
 <p><strong>API e Interface de Usuário</strong></p>
 <ul>
-<li>API RESTful (FastAPI) para servir dados</li>
-<li>Aplicação web (React) para consulta e visualização</li>
-<li>Sistema de busca e filtros inteligentes</li>
-<li>Apresentação de resultados com transparência sobre fontes e classificação</li>
+<li>API RESTful (FastAPI) para servir dados.</li>
+<li>Aplicação web (React) para consulta e visualização.</li>
+<li>Sistema de busca e filtros inteligentes.</li>
+<li>Apresentação de resultados com transparência sobre fontes e classificação.</li>
 </ul>
 </li>
 </ol>
 <p><strong>Infraestrutura:</strong></p>
 <ul>
-<li>Banco de dados MongoDB para armazenamento</li>
-<li>Sistema de controle de versão (Git/GitHub)</li>
+<li>Banco de dados MongoDB para armazenamento.</li>
+<li>Sistema de controle de versão (Git/GitHub).</li>
 </ul>
 <p><strong>Público-alvo:</strong></p>
 <ul>
-<li>Usuários finais: pessoas buscando verificar a veracidade de notícias</li>
-<li>Desenvolvedores: interessados em integrar dados via API</li>
+<li>Usuários finais: pessoas buscando verificar a veracidade de notícias.</li>
+<li>Desenvolvedores: interessados em integrar dados via API.</li>
 </ul>
 <hr>
 <h1 id="2-visão-geral-do-produto--solução">2. Visão Geral do Produto / Solução<a hidden class="anchor" aria-hidden="true" href="#2-visão-geral-do-produto--solução">#</a></h1>
@@ -275,11 +280,48 @@ Na era da informação instantânea, diferenciar fato de ficção é um desafio 
       </tr>
       <tr>
           <td style="text-align: left"><strong>Ferramentas</strong></td>
-          <td style="text-align: center"><em>Git, GitHub</em></td>
+          <td style="text-align: center"><em>Git e GitHub</em></td>
           <td style="text-align: right">Controle de versão e colaboração em equipe.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tecnologias de Teste</strong></td>
+          <td style="text-align: center"><em>Pytest, Jest e flake8</em></td>
+          <td style="text-align: right">Testes para o backend e frontend. Verificação de falhas no sistema e erros de sintaxe.</td>
       </tr>
   </tbody>
 </table>
+<hr>
+<h1 id="3-planejamento-e-gestão-do-projeto">3. Planejamento e Gestão do Projeto<a hidden class="anchor" aria-hidden="true" href="#3-planejamento-e-gestão-do-projeto">#</a></h1>
+<h2 id="31-roadmap--story-map">3.1 Roadmap / Story Map<a hidden class="anchor" aria-hidden="true" href="#31-roadmap--story-map">#</a></h2>
+<ul>
+<li>
+<p>Épicos:</p>
+</li>
+<li>
+<p>Features:</p>
+</li>
+<li>
+<p>User Stories (com critérios de aceitação):</p>
+</li>
+</ul>
+<h2 id="32-organização-do-trabalho">3.2 Organização do Trabalho<a hidden class="anchor" aria-hidden="true" href="#32-organização-do-trabalho">#</a></h2>
+<ul>
+<li>
+<p>Modelo ágil utilizado (Scrum, XP etc.):</p>
+<ul>
+<li>Scrum.</li>
+</ul>
+</li>
+<li>
+<p>Sprint planning, reviews e retrospectivas:</p>
+</li>
+<li>
+<p>Papéis dos integrantes:</p>
+</li>
+<li>
+<p>Ferramentas adotadas (Git, CI/CD, board etc.)</p>
+</li>
+</ul>
 <hr>
 <h2 id="-estrutura-do-projeto">📁 Estrutura do Projeto<a hidden class="anchor" aria-hidden="true" href="#-estrutura-do-projeto">#</a></h2>
 <p>O projeto segue uma estrutura modular para facilitar o desenvolvimento e a manutenção.</p>

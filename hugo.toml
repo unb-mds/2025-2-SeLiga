@@ -44,16 +44,16 @@ enableRobotsTXT = true
     url = "https://github.com/unb-mds/2025-2-SeLiga"
 
   [[params.socialIcons]]
-    name = "MDS"
-    url = "https://mds.lappis.rocks"
+    name = "Figma"
+    url = "https://www.figma.com/board/CIMdLiO4lAXoEHfFq4qZsg/SeLiga?node-id=0-1&t=wvpNNgTH1pzg8D7N-1"
 
 
 [menu]
   # Menu principal
   [[menu.main]]
-    identifier = "inicio"
-    name = "Início"
-    url = "/inicio/"
+    identifier = "visaogeral"
+    name = "Visão Geral"
+    url = "/visaogeral/"
     weight = 10  
 
   [[menu.main]]
@@ -69,7 +69,13 @@ enableRobotsTXT = true
     weight = 20
 
   [[menu.main]]
+    identifier = "desenvolvimento"
+    name = "Desenvolvimento"
+    url = "/desenvolvimento"
+    weight = 25
+
+  [[menu.main]]
     identifier = "menuestudos"
     name = "Estudos"
     url = "/menuestudos"
-    weight = 25
+    weight = 30

@@ -1817,11 +1817,11 @@
     </item>
     <item>
       <title>Bem-vindo ao SeLiga 👋</title>
-      <link>http://localhost:1313/2025-2-SeLiga/inicio/</link>
+      <link>http://localhost:1313/2025-2-SeLiga/visaogeral/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2025-2-SeLiga/inicio/</guid>
+      <guid>http://localhost:1313/2025-2-SeLiga/visaogeral/</guid>
       <description>&lt;hr&gt;
-&lt;h1 id=&#34;1-visão-geral&#34;&gt;1. Visão Geral&lt;/h1&gt;
+&lt;h1 id=&#34;visão-geral&#34;&gt;Visão Geral&lt;/h1&gt;
 &lt;h2 id=&#34;-seliga-o-portal-da-verdade&#34;&gt;🔎 SeLiga: O Portal da Verdade&lt;/h2&gt;
 &lt;p&gt;Sua ferramenta confiável na luta contra a desinformação.&lt;/p&gt;
 &lt;h3 id=&#34;contextualização-do-problema&#34;&gt;Contextualização do Problema&lt;/h3&gt;
@@ -1853,33 +1853,63 @@ O objetivo é ter um desempenho definido, que faça com que os desenvolvedores e
 &lt;div class=&#34;team-container&#34;&gt; &lt;div class=&#34;team-member&#34;&gt;
         &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/gustavo.jpg&#34; alt=&#34;Gustavo Emmanuel dos Santos Rodrigues&#34;&gt;
         &lt;p class=&#34;member-name&#34;&gt;Gustavo E. dos Santos Rodrigues&lt;/p&gt;
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• Scrum Master •&lt;/p&gt;
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• BackEnd •&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;team-member&#34;&gt;
         &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/arthur.jpg&#34; alt=&#34;Arthur Vilas Boas Laterza&#34;&gt;
         &lt;p class=&#34;member-name&#34;&gt;Arthur Vilas Boas Laterza&lt;/p&gt;
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• P.O. •&lt;/p&gt;
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• Arquitetura •&lt;/p&gt;
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• BackEnd •&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;team-member&#34;&gt;
         &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/amanda.jpg&#34; alt=&#34;Maria Amanda Lima Pinheiro&#34;&gt;
         &lt;p class=&#34;member-name&#34;&gt;Maria Amanda Lima Pinheiro&lt;/p&gt;
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• FrontEnd •&lt;/p&gt;
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• Banco de Dados •&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;team-member&#34;&gt;
     &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/marcus.jpg&#34; alt=&#34;Marcus Vinicius Rezende Dos Santos&#34;&gt;
         &lt;p class=&#34;member-name&#34;&gt;Marcus Vinicius R. Dos Santos&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;team-member&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/enzo.jpg&#34; alt=&#34;Enzo Lopes Ferreira&#34;&gt;
-        &lt;p class=&#34;member-name&#34;&gt;Enzo Lopes Ferreira&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;team-member&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/equipe/erick.jpg&#34; alt=&#34;Erick Ryan Caetano Guimaraes&#34;&gt;
-    &lt;p class=&#34;member-name&#34;&gt;Erick Ryan Caetano Guimaraes&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;atas-de-reunião&#34;&gt;ATAS de Reunião&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/2025-2-SeLiga/menuAtas/&#34;&gt;Atas&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• FrontEnd •&lt;/p&gt;
+    &lt;p align=&#34;center&#34; style=&#34;margin: 2px 0;&#34;&gt;• Banco de Dados •&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Desenvolvimento do projeto</title>
+      <link>http://localhost:1313/2025-2-SeLiga/desenvolvimento/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2025-2-SeLiga/desenvolvimento/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;desenvolvimento-e-implementação&#34;&gt;Desenvolvimento e Implementação&lt;/h2&gt;
+&lt;h2 id=&#34;arquitetura-da-solução&#34;&gt;Arquitetura da Solução&lt;/h2&gt;
+&lt;p&gt;A arquitetura geral do sistema foi modelada em C4, já apresentada anteriormente.
+Nesta seção, são descritas apenas as camadas implementadas e as decisões arquiteturais, considerando um ponto essencial:&lt;/p&gt;
+&lt;p&gt;O backend não se comunica diretamente com a IA.
+A classificação é feita por um serviço separado em python que usa a API do Gemini, que acessa o banco de dados.&lt;/p&gt;
+&lt;p&gt;Camadas Implementadas&lt;/p&gt;
+&lt;h3 id=&#34;camada-de-apresentação-frontend&#34;&gt;Camada de Apresentação (Frontend)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Interface Web acessada pelo usuário.&lt;/li&gt;
+&lt;li&gt;Realiza requisições ao backend via HTTPS.&lt;/li&gt;
+&lt;li&gt;Exibe apenas notícias já classificadas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;camada-de-aplicação-backend--api&#34;&gt;Camada de Aplicação (Backend / API)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Exposição de endpoints REST.&lt;/li&gt;
+&lt;li&gt;Realiza somente operações no MongoDB.&lt;/li&gt;
+&lt;li&gt;Não chama a IA e não realiza classificação.&lt;/li&gt;
+&lt;li&gt;Apenas retorna ao frontend os dados já presentes no banco.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;serviço-de-classificaçãogemini-api&#34;&gt;Serviço de Classificação(Gemini API)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Ler notícias pendentes no MongoDB&lt;/li&gt;
+&lt;li&gt;Enviar todos os dados da notícia para a API Gemini&lt;/li&gt;
+&lt;li&gt;Receber a classificação da IA&lt;/li&gt;
+&lt;li&gt;Atualizar o documento no banco&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;bando-de-dados-mongodb&#34;&gt;Bando de dados (MongoDB)&lt;/h3&gt;
+&lt;p&gt;Armazena:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Documentação</title>
@@ -1889,8 +1919,12 @@ O objetivo é ter um desempenho definido, que faça com que os desenvolvedores e
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;-requisitos-de-software&#34;&gt;📜 Requisitos De Software&lt;/h2&gt;
 &lt;p&gt;Esta seção define os requisitos funcionais e não funcionais que norteiam nosso projeto, garantindo que a entrega final atenda a todos os objetivos e critérios de qualidade.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;requisitos&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/documentacao/requisitos_funcionais.png&#34;&gt;
-&lt;img alt=&#34;requisitos&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/documentacao/requisitos_naofuncionais.png&#34;&gt;&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;
+  &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/documentacao/requisitos_funcionais.png&#34;&gt;
+&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;
+  &lt;img src=&#34;http://localhost:1313/2025-2-SeLiga/imagens/documentacao/requisitos_naofuncionais.png&#34;&gt;
+&lt;/div&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-arquitetura-de-software&#34;&gt;🏗️ Arquitetura de Software&lt;/h2&gt;
 &lt;p&gt;A arquitetura define a estrutura de alto nível do sistema e como seus principais componentes (frontend, backend, banco de dados, APIs) se organizam e se comunicam. Para este projeto, foi adotado o modelo cliente-servidor (client-server), que separa claramente as responsabilidades da interface de usuário (cliente) da lógica de negócio e armazenamento de dados (servidor). Esta estrutura é crucial para garantir o desempenho, a escalabilidade e a manutenibilidade da aplicação.&lt;/p&gt;</description>

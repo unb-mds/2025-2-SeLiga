@@ -11,6 +11,10 @@
 📜 Requisitos De Software
 Esta seção define os requisitos funcionais e não funcionais que norteiam nosso projeto, garantindo que a entrega final atenda a todos os objetivos e critérios de qualidade.
 
+  
+
+
+  
 
 
 🏗️ Arquitetura de Software
@@ -106,8 +110,8 @@ A arquitetura define a estrutura de alto nível do sistema e como seus principai
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/2025-2-SeLiga/inicio/" title="Início">
-                    <span>Início</span>
+                <a href="http://localhost:1313/2025-2-SeLiga/visaogeral/" title="Visão Geral">
+                    <span>Visão Geral</span>
                 </a>
             </li>
             <li>
@@ -118,6 +122,11 @@ A arquitetura define a estrutura de alto nível do sistema e como seus principai
             <li>
                 <a href="http://localhost:1313/2025-2-SeLiga/documentacao" title="Documentação">
                     <span class="active">Documentação</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/2025-2-SeLiga/desenvolvimento" title="Desenvolvimento">
+                    <span>Desenvolvimento</span>
                 </a>
             </li>
             <li>
@@ -143,22 +152,78 @@ A arquitetura define a estrutura de alto nível do sistema e como seus principai
   <div class="post-content"><hr>
 <h2 id="-requisitos-de-software">📜 Requisitos De Software<a hidden class="anchor" aria-hidden="true" href="#-requisitos-de-software">#</a></h2>
 <p>Esta seção define os requisitos funcionais e não funcionais que norteiam nosso projeto, garantindo que a entrega final atenda a todos os objetivos e critérios de qualidade.</p>
-<p><img alt="requisitos" loading="lazy" src="/2025-2-SeLiga/imagens/documentacao/requisitos_funcionais.png">
-<img alt="requisitos" loading="lazy" src="/2025-2-SeLiga/imagens/documentacao/requisitos_naofuncionais.png"></p>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/requisitos_funcionais.png">
+</div>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/requisitos_naofuncionais.png">
+</div>
 <hr>
 <h2 id="-arquitetura-de-software">🏗️ Arquitetura de Software<a hidden class="anchor" aria-hidden="true" href="#-arquitetura-de-software">#</a></h2>
 <p>A arquitetura define a estrutura de alto nível do sistema e como seus principais componentes (frontend, backend, banco de dados, APIs) se organizam e se comunicam. Para este projeto, foi adotado o modelo cliente-servidor (client-server), que separa claramente as responsabilidades da interface de usuário (cliente) da lógica de negócio e armazenamento de dados (servidor). Esta estrutura é crucial para garantir o desempenho, a escalabilidade e a manutenibilidade da aplicação.</p>
 <ul>
-<li><strong>Diagrama de contexto do sistema:</strong>
-<img alt="arquitetura_contexto" loading="lazy" src="/2025-2-SeLiga/imagens/documentacao/diagrama_de_contexto.png"><br>
-<br></li>
-<li><strong>Diagrama de containers:</strong>
-<img alt="arquitetura_containers" loading="lazy" src="/2025-2-SeLiga/imagens/documentacao/diagrama_de_containers.png">
-<br></li>
-<li><strong>Diagrama de componentes:</strong>
-<img alt="arquitetura_componentes" loading="lazy" src="/2025-2-SeLiga/imagens/documentacao/diagrama_de_componentes.png"></li>
+<li><strong>Diagrama de contexto do sistema:</strong></li>
 </ul>
-
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/diagrama_de_contexto.png">
+</div>
+<ul>
+<li><strong>Diagrama de containers:</strong></li>
+</ul>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/diagrama_de_containers.png">
+</div>
+<ul>
+<li><strong>Diagrama de componentes:</strong></li>
+</ul>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/diagrama_de_componentes.png">
+</div>
+<hr>
+<h1 id="planejamento-e-gestão-do-projeto">Planejamento e Gestão do Projeto<a hidden class="anchor" aria-hidden="true" href="#planejamento-e-gestão-do-projeto">#</a></h1>
+<h2 id="story-map">Story Map<a hidden class="anchor" aria-hidden="true" href="#story-map">#</a></h2>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/storymap/1.png">
+</div>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/storymap/2.png">
+</div>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/storymap/3.png">
+</div>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/storymap/4.png">
+</div>
+<div align="center">
+  <img src="/2025-2-SeLiga/imagens/documentacao/storymap/5.png">
+</div>
+<hr>
+<h2 id="-estrutura-do-projeto">📁 Estrutura do Projeto<a hidden class="anchor" aria-hidden="true" href="#-estrutura-do-projeto">#</a></h2>
+<p>O projeto segue uma estrutura modular para facilitar o desenvolvimento e a manutenção.</p>
+<pre tabindex="0"><code>seliga-project/
+├── 📄 .gitignore
+├── 📄 README.md
+├── 📄 requirements.txt
+├── 📂 docs/               # Documentação técnica e relatórios
+├── 🚀 backend/            # Lógica da API e do modelo de detecção
+│   ├── 🧠 verificador.py
+│   ├── 🧠 verifica_duplicatas.py
+│   └── 🐍 main.py
+├── 💻 frontend/           # Código da aplicação web (React)
+│   ├── 📁 public/
+│   └── 📁 src/
+├── 🕷️ spiders/         # Módulo de mineração de dados com Scrapy
+│   ├── 📁 itens.py
+│   ├── 📁 spiders/
+│       ├── 🕸️ band.py
+│       ├── 🕸️ metropoles.py
+│       ├── 🕸️ jovempan.py
+│       ├── 🕸️ yahoo.py
+│       ├── 🕸️ leodias.py
+│   ├── middlewares.py
+│   ├── pipelines.py
+|   └── ⚙️ settings.py🕸️
+</code></pre>
 
   </div>
 

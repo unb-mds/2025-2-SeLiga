@@ -48,18 +48,16 @@ app = FastAPI(
     version="1.0.0"
 )
 
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"                # informa a porta para o frontend
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"                # informa a porta para o frontend
+origins = [        
+    
+    "*"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["GET"],  # APENAS LEITURA 
+    allow_origins=["*"], # Libera qualquer site (Render, localhost, etc)
+    allow_credentials=False,
+    allow_methods=["*"],  
     allow_headers=["*"],
 )
 

@@ -45,12 +45,11 @@ O SeLiga é um sistema dividido em camadas, garantindo uma facil manuntenção e
 O projeto segue uma estrutura modular, tipicamente organizada em:
 
 ```
-
 .
-├── backend/   \# Lógica da API e do modelo de detecção
+├── BackEnd/   \# Lógica da API e do modelo de detecção
     ├── scraper/   
-    ├── Spyder/        
-├── frontend/           \# Código da aplicação web (interface do usuário)
+    ├── spiders/        
+├── FrontEnd/           \# Código da aplicação web (interface do usuário)
 ├── docs/               \# Documentação técnica e relatórios
 └── requirements.txt    \# Dependências necessárias para o ambiente Python
 
@@ -63,7 +62,33 @@ O projeto segue uma estrutura modular, tipicamente organizada em:
 
 ---
 
-## ⚙️ Como Criar um Ambiente de Desenvolvimento
+## 🐳 Rodando com Docker (Recomendado)
+
+Esta é a maneira mais simples de rodar o projeto, sem a necessidade de configurar ambientes Python ou Node.js manualmente.
+
+### Pré-requisitos
+* **[Docker Desktop](https://www.docker.com/products/docker-desktop)** instalado e em execução.
+
+### Passo a Passo
+
+1.  **Configuração:**
+    Certifique-se de que o arquivo `.env` (com as chaves do MongoDB e Google API) esteja criado dentro da pasta `BackEnd/`.
+
+2.  **Execução:**
+    Abra o terminal na raiz do projeto e execute:
+    ```bash
+    docker-compose up
+    ```
+    *(Aguarde o build e a inicialização dos containers)*
+
+3.  **Acesso:**
+    Acesse a aplicação em: **[http://localhost:3000](http://localhost:3000)**
+
+Para parar a execução, pressione `Ctrl + C` no terminal ou rode `docker-compose down`.
+
+---
+
+## ⚙️ Instalação Manual (Sem Docker)
 
 Siga estes passos para configurar e rodar o *backend* do projeto localmente.
 

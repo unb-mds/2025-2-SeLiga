@@ -1,0 +1,24 @@
+services: 
+  backend:
+    build:
+      context: ./BackEnd
+      dockerfile: Dockerfile
+    container_name: seliga-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./BackEnd/.env 
+    volumes:
+      - ./BackEnd:/app
+
+  frontend:
+    build:
+      context: ./FrontEnd
+      dockerfile: Dockerfile
+    container_name: seliga-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    depends_on:
+      - backend

@@ -1,7 +1,6 @@
 <div align="center">
   <img src="FrontEnd/public/logo512x512.png" alt="Logo SeLiga" width="120"/>
   <h1>🔎 SeLiga: O Portal da Verdade</h1>
-
   <p>
     <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python" alt="Python" />
     <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
@@ -11,8 +10,10 @@
     <a href="https://www.figma.com/board/CIMdLiO4lAXoEHfFq4qZsg/SeLiga?node-id=0-1&t=cW6M6PqNMMI18hG7-1" target="_blank">
       <img src="https://img.shields.io/badge/Design%20Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Acessar Figma" />
     </a>
+    <h3>
+    🚀 <a href="https://seliga-front.onrender.com">Clique aqui para acessar a aplicação online</a>
+  </h3>
   </p>
-  
   <p>
     <strong>Combate às Fake News com Inteligência Artificial e Verificação Automatizada.</strong>
   </p>
@@ -20,8 +21,11 @@
 
 <br />
 
-Na era da informação instantânea, diferenciar fato de ficção é um desafio constante. O **SeLiga**
-nasceu com um propósito claro: ser a sua ferramenta confiável na luta contra a desinformação.
+Na era da informação instantânea, diferenciar fato de ficção é um desafio constante. O **SeLiga** nasceu com um propósito claro: ser a sua ferramenta confiável na luta contra a desinformação.
+
+Este projeto automatiza a verificação de notícias, minerando e analisando reportagens de mais de **10 grandes veículos de imprensa**. Utilizamos IA para detectar desinformação e entregamos os resultados através de uma **aplicação web intuitiva**.
+
+Desenvolvido pela equipe do Squad 05 na disciplina de Métodos de Desenvolvimento de Software (MDS - 2025/2 - FCTE/UnB).
 ---
 
 ## ✨ Funcionalidades

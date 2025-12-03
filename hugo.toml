@@ -40,8 +40,13 @@ enableRobotsTXT = true
 
   # Redes sociais / links externos
   [[params.socialIcons]]
+  name = "Site"
+  url = "https://seliga-portal.onrender.com/"
+
+  [[params.socialIcons]]
     name = "github"
     url = "https://github.com/unb-mds/2025-2-SeLiga"
+
 
   [[params.socialIcons]]
     name = "Figma"

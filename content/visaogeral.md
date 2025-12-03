@@ -170,4 +170,3 @@ Como próximos passos, seria importante aprimorar a escalabiliade do projeto, pa
 <p align="center">
 <a href="https://github.com/unb-mds/2025-2-SeLiga" target="_blank">Ver no GitHub</a>
 </p>
-
